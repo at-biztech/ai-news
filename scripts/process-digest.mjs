@@ -183,7 +183,8 @@ async function main() {
   try {
     text = await callGemini()
   } catch (e) {
-    console.log(`First attempt failed: ${e.message}\nRetrying...`)
+    console.log(`First attempt failed: ${e.message}\nRetrying in 30 seconds...`)
+    await new Promise(r => setTimeout(r, 30000))
     text = await callGemini(2)
   }
 

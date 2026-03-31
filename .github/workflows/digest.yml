@@ -18,31 +18,82 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Skip cron if today already processed
+        if: github.event_name == 'schedule'
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          if [ -f public/digests.json ]; then
+            if node -e "const d=JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'));process.exit(d.dates?.includes('$TODAY')?0:1)" 2>/dev/null; then
+              echo "Digest for $TODAY already exists, skipping cron run"
+              echo "SKIP_RUN=true" >> $GITHUB_ENV
+            fi
+          fi
+
+      - name: Exit early if skipped
+        if: env.SKIP_RUN == 'true'
+        run: |
+          echo "Today's digest already exists. Cron backup not needed."
+          exit 0
+
       - uses: actions/setup-node@v4
+        if: env.SKIP_RUN != 'true'
         with:
           node-version: 20
 
-      - run: npm ci
+      - name: Install dependencies
+        if: env.SKIP_RUN != 'true'
+        run: npm ci
 
       - name: Process digest
+        if: env.SKIP_RUN != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RAW_CONTENT: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.email_content || github.event.inputs.manual_content || '' }}
         run: node scripts/process-digest.mjs
 
       - name: Update digests.json
+        if: env.SKIP_RUN != 'true'
         run: node scripts/update-digests.mjs
 
+      - name: Validate digests.json
+        if: env.SKIP_RUN != 'true'
+        run: |
+          if ! node -e "JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'))"; then
+            echo "::error::digests.json is not valid JSON, aborting commit"
+            exit 1
+          fi
+          echo "digests.json is valid JSON"
+
       - name: Commit and push
+        if: env.SKIP_RUN != 'true'
         run: |
           git config user.name "AI Digest Bot"
           git config user.email "bot@digest.local"
           git add public/digests.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
+            exit 0
+          fi
+
+          DATE=$(node -e "const d=JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'));console.log(d.dates[0])")
+          git commit -m "digest: ${DATE}"
+
+          if git push; then
+            echo "Push succeeded"
           else
-            DATE=$(node -e "const d=JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'));console.log(d.dates[0])")
+            echo "Push failed, retrying with rebase..."
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/update-digests.mjs
+            if ! node -e "JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'))"; then
+              echo "::error::digests.json invalid after retry"
+              exit 1
+            fi
+            git add public/digests.json
+            if git diff --cached --quiet; then
+              echo "No changes after retry"
+              exit 0
+            fi
             git commit -m "digest: ${DATE}"
-            git pull --rebase
             git push
           fi
