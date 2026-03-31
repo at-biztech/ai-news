@@ -1,13 +1,15 @@
 name: Process Digest
 
 on:
+  schedule:
+    - cron: '0 1 * * *'
   repository_dispatch:
     types: [new-digest]
   workflow_dispatch:
     inputs:
       manual_content:
-        description: 'Paste news content here'
-        required: true
+        description: 'Paste news content here (leave empty to use Gemini search)'
+        required: false
         type: string
 
 jobs:
@@ -22,25 +24,11 @@ jobs:
 
       - run: npm ci
 
-      - name: Extract content
-        id: content
-        run: |
-          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
-            echo "source=dispatch" >> $GITHUB_OUTPUT
-          else
-            echo "source=manual" >> $GITHUB_OUTPUT
-          fi
-
       - name: Process digest
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          RAW_CONTENT: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.email_content || github.event.inputs.manual_content }}
-        run: |
-          if [ -z "$RAW_CONTENT" ]; then
-            echo "::error::No content provided"
-            exit 1
-          fi
-          node scripts/process-digest.mjs
+          RAW_CONTENT: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.email_content || github.event.inputs.manual_content || '' }}
+        run: node scripts/process-digest.mjs
 
       - name: Update digests.json
         run: node scripts/update-digests.mjs

@@ -7,17 +7,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY
 if (!GEMINI_API_KEY) { console.error('Missing GEMINI_API_KEY'); process.exit(1) }
 
-let rawContent = process.env.RAW_CONTENT || ''
-if (!rawContent.trim()) { console.error('Missing RAW_CONTENT'); process.exit(1) }
+let rawContent = (process.env.RAW_CONTENT || '').trim()
+const searchMode = !rawContent
 
 if (rawContent.length > 30000) {
   console.log(`Content truncated from ${rawContent.length} to 30000 chars`)
   rawContent = rawContent.slice(0, 30000) + '\n\n[Content truncated]'
 }
 
-const SYSTEM_PROMPT = `You are an AI news analyst for a team of digital ecosystem architects and automation builders.
+console.log(searchMode ? 'Search mode: Gemini will find today\'s AI news via Google Search' : 'Content mode: processing provided content')
 
-You will receive raw AI industry news content. Your job:
+const SCORING_INSTRUCTIONS = `You are an AI news analyst for a team of digital ecosystem architects and automation builders.
+
+Your job:
 
 1. Score each news item 1 to 10 based on relevance to someone who builds AI-powered automated systems, integrates AI tools into business operations, and designs digital ecosystems across industries.
 
@@ -31,7 +33,7 @@ Scoring priority (in this order):
 - CRITICAL (8 to 10): Stop what you are doing and read this.
 - WATCH (6 to 7): Worth knowing, keep an eye on it.
 - LOW (1 to 5): Noted. Not directly relevant right now.
-- Include ALL items. Do not skip or exclude any news. Every item in the input must appear in the output.
+- Include ALL items. Do not skip or exclude any news. Every item must appear in the output.
 
 3. For each item, provide:
 - headline: A simple one-line headline (rewrite if the original is unclear)
@@ -49,7 +51,7 @@ Scoring priority (in this order):
 5. If there are no items at all, return valid JSON with an empty items array.
 
 IMPORTANT:
-- Do not invent news. Only work with what is provided.
+- Do not invent news. Only work with what is provided or found via search.
 - Keep all text short. Every word must earn its place.
 - No emojis.
 - Items must be sorted by score, highest first.
@@ -80,18 +82,37 @@ Respond with ONLY valid JSON matching this exact structure, no markdown fences, 
   ]
 }`
 
+function buildSearchPrompt() {
+  return `Search the web for all significant AI industry news from the last 24 hours. Look broadly across: new model releases, AI tool launches, funding rounds, regulation updates, hardware announcements, research breakthroughs, partnerships, and any other notable AI developments.
+
+Find as many distinct news items as possible. Do not limit yourself to a small number.
+
+Then score and format ALL of them.\n\n` + SCORING_INSTRUCTIONS
+}
+
+function buildContentPrompt(content) {
+  return `You will receive raw AI industry news content. Score and format ALL items.\n\n` + SCORING_INSTRUCTIONS + '\n\nHere is today\'s raw news content:\n\n' + content
+}
+
 const MODEL = 'gemini-2.5-flash'
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`
 
-async function callGemini(content, attempt = 1) {
+async function callGemini(attempt = 1) {
   console.log(`Calling Gemini (attempt ${attempt})...`)
+
+  const body = {
+    contents: [{ parts: [{ text: searchMode ? buildSearchPrompt() : buildContentPrompt(rawContent) }] }],
+    generationConfig: { temperature: 0.2 }
+  }
+
+  if (searchMode) {
+    body.tools = [{ google_search: {} }]
+  }
+
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: SYSTEM_PROMPT + '\n\nHere is today\'s raw news content:\n\n' + content }] }],
-      generationConfig: { temperature: 0.2 }
-    })
+    body: JSON.stringify(body)
   })
 
   if (!res.ok) {
@@ -100,8 +121,13 @@ async function callGemini(content, attempt = 1) {
   }
 
   const data = await res.json()
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text
-  if (!text) throw new Error('Empty response from Gemini')
+  const parts = data.candidates?.[0]?.content?.parts
+  if (!parts?.length) throw new Error('Empty response from Gemini')
+
+  // In search mode, Gemini may return multiple parts — find the text part with JSON
+  const textParts = parts.filter(p => p.text).map(p => p.text)
+  const text = textParts.join('\n')
+  if (!text) throw new Error('No text content in Gemini response')
   return text
 }
 
@@ -155,10 +181,10 @@ function validate(digest) {
 async function main() {
   let text
   try {
-    text = await callGemini(rawContent)
+    text = await callGemini()
   } catch (e) {
-    console.log('First attempt failed, retrying...')
-    text = await callGemini(rawContent, 2)
+    console.log(`First attempt failed: ${e.message}\nRetrying...`)
+    text = await callGemini(2)
   }
 
   const parsed = parseResponse(text)
@@ -167,7 +193,7 @@ async function main() {
   const outPath = join(__dirname, 'output.json')
   writeFileSync(outPath, JSON.stringify(digest, null, 2))
   console.log(`Output written to ${outPath}`)
-  console.log(`Date: ${digest.dateKey}, Items: ${digest.items.length} (${digest.critical} critical, ${digest.watch} watch)`)
+  console.log(`Date: ${digest.dateKey}, Items: ${digest.items.length} (${digest.critical} critical, ${digest.watch} watch, ${digest.low} low)`)
 }
 
 main().catch(e => { console.error(e.message); process.exit(1) })
