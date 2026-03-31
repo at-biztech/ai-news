@@ -96,7 +96,7 @@ function buildContentPrompt(content) {
 Then score and format ALL of them.\n\n` + SCORING_INSTRUCTIONS + '\n\nHere is the summary:\n\n' + content
 }
 
-const MODEL = 'gemini-2.5-flash'
+const MODEL = 'gemini-2.5-pro'
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`
 
 async function callGemini(attempt = 1) {
