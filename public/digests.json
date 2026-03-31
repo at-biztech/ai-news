@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-03-31",
     "2026-03-29",
     "2024-06-10"
   ],
@@ -125,6 +126,48 @@
           "useCase": "An infrastructure architect planning a next-generation AI inference cluster for a large language model service in 2026 would factor in the H200 Ultra's specifications to ensure future scalability and performance for demanding real-time applications.",
           "sourceUrl": "https://nvidia.com/h200ultra",
           "sourceName": "nvidia.com"
+        }
+      ]
+    },
+    "2026-03-31": {
+      "date": "March 31, 2026",
+      "dateKey": "2026-03-31",
+      "totalScanned": 4,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
+      "summary": "Big day. US federal AI regulation is advancing, while new hardware and voice AI tools are gaining traction.",
+      "footerNote": "One item (Korean AI chip startup funding) was excluded due to a score below 6, as it did not present immediate actionable insights or significant ecosystem changes for builders within the next six months.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Regulation",
+          "headline": "US Government Advances First Federal Law to Regulate AI",
+          "description": "The US government is moving forward with a comprehensive federal law to regulate AI development and use. This legislation aims to protect users, address environmental concerns, and create unified safety and accountability rules across the country.",
+          "useCase": "An automation builder designing a new AI-powered customer onboarding system for a US-based financial institution must now proactively incorporate features for data privacy, explainability, and bias detection to ensure future compliance with these upcoming federal regulations.",
+          "sourceUrl": "https://zagadeporte.org/2026/03/31/estados-unidos-impulsa-ley-federal-para-regular-la-inteligencia-artificial/",
+          "sourceName": "zagadeporte"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Hardware",
+          "headline": "Huawei Launches New AI Accelerator Card to Compete with Nvidia",
+          "description": "Huawei introduced a new AI accelerator card, the Atlas 350, designed for AI training and inference in data centers. This card offers an alternative to Nvidia GPUs, particularly for Chinese enterprises facing restrictions on US chip imports.",
+          "useCase": "An automation builder in a Chinese enterprise could integrate these new cards into their on-premise data center infrastructure to power large language model (LLM) inference engines for internal document processing automations, ensuring local supply chain stability.",
+          "sourceUrl": "https://www.muycomputerpro.com/2026/03/31/huawei-presenta-la-aceleradora-atlas-350-para-competir-con-nvidia",
+          "sourceName": "muycomputerpro"
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Gnani.ai Secures $10M to Expand Speech and Voice AI Products",
+          "description": "Indian speech AI company Gnani.ai raised $10 million to grow its voice AI products, enter new markets, and improve research and development. This funding will lead to more robust, real-time voice AI solutions for businesses.",
+          "useCase": "An automation builder could integrate Gnani.ai's enhanced voice AI solutions into a customer service workflow to automate call routing, provide real-time agent assistance, or handle common customer queries entirely through voice bots in multiple languages.",
+          "sourceUrl": "https://letsdatascience.com/news/gnaniai-raises-10m-series-b-funding-b6102787",
+          "sourceName": "letsdatascience"
         }
       ]
     }
