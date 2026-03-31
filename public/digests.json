@@ -1,7 +1,8 @@
 {
   "dates": [
     "2026-03-31",
-    "2026-03-29"
+    "2026-03-29",
+    "2024-05-15"
   ],
   "digests": {
     "2026-03-29": {
@@ -166,6 +167,49 @@
           "useCase": "This is not directly relevant to building AI automations or integrating AI tools. It focuses on user education. For it to matter, this initiative would need to specifically train a workforce on how to *build* or *manage* AI-powered automated systems, rather than just use them, or lead to a significant increase in the availability of skilled AI builders.",
           "sourceUrl": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/googles-ai-works-for-britain-aims-to-help-stuck-brits-unlock-progression/",
           "sourceName": "blog.google"
+        }
+      ]
+    },
+    "2024-05-15": {
+      "date": "May 15, 2024",
+      "dateKey": "2024-05-15",
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 2,
+      "watch": 1,
+      "low": 0,
+      "summary": "Big day. Key developments include significant regional AI infrastructure investment, new AI tools for finance, and important releases for AI governance and Java development.",
+      "footerNote": "News today shows a strong focus on both foundational infrastructure and practical application tools, alongside crucial governance solutions. Geographic focus on Southeast Asia is notable.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Microsoft Invests $1B+ in Thailand's AI Infrastructure",
+          "description": "Microsoft plans to invest over $1 billion by 2028 to build cloud and AI data centers in Thailand. This will improve local access to powerful AI computing, reducing delays and supporting more complex AI tasks for businesses and government.",
+          "useCase": "An automation builder could design AI solutions for Thai businesses that require real-time processing or large data sets, knowing that the local infrastructure will support these demanding workloads with low latency, enabling services like real-time language translation or local data analytics.",
+          "sourceUrl": "https://www.perplexity.ai/search/find-all-ai-industry-news-from-o35fthKAR0WWrObsjpoFtQ",
+          "sourceName": "perplexity.ai"
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "New AI Governance Platform and Java Development Kit Released",
+          "description": "OpenBox AI launched a $5M platform to help manage AI trust and compliance. Separately, Google released a Java toolkit (ADK) to help developers build AI agents into Java applications. A US pilot program also aims to boost US AI leadership in Southeast Asia.",
+          "useCase": "An automation builder can use Google's ADK to integrate AI agents directly into existing Java enterprise applications, such as automating data entry or customer service within a legacy system. Simultaneously, the OpenBox AI platform can be used to ensure these new AI integrations comply with industry regulations and ethical guidelines from the start.",
+          "sourceUrl": "https://www.perplexity.ai/search/find-all-ai-industry-news-from-o35fthKAR0WWrObsjpoFtQ",
+          "sourceName": "perplexity.ai"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "New AI Tools Automate Tasks for Finance and Banking",
+          "description": "New AI tools like Jump—Accio’s AI Associate and Glia’s CoPilot/Banker are helping financial firms automate tasks. These tools can take notes during meetings and handle common customer questions, allowing smaller businesses to offer advanced 24/7 support.",
+          "useCase": "A digital ecosystem architect could integrate these AI agents into a bank's customer relationship management (CRM) system to automatically summarize client interactions, freeing up human advisors to focus on complex problem-solving and personalized advice, thereby scaling service capacity without increasing headcount.",
+          "sourceUrl": "https://www.perplexity.ai/search/find-all-ai-industry-news-from-o35fthKAR0WWrObsjpoFtQ",
+          "sourceName": "perplexity.ai"
         }
       ]
     }
