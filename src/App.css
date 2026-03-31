@@ -126,6 +126,7 @@ body {
 }
 .pill-critical { background: var(--red-bg); color: var(--red-text); }
 .pill-watch { background: var(--amber-bg); color: var(--amber-text); }
+.pill-low { background: var(--bg-tertiary); color: var(--text-tertiary); }
 
 .summary {
   text-align: center;
@@ -148,6 +149,10 @@ body {
   border-radius: 12px;
   padding: 1rem 1.25rem;
   box-shadow: var(--card-shadow);
+}
+.card-low {
+  opacity: 0.7;
+  border-style: dashed;
 }
 .card-header {
   display: flex;
@@ -173,6 +178,7 @@ body {
 }
 .tag-critical { background: var(--red-bg); color: var(--red-text); }
 .tag-watch { background: var(--amber-bg); color: var(--amber-text); }
+.tag-low { background: var(--bg-tertiary); color: var(--text-tertiary); }
 .cat-badge { background: var(--bg-tertiary); color: var(--text-secondary); }
 
 .card-headline {

@@ -67,11 +67,11 @@ function BarChart({ items, dark }) {
 
 function Card({ item }) {
   return (
-    <div className="card">
+    <div className={`card${item.tag === 'LOW' ? ' card-low' : ''}`}>
       <div className="card-header">
         <div className="card-score">{item.score}</div>
         <div className="card-badges">
-          <span className={`tag-badge ${item.tag === 'CRITICAL' ? 'tag-critical' : 'tag-watch'}`}>{item.tag}</span>
+          <span className={`tag-badge ${item.tag === 'CRITICAL' ? 'tag-critical' : item.tag === 'WATCH' ? 'tag-watch' : 'tag-low'}`}>{item.tag}</span>
           <span className="cat-badge">{item.category}</span>
         </div>
       </div>
@@ -182,6 +182,7 @@ export default function App() {
             <span className="pill">{digest.relevant} relevant</span>
             {digest.critical > 0 && <span className="pill pill-critical">{digest.critical} CRITICAL</span>}
             {digest.watch > 0 && <span className="pill pill-watch">{digest.watch} WATCH</span>}
+            {digest.low > 0 && <span className="pill pill-low">{digest.low} LOW</span>}
           </div>
           <div className="summary">{digest.summary}</div>
           <div className="divider" />

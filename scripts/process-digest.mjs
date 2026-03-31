@@ -30,12 +30,13 @@ Scoring priority (in this order):
 2. Assign a tag based on score:
 - CRITICAL (8 to 10): Stop what you are doing and read this.
 - WATCH (6 to 7): Worth knowing, keep an eye on it.
-- Skip anything below 6 entirely. Do not include it in the output.
+- LOW (1 to 5): Noted. Not directly relevant right now.
+- Include ALL items. Do not skip or exclude any news. Every item in the input must appear in the output.
 
-3. For each qualifying item, provide:
+3. For each item, provide:
 - headline: A simple one-line headline (rewrite if the original is unclear)
 - description: 1 to 2 sentences explaining what happened in the simplest possible words. No jargon. If you must use a technical term, explain it in parentheses. Write like you are explaining to a smart person who is not a native English speaker.
-- useCase: One specific, concrete scenario of how this could be applied in building AI automations, connecting systems, or designing digital workflows. Never generic. Never "could be useful for automation." Always a real scenario.
+- useCase: One specific, concrete scenario of how this could be applied in building AI automations, connecting systems, or designing digital workflows. For lower-scored items, explain why it is less relevant or what would need to change for it to matter. Never generic.
 - category: One of: Models, Tools, Regulation, Funding, Hardware, Healthcare, Infrastructure, Research, or whatever fits best.
 - sourceUrl: The URL from the source content if available, otherwise empty string.
 - sourceName: The domain name of the source.
@@ -43,9 +44,9 @@ Scoring priority (in this order):
 4. Also provide:
 - totalScanned: Total number of distinct news items in the input
 - summary: One line. Start with "Big day." or "Quiet day." followed by the main takeaway.
-- footerNote: What was excluded and why. Any gaps noted.
+- footerNote: Any gaps or patterns noted in today's news cycle.
 
-5. If no items score 6 or above, still return valid JSON with an empty items array.
+5. If there are no items at all, return valid JSON with an empty items array.
 
 IMPORTANT:
 - Do not invent news. Only work with what is provided.
@@ -62,12 +63,13 @@ Respond with ONLY valid JSON matching this exact structure, no markdown fences, 
   "relevant": 0,
   "critical": 0,
   "watch": 0,
+  "low": 0,
   "summary": "",
   "footerNote": "",
   "items": [
     {
       "score": 0,
-      "tag": "CRITICAL or WATCH",
+      "tag": "CRITICAL, WATCH, or LOW",
       "category": "",
       "headline": "",
       "description": "",
@@ -127,7 +129,7 @@ function validate(digest) {
 
   for (const item of digest.items) {
     if (typeof item.score !== 'number' || item.score < 1 || item.score > 10) item.score = 6
-    if (!item.tag) item.tag = item.score >= 8 ? 'CRITICAL' : 'WATCH'
+    item.tag = item.score >= 8 ? 'CRITICAL' : item.score >= 6 ? 'WATCH' : 'LOW'
     if (!item.headline) item.headline = 'Untitled'
     if (!item.description) item.description = ''
     if (!item.useCase) item.useCase = ''
@@ -135,9 +137,13 @@ function validate(digest) {
     if (!item.sourceName) item.sourceName = ''
   }
 
-  digest.relevant = digest.items.length
+  digest.items.sort((a, b) => b.score - a.score)
+
+  digest.totalScanned = digest.items.length
+  digest.relevant = digest.items.filter(i => i.score >= 6).length
   digest.critical = digest.items.filter(i => i.score >= 8).length
   digest.watch = digest.items.filter(i => i.score >= 6 && i.score <= 7).length
+  digest.low = digest.items.filter(i => i.score < 6).length
 
   const [y, m, d] = digest.dateKey.split('-')
   const dt = new Date(y, m - 1, d)
