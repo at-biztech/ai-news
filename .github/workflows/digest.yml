@@ -1,0 +1,60 @@
+name: Process Digest
+
+on:
+  repository_dispatch:
+    types: [new-digest]
+  workflow_dispatch:
+    inputs:
+      manual_content:
+        description: 'Paste news content here'
+        required: true
+        type: string
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Extract content
+        id: content
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "source=dispatch" >> $GITHUB_OUTPUT
+          else
+            echo "source=manual" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Process digest
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RAW_CONTENT: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.email_content || github.event.inputs.manual_content }}
+        run: |
+          if [ -z "$RAW_CONTENT" ]; then
+            echo "::error::No content provided"
+            exit 1
+          fi
+          node scripts/process-digest.mjs
+
+      - name: Update digests.json
+        run: node scripts/update-digests.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "AI Digest Bot"
+          git config user.email "bot@digest.local"
+          git add public/digests.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            DATE=$(node -e "const d=JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'));console.log(d.dates[0])")
+            git commit -m "digest: ${DATE}"
+            git pull --rebase
+            git push
+          fi

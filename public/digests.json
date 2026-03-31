@@ -1,0 +1,132 @@
+{
+  "dates": [
+    "2026-03-29",
+    "2024-06-10"
+  ],
+  "digests": {
+    "2026-03-29": {
+      "date": "March 29, 2026",
+      "dateKey": "2026-03-29",
+      "totalScanned": 7,
+      "relevant": 4,
+      "critical": 0,
+      "watch": 4,
+      "summary": "Quiet day. China-heavy news cycle with healthcare and infrastructure moves. No major model or tool releases from Western labs.",
+      "footerNote": "3 items scored below 6 and were excluded (Tongtong 3.0 embodied AI, AGI4S research program, Zhongguancun Forum policy recap). No major Western lab announcements detected in this cycle.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Healthcare",
+          "headline": "China announces first \"Super AI Hospital\" with end-to-end AI care pathways",
+          "description": "A group of Chinese companies launched a hospital model where AI handles the full patient journey: sorting patients by urgency, helping with diagnosis, suggesting treatment plans, and tracking recovery. Instead of using AI for one task, the whole system is connected.",
+          "useCase": "Reference architecture for any client building a multi-agent system in healthcare or insurance. Map their patient/claim journey and place AI agents at each handoff point instead of bolting on a single chatbot.",
+          "sourceUrl": "https://k.sina.com.cn/article_7857201856_1d45362c001903ri16.html?from=tech",
+          "sourceName": "k.sina.com"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools / Legal",
+          "headline": "ExposeIQ launches real-time AI deposition analysis with human verification",
+          "description": "A new legal tool uses AI to analyze live court depositions (sworn testimony sessions) as they happen, spotting contradictions and key statements instantly. A human checks every AI output before lawyers see it, reducing the risk of AI mistakes in high-stakes situations.",
+          "useCase": "Blueprint for any real-time AI + human-in-the-loop workflow. Apply this pattern to compliance monitoring, live call analysis, or QA pipelines where AI flags issues and a human approves before action is taken.",
+          "sourceUrl": "https://www.palmbeachpost.com/press-release/story/164986/exposeiq-launches-aihuman-verified-litigation-platform-offering-real-time-live-deposition-analysis/",
+          "sourceName": "palmbeachpost.com"
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "China launches open-source AI alliance and FlagOS 2.0 platform for domestic AI stack",
+          "description": "Over 40 Chinese organizations formed a new alliance to build a China-controlled open-source AI ecosystem. They also released FlagOS 2.0, a platform that supports more types of AI chips and aims to make training and running large AI models faster and more stable.",
+          "useCase": "If building AI systems for clients with operations in China, track FlagOS compatibility. It signals which chip/model combos will be supported domestically, affecting infrastructure choices for any China-facing deployment.",
+          "sourceUrl": "https://k.sina.com.cn/article_7857201856_1d45362c001903rbos.html?from=tech",
+          "sourceName": "k.sina.com"
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Government / Legal",
+          "headline": "India launches Nyaya Setu AI chatbot for public legal access",
+          "description": "India's Vice President launched an AI chatbot that answers basic legal questions and guides citizens through court procedures. It is designed to help people who cannot easily access lawyers, making legal information available at scale.",
+          "useCase": "Template for government-facing AI chatbot projects. Note the pattern: narrow domain (legal procedures), high-trust requirement, always-on availability. Replicable for immigration, tax guidance, or municipal services bots.",
+          "sourceUrl": "https://www.newindianexpress.com/nation/2026/Mar/29/vice-president-radhakrishnan-launches-ai-chatbot-nyaya-setu-to-expand-access-to-justice",
+          "sourceName": "newindianexpress.com"
+        }
+      ]
+    },
+    "2024-06-10": {
+      "date": "June 10, 2024",
+      "dateKey": "2024-06-10",
+      "totalScanned": 8,
+      "relevant": 6,
+      "critical": 4,
+      "watch": 2,
+      "summary": "Big day. Major advancements in AI models and tools, alongside critical new regulations for AI system builders.",
+      "footerNote": "Excluded 2 items (Small startup releases yet another AI writing assistant, Samsung adds AI photo editing to Galaxy S27) due to low relevance (score below 6) for building AI-powered automated systems and digital ecosystems.",
+      "items": [
+        {
+          "score": 10,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "OpenAI Launches GPT-5 with Native Tool Use and Massive Context Window",
+          "description": "OpenAI released GPT-5, its most advanced AI model, featuring the ability to directly use tools like APIs and web browsing without extra setup. It also understands very long conversations or documents, up to 1 million 'tokens' (parts of words).",
+          "useCase": "An automation builder can now design a single AI agent powered by GPT-5 to autonomously research a topic online, extract data from a specific API, and then generate a report, all within one prompt, without needing complex external orchestration logic.",
+          "sourceUrl": "https://openai.com/blog/gpt5",
+          "sourceName": "openai.com"
+        },
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Meta Open-Sources Llama 4, a Powerful New AI Model",
+          "description": "Meta has released Llama 4, a large open-source AI model with 400 billion parameters (its internal components). It performs as well as GPT-4 on many tests and can be used by businesses for free.",
+          "useCase": "An automation builder can integrate Llama 4 into an on-premise or private cloud environment to power a custom content generation pipeline, ensuring data privacy and reducing API costs, especially for applications requiring high volume text generation or summarization.",
+          "sourceUrl": "https://ai.meta.com/llama4",
+          "sourceName": "ai.meta.com"
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Regulation",
+          "headline": "EU Passes AI Liability Law Requiring Explainable AI Decisions",
+          "description": "The European Union has approved a new law making companies legally responsible for harm caused by their AI systems to consumers. It requires companies to explain how their AI made decisions if requested, starting in January 2027.",
+          "useCase": "When designing an AI-powered loan application system for European customers, an architect must now build in robust logging and a user-facing explanation module to detail the factors contributing to a loan denial, ensuring compliance with future regulations.",
+          "sourceUrl": "https://ec.europa.eu/ai-liability",
+          "sourceName": "ec.europa.eu"
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Anthropic Releases Claude Agent SDK for Autonomous AI Workflows",
+          "description": "Anthropic launched an open-source software development kit (SDK) that helps developers build complex, multi-step AI agent systems using their Claude models. It includes features for tool use, managing AI memory, and organizing tasks.",
+          "useCase": "A digital ecosystem architect can use this SDK to build an autonomous customer service agent that can understand complex queries, access a knowledge base, interact with a CRM system (using built-in tool use), and then generate a personalized response, all orchestrated within the SDK.",
+          "sourceUrl": "https://anthropic.com/agent-sdk",
+          "sourceName": "anthropic.com"
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Healthcare",
+          "headline": "DeepMind's AlphaFold 3.5 Accelerates Drug Discovery",
+          "description": "Google DeepMind's new AI model, AlphaFold 3.5, can predict how drugs interact with proteins with high accuracy (95%). This could significantly speed up the process of finding new medicines, reducing years of work to months.",
+          "useCase": "A pharmaceutical company could integrate AlphaFold 3.5 into their drug discovery pipeline to quickly screen potential drug candidates, automating the initial assessment of their effectiveness and reducing costly lab experiments.",
+          "sourceUrl": "https://deepmind.google/alphafold35",
+          "sourceName": "deepmind.google"
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Hardware",
+          "headline": "Nvidia Unveils H200 Ultra GPU for Future AI Workloads",
+          "description": "Nvidia announced a new powerful graphics processing unit (GPU), the H200 Ultra, which will have significantly more memory (288GB HBM4) and faster processing for AI tasks. It is expected to be available in late 2026.",
+          "useCase": "An infrastructure architect planning a next-generation AI inference cluster for a large language model service in 2026 would factor in the H200 Ultra's specifications to ensure future scalability and performance for demanding real-time applications.",
+          "sourceUrl": "https://nvidia.com/h200ultra",
+          "sourceName": "nvidia.com"
+        }
+      ]
+    }
+  }
+}
