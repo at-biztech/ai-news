@@ -188,8 +188,8 @@
           "headline": "OpenAI Secures $122 Billion in Latest Funding Round, Valued at Up to $852 Billion",
           "description": "OpenAI has completed a massive funding round, raising an additional $12 billion to bring its total to $122 billion, with its valuation now reaching between $730 billion and $852 billion. This investment will fuel its continued leadership in AI technology and expansion of its ChatGPT chatbot.",
           "useCase": "This significant capital injection allows OpenAI to continue developing advanced AI models and infrastructure, which will likely lead to more powerful and accessible APIs for developers building AI-powered applications and integrations.",
-          "sourceUrl": "",
-          "sourceName": "San Francisco Today"
+          "sourceUrl": "https://www.forbes.com/sites/antoniopequenoiv/2026/03/31/openai-valuation-reaches-852-billion-after-massive-funding-round/",
+          "sourceName": "forbes.com"
         },
         {
           "score": 9,
@@ -228,8 +228,8 @@
           "headline": "White House Proposes National AI Framework to Standardize Regulation and Preempt State Laws",
           "description": "The White House has released a National Policy Framework for Artificial Intelligence, recommending federal legislation to create a unified approach to AI regulation. This framework aims to preempt (override) state AI laws that are deemed overly burdensome, while preserving state powers in areas like child safety and fraud prevention, and channeling oversight through existing federal agencies.",
           "useCase": "Digital ecosystem architects and automation builders need to monitor this closely as it could simplify the regulatory landscape for deploying AI systems across state lines, reducing legal complexity and compliance overhead, or conversely, introduce new federal requirements.",
-          "sourceUrl": "",
-          "sourceName": "ACA International"
+          "sourceUrl": "https://www.acainternational.org/news/white-house-pushes-federal-preemption-over-state-rules-in-ai-action-plan/",
+          "sourceName": "acainternational.org"
         },
         {
           "score": 8,
@@ -258,8 +258,8 @@
           "headline": "ExpressVPN Launches ExpressAI, a Private AI Platform with Audited Confidential Computing",
           "description": "ExpressVPN has launched ExpressAI, a private AI platform that allows users to access AI tools (including models from OpenAI, DeepSeek, Qwen, NVIDIA Nemotron) with strong privacy guarantees. It uses \"secure enclave\" technology to ensure user prompts and files are not used for model training and remain encrypted, even from ExpressVPN itself, and has been independently audited by Cure53.",
           "useCase": "For organizations handling sensitive data or operating in highly regulated industries, ExpressAI offers a secure way to leverage various AI models for tasks like content generation or data analysis, mitigating privacy risks associated with sending proprietary information to public AI services.",
-          "sourceUrl": "",
-          "sourceName": "Australian Cyber Security Magazine"
+          "sourceUrl": "https://www.expressvpn.com/expressai",
+          "sourceName": "expressvpn.com"
         },
         {
           "score": 7,
@@ -278,8 +278,8 @@
           "headline": "NVIDIA Announces Groq 3 LPX Integration with Vera Rubin Platform for Accelerated Inference",
           "description": "NVIDIA CEO Jensen Huang announced the Nvidia Groq 3 LPX, which integrates Groq's inference-optimized architecture with NVIDIA's Vera Rubin platform. This aims to accelerate AI inference workloads by up to 35 times, with the chip manufactured by Samsung and expected to ship in the second half of 2026.",
           "useCase": "For organizations running large-scale AI inference (e.g., real-time recommendations, complex natural language processing), this hardware development promises significant speedups and efficiency gains. Builders of AI-powered services should anticipate these advancements to plan for future infrastructure upgrades and performance improvements.",
-          "sourceUrl": "",
-          "sourceName": "The Serious Insights State of AI 2026 March Update"
+          "sourceUrl": "https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-low-latency-inference-accelerator-nvidia-vera-rubin-platform/",
+          "sourceName": "developer.nvidia.com"
         },
         {
           "score": 7,
@@ -428,8 +428,8 @@
           "headline": "Pocket (YC W26) Develops Hardware AI Device for Recording, Transcribing, and Summarizing Conversations",
           "description": "Pocket, a hardware-focused AI startup, is building a device that records, transcribes, and summarizes real-world conversations. This aims to provide an AI assistant for capturing and processing spoken information.",
           "useCase": "Professionals who attend many meetings, interviews, or lectures could use this device to automatically generate accurate transcripts and concise summaries, streamlining information capture and knowledge management within their workflows.",
-          "sourceUrl": "",
-          "sourceName": "YC W26 Demo Day highlights"
+          "sourceUrl": "https://www.ycombinator.com/companies/pocket",
+          "sourceName": "ycombinator.com"
         },
         {
           "score": 6,
@@ -568,8 +568,8 @@
           "headline": "Various US States Consider New AI Legislation on Data Provenance, Arbitration, and Consumer Protection",
           "description": "Several US states, including Oklahoma and Arizona, are considering new AI-related bills. These proposals cover areas such as requiring provenance data for AI-generated video/image/audio, regulating AI-assisted arbitration in divorce, prohibiting AI systems from impersonating mental health professionals, and mandating AI use notifications in consumer fraud.",
           "useCase": "Businesses operating across states need to monitor this patchwork of emerging regulations. Automation builders must ensure their AI systems comply with varying state laws regarding transparency, data provenance, and ethical use, potentially requiring adaptable AI governance frameworks.",
-          "sourceUrl": "",
-          "sourceName": "Transparency Coalition"
+          "sourceUrl": "https://transparencycoalition.ai/ai-legislative-update-march-27-2026/",
+          "sourceName": "transparencycoalition.ai"
         },
         {
           "score": 4,
@@ -578,8 +578,8 @@
           "headline": "Elon Musk Advocates for \"Terafab\" to Address Intensifying AI Chip Shortage",
           "description": "Elon Musk has proposed establishing what he calls the largest chip manufacturing effort ever, a \"Terafab,\" to address the increasing demand for artificial intelligence chips that is causing a potential supply crunch in the semiconductor industry.",
           "useCase": "This is a high-level strategic proposal rather than a concrete product or immediate plan. For builders, it highlights the ongoing challenge of AI chip supply and the industry's long-term efforts to scale manufacturing, which could eventually ease hardware constraints for AI deployments.",
-          "sourceUrl": "",
-          "sourceName": "NewsDigest.Ai"
+          "sourceUrl": "https://marketwise.com/what-is-terafab-musks-bold-bet-on-chipmaking-and-ai/",
+          "sourceName": "marketwise.com"
         },
         {
           "score": 4,
