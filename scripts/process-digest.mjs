@@ -96,20 +96,23 @@ function buildContentPrompt(content) {
 Then score and format ALL of them.\n\n` + SCORING_INSTRUCTIONS + '\n\nHere is the summary:\n\n' + content
 }
 
-const MODEL = 'gemini-2.5-pro'
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`
+const PRIMARY_MODEL = 'gemini-2.5-pro'
+const FALLBACK_MODEL = 'gemini-2.5-flash'
 
-async function callGemini(attempt = 1) {
-  console.log(`Calling Gemini (attempt ${attempt})...`)
+function apiUrl(model) {
+  return `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`
+}
+
+async function callGeminiWithModel(model) {
+  console.log(`Calling ${model}...`)
 
   const body = {
     contents: [{ parts: [{ text: searchMode ? buildSearchPrompt() : buildContentPrompt(rawContent) }] }],
-    generationConfig: { temperature: 0.2 }
+    generationConfig: { temperature: 0.2 },
+    tools: [{ google_search: {} }]
   }
 
-  body.tools = [{ google_search: {} }]
-
-  const res = await fetch(API_URL, {
+  const res = await fetch(apiUrl(model), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
@@ -117,18 +120,28 @@ async function callGemini(attempt = 1) {
 
   if (!res.ok) {
     const err = await res.text()
-    throw new Error(`Gemini API error ${res.status}: ${err}`)
+    throw new Error(`${model} API error ${res.status}: ${err}`)
   }
 
   const data = await res.json()
   const parts = data.candidates?.[0]?.content?.parts
-  if (!parts?.length) throw new Error('Empty response from Gemini')
+  if (!parts?.length) throw new Error('Empty response from ' + model)
 
-  // In search mode, Gemini may return multiple parts — find the text part with JSON
   const textParts = parts.filter(p => p.text).map(p => p.text)
   const text = textParts.join('\n')
-  if (!text) throw new Error('No text content in Gemini response')
+  if (!text) throw new Error('No text content from ' + model)
   return text
+}
+
+async function callGemini() {
+  try {
+    return await callGeminiWithModel(PRIMARY_MODEL)
+  } catch (e) {
+    console.log(`${PRIMARY_MODEL} failed: ${e.message}`)
+    console.log(`Falling back to ${FALLBACK_MODEL} in 30 seconds...`)
+    await new Promise(r => setTimeout(r, 30000))
+    return await callGeminiWithModel(FALLBACK_MODEL)
+  }
 }
 
 function parseResponse(text) {
@@ -179,14 +192,7 @@ function validate(digest) {
 }
 
 async function main() {
-  let text
-  try {
-    text = await callGemini()
-  } catch (e) {
-    console.log(`First attempt failed: ${e.message}\nRetrying in 30 seconds...`)
-    await new Promise(r => setTimeout(r, 30000))
-    text = await callGemini(2)
-  }
+  const text = await callGemini()
 
   const parsed = parseResponse(text)
   const digest = validate(parsed)
