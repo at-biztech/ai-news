@@ -223,35 +223,73 @@ async function validate(digest) {
     if (removed > 0) console.log(`Dedup: removed ${removed} items already covered in recent digests`)
   }
 
-  // Verify URLs actually exist
+  // Verify URLs and fix broken/missing ones
   console.log('Verifying source URLs...')
-  let broken = 0
-  await Promise.all(digest.items.map(async (item) => {
-    if (!item.sourceUrl) return
+  const needsFix = []
+
+  await Promise.all(digest.items.map(async (item, idx) => {
+    if (!item.sourceUrl) { needsFix.push(idx); return }
+    // Reject generic homepages
     try {
-      const res = await fetch(item.sourceUrl, {
-        method: 'HEAD',
-        redirect: 'follow',
-        signal: AbortSignal.timeout(8000)
-      })
-      if (!res.ok) {
-        // Try GET as some servers block HEAD
-        const res2 = await fetch(item.sourceUrl, {
-          method: 'GET',
-          redirect: 'follow',
-          signal: AbortSignal.timeout(8000)
-        })
-        if (!res2.ok) {
-          item.sourceUrl = ''
-          broken++
-        }
+      const path = new URL(item.sourceUrl).pathname
+      if (path === '/' || path === '' || path.split('/').filter(Boolean).length <= 1) {
+        item.sourceUrl = ''
+        needsFix.push(idx)
+        return
       }
-    } catch {
-      item.sourceUrl = ''
-      broken++
-    }
+    } catch { item.sourceUrl = ''; needsFix.push(idx); return }
+    // Check if URL resolves
+    try {
+      const res = await fetch(item.sourceUrl, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(8000) })
+      if (!res.ok) {
+        const res2 = await fetch(item.sourceUrl, { method: 'GET', redirect: 'follow', signal: AbortSignal.timeout(8000) })
+        if (!res2.ok) { item.sourceUrl = ''; needsFix.push(idx) }
+      }
+    } catch { item.sourceUrl = ''; needsFix.push(idx) }
   }))
-  if (broken > 0) console.log(`Cleared ${broken} broken URLs`)
+
+  // Batch-fix broken/missing URLs using Gemini Flash search
+  if (needsFix.length > 0) {
+    console.log(`${needsFix.length} items need URL lookup...`)
+    const queries = needsFix.map(i => `${i}. ${digest.items[i].headline} (${digest.items[i].sourceName})`).join('\n')
+    try {
+      const r = await fetch(apiUrl('gemini-2.5-flash') , {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: `Find the real, direct article URL for each of these news headlines. Search the web. Return ONLY a JSON array of objects with "index" (number) and "url" (string). Use real article URLs from the original publisher, not homepage URLs. If truly not findable, use empty string.\n\n${queries}` }] }],
+          tools: [{ google_search: {} }],
+          generationConfig: { temperature: 0 }
+        })
+      })
+      const data = await r.json()
+      const text = data.candidates?.[0]?.content?.parts?.filter(p => p.text).map(p => p.text).join('') || ''
+      const parsed = parseResponse(text)
+      if (Array.isArray(parsed)) {
+        let fixed = 0
+        for (const entry of parsed) {
+          const i = entry.index
+          const url = entry.url
+          if (url && !url.includes('grounding-api-redirect') && digest.items[i]) {
+            // Verify this URL too
+            try {
+              const path = new URL(url).pathname
+              if (path === '/' || path === '') continue
+              const check = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: AbortSignal.timeout(8000) }).catch(() => null)
+              if (check?.ok) {
+                digest.items[i].sourceUrl = url
+                digest.items[i].sourceName = new URL(url).hostname.replace('www.', '')
+                fixed++
+              }
+            } catch {}
+          }
+        }
+        console.log(`Fixed ${fixed} of ${needsFix.length} URLs via search`)
+      }
+    } catch (e) {
+      console.log('URL lookup failed:', e.message)
+    }
+  }
 
   digest.totalScanned = digest.items.length
   digest.relevant = digest.items.filter(i => i.score >= 6).length

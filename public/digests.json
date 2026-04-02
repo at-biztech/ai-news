@@ -476,8 +476,8 @@
           "headline": "AWS Introduces Autonomous Agents for Streamlining Operations",
           "description": "Amazon Web Services (AWS) has launched autonomous agents designed to streamline operational tasks. These agents aim to enhance business efficiency and growth by automating various processes.",
           "useCase": "Automation builders can utilize these AWS autonomous agents to automate complex cloud operations, manage infrastructure, and orchestrate workflows across different AWS services, reducing manual intervention and improving system reliability.",
-          "sourceUrl": "",
-          "sourceName": "femaleentrepreneurs.global"
+          "sourceUrl": "https://aws.amazon.com/bedrock/agents/",
+          "sourceName": "aws.amazon.com"
         },
         {
           "score": 7,
@@ -487,7 +487,7 @@
           "description": "China has enacted significant amendments to its cybersecurity law in January 2026, covering AI risk assessment, security governance, and ethics. It has also released draft rules for agentic AI, with standards expected later this year.",
           "useCase": "Companies operating or planning to operate AI systems in China must be aware of these evolving regulations, especially regarding data localization, content moderation, and the upcoming standards for AI agents, which will impact how AI automations are designed and deployed in the region.",
           "sourceUrl": "",
-          "sourceName": "cio.com"
+          "sourceName": "economictimes.indiatimes.com"
         },
         {
           "score": 7,
@@ -516,8 +516,8 @@
           "headline": "US AI Regulation in 2026: Fragmented Landscape with State and Federal Divides",
           "description": "As of early 2026, the US lacks a comprehensive nationwide AI law. California has implemented detailed state-level regulations covering generative AI, frontier models, and algorithmic pricing, while the federal government advocates for unified national standards.",
           "useCase": "Businesses deploying AI across the US must navigate a complex and fragmented regulatory landscape. Automation builders need to design systems with flexibility to adapt to varying state-specific compliance requirements, especially concerning data privacy, transparency, and high-risk AI applications.",
-          "sourceUrl": "",
-          "sourceName": "blockchaincouncil.org"
+          "sourceUrl": "https://www.bakerbotts.com/thought-leadership/publications/2026/january/us-artificial-intelligence-law-update",
+          "sourceName": "bakerbotts.com"
         },
         {
           "score": 7,
@@ -537,7 +537,7 @@
           "description": "SmartBear has updated its software testing suite with AI enhancements across its API and UI (User Interface) testing tools. These improvements aim to keep pace with the rapid creation of AI-driven code and ensure quality.",
           "useCase": "Developers and QA (Quality Assurance) teams building AI-powered applications can use these enhanced tools to automate the testing of AI model integrations and user interfaces, ensuring the reliability and performance of their digital ecosystems.",
           "sourceUrl": "",
-          "sourceName": "TechCrunch"
+          "sourceName": "smartbear.com"
         },
         {
           "score": 6,
@@ -547,7 +547,7 @@
           "description": "Criteo GO is now leveraging generative AI to optimize advertising, making enterprise-level marketing tools more accessible and effective for smaller businesses. This helps startups compete in online marketing with fewer resources.",
           "useCase": "Small and medium-sized businesses (SMBs) can integrate Criteo GO into their marketing automation stacks to generate optimized ad content and campaigns, improving their reach and conversion rates without needing extensive in-house AI expertise.",
           "sourceUrl": "",
-          "sourceName": "femaleentrepreneurs.global"
+          "sourceName": "criteo.com"
         },
         {
           "score": 6,
@@ -557,7 +557,7 @@
           "description": "Shilo AI introduced \"Signals,\" a new feature that analyzes agent call recordings to build DISC behavioral profiles and generate personalized coaching recommendations. This aims to improve agent performance in real estate.",
           "useCase": "Businesses with large customer service or sales teams can integrate this AI tool to automate performance analysis and provide targeted coaching, improving agent effectiveness and customer satisfaction through data-driven insights from conversations.",
           "sourceUrl": "",
-          "sourceName": "housingwire.com"
+          "sourceName": "shilo.ai"
         },
         {
           "score": 6,
@@ -567,7 +567,7 @@
           "description": "Louisiana lawmakers have scrapped some AI regulation proposals following threats from President Trump to withhold federal funding. However, bills related to child safety, disclosure of AI use in calls, and restrictions on mental health chatbots are still moving forward.",
           "useCase": "This highlights the complex and fragmented nature of AI regulation in the US. Businesses operating across states need to monitor local legislative developments closely, as varying rules will impact the design and deployment of AI systems, particularly in sensitive areas like healthcare and political advertising.",
           "sourceUrl": "",
-          "sourceName": "wwno.org"
+          "sourceName": "businessreport.com"
         },
         {
           "score": 6,
@@ -576,8 +576,8 @@
           "headline": "Kaufman Rossin and Synack Partner for AI-Powered Continuous Penetration Testing",
           "description": "Kaufman Rossin, an advisory firm, partnered with Synack to offer scalable, AI-powered continuous penetration testing and security validation for regulated enterprises. This moves beyond traditional periodic testing to address modern attack surfaces.",
           "useCase": "Organizations, especially those in regulated industries, can leverage this partnership to implement continuous, AI-driven security testing within their digital ecosystems. This helps identify vulnerabilities in AI models and integrated systems more rapidly, improving overall security posture and compliance.",
-          "sourceUrl": "",
-          "sourceName": "cpapracticeadvisor.com"
+          "sourceUrl": "https://kaufmanrossin.com/news/kaufman-rossin-and-synack-partner-to-scale-ai-powered-continuous-penetration-testing-for-regulated-companies/",
+          "sourceName": "kaufmanrossin.com"
         },
         {
           "score": 6,
@@ -636,8 +636,8 @@
           "headline": "Legal AI Company Harvey Announces AI-Generated Partnership with \"Harvey\" the Rabbit (April Fool's)",
           "description": "Legal AI company Harvey announced an AI-generated brand partnership with the invisible rabbit character \"Harvey\" from the 1950 film, digitally resurrecting actor Jimmy Stewart. The article explicitly states this is an April Fool's joke.",
           "useCase": "This is an April Fool's joke and not a real development. It highlights the creative (and sometimes misleading) potential of generative AI for marketing, but not a practical application for building AI automations.",
-          "sourceUrl": "",
-          "sourceName": "robertambrogi.com"
+          "sourceUrl": "https://www.lawsitesblog.com/2026/04/in-ai-powered-brand-deal-harvey-partners-with-yet-another-harvey-you-know-its-other-namesake.html",
+          "sourceName": "lawsitesblog.com"
         }
       ]
     }
