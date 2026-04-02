@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs'
+import { writeFileSync, readFileSync, existsSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 
@@ -163,6 +163,37 @@ function parseResponse(text) {
   throw new Error('Failed to parse Gemini response:\n' + text.slice(0, 500))
 }
 
+function getPreviousHeadlines() {
+  const digestsPath = join(__dirname, '..', 'public', 'digests.json')
+  if (!existsSync(digestsPath)) return []
+  try {
+    const data = JSON.parse(readFileSync(digestsPath, 'utf-8'))
+    const dates = data.dates || []
+    // Get headlines from the most recent 2 days
+    const recentHeadlines = []
+    for (const d of dates.slice(0, 2)) {
+      const digest = data.digests[d]
+      if (digest?.items) {
+        for (const item of digest.items) {
+          recentHeadlines.push(item.headline.toLowerCase().replace(/[^a-z0-9\s]/g, ''))
+        }
+      }
+    }
+    return recentHeadlines
+  } catch { return [] }
+}
+
+function isDuplicate(headline, previousHeadlines) {
+  const normalized = headline.toLowerCase().replace(/[^a-z0-9\s]/g, '')
+  const words = normalized.split(/\s+/).filter(w => w.length > 3)
+  for (const prev of previousHeadlines) {
+    // Check if 60%+ of significant words match
+    const matchCount = words.filter(w => prev.includes(w)).length
+    if (words.length > 0 && matchCount / words.length >= 0.6) return true
+  }
+  return false
+}
+
 function validate(digest) {
   if (!digest.dateKey || !/^\d{4}-\d{2}-\d{2}$/.test(digest.dateKey)) {
     const now = new Date()
@@ -182,6 +213,15 @@ function validate(digest) {
   }
 
   digest.items.sort((a, b) => b.score - a.score)
+
+  // Deduplicate against recent days
+  const previousHeadlines = getPreviousHeadlines()
+  if (previousHeadlines.length > 0) {
+    const before = digest.items.length
+    digest.items = digest.items.filter(item => !isDuplicate(item.headline, previousHeadlines))
+    const removed = before - digest.items.length
+    if (removed > 0) console.log(`Dedup: removed ${removed} items already covered in recent digests`)
+  }
 
   digest.totalScanned = digest.items.length
   digest.relevant = digest.items.filter(i => i.score >= 6).length
