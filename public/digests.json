@@ -1,4 +1,365 @@
 {
-  "dates": [],
-  "digests": {}
+  "dates": [
+    "2026-04-02"
+  ],
+  "digests": {
+    "2026-04-02": {
+      "dateKey": "2026-04-02",
+      "date": "April 2, 2026",
+      "summary": "The agent tooling layer is splitting open. MCP Dev Summit kicks off today with 95+ sessions, Claw Code proves the agent harness pattern can be replicated outside proprietary walls, and AWS is about to reprice GPU instances again. If you build on cloud GPUs or rely on proprietary agent frameworks, audit your cost assumptions and dependency risk this week.",
+      "footerNote": "Three threads converge today: the agent harness is commoditizing (Claw Code, MCP standardization), compute costs are rising (AWS repricing, Oracle redirecting billions), and regulation is closing in (Colorado June 30, EU August 2). The era of cheap experimentation on proprietary stacks is ending. The builders who win in Q3 will be those who locked in infrastructure pricing and adopted open standards in Q2.",
+      "totalScanned": 12,
+      "relevant": 5,
+      "critical": 1,
+      "watch": 4,
+      "low": 7,
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "AWS April GPU pricing review will permanently raise cloud AI cost baselines",
+          "description": "AWS is conducting its scheduled April 2026 infrastructure pricing review covering GPU instance types p3, p4d, g4dn, and g5. This follows the unprecedented 15% hike on H200 instances in January, which broke AWS's 20 year record of only lowering prices. Cloud economist Corey Quinn called it a policy decision, not supply/demand. Once new rates take effect, they do not get rolled back.",
+          "action": "Audit all GPU instance usage before the April review hits. Switch eligible workloads from On Demand to Reserved (30 to 40% savings). Benchmark specialized providers like RunPod and Lambda Cloud, which run 60 to 85% cheaper than hyperscalers for equivalent hardware.",
+          "clientPitch": "",
+          "useCase": "Every AI production workload running on AWS GPU instances faces a permanent cost increase. This changes the economics of build vs. buy for inference, fine tuning, and training pipelines. Specialized GPU providers are now price competitive enough to justify migration for non compliance sensitive workloads.",
+          "tools": [
+            "AWS EC2",
+            "RunPod",
+            "Lambda Cloud",
+            "Vast.ai"
+          ],
+          "timeline": "April 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sources": [
+            {
+              "url": "https://spacio.digital/blog/aws-gpu-pricing-review/",
+              "name": "Spacio Digital"
+            },
+            {
+              "url": "https://www.theregister.com/2026/01/05/aws_price_increase/",
+              "name": "The Register"
+            },
+            {
+              "url": "https://cloudlatitude.com/insights/cloud/aws-hikes-ec2-gpu-prices-enterprise-strategy-implications-for-ai-workloads/",
+              "name": "Cloud Latitude"
+            }
+          ],
+          "sourceUrl": "https://spacio.digital/blog/aws-gpu-pricing-review/",
+          "sourceName": "Spacio Digital"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "MCP Dev Summit opens today with 95+ sessions and a path to V2 SDKs",
+          "description": "The first MCP Dev Summit North America runs April 2 to 3 in New York, hosted by the Agentic AI Foundation. Over 95 sessions cover protocol evolution, conformance testing, security, and production deployment. Key sessions include Anthropic presenting Path to V2 for MCP SDKs, six dedicated sessions on MCP authentication, and an OpenAI keynote on MCP interoperability. Enterprise auth (OAuth 2.1, SAML/OIDC) is on the Q2 2026 roadmap.",
+          "clientPitch": "MCP is becoming the standard integration layer for AI agents, and the V2 SDK and enterprise auth roadmap mean it is ready for production regulated environments by mid year.",
+          "action": "",
+          "useCase": "MCP enterprise authentication in Q2 unlocks agent deployments in finance, healthcare, and other regulated sectors. Agent to agent coordination in Q3 enables hierarchical multi agent architectures. If you build integrations, MCP support is no longer optional.",
+          "tools": [
+            "MCP",
+            "Claude",
+            "OpenAI API",
+            "n8n"
+          ],
+          "timeline": "April 2 to 3, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sources": [
+            {
+              "url": "https://events.linuxfoundation.org/mcp-dev-summit-north-america/",
+              "name": "Linux Foundation Events"
+            },
+            {
+              "url": "https://finance.yahoo.com/news/agentic-ai-foundation-unveils-mcp-140000965.html",
+              "name": "Yahoo Finance"
+            }
+          ],
+          "sourceUrl": "https://events.linuxfoundation.org/mcp-dev-summit-north-america/",
+          "sourceName": "Linux Foundation Events"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Funding",
+          "headline": "OpenAI closes $122B round at $852B valuation, confirms superapp strategy",
+          "description": "OpenAI closed one of the largest private funding rounds ever at $122 billion, backed by Amazon, NVIDIA, SoftBank, and Microsoft. The company is generating $2 billion in monthly revenue with 900 million weekly ChatGPT users. The funding will support a unified superapp merging ChatGPT, Codex, and the Atlas browser into a single agentic platform. Codex has 2 million weekly users with 70% month over month growth.",
+          "clientPitch": "OpenAI is consolidating its products into a single agentic platform, signaling that the standalone chatbot era is ending and integrated AI workspaces are the next battleground.",
+          "action": "",
+          "useCase": "The superapp strategy signals OpenAI moving from API provider to platform. If it succeeds, it competes directly with the integration layer that tools like Make, n8n, and Zapier currently occupy. Watch for API pricing changes tied to the superapp push. For now, the API remains the integration point.",
+          "tools": [
+            "OpenAI API",
+            "ChatGPT",
+            "Codex"
+          ],
+          "timeline": "Q2 to Q3 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sources": [
+            {
+              "url": "https://www.cnbc.com/2026/03/19/openai-desktop-super-app-chatgpt-browser-codex.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://theaiinsider.tech/2026/04/01/openai-raises-122b-in-funding-round-with-853b-valuation-to-build-global-ai-infrasture-superapp/",
+              "name": "The AI Insider"
+            }
+          ],
+          "sourceUrl": "https://www.cnbc.com/2026/03/19/openai-desktop-super-app-chatgpt-browser-codex.html",
+          "sourceName": "CNBC"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Regulation",
+          "headline": "Colorado AI Act enforcement begins June 30 with algorithmic discrimination rules",
+          "description": "Colorado SB 24 205 takes effect June 30, 2026, after a five month delay from the original February date. Developers and deployers of high risk AI systems must exercise reasonable care to prevent algorithmic discrimination, perform impact assessments, publish disclosures, and maintain documentation. Enforcement is exclusive to the Colorado Attorney General. Penalties apply for non compliance, though an affirmative defense exists for NIST aligned risk management frameworks.",
+          "clientPitch": "If you deploy AI systems that affect hiring, lending, insurance, or other high risk decisions for Colorado residents, you have 89 days to complete impact assessments and publish required disclosures.",
+          "action": "",
+          "useCase": "Any AI powered workflow that touches hiring, credit, insurance, or housing decisions for Colorado residents now requires impact assessments and public disclosures. This affects automated scoring, recommendation engines, and decision support systems built on Make, n8n, or custom pipelines. NIST AI RMF alignment provides an affirmative defense.",
+          "tools": [
+            "NIST AI RMF"
+          ],
+          "timeline": "June 30, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sources": [
+            {
+              "url": "https://www.clarkhill.com/news-events/news/colorados-ai-law-delayed-until-june-2026-what-the-latest-setback-means-for-businesses/",
+              "name": "Clark Hill"
+            },
+            {
+              "url": "https://almcorp.com/blog/colorado-ai-act-sb-205-compliance-guide/",
+              "name": "ALM Corp"
+            }
+          ],
+          "sourceUrl": "https://www.clarkhill.com/news-events/news/colorados-ai-law-delayed-until-june-2026-what-the-latest-setback-means-for-businesses/",
+          "sourceName": "Clark Hill"
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Open Source",
+          "headline": "Claw Code ships open source agent harness, hits 72K GitHub stars in days",
+          "description": "Claw Code, a clean room reimplementation of Claude Code's agent harness architecture in Python and Rust, launched publicly on April 2. Built after Anthropic's Claude Code source was accidentally published via an npm source map, the project reimplements the tool system, query engine, multi agent orchestration, and memory management. It supports multiple LLM providers and has 19 built in permission gated tools. Independent audits confirm no proprietary code.",
+          "clientPitch": "The agent harness pattern that powers Claude Code is now available as an open source framework, reducing vendor lock in for teams building coding agents.",
+          "action": "",
+          "useCase": "This is relevant if you build or customize coding agents. The architecture is now a known, replicable pattern rather than a proprietary black box. It does not change what you can build today, but it shifts the competitive landscape for agent tooling toward open standards. Evaluate if your agent stack benefits from the plugin based, multi provider approach.",
+          "tools": [
+            "Claw Code",
+            "Claude",
+            "OpenAI API"
+          ],
+          "timeline": "Available now",
+          "confidence": "likely",
+          "sourceTier": 2,
+          "sources": [
+            {
+              "url": "https://www.24-7pressrelease.com/press-release/533389/claw-code-launches-open-source-ai-coding-agent-framework-with-72000-github-stars-in-first-days",
+              "name": "24-7 Press Release"
+            },
+            {
+              "url": "https://claw-code.codes/",
+              "name": "Claw Code Official"
+            }
+          ],
+          "sourceUrl": "https://www.24-7pressrelease.com/press-release/533389/claw-code-launches-open-source-ai-coding-agent-framework-with-72000-github-stars-in-first-days",
+          "sourceName": "24-7 Press Release"
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Infrastructure",
+          "headline": "Oracle cuts up to 30,000 jobs to fund $50B AI infrastructure buildout",
+          "description": "Oracle began laying off up to 30,000 employees on March 31, redirecting an estimated $8 to $10 billion in annual cash flow to data center construction. The company is a key partner in the $500 billion Stargate initiative with OpenAI and SoftBank. Oracle posted $6.13 billion in net income last quarter and holds $523 billion in remaining performance obligations.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "Oracle is not a primary tool in most automation stacks, but the pattern matters: large enterprises are cutting headcount to fund AI compute. This accelerates demand for automation systems that replace the work those employees did. It does not change your tooling today.",
+          "tools": [
+            "Oracle Cloud"
+          ],
+          "timeline": "Q2 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sources": [
+            {
+              "url": "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://thenextweb.com/news/oracle-layoffs-march-2026",
+              "name": "The Next Web"
+            }
+          ],
+          "sourceUrl": "https://www.cnbc.com/2026/03/31/oracle-layoffs-ai-spending.html",
+          "sourceName": "CNBC"
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Regulation",
+          "headline": "EU AI Act high risk system rules on track for August 2 enforcement",
+          "description": "The EU AI Act's high risk AI system requirements become enforceable on August 2, 2026, though the European Commission's Digital Omnibus proposal may push this to December 2027. GPAI model providers must already maintain technical documentation as of March 1, 2026. Penalties reach up to 35 million euros or 7% of global turnover for prohibited practices.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "The August deadline is still four months out and may be delayed. No immediate action required unless you deploy high risk AI systems (employment, credit, law enforcement) for EU users. The GPAI documentation requirement is already live, so if you serve GPAI models to EU customers, verify your documentation is current.",
+          "tools": [],
+          "timeline": "August 2, 2026 (may slip to December 2027)",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sources": [
+            {
+              "url": "https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-implementation-timeline-understanding-the-next-deadline-for-compliance/",
+              "name": "Kennedys Law"
+            },
+            {
+              "url": "https://artificialintelligenceact.eu/",
+              "name": "EU AI Act Portal"
+            }
+          ],
+          "sourceUrl": "https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-implementation-timeline-understanding-the-next-deadline-for-compliance/",
+          "sourceName": "Kennedys Law"
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Infrastructure",
+          "headline": "GPU cloud pricing fragments further as specialized providers undercut hyperscalers by 60 to 85%",
+          "description": "A comparison of 2,779 GPU prices across 57 cloud providers shows specialized GPU providers running at $0.29 to $2.99 per hour versus hyperscaler rates of $3.67 to $14.19 per hour. The A100 80GB sweet spot sits at $1.50 to $2.00 per hour on managed providers. Consumer grade RTX 4090 spot instances start at $0.31 per hour on Vast.ai.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "This is background context for the AWS pricing story. The gap between hyperscaler and specialized provider pricing is now wide enough to justify migration for inference and fine tuning workloads that do not require compliance certifications. Does not change what you build, but changes where you run it.",
+          "tools": [
+            "RunPod",
+            "Lambda Cloud",
+            "Vast.ai",
+            "Northflank"
+          ],
+          "timeline": "Current",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sources": [
+            {
+              "url": "https://getdeploying.com/gpus",
+              "name": "GetDeploying"
+            },
+            {
+              "url": "https://nerdleveltech.com/gpu-cloud-comparison-2026-the-real-cost-of-ai-compute",
+              "name": "Nerd Level Tech"
+            }
+          ],
+          "sourceUrl": "https://getdeploying.com/gpus",
+          "sourceName": "GetDeploying"
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Models",
+          "headline": "MCP adoption reaches 97 million monthly downloads across all major AI providers",
+          "description": "MCP has gone from 2 million monthly downloads at launch in November 2024 to 97 million in March 2026. Every major AI provider now supports it: Anthropic, OpenAI, Microsoft Copilot Studio, and AWS Bedrock. The Q2 roadmap includes enterprise authentication with OAuth 2.1 and SAML/OIDC, and Q3 adds agent to agent coordination.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "MCP adoption is now table stakes. If you are not building MCP compatible integrations, you are limiting the agent ecosystems your tools can participate in. This is not new information but the 97 million download figure confirms the standard has won. No alternative protocol is competitive.",
+          "tools": [
+            "MCP",
+            "Claude",
+            "OpenAI API",
+            "AWS Bedrock"
+          ],
+          "timeline": "Current",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sources": [
+            {
+              "url": "https://bonjoy.com/articles/what-is-mcp-model-context-protocol-enterprise-guide/",
+              "name": "Bonjoy"
+            },
+            {
+              "url": "https://dev.to/aristoaistack/mcp-explained-how-ai-agents-actually-work-2026-5p8",
+              "name": "DEV Community"
+            }
+          ],
+          "sourceUrl": "https://bonjoy.com/articles/what-is-mcp-model-context-protocol-enterprise-guide/",
+          "sourceName": "Bonjoy"
+        },
+        {
+          "score": 4,
+          "tag": "LOW",
+          "category": "Funding",
+          "headline": "Global VC investment hit $297B in Q1 2026 with AI capturing 81% of total",
+          "description": "Venture capital investment reached a record $297 billion in Q1 2026, up 150% year over year. AI startups captured 81% of the total. The 17 largest US AI rounds each exceeded $100 million. Anthropic is approaching $19 billion in annualized revenue and reportedly exploring dual track IPO and private financing above $300 billion valuation.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "Capital is flooding into AI at unprecedented levels. This does not change your tooling today, but it means more competitors, more products, and more API providers will emerge in the next 6 to 12 months. The landscape will fragment before it consolidates.",
+          "tools": [],
+          "timeline": "Q1 2026",
+          "confidence": "likely",
+          "sourceTier": 2,
+          "sources": [
+            {
+              "url": "https://mlq.ai/news/ai-roundup/2026-04-01/openai-secures-3b-funding-at-852b-valuation-as-ai-funding-frenzy-continues/",
+              "name": "MLQ AI"
+            },
+            {
+              "url": "https://www.contentgrip.com/us-ai-funding-2026-roundup/",
+              "name": "ContentGrip"
+            }
+          ],
+          "sourceUrl": "https://mlq.ai/news/ai-roundup/2026-04-01/openai-secures-3b-funding-at-852b-valuation-as-ai-funding-frenzy-continues/",
+          "sourceName": "MLQ AI"
+        },
+        {
+          "score": 4,
+          "tag": "LOW",
+          "category": "Research",
+          "headline": "SynthID watermarking now embedded in Google Gemini AI generated images",
+          "description": "Google's Gemini AI now includes SynthID, an invisible digital watermarking tool for AI generated images. The watermark is detectable by the Gemini app and is part of broader efforts to combat AI generated disinformation, highlighted on International Fact Checking Day.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "If you build workflows that generate or process images via Gemini, the outputs now carry invisible watermarks. This is relevant for compliance and content provenance but does not change the API surface or capabilities.",
+          "tools": [
+            "Gemini API"
+          ],
+          "timeline": "Current",
+          "confidence": "likely",
+          "sourceTier": 2,
+          "sources": [
+            {
+              "url": "https://www.clickorlando.com/news/politics/2026/04/02/its-international-fact-checking-day-refresh-your-ai-identification-skills/",
+              "name": "Click Orlando"
+            }
+          ],
+          "sourceUrl": "https://www.clickorlando.com/news/politics/2026/04/02/its-international-fact-checking-day-refresh-your-ai-identification-skills/",
+          "sourceName": "Click Orlando"
+        },
+        {
+          "score": 4,
+          "tag": "LOW",
+          "category": "Tools",
+          "headline": "Atlassian cuts 10% of workforce, replaces CTO with two AI focused CTOs",
+          "description": "Atlassian laid off approximately 1,600 employees (10% of global workforce) and replaced its CTO with two new AI focused CTO roles. The restructuring redirects resources toward AI development across Jira, Confluence, and the broader Atlassian platform.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "Atlassian tools sit in many automation stacks via Jira and Confluence APIs. The AI pivot may change these APIs over time, but there is no immediate integration impact. Watch for new AI features in Jira and Confluence that could replace custom automation workflows.",
+          "tools": [
+            "Jira",
+            "Confluence"
+          ],
+          "timeline": "Q2 2026",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sources": [
+            {
+              "url": "https://tech.yahoo.com/general/breaking-news/article/tech-layoffs-in-2026-tracking-the-job-losses-so-far-across-oracle-meta-epic-games-and-more-144545125.html",
+              "name": "Yahoo Tech"
+            }
+          ],
+          "sourceUrl": "https://tech.yahoo.com/general/breaking-news/article/tech-layoffs-in-2026-tracking-the-job-losses-so-far-across-oracle-meta-epic-games-and-more-144545125.html",
+          "sourceName": "Yahoo Tech"
+        }
+      ]
+    }
+  }
 }
