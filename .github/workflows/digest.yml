@@ -17,9 +17,15 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   process:
     runs-on: ubuntu-latest
+    outputs:
+      deployed: ${{ steps.check.outputs.deployed }}
     steps:
       - uses: actions/checkout@v4
 
@@ -113,6 +119,17 @@ jobs:
         with:
           path: dist
 
-      - name: Deploy to GitHub Pages
+      - id: check
         if: env.SKIP_RUN != 'true'
+        run: echo "deployed=true" >> $GITHUB_OUTPUT
+
+  deploy:
+    needs: process
+    if: needs.process.outputs.deployed == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
         uses: actions/deploy-pages@v4
