@@ -1,0 +1,60 @@
+{
+  "topicsHighPriority": [
+    "MCP protocol",
+    "agent frameworks",
+    "Make.com",
+    "n8n",
+    "Zapier",
+    "Airtable",
+    "Claude API",
+    "OpenAI API",
+    "Gemini API",
+    "workflow automation",
+    "multi agent systems",
+    "API pricing changes",
+    "API deprecations",
+    "breaking changes"
+  ],
+  "topicsModerate": [
+    "open source models",
+    "RAG pipelines",
+    "vector databases",
+    "AI regulation EU",
+    "AI regulation US",
+    "healthcare AI",
+    "fintech AI",
+    "computer use agents",
+    "voice AI",
+    "document processing"
+  ],
+  "topicsLowInterest": [
+    "AI art generation",
+    "AI music",
+    "AI gaming",
+    "autonomous vehicles",
+    "robotics hardware",
+    "quantum computing",
+    "space AI"
+  ],
+  "toolsUsed": [
+    "Make.com",
+    "n8n",
+    "Zapier",
+    "Airtable",
+    "Claude",
+    "GPT",
+    "Gemini",
+    "GitHub Actions",
+    "Notion",
+    "Slack"
+  ],
+  "clientVerticals": [
+    "healthcare",
+    "fintech",
+    "retail",
+    "insurance",
+    "logistics",
+    "real estate"
+  ],
+  "readerNotes": "Scores items about automation tools and API changes highest. Prefers actionable news over market analysis. Forwards WATCH items to clients regularly. Values source reliability."
+}

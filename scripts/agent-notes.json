@@ -1,0 +1,20 @@
+{
+  "lastUpdated": "2026-04-02",
+  "sourceNotes": {
+    "openai_changelog": "https://developers.openai.com/changelog/ works reliably",
+    "anthropic_releases": "https://docs.anthropic.com/en/release-notes/overview works reliably",
+    "gemini_changelog": "https://ai.google.dev/gemini-api/docs/changelog works reliably",
+    "n8n_releases": "https://docs.n8n.io/release-notes/ works reliably",
+    "zapier_updates": "https://community.zapier.com/product-updates may require login, check if accessible",
+    "anthropic_news": "https://www.anthropic.com/news works reliably"
+  },
+  "searchTips": [
+    "Generic AI news searches return too many aggregator results. Use specific product names.",
+    "Asian sources often break news 6 to 12 hours before Western coverage.",
+    "Hacker News front page is a good signal for what builders care about."
+  ],
+  "qualityIssues": [],
+  "improvements": [
+    "First run: 2026-04-02. Baseline established."
+  ]
+}
