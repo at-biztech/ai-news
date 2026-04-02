@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react'
 
 function cleanSource(name) {
   if (!name) return 'Source'
-  const low = ['blog', 'ceo', 'digest', 'tracker', 'content', 'insider']
+  const low = ['blog', 'ceo', 'digest', 'tracker', 'content', 'insider', 'stats', 'aggregat']
   if (low.some(l => name.toLowerCase().includes(l))) return 'Source'
   return name
 }
