@@ -292,6 +292,22 @@ section:first-of-type { margin-top: .5rem; }
 }
 .item-src:hover { text-decoration: underline; }
 
+/* Show more button */
+.show-more {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  margin-top: .25rem;
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--text3);
+  cursor: pointer;
+  font-size: .75rem;
+  transition: all .12s;
+}
+.show-more:hover { color: var(--text); border-color: var(--text3); }
+
 /* Low items are quieter */
 .item-low .item-hl { font-size: .85rem; color: var(--text2); }
 .item-low .item-desc { font-size: .78rem; color: var(--text3); }

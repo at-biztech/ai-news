@@ -1,5 +1,13 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 
+// Hide low quality source names, show domain only
+function cleanSource(name) {
+  if (!name) return 'Source'
+  const low = ['blog', 'ceo', 'digest', 'tracker', 'content', 'insider']
+  if (low.some(l => name.toLowerCase().includes(l))) return 'Source'
+  return name
+}
+
 function getSaved() { try { return JSON.parse(localStorage.getItem('digest-saved') || '[]') } catch { return [] } }
 function toggleSave(dateKey, item) {
   const s = getSaved(), idx = s.findIndex(x => x.dateKey === dateKey && x.headline === item.headline)
@@ -49,10 +57,10 @@ function Item({ item, dateKey, onSave }) {
           {lowText && <div className="item-low-note">{lowText}</div>}
           {item.tools?.length > 0 && <div className="item-tools">{item.tools.map((t, i) => <span key={i} className="item-tool">{t}</span>)}</div>}
           {item.confidence && <span className="item-conf">{item.confidence} confidence</span>}
-          {item.sourceUrl && <a className="item-src" href={item.sourceUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>{item.sourceName || 'Source'}</a>}
+          {item.sourceUrl && <a className="item-src" href={item.sourceUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>{cleanSource(item.sourceName)}</a>}
         </div>
       )}
-      {!open && item.sourceUrl && <a className="item-src" href={item.sourceUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>{item.sourceName || 'Source'}</a>}
+      {!open && item.sourceUrl && <a className="item-src" href={item.sourceUrl} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>{cleanSource(item.sourceName)}</a>}
     </div>
   )
 }
@@ -88,6 +96,7 @@ export default function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [view, setView] = useState('read')
+  const [showMoreWatch, setShowMoreWatch] = useState(false)
   const [, refresh] = useState(0)
 
   useEffect(() => { document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light'); localStorage.setItem('digest-dark', dark) }, [dark])
@@ -100,8 +109,8 @@ export default function App() {
   }, [])
 
   const ci = dates.indexOf(cur)
-  const prev = useCallback(() => { if (ci < dates.length - 1) setCur(dates[ci + 1]) }, [ci, dates])
-  const next = useCallback(() => { if (ci > 0) setCur(dates[ci - 1]) }, [ci, dates])
+  const prev = useCallback(() => { if (ci < dates.length - 1) { setCur(dates[ci + 1]); setShowMoreWatch(false) } }, [ci, dates])
+  const next = useCallback(() => { if (ci > 0) { setCur(dates[ci - 1]); setShowMoreWatch(false) } }, [ci, dates])
 
   useEffect(() => {
     const h = e => {
@@ -119,7 +128,7 @@ export default function App() {
   if (error) return <div className="empty"><p>{error}</p><button className="copy" onClick={() => location.reload()}>Retry</button></div>
   if (!d) return <div className="empty">No digests yet.</div>
 
-  const fmt = k => { const [y, m, day] = k.split('-'); return new Date(y, m - 1, day).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }) }
+  const fmt = k => { const [y, m, day] = k.split('-'); return new Date(y, m - 1, day).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) }
   const all = d.items || []
   const crit = all.filter(i => i.score >= 8)
   const watch = all.filter(i => i.score >= 6 && i.score < 8)
@@ -199,7 +208,9 @@ export default function App() {
             {watch.length > 0 && (
               <section>
                 <h2 className="section-label label-w">Worth knowing</h2>
-                {watch.map((item, i) => <Item key={i} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
+                {watch.slice(0, 5).map((item, i) => <Item key={i} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
+                {watch.length > 5 && !showMoreWatch && <button className="show-more" onClick={() => setShowMoreWatch(true)}>{watch.length - 5} more</button>}
+                {showMoreWatch && watch.slice(5).map((item, i) => <Item key={i + 5} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
               </section>
             )}
 
