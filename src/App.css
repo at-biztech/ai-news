@@ -294,6 +294,19 @@ section:first-of-type { margin-top: .5rem; }
   to { opacity: 1; max-height: 500px; }
 }
 
+.item-action-full {
+  font-size: .78rem;
+  background: transparent;
+  border-left: 2px solid var(--crit);
+  padding: .3rem 0 .3rem .6rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  line-height: 1.5;
+  color: var(--text2);
+}
+.item-action-full span { flex: 1; }
+
 .item-pitch-full {
   font-size: .78rem;
   background: transparent;

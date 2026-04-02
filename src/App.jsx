@@ -67,7 +67,7 @@ function Item({ item, dateKey, onSave }) {
       {open && (
         <div className="item-detail">
           {isCrit && actionText && (
-            <div className="item-pitch-full">
+            <div className="item-action-full">
               <span>{actionText}</span>
               <Copy text={actionText} />
             </div>
