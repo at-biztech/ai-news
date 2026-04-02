@@ -194,7 +194,7 @@ function isDuplicate(headline, previousHeadlines) {
   return false
 }
 
-function validate(digest) {
+async function validate(digest) {
   if (!digest.dateKey || !/^\d{4}-\d{2}-\d{2}$/.test(digest.dateKey)) {
     const now = new Date()
     digest.dateKey = now.toISOString().split('T')[0]
@@ -223,6 +223,36 @@ function validate(digest) {
     if (removed > 0) console.log(`Dedup: removed ${removed} items already covered in recent digests`)
   }
 
+  // Verify URLs actually exist
+  console.log('Verifying source URLs...')
+  let broken = 0
+  await Promise.all(digest.items.map(async (item) => {
+    if (!item.sourceUrl) return
+    try {
+      const res = await fetch(item.sourceUrl, {
+        method: 'HEAD',
+        redirect: 'follow',
+        signal: AbortSignal.timeout(8000)
+      })
+      if (!res.ok) {
+        // Try GET as some servers block HEAD
+        const res2 = await fetch(item.sourceUrl, {
+          method: 'GET',
+          redirect: 'follow',
+          signal: AbortSignal.timeout(8000)
+        })
+        if (!res2.ok) {
+          item.sourceUrl = ''
+          broken++
+        }
+      }
+    } catch {
+      item.sourceUrl = ''
+      broken++
+    }
+  }))
+  if (broken > 0) console.log(`Cleared ${broken} broken URLs`)
+
   digest.totalScanned = digest.items.length
   digest.relevant = digest.items.filter(i => i.score >= 6).length
   digest.critical = digest.items.filter(i => i.score >= 8).length
@@ -240,7 +270,7 @@ async function main() {
   const text = await callGemini()
 
   const parsed = parseResponse(text)
-  const digest = validate(parsed)
+  const digest = await validate(parsed)
 
   const outPath = join(__dirname, 'output.json')
   writeFileSync(outPath, JSON.stringify(digest, null, 2))
