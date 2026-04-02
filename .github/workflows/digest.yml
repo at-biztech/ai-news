@@ -1,131 +1,34 @@
-name: Process Digest
+name: Deploy Site
 
 on:
-  schedule:
-    - cron: '0 1 * * *'
-  repository_dispatch:
-    types: [new-digest]
-  workflow_dispatch:
-    inputs:
-      manual_content:
-        description: 'Paste news content here (leave empty to use Gemini search)'
-        required: false
-        type: string
+  push:
+    branches: [main]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  process:
+  build:
     runs-on: ubuntu-latest
-    outputs:
-      deployed: ${{ steps.check.outputs.deployed }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Skip cron if today already processed
-        if: github.event_name == 'schedule'
-        run: |
-          TODAY=$(date -u +%Y-%m-%d)
-          if [ -f public/digests.json ]; then
-            if node -e "const d=JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'));process.exit(d.dates?.includes('$TODAY')?0:1)" 2>/dev/null; then
-              echo "Digest for $TODAY already exists, skipping cron run"
-              echo "SKIP_RUN=true" >> $GITHUB_ENV
-            fi
-          fi
-
-      - name: Exit early if skipped
-        if: env.SKIP_RUN == 'true'
-        run: |
-          echo "Today's digest already exists. Cron backup not needed."
-          exit 0
-
       - uses: actions/setup-node@v4
-        if: env.SKIP_RUN != 'true'
         with:
           node-version: 20
-
-      - name: Install dependencies
-        if: env.SKIP_RUN != 'true'
-        run: npm ci
-
-      - name: Process digest
-        if: env.SKIP_RUN != 'true'
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          RAW_CONTENT: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.email_content || github.event.inputs.manual_content || '' }}
-        run: node scripts/process-digest.mjs
-
-      - name: Update digests.json
-        if: env.SKIP_RUN != 'true'
-        run: node scripts/update-digests.mjs
-
-      - name: Validate digests.json
-        if: env.SKIP_RUN != 'true'
-        run: |
-          if ! node -e "JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'))"; then
-            echo "::error::digests.json is not valid JSON, aborting commit"
-            exit 1
-          fi
-          echo "digests.json is valid JSON"
-
-      - name: Commit and push
-        if: env.SKIP_RUN != 'true'
-        run: |
-          git config user.name "AI Digest Bot"
-          git config user.email "bot@digest.local"
-          git add public/digests.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          DATE=$(node -e "const d=JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'));console.log(d.dates[0])")
-          git commit -m "digest: ${DATE}"
-
-          if git push; then
-            echo "Push succeeded"
-          else
-            echo "Push failed, retrying with rebase..."
-            git fetch origin main
-            git reset --hard origin/main
-            node scripts/update-digests.mjs
-            if ! node -e "JSON.parse(require('fs').readFileSync('public/digests.json','utf-8'))"; then
-              echo "::error::digests.json invalid after retry"
-              exit 1
-            fi
-            git add public/digests.json
-            if git diff --cached --quiet; then
-              echo "No changes after retry"
-              exit 0
-            fi
-            git commit -m "digest: ${DATE}"
-            git push
-          fi
-
-      - name: Build site
-        if: env.SKIP_RUN != 'true'
-        run: npm run build
-
-      - name: Upload pages artifact
-        if: env.SKIP_RUN != 'true'
-        uses: actions/upload-pages-artifact@v3
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
-      - id: check
-        if: env.SKIP_RUN != 'true'
-        run: echo "deployed=true" >> $GITHUB_OUTPUT
-
   deploy:
-    needs: process
-    if: needs.process.outputs.deployed == 'true'
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
