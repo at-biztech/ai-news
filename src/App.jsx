@@ -73,21 +73,13 @@ function WeeklySummary({ digests, dates, currentDate }) {
   if (wd.length < 2) return null
   const wi = wd.flatMap(d => digests[d]?.items || [])
   if (wi.length === 0) return null
-
-  // Get the top headlines from the week for context
-  const topItems = wi.filter(i => i.score >= 7).sort((a, b) => b.score - a.score).slice(0, 5)
-  const summaries = wd.map(d => digests[d]?.summary).filter(Boolean)
+  const topItems = wi.filter(i => i.score >= 7).sort((a, b) => b.score - a.score).slice(0, 7)
+  if (topItems.length === 0) return null
 
   return (
     <div className="weekly">
       <div className="wk-label">Last {wd.length} days</div>
-      {summaries.length > 0 && <div className="wk-summaries">{summaries.map((s, i) => <p key={i} className="wk-sum">{s}</p>)}</div>}
-      {topItems.length > 0 && (
-        <div className="wk-top">
-          <div className="wk-top-label">Top stories</div>
-          {topItems.map((item, i) => <div key={i} className="wk-item">{item.headline}</div>)}
-        </div>
-      )}
+      {topItems.map((item, i) => <div key={i} className="wk-item">{item.headline}</div>)}
     </div>
   )
 }
