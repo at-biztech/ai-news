@@ -1,36 +1,22 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 
+function getSaved() { try { return JSON.parse(localStorage.getItem('digest-saved') || '[]') } catch { return [] } }
+function toggleSave(dateKey, item) {
+  const s = getSaved(), idx = s.findIndex(x => x.dateKey === dateKey && x.headline === item.headline)
+  if (idx >= 0) s.splice(idx, 1); else s.push({ dateKey, ...item })
+  localStorage.setItem('digest-saved', JSON.stringify(s)); return s
+}
+
 function cleanSource(name) {
   if (!name) return 'Source'
   const low = ['blog', 'ceo', 'digest', 'tracker', 'content', 'insider', 'stats', 'aggregat']
   if (low.some(l => name.toLowerCase().includes(l))) return 'Source'
   return name
 }
-
-// Normalize sources: support both old format (sourceUrl/sourceName) and new format (sources array)
 function getSources(item) {
   if (item.sources?.length) return item.sources
   if (item.sourceUrl) return [{ url: item.sourceUrl, name: item.sourceName || '' }]
   return []
-}
-
-function Sources({ item }) {
-  const srcs = getSources(item)
-  if (srcs.length === 0) return null
-  return (
-    <div className="item-sources">
-      {srcs.filter(s => s.url).map((s, i) => (
-        <a key={i} className="item-src" href={s.url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>{cleanSource(s.name)}</a>
-      ))}
-    </div>
-  )
-}
-
-function getSaved() { try { return JSON.parse(localStorage.getItem('digest-saved') || '[]') } catch { return [] } }
-function toggleSave(dateKey, item) {
-  const s = getSaved(), idx = s.findIndex(x => x.dateKey === dateKey && x.headline === item.headline)
-  if (idx >= 0) s.splice(idx, 1); else s.push({ dateKey, ...item })
-  localStorage.setItem('digest-saved', JSON.stringify(s)); return s
 }
 
 function Copy({ text }) {
@@ -46,45 +32,62 @@ function Star({ dateKey, item, onToggle }) {
 function Item({ item, dateKey, onSave }) {
   const [open, setOpen] = useState(false)
   const isCrit = item.score >= 8
-  const isWatch = item.score >= 6 && item.score < 8
-  const actionText = isCrit ? (item.action || item.useCase || '') : ''
-  const pitchText = isWatch ? (item.clientPitch || item.useCase || '') : ''
-  const lowText = item.score < 6 ? (item.useCase || '') : ''
+  const insight = item.useCase || item.action || item.clientPitch || ''
+  const srcs = getSources(item)
 
   return (
-    <div className={`item ${isCrit ? 'item-crit' : isWatch ? 'item-watch' : 'item-low'} ${open ? 'item-open' : ''}`} onClick={() => setOpen(!open)}>
-      <div className="item-main">
-        <div className="item-head">
-          <span className="item-cat">{item.category}</span>
-          {item.timeline && <span className={`item-tl ${item.timeline.toLowerCase().includes('available now') ? 'tl-now' : ''}`}>{item.timeline}</span>}
+    <>
+      <div className={`item ${open ? 'item-expanded' : ''}`} onClick={() => setOpen(!open)}>
+        <div className="item-top">
+          <div className="item-content">
+            <h3 className="item-hl">{item.headline}</h3>
+            {!open && <p className="item-sub">{item.description?.split('.')[0]}.</p>}
+          </div>
           <Star dateKey={dateKey} item={item} onToggle={onSave} />
         </div>
-        <h3 className="item-hl">{item.headline}</h3>
-        <p className="item-desc">{item.description}</p>
-        {isCrit && !open && actionText && <div className="item-pitch">{actionText}</div>}
-        {isWatch && !open && pitchText && <div className="item-pitch">{pitchText}</div>}
       </div>
+      {open && <div className="item-overlay" onClick={() => setOpen(false)} />}
       {open && (
-        <div className="item-detail">
-          {isCrit && actionText && (
-            <div className="item-action-full">
-              <span>{actionText}</span>
-              <Copy text={actionText} />
-            </div>
-          )}
-          {isWatch && pitchText && (
-            <div className="item-pitch-full">
-              <span>{pitchText}</span>
-              {item.clientPitch && <Copy text={item.clientPitch} />}
-            </div>
-          )}
-          {lowText && <div className="item-low-note">{lowText}</div>}
-          {item.tools?.length > 0 && <div className="item-tools">{item.tools.map((t, i) => <span key={i} className="item-tool">{t}</span>)}</div>}
-          {item.confidence && <span className="item-conf">{item.confidence} confidence</span>}
-          <Sources item={item} />
+        <div className="item-card" onClick={e => e.stopPropagation()}>
+          <div className="card-head">
+            <span className="card-cat">{item.category}</span>
+            {item.timeline && <span className="card-tl">{item.timeline}</span>}
+            <button className="card-close" onClick={() => setOpen(false)}>&times;</button>
+          </div>
+          <h3 className="card-hl">{item.headline}</h3>
+          <p className="card-desc">{item.description}</p>
+          {insight && <p className={`card-insight ${isCrit ? 'insight-crit' : 'insight-watch'}`}>{insight}</p>}
+          {item.tools?.length > 0 && <div className="card-tools">{item.tools.map((t, i) => <span key={i} className="card-tool">{t}</span>)}</div>}
+          <div className="card-sources">
+            {srcs.filter(s => s.url).map((s, i) => <a key={i} className="card-src" href={s.url} target="_blank" rel="noopener noreferrer">{cleanSource(s.name)}</a>)}
+          </div>
         </div>
       )}
-      {!open && <Sources item={item} />}
+    </>
+  )
+}
+
+function WeeklySummary({ digests, dates, currentDate }) {
+  const idx = dates.indexOf(currentDate)
+  const wd = dates.slice(idx, Math.min(idx + 7, dates.length))
+  if (wd.length < 2) return null
+  const wi = wd.flatMap(d => digests[d]?.items || [])
+  if (wi.length === 0) return null
+  const cc = wi.filter(i => i.score >= 8).length
+  const cats = {}; wi.forEach(i => { if (i.category) cats[i.category] = (cats[i.category] || 0) + 1 })
+  const topC = Object.entries(cats).sort((a, b) => b[1] - a[1]).slice(0, 3)
+  const tf = {}; wi.flatMap(i => i.tools || []).forEach(t => { tf[t] = (tf[t] || 0) + 1 })
+  const topT = Object.entries(tf).sort((a, b) => b[1] - a[1]).slice(0, 4)
+
+  return (
+    <div className="weekly">
+      <div className="wk-label">Last {wd.length} days</div>
+      <div className="wk-body">
+        {cc > 0 && <span>{cc} critical</span>}
+        <span>{wi.length} items total</span>
+      </div>
+      {topC.length > 0 && <div className="wk-detail">Focus: {topC.map(([c, n]) => `${c} (${n})`).join(', ')}</div>}
+      {topT.length > 0 && <div className="wk-detail">Mentioned: {topT.map(([t, n]) => `${t} (${n}x)`).join(', ')}</div>}
     </div>
   )
 }
@@ -95,16 +98,16 @@ function Search({ digests, dates, onSelect, onClose }) {
     if (!q || q.length < 2) return []
     const ql = q.toLowerCase(), out = []
     for (const d of dates) { const dig = digests[d]; if (!dig?.items) continue
-      for (const item of dig.items) { if (item.headline?.toLowerCase().includes(ql) || item.description?.toLowerCase().includes(ql) || (item.tools || []).some(t => t.toLowerCase().includes(ql))) { out.push({ ...item, dateKey: d }); if (out.length >= 20) return out } } }
+      for (const item of dig.items) { if (item.headline?.toLowerCase().includes(ql) || item.description?.toLowerCase().includes(ql) || (item.tools || []).some(t => t.toLowerCase().includes(ql))) { out.push({ ...item, dateKey: d }); if (out.length >= 25) return out } } }
     return out
   }, [digests, dates, q])
   return (
     <div className="search">
       <input autoFocus placeholder="Search all digests..." value={q} onChange={e => setQ(e.target.value)} onKeyDown={e => e.key === 'Escape' && onClose()} />
       {q.length >= 2 && (
-        <div className="search-list">
-          {results.length === 0 ? <p className="search-empty">Nothing found</p> :
-            results.map((r, i) => <div key={i} className="search-row" onClick={() => onSelect(r.dateKey)}><span className="search-cat">{r.category}</span><span className="search-hl">{r.headline}</span><span className="search-dt">{r.dateKey}</span></div>)}
+        <div className="sr-list">
+          {results.length === 0 ? <p className="sr-empty">Nothing found</p> :
+            results.map((r, i) => <div key={i} className="sr-row" onClick={() => onSelect(r.dateKey)}><span className="sr-hl">{r.headline}</span><span className="sr-dt">{r.dateKey}</span></div>)}
         </div>
       )}
     </div>
@@ -120,7 +123,6 @@ export default function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [view, setView] = useState('read')
-  const [showMoreWatch, setShowMoreWatch] = useState(false)
   const [, refresh] = useState(0)
 
   useEffect(() => { document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light'); localStorage.setItem('digest-dark', dark) }, [dark])
@@ -133,30 +135,21 @@ export default function App() {
   }, [])
 
   const ci = dates.indexOf(cur)
-  const prev = useCallback(() => { if (ci < dates.length - 1) { setCur(dates[ci + 1]); setShowMoreWatch(false) } }, [ci, dates])
-  const next = useCallback(() => { if (ci > 0) { setCur(dates[ci - 1]); setShowMoreWatch(false) } }, [ci, dates])
+  const prev = useCallback(() => { if (ci < dates.length - 1) setCur(dates[ci + 1]) }, [ci, dates])
+  const next = useCallback(() => { if (ci > 0) setCur(dates[ci - 1]) }, [ci, dates])
 
-  // Swipe detection for mobile date navigation
   useEffect(() => {
-    let startX = 0, startY = 0
-    const onStart = e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY }
-    const onEnd = e => {
-      const dx = e.changedTouches[0].clientX - startX
-      const dy = e.changedTouches[0].clientY - startY
-      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-        if (dx > 0) prev(); else next()
-      }
-    }
-    window.addEventListener('touchstart', onStart, { passive: true })
-    window.addEventListener('touchend', onEnd, { passive: true })
-    return () => { window.removeEventListener('touchstart', onStart); window.removeEventListener('touchend', onEnd) }
+    let sx = 0, sy = 0
+    const ts = e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY }
+    const te = e => { const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) { if (dx > 0) prev(); else next() } }
+    window.addEventListener('touchstart', ts, { passive: true }); window.addEventListener('touchend', te, { passive: true })
+    return () => { window.removeEventListener('touchstart', ts); window.removeEventListener('touchend', te) }
   }, [prev, next])
 
   useEffect(() => {
     const h = e => {
       if (e.target.tagName === 'INPUT') return
-      if (e.key === 'ArrowLeft') prev()
-      if (e.key === 'ArrowRight') next()
+      if (e.key === 'ArrowLeft') prev(); if (e.key === 'ArrowRight') next()
       if (e.key === '/' && view === 'read') { e.preventDefault(); setView('search') }
       if (e.key === 'Escape') { setView('read'); setSidebar(false) }
     }
@@ -165,20 +158,19 @@ export default function App() {
 
   const d = digests && cur ? digests[cur] : null
   if (loading) return <div className="empty">Loading...</div>
-  if (error) return <div className="empty"><p>{error}</p><button className="copy" onClick={() => location.reload()}>Retry</button></div>
+  if (error) return <div className="empty"><p>{error}</p></div>
   if (!d) return <div className="empty">No digests yet.</div>
 
   const fmt = k => { const [y, m, day] = k.split('-'); return new Date(y, m - 1, day).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) }
   const all = d.items || []
   const crit = all.filter(i => i.score >= 8)
-  const watch = all.filter(i => i.score >= 6 && i.score < 8)
-  const low = all.filter(i => i.score < 6)
+  const notable = all.filter(i => i.score < 8)
 
   return (
     <>
       {sidebar && <div className="overlay" onClick={() => setSidebar(false)} />}
       <div className={`sidebar ${sidebar ? 'open' : ''}`}>
-        <div className="sb-top"><span>Archive</span><button className="close" onClick={() => setSidebar(false)}>&times;</button></div>
+        <div className="sb-top"><span>Archive</span><button className="sb-close" onClick={() => setSidebar(false)}>&times;</button></div>
         <div className="sb-list">{dates.map((k, i) => (
           <button key={k} className={`sb-item ${k === cur ? 'sb-active' : ''}`} onClick={() => { setCur(k); setSidebar(false); setView('read') }}>
             <span>{k}</span>{i === 0 && <span className="sb-new">new</span>}
@@ -187,20 +179,19 @@ export default function App() {
       </div>
 
       <div className="page">
-        {/* Toolbar */}
         <nav className="toolbar">
           <button className="icon" onClick={() => setSidebar(true)}>
             <svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
           </button>
-          <div className="nav">
+          <div className="nav-arrows">
             <button className="icon" onClick={prev} disabled={ci >= dates.length - 1}><svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
             <button className="icon" onClick={next} disabled={ci <= 0}><svg width="16" height="16" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
           </div>
-          <div className="toolbar-right">
+          <div className="nav-right">
             <button className={`icon ${view === 'saved' ? 'icon-on' : ''}`} onClick={() => setView(view === 'saved' ? 'read' : 'saved')}>
               <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 2l2.4 4.8 5.3.8-3.85 3.7.9 5.2L10 14l-4.75 2.5.9-5.2L2.3 7.6l5.3-.8z" stroke="currentColor" strokeWidth="1.3" fill={view === 'saved' ? 'currentColor' : 'none'} strokeLinejoin="round"/></svg>
             </button>
-            <button className={`icon ${view === 'search' ? 'icon-on' : ''}`} onClick={() => setView(view === 'search' ? 'read' : 'search')}>
+            <button className={`icon ${view === 'search' ? 'icon-on' : ''}`} onClick={() => { setView(view === 'search' ? 'read' : 'search'); }}>
               <svg width="16" height="16" viewBox="0 0 20 20"><circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/><path d="M13.5 13.5L17 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
             </button>
             <button className="icon" onClick={() => setDark(!dark)}>
@@ -216,53 +207,38 @@ export default function App() {
           <div className="saved">
             <h2 className="saved-title">Saved</h2>
             {getSaved().length === 0 ? <p className="saved-empty">Star items to save them here.</p> :
-              <div className="search-list">{getSaved().map((r, i) => <div key={i} className="search-row" onClick={() => { setCur(r.dateKey); setView('read') }}><span className="search-cat">{r.category}</span><span className="search-hl">{r.headline}</span><span className="search-dt">{r.dateKey}</span></div>)}</div>}
+              <div className="sr-list">{getSaved().map((r, i) => <div key={i} className="sr-row" onClick={() => { setCur(r.dateKey); setView('read') }}><span className="sr-hl">{r.headline}</span><span className="sr-dt">{r.dateKey}</span></div>)}</div>}
           </div>
         )}
 
         {view === 'read' && (
-          <article key={cur}>
-            {/* Date and briefing */}
-            <header className="digest-header">
+          <article key={cur} className="digest">
+            <header>
               <h1 className="date">{fmt(cur)}</h1>
-              <div className="briefing">
-                <p>{d.summary}</p>
-                <Copy text={d.summary} />
-              </div>
-              <div className="counts">
-                {crit.length > 0 && <span className="count count-c">{crit.length} to act on</span>}
-                {watch.length > 0 && <span className="count count-w">{watch.length} worth knowing</span>}
-                {low.length > 0 && <span className="count count-l">{low.length} background</span>}
-              </div>
+              {d.summary && <p className="deck"><strong>{d.summary}</strong></p>}
             </header>
 
-            {all.length === 0 && <p className="empty">Nothing today.</p>}
+            {all.length === 0 && <p className="nothing">Nothing new today. Good day to build.</p>}
 
             {crit.length > 0 && (
               <section>
-                <h2 className="section-label label-c">Act on this</h2>
-                {crit.map((item, i) => <Item key={i} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
+                <div className="section-line line-crit"><span>Critical</span></div>
+                {crit.map((item, i) => <Item key={`c${i}`} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
               </section>
             )}
 
-            {watch.length > 0 && (
+            {notable.length > 0 && (
               <section>
-                <h2 className="section-label label-w">Worth knowing</h2>
-                {watch.slice(0, 5).map((item, i) => <Item key={i} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
-                {watch.length > 5 && !showMoreWatch && <button className="show-more" onClick={() => setShowMoreWatch(true)}>{watch.length - 5} more</button>}
-                {showMoreWatch && watch.slice(5).map((item, i) => <Item key={i + 5} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
+                <div className="section-line line-note"><span>Notable</span></div>
+                {notable.map((item, i) => <Item key={`n${i}`} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
               </section>
             )}
 
-            {low.length > 0 && (
-              <section>
-                <h2 className="section-label label-l">Background</h2>
-                {low.map((item, i) => <Item key={i} item={item} dateKey={cur} onSave={() => refresh(n => n + 1)} />)}
-              </section>
-            )}
+            <WeeklySummary digests={digests} dates={dates} currentDate={cur} />
 
-            {d.footerNote && <p className="footer-note">{d.footerNote}</p>}
-            <p className="footer-meta">{dates.length} digests in archive</p>
+            <footer>
+              <p className="ft-meta">{dates.length} digests in archive</p>
+            </footer>
           </article>
         )}
       </div>
