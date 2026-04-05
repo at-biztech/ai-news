@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-05",
     "2026-04-04",
     "2026-04-03",
     "2026-04-02",
@@ -682,6 +683,124 @@
           "sources": [
             "https://docs.anthropic.com/en/release-notes/overview",
             "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+          ]
+        }
+      ]
+    },
+    "2026-04-05": {
+      "dateKey": "2026-04-05",
+      "date": "April 5, 2026",
+      "summary": "Anthropic cuts off Claude subscription access for third party tools effective immediately, Google sets June deprecation deadlines across four Gemini model families, and OpenAI confirms the Assistants API shuts down August 26 with mandatory migration to Responses API.",
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 2,
+      "watch": 2,
+      "low": 0,
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "API Changes",
+          "headline": "Anthropic blocks Claude subscription use through third party tools like OpenClaw",
+          "description": "Starting April 4 at 12pm PT, Claude Pro and Max subscribers can no longer use their flat rate subscription to power external automation platforms and agent tools. Enforcement began with OpenClaw, the popular open source AI coding agent framework. Anthropic cited unsustainable compute and engineering strain from third party usage patterns. Boris Cherny, Head of Claude Code, stated that capacity is being prioritized for Anthropic's own products and API. Users who need third party integration must now enable extra usage billing or authenticate with a standard Claude API key.",
+          "action": "Audit any workflows that route Claude requests through third party agent tools using subscription credentials. Switch affected integrations to API key authentication. Evaluate whether extra usage billing or prepurchased bundles (up to 30% discount) are more cost effective for your volume.",
+          "clientPitch": "If you use Claude through any third party automation tool, that access was cut off April 4. We need to move those integrations to API key billing. Anthropic is offering a one time credit and bundle discounts to soften the transition.",
+          "useCase": "Any automation pipeline calling Claude through external agent frameworks rather than directly through the API. Custom tool chains that relied on subscription pass through for Claude access.",
+          "tools": [
+            "Claude API",
+            "OpenClaw",
+            "n8n",
+            "Make.com"
+          ],
+          "timeline": "Effective April 4, 2026. One time credit redeemable until April 17.",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and",
+          "sourceName": "VentureBeat",
+          "sources": [
+            "https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and",
+            "https://the-decoder.com/anthropic-cuts-off-third-party-tools-like-openclaw-for-claude-subscribers-citing-unsustainable-demand/",
+            "https://cybersecuritynews.com/claude-ends-openclaw-subscriptions/"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "API Deprecations",
+          "headline": "Google deprecates Gemini 2.0 and 2.5 model families with June shutdown deadlines",
+          "description": "Google has set two deprecation deadlines for older Gemini models. Gemini 2.0 Flash and Gemini 2.0 Flash Lite shut down on June 1, 2026, with both models already restricted to existing customers only since March 6. Gemini 2.5 Flash and Gemini 2.5 Pro follow on June 17, 2026. The migration path for 2.0 models is Gemini 2.5 Flash Lite or Gemini 3.1 Flash Lite. For 2.5 models, Google recommends Gemini 3.1 Flash and Gemini 3.1 Pro respectively. Four model families retiring in a 17 day window.",
+          "action": "Inventory all Gemini API calls across automation workflows. Map each model reference to its replacement: 2.0 Flash to 3.1 Flash Lite, 2.5 Flash to 3.1 Flash, 2.5 Pro to 3.1 Pro. Test replacement models for output quality and pricing differences before the June 1 cutoff.",
+          "clientPitch": "Google is retiring four Gemini models in June. Any workflow calling these models will break. We need to audit and update all Gemini integrations within the next 8 weeks, starting with the 2.0 models that go first.",
+          "useCase": "All Make.com, n8n, and Zapier scenarios using Gemini API nodes. Custom integrations with hardcoded Gemini model IDs. Vertex AI pipelines referencing 2.0 or 2.5 model versions.",
+          "tools": [
+            "Gemini API",
+            "Vertex AI",
+            "Make.com",
+            "n8n",
+            "Zapier"
+          ],
+          "timeline": "Gemini 2.0 models shut down June 1. Gemini 2.5 models shut down June 17. 57 and 73 days remaining.",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://ai.google.dev/gemini-api/docs/deprecations",
+          "sourceName": "Google AI Developers",
+          "sources": [
+            "https://ai.google.dev/gemini-api/docs/deprecations",
+            "https://discuss.ai.google.dev/t/clarification-on-stable-replacement-models-for-gemini-2-5-flash-and-gemini-2-5-pro-before-june-2026-deprecation/130009",
+            "https://discuss.ai.google.dev/t/gemini-2-0-flash-discontinuation-date/131389"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "API Deprecations",
+          "headline": "OpenAI Assistants API shuts down August 26 with mandatory migration to Responses API",
+          "description": "OpenAI confirmed the Assistants API beta will be fully sunset on August 26, 2026. The Assistants API, which provided managed threads, file handling, and tool execution for building AI agents, is being replaced by the Responses API. The Responses API offers better performance, native support for deep research, MCP integration, and computer use. Azure OpenAI Assistants API follows the same retirement date. OpenAI has published a migration guide with step by step instructions for moving to the Responses API.",
+          "action": "Identify any production systems built on the Assistants API. Begin migration planning using OpenAI's published migration guide. The Responses API requires a different architecture: no more persistent threads, so state management moves to your application layer.",
+          "clientPitch": "If any of your AI workflows use OpenAI's Assistants API for managed conversations or file processing, those will stop working August 26. The replacement Responses API is more flexible but requires architectural changes. We should start migration now to avoid last minute pressure.",
+          "useCase": "Customer support bots built on Assistants API threads. Document processing pipelines using Assistants file handling. Any agent workflow relying on OpenAI managed conversation state.",
+          "tools": [
+            "OpenAI API",
+            "Responses API",
+            "n8n",
+            "Make.com",
+            "Zapier"
+          ],
+          "timeline": "Shutdown August 26, 2026. 143 days remaining. Migration guide available now.",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666",
+          "sourceName": "OpenAI Developer Community",
+          "sources": [
+            "https://community.openai.com/t/assistants-api-beta-deprecation-august-26-2026-sunset/1354666",
+            "https://developers.openai.com/api/docs/deprecations",
+            "https://developers.openai.com/api/docs/assistants/migration"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Open Source Models",
+          "headline": "Claw Code ships open source AI coding agent framework as Claude Code alternative",
+          "description": "Claw Code, a clean room reimplementation of the Claude Code agent architecture, launched publicly on April 2 and reached 123,000 GitHub stars within days. Built in Python with a Rust port in progress, it provides a fully open source agent harness connecting LLMs to tools, file systems, and task workflows. The project addresses the gap between increasingly capable models and the proprietary control layers that connect them to developer environments. It supports any LLM backend and runs entirely locally.",
+          "action": "Evaluate Claw Code as an open source alternative for AI assisted development workflows, particularly for teams that need full control over the agent harness layer. The model agnostic design means it can work with self hosted models like Gemma 4.",
+          "clientPitch": "A fully open source AI coding agent that works with any model and runs locally. Useful for teams that need AI assisted development without sending code to external services, or for building custom agent tooling on top of a proven architecture.",
+          "useCase": "Self hosted AI coding assistance for teams with data sensitivity requirements. Custom agent harness development. Local AI development workflows paired with open source models.",
+          "tools": [
+            "Claw Code",
+            "Gemma 4",
+            "Ollama",
+            "vLLM"
+          ],
+          "timeline": "Available now. Rust port in progress for production deployment.",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sourceUrl": "https://www.24-7pressrelease.com/press-release/533389/claw-code-launches-open-source-ai-coding-agent-framework-with-72000-github-stars-in-first-days",
+          "sourceName": "24-7 Press Release",
+          "sources": [
+            "https://www.24-7pressrelease.com/press-release/533389/claw-code-launches-open-source-ai-coding-agent-framework-with-72000-github-stars-in-first-days",
+            "https://claw-code.codes/",
+            "https://toolhunter.cc/tools/ultraworkers-claw-code"
           ]
         }
       ]
