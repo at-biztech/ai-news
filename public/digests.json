@@ -202,7 +202,7 @@
     "2026-04-01": {
       "dateKey": "2026-04-01",
       "date": "April 01, 2026",
-      "summary": "Anthropic's Claude Code source leak exposes 500,000 lines of agent internals and unreleased feature flags, Apple confirms Gemini-powered Siri with on-screen awareness shipping in iOS 26.4, and a class action lawsuit alleges Perplexity routed user chats to Meta and Google without consent.",
+      "summary": "Google DeepMind publishes the first full taxonomy of autonomous agent attack vectors while Anthropic scrambles to patch a critical Claude Code permission bypass exposed by its own source code leak.",
       "items": [
         {
           "score": 10,
@@ -233,211 +233,274 @@
         {
           "score": 9,
           "tag": "CRITICAL",
-          "category": "Infrastructure",
-          "headline": "Anthropic Claude Code source leak exposes full agent architecture and unreleased features",
-          "description": "A misconfigured debug file in a routine npm update exposed the entire Claude Code source code: nearly 2,000 files and 500,000 lines covering LLM API call handling, tool-call loops, thinking mode, retry logic, token counting, and permission models. The archive also contained dozens of feature flags for capabilities that are fully built but unshipped. Anthropic confirmed the leak was a packaging error, not a breach, and stated no customer data was exposed. The codebase was mirrored across GitHub within hours.",
-          "useCase": "If you build agent frameworks or tool-calling pipelines, the leaked architecture offers a reference implementation for streaming responses, tool orchestration, and permission gating. Review the publicly available analysis to benchmark your own agent design.",
-          "action": "If you build agent frameworks or tool-calling pipelines, the leaked architecture offers a reference implementation for streaming responses, tool orchestration, and permission gating. Review the publicly available analysis to benchmark your own agent design.",
+          "category": "Tools",
+          "headline": "Critical Claude Code vulnerability found days after Anthropic source code leak",
+          "description": "Adversa AI discovered that Claude Code silently skips all user configured deny rules when a compound command exceeds 50 subcommands. The flaw, traced to a hard cap in the permission checker (MAX_SUBCOMMANDS_FOR_SECURITY_CHECK = 50), means a prompt injection via a malicious CLAUDE.md file can chain enough harmless statements to smuggle dangerous commands past every safety gate. Anthropic quietly patched it in v2.1.90.",
+          "action": "Update Claude Code to v2.1.90 immediately. Audit any repos where untrusted CLAUDE.md files could have been introduced. If you run Claude Code in CI, add an external linter that rejects compound commands above a safe threshold.",
           "clientPitch": "",
+          "useCase": "Any team running Claude Code on production codebases should verify they are on v2.1.90 or later and review recent commit history for suspicious compound shell commands that may have bypassed deny rules.",
+          "tools": [
+            "Claude Code",
+            "Adversa AI"
+          ],
+          "timeline": "Patched now",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/",
+          "sourceName": "SecurityWeek",
+          "sources": [
+            {
+              "url": "https://www.securityweek.com/critical-vulnerability-in-claude-code-emerges-days-after-source-leak/",
+              "name": "SecurityWeek"
+            },
+            {
+              "url": "https://adversa.ai/claude-code-security-bypass-deny-rules-disabled/",
+              "name": "Adversa AI"
+            },
+            {
+              "url": "https://www.theregister.com/2026/04/01/claude_code_rule_cap_raises/",
+              "name": "The Register"
+            }
+          ]
+        },
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Research",
+          "headline": "Google DeepMind maps six attack categories that hijack autonomous AI agents",
+          "description": "DeepMind researchers published the first systematic taxonomy of attacks against autonomous AI agents, identifying six trap categories: content injection, memory poisoning, goal hijacking, semantic manipulation, multi agent cascades, and supervisor spoofing. The paper warns that synchronized manipulation campaigns could produce chain reaction failures comparable to algorithmic trading flash crashes.",
+          "action": "If you deploy agents that browse the web, manage email, or execute financial transactions, map your system against all six categories now. Prioritize memory poisoning and goal hijacking defenses since those redirect entire agent trajectories, not just single actions.",
+          "clientPitch": "",
+          "useCase": "Security teams building or auditing agentic AI systems can use the taxonomy as a structured red team checklist. Each category maps to a distinct component of the agent loop (perception, reasoning, memory, action, multi agent, supervisor) and requires a targeted mitigation.",
+          "tools": [
+            "Google DeepMind",
+            "AI Agent Security"
+          ],
+          "timeline": "April 1, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://the-decoder.com/google-deepmind-study-exposes-six-traps-that-can-easily-hijack-autonomous-ai-agents-in-the-wild/",
+          "sourceName": "The Decoder",
+          "sources": [
+            {
+              "url": "https://the-decoder.com/google-deepmind-study-exposes-six-traps-that-can-easily-hijack-autonomous-ai-agents-in-the-wild/",
+              "name": "The Decoder"
+            },
+            {
+              "url": "https://www.digitaldan.me/google-deepmind-ai-agent-security-attacks-taxonomy/",
+              "name": "Digital Dan"
+            }
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Anthropic leaks 512,000 lines of Claude Code source via npm packaging error",
+          "description": "A 59.8 MB JavaScript source map file intended for internal debugging shipped in Claude Code v2.1.88 on the public npm registry on March 31. Security researcher Chaofan Shou spotted it within hours and the full TypeScript codebase was mirrored across GitHub. A separate supply chain attack followed: trojanized npm packages mimicking internal dependencies appeared between 00:21 and 03:29 UTC, embedding a cross platform remote access trojan.",
+          "action": "If you installed or updated Claude Code via npm on March 31 between 00:21 and 03:29 UTC, audit your environment for trojanized axios packages immediately. Pin dependencies and verify checksums for all Anthropic npm packages going forward.",
+          "clientPitch": "",
+          "useCase": "Any organization using Claude Code should run a dependency audit against the known malicious package hashes published by Zscaler ThreatLabz and verify no trojanized packages persist in local or CI caches.",
           "tools": [
             "Claude Code",
             "npm"
           ],
-          "timeline": "Already public",
+          "timeline": "March 31, 2026",
           "confidence": "verified",
           "sourceTier": 1,
+          "sourceUrl": "https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html",
+          "sourceName": "The Hacker News",
           "sources": [
+            {
+              "url": "https://thehackernews.com/2026/04/claude-code-tleaked-via-npm-packaging.html",
+              "name": "The Hacker News"
+            },
             {
               "url": "https://venturebeat.com/technology/claude-codes-source-code-appears-to-have-leaked-heres-what-we-know",
               "name": "VentureBeat"
             },
             {
-              "url": "https://www.bloomberg.com/news/articles/2026-04-01/anthropic-accidentally-releases-source-code-for-claude-ai-agent",
-              "name": "Bloomberg"
+              "url": "https://www.zscaler.com/blogs/security-research/anthropic-claude-code-leak",
+              "name": "Zscaler ThreatLabz"
             }
-          ],
-          "sourceUrl": "https://venturebeat.com/technology/claude-codes-source-code-appears-to-have-leaked-heres-what-we-know",
-          "sourceName": "VentureBeat"
+          ]
         },
         {
           "score": 8,
           "tag": "CRITICAL",
-          "category": "Multimodal",
-          "headline": "Apple confirms Gemini-powered Siri with on-screen awareness in iOS 26.4",
-          "description": "Apple is paying Google roughly $1 billion per year to rebuild Siri on a custom Gemini model running on Apple's Private Cloud Compute. iOS 26.4, expected in early April, introduces on-screen context awareness: Siri can read what is displayed on screen and act on it, such as booking a restaurant from Safari or adding a flight from an email to the calendar. User data stays on Apple's infrastructure, isolated from Google. Requires iPhone 15 Pro or later.",
-          "useCase": "If you build iOS apps, Siri's on-screen awareness means your visible content becomes actionable context. Ensure key information (addresses, dates, booking details) is rendered as accessible text rather than baked into images so Siri can parse and act on it.",
-          "action": "If you build iOS apps, Siri's on-screen awareness means your visible content becomes actionable context. Ensure key information is rendered as accessible text rather than baked into images so Siri can parse and act on it.",
+          "category": "Policy",
+          "headline": "Perplexity hit with class action alleging secret data sharing with Meta and Google",
+          "description": "A federal class action filed in San Francisco accuses Perplexity AI of routing user conversations, including those in Incognito mode, to Meta and Google via hidden trackers embedded at login. The complaint alleges full chat text (prompts and responses) was transmitted without consent. The proposed class covers all non paying users from December 2022 through February 2026.",
+          "action": "If you integrate Perplexity into workflows that handle sensitive queries, audit network traffic for third party tracker calls. Consider switching to self hosted or API only search tools until the lawsuit clarifies Perplexity's data practices.",
           "clientPitch": "",
+          "useCase": "Legal and compliance teams at organizations using Perplexity for internal research should assess exposure under California privacy law and determine whether employee queries may have been shared with third parties.",
           "tools": [
-            "Siri",
-            "Gemini",
-            "Apple Private Cloud Compute",
-            "iOS 26.4"
+            "Perplexity AI"
           ],
-          "timeline": "iOS 26.4, early April 2026",
+          "timeline": "April 1, 2026",
           "confidence": "verified",
           "sourceTier": 1,
-          "sources": [
-            {
-              "url": "https://aiwire.ai/articles/apple-siri-gemini-ai-upgrade-2026",
-              "name": "AIWire"
-            },
-            {
-              "url": "https://9to5mac.com/2026/03/20/apples-gemini-powered-siri-upgrade-could-still-arrive-this-month/",
-              "name": "9to5Mac"
-            }
-          ],
-          "sourceUrl": "https://aiwire.ai/articles/apple-siri-gemini-ai-upgrade-2026",
-          "sourceName": "AIWire"
-        },
-        {
-          "score": 8,
-          "tag": "CRITICAL",
-          "category": "Regulation",
-          "headline": "Class action lawsuit alleges Perplexity routed user chats to Meta and Google without consent",
-          "description": "A 135-page federal complaint filed in San Francisco claims that tracking tools embedded in Perplexity's code sent user chat data directly to Google and Meta before Perplexity itself processed it. The suit alleges trackers harvested email addresses, Facebook IDs, IP addresses, and device information, even in incognito mode. The complaint includes 14 counts covering invasion of privacy, the Electronic Communications Privacy Act, and unfair competition. The proposed class covers all non-paying users from December 2022 through February 2026.",
-          "useCase": "If you embed third-party analytics or ad SDKs in AI products, audit exactly what data they transmit and when. This lawsuit shows that pre-processing data leakage to third parties can trigger federal privacy claims even without a traditional data breach.",
-          "action": "If you embed third-party analytics or ad SDKs in AI products, audit exactly what data they transmit and when. Pre-processing data leakage to third parties can trigger federal privacy claims.",
-          "clientPitch": "",
-          "tools": [
-            "Perplexity",
-            "Google Analytics",
-            "Meta Pixel"
-          ],
-          "timeline": "Lawsuit filed March 31, 2026",
-          "confidence": "verified",
-          "sourceTier": 1,
+          "sourceUrl": "https://www.bloomberg.com/news/articles/2026-04-01/perplexity-ai-machine-accused-of-sharing-data-with-meta-google",
+          "sourceName": "Bloomberg",
           "sources": [
             {
               "url": "https://www.bloomberg.com/news/articles/2026-04-01/perplexity-ai-machine-accused-of-sharing-data-with-meta-google",
               "name": "Bloomberg"
             },
             {
-              "url": "https://www.almanacnews.com/technology/2026/04/02/bombshell-ai-class-action-suit-alleges-users-chats-with-perplexity-go-straight-to-meta-google/",
-              "name": "The Almanac"
+              "url": "https://seekingalpha.com/news/4571476-utah-man-files-class-action-lawsuit-against-perplexity-for-sharing-search-data-with-google",
+              "name": "Seeking Alpha"
             }
-          ],
-          "sourceUrl": "https://www.bloomberg.com/news/articles/2026-04-01/perplexity-ai-machine-accused-of-sharing-data-with-meta-google",
-          "sourceName": "Bloomberg"
+          ]
         },
         {
           "score": 7,
           "tag": "WATCH",
-          "category": "Models",
-          "headline": "Google Gemini 3.1 Flash-Lite enters preview at $0.25 per million input tokens",
-          "description": "Google released Gemini 3.1 Flash-Lite in preview on Vertex AI and Google AI Studio. The model matches Gemini 2.5 Flash quality while delivering 2.5x faster time to first token and 45% faster output generation. It supports configurable thinking levels (minimal, low, medium, high) to balance quality and speed. Priced at $0.25 per million input tokens and $1.50 per million output tokens, it is one-eighth the cost of Gemini 3.1 Pro.",
-          "useCase": "For high-volume, latency-sensitive workloads like classification, extraction, or chat routing, Flash-Lite's price and speed make it a drop-in replacement for heavier models on tasks that do not need deep reasoning.",
-          "action": "For high-volume, latency-sensitive workloads like classification, extraction, or chat routing, Flash-Lite's price and speed make it viable as a routing or triage model in multi-model pipelines.",
+          "category": "Policy",
+          "headline": "Newsom signs executive order letting California override federal AI supply chain bans",
+          "description": "Governor Newsom signed executive order N-5-26 on March 30, requiring AI vendors seeking state contracts to disclose policies on illegal content distribution, model bias, and civil rights. The order instructs California's Chief Information Security Officer to review and potentially overrule any federal designation of AI companies as supply chain risks, directly countering the Trump administration's preemption push.",
+          "action": "AI vendors selling to state governments should prepare disclosure documentation covering content policies, bias testing, and civil rights impact now. California's framework will likely become the template other states adopt.",
           "clientPitch": "",
+          "useCase": "Companies bidding on California state contracts should begin preparing the required AI policy disclosures covering content distribution, bias testing methodology, and civil rights compliance before the procurement rules formalize.",
           "tools": [
-            "Gemini 3.1 Flash-Lite",
-            "Vertex AI",
-            "Google AI Studio"
+            "California AI Procurement"
           ],
-          "timeline": "Available now in preview",
+          "timeline": "March 30, 2026",
           "confidence": "verified",
           "sourceTier": 1,
+          "sourceUrl": "https://www.gov.ca.gov/2026/03/30/as-trump-rolls-back-protections-governor-newsom-signs-first-of-its-kind-executive-order-to-strengthen-ai-protections-and-responsible-use/",
+          "sourceName": "Governor of California",
           "sources": [
             {
-              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/",
-              "name": "Google Blog"
+              "url": "https://www.gov.ca.gov/2026/03/30/as-trump-rolls-back-protections-governor-newsom-signs-first-of-its-kind-executive-order-to-strengthen-ai-protections-and-responsible-use/",
+              "name": "Governor of California"
             },
             {
-              "url": "https://venturebeat.com/technology/google-releases-gemini-3-1-flash-lite-at-1-8th-the-cost-of-pro",
-              "name": "VentureBeat"
+              "url": "https://calmatters.org/politics/2026/04/newsom-moves-for-california-ai-startups/",
+              "name": "CalMatters"
+            },
+            {
+              "url": "https://www.washingtonpost.com/business/2026/04/02/ai-anthropic-defense-department-newsom-executive-order/a8e956f8-2ecf-11f1-aac2-f56b5ccad184_story.html",
+              "name": "Washington Post"
             }
-          ],
-          "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/",
-          "sourceName": "Google Blog"
+          ]
         },
         {
           "score": 7,
           "tag": "WATCH",
-          "category": "Enterprise",
-          "headline": "ChatGPT uninstalls surge 295% as QuitGPT movement tops 2.5 million supporters",
-          "description": "OpenAI's agreement to deploy its AI on U.S. Department of Defense classified networks triggered the QuitGPT boycott movement. U.S. mobile uninstalls of ChatGPT jumped 295% day over day and over 1.5 million users cancelled subscriptions. Anthropic's Claude, which publicly refused the same deal, reached the number one spot on the U.S. App Store. OpenAI CEO Sam Altman acknowledged the deal looked 'sloppy and opportunistic' and said the company intends to revise the contract.",
-          "useCase": "If your product depends on a single AI provider, this episode illustrates the brand risk of upstream policy decisions. Architect for multi-provider switching so your product is not tied to one vendor's political exposure.",
-          "action": "If your product depends on a single AI provider, architect for multi-provider switching so your product is not tied to one vendor's political exposure.",
+          "category": "Research",
+          "headline": "Quinnipiac poll: 55% of Americans say AI will do more harm than good",
+          "description": "A Quinnipiac University poll released March 30 shows 55% of Americans believe AI will cause more harm than good in daily life, up 11 points from April 2025. Usage is rising (51% have used AI for research, up from 37%) but only 21% trust the results. 70% expect AI to reduce job opportunities, with Gen Z the most pessimistic.",
+          "action": "Product teams shipping AI features should invest in transparency and citation mechanisms. The trust gap between adoption and confidence is widening, and products that surface sources and explain reasoning will have a measurable advantage.",
           "clientPitch": "",
+          "useCase": "Any customer facing AI product should benchmark its trust signals (citations, confidence scores, explainability) against user expectations. The poll data provides a concrete baseline for measuring whether your UX closes the trust gap.",
           "tools": [
-            "ChatGPT",
-            "Claude"
+            "Quinnipiac University Poll"
           ],
-          "timeline": "Ongoing",
+          "timeline": "March 30, 2026",
           "confidence": "verified",
           "sourceTier": 1,
+          "sourceUrl": "https://www.bloomberg.com/news/articles/2026-03-30/more-than-half-of-us-says-ai-likely-to-harm-them-poll-finds",
+          "sourceName": "Bloomberg",
           "sources": [
             {
-              "url": "https://techcrunch.com/2026/03/02/chatgpt-uninstalls-surged-by-295-after-dod-deal/",
-              "name": "TechCrunch"
-            },
-            {
-              "url": "https://www.euronews.com/next/2026/03/02/cancel-chatgpt-ai-boycott-surges-after-openai-pentagon-military-deal",
-              "name": "Euronews"
-            }
-          ],
-          "sourceUrl": "https://techcrunch.com/2026/03/02/chatgpt-uninstalls-surged-by-295-after-dod-deal/",
-          "sourceName": "TechCrunch"
-        },
-        {
-          "score": 7,
-          "tag": "WATCH",
-          "category": "Hardware",
-          "headline": "Nothing confirms AI smart glasses for 2027 and AI earbuds for 2026",
-          "description": "Nothing Technology plans to release AI-enhanced smart glasses with cameras, microphones, and speakers in the first half of 2027, and AI-powered earbuds later this year. CEO Carl Pei shifted to a multi-device strategy after initially dismissing the smart glasses category. The devices will connect to a smartphone and cloud for AI query processing.",
-          "useCase": "If you build voice-first or ambient AI applications, Nothing's entry alongside Meta Ray-Bans signals growing distribution for always-on AI hardware. Start prototyping voice and camera-triggered workflows that work across glasses and earbuds.",
-          "action": "If you build voice-first or ambient AI applications, Nothing's entry signals growing distribution for always-on AI hardware. Prototype voice and camera-triggered workflows.",
-          "clientPitch": "",
-          "tools": [
-            "Nothing Smart Glasses",
-            "Nothing AI Earbuds"
-          ],
-          "timeline": "Earbuds 2026, glasses H1 2027",
-          "confidence": "verified",
-          "sourceTier": 1,
-          "sources": [
-            {
-              "url": "https://techcrunch.com/2026/04/01/nothings-ai-devices-plan-reportedly-contains-smart-glasses-and-earbuds/",
-              "name": "TechCrunch"
-            },
-            {
-              "url": "https://www.bloomberg.com/news/articles/2026-03-31/device-startup-nothing-technology-plans-to-release-ai-glasses-next-year",
+              "url": "https://www.bloomberg.com/news/articles/2026-03-30/more-than-half-of-us-says-ai-likely-to-harm-them-poll-finds",
               "name": "Bloomberg"
+            },
+            {
+              "url": "https://techcrunch.com/2026/03/30/ai-trust-adoption-poll-more-americans-adopt-tools-fewer-say-they-can-trust-the-results/",
+              "name": "TechCrunch"
             }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Healthcare",
+          "headline": "Mount Sinai deploys OpenEvidence AI across seven hospitals inside Epic EHR",
+          "description": "Mount Sinai Health System announced the first enterprise wide deployment of OpenEvidence, embedding the AI clinical decision support platform directly into Epic workflows across all seven hospitals. Physicians, nurses, and pharmacists can ask medical questions in natural language and receive answers grounded in peer reviewed literature without leaving the EHR.",
+          "action": "Health systems evaluating AI clinical decision support should examine the OpenEvidence integration model. Embedding directly into Epic eliminates the workflow disruption that has historically killed adoption of standalone clinical AI tools.",
+          "clientPitch": "",
+          "useCase": "Hospital IT teams running Epic can evaluate OpenEvidence as an EHR embedded alternative to standalone medical AI search tools. The integration removes the context switching that has historically limited clinician adoption of AI decision support.",
+          "tools": [
+            "OpenEvidence",
+            "Epic EHR"
           ],
-          "sourceUrl": "https://techcrunch.com/2026/04/01/nothings-ai-devices-plan-reportedly-contains-smart-glasses-and-earbuds/",
-          "sourceName": "TechCrunch"
+          "timeline": "March 31, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.mountsinai.org/about/newsroom/2026/mount-sinai-health-system-collaborates-with-openevidence-to-provide-evidence-based-knowledge-within-electronic-medical-record",
+          "sourceName": "Mount Sinai",
+          "sources": [
+            {
+              "url": "https://www.mountsinai.org/about/newsroom/2026/mount-sinai-health-system-collaborates-with-openevidence-to-provide-evidence-based-knowledge-within-electronic-medical-record",
+              "name": "Mount Sinai"
+            },
+            {
+              "url": "https://www.healthcareitnews.com/news/mount-sinai-integrate-openevidence-ai-enterprise-wide",
+              "name": "Healthcare IT News"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Research",
+          "headline": "Cornell's EMSeek turns electron microscopy into structured materials reports in minutes",
+          "description": "Cornell researchers published EMSeek in Science Advances on April 1. The agentic AI platform processes a microscopy image into a full scientific output (crystal structure, material properties, literature comparison, and report) in two to five minutes, roughly 50x faster than conventional expert workflows. Multiple AI agents handle different analysis steps coordinated by a central planner.",
+          "action": "Materials science labs spending hours on manual microscopy analysis should evaluate EMSeek, which is open source on GitHub. The agentic architecture pattern (planner plus specialist agents plus verification) is directly transferable to other multi step scientific workflows.",
+          "clientPitch": "",
+          "useCase": "Research labs and semiconductor fabs doing routine electron microscopy characterization can use EMSeek to cut analysis time from hours to minutes while maintaining reproducibility through built in verification steps.",
+          "tools": [
+            "EMSeek",
+            "Science Advances"
+          ],
+          "timeline": "April 1, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://news.cornell.edu/stories/2026/04/ai-turns-electron-microscopy-materials-insights-minutes",
+          "sourceName": "Cornell Chronicle",
+          "sources": [
+            {
+              "url": "https://news.cornell.edu/stories/2026/04/ai-turns-electron-microscopy-materials-insights-minutes",
+              "name": "Cornell Chronicle"
+            },
+            {
+              "url": "https://www.science.org/doi/10.1126/sciadv.aed0583",
+              "name": "Science Advances"
+            }
+          ]
         },
         {
           "score": 6,
           "tag": "WATCH",
-          "category": "Models",
-          "headline": "Meta postpones frontier model Avocado to May after falling short of Gemini in internal tests",
-          "description": "Meta's next frontier model, codenamed Avocado, was scheduled for March but has been pushed to May or June. Internal benchmarks showed the model underperforming Google's Gemini on reasoning, coding, and writing tasks. Meta is continuing to iterate before public release.",
-          "useCase": "If you are planning to build on Meta's open-weight models, factor in the delay. For time-sensitive projects requiring frontier-grade reasoning, Gemini 3.1 or Claude Opus 4.6 remain the available options.",
-          "action": "If you are planning to build on Meta's open-weight models, factor in the delay. For time-sensitive projects, Gemini 3.1 or Claude Opus 4.6 remain available.",
+          "category": "Robotics",
+          "headline": "Durham University launches humanoid robot research platform for AI and human robot interaction",
+          "description": "Durham University introduced Alan, a Unitree G1 Edu humanoid robot, as a shared research platform for its Computer Science department. The robot will support research in scene understanding, action imitation, autonomous decision making, and assistive robotics within the VIViD research group.",
+          "action": "University robotics labs considering humanoid platforms should note that the Unitree G1 Edu is now validated for academic HRI research. The platform supports full stack AI experimentation from perception through autonomous action.",
           "clientPitch": "",
+          "useCase": "Academic institutions building robotics curricula can use the Unitree G1 Edu as a standardized humanoid research platform, reducing the setup time needed to begin experiments in human robot interaction and autonomous navigation.",
           "tools": [
-            "Meta Avocado",
-            "Llama"
+            "Unitree G1 Edu",
+            "Durham University VIViD"
           ],
-          "timeline": "Delayed to May/June 2026",
+          "timeline": "April 1, 2026",
           "confidence": "verified",
           "sourceTier": 2,
+          "sourceUrl": "https://interestingengineering.com/ai-robotics/durham-university-debuts-humanoid-robot-ai-research",
+          "sourceName": "Interesting Engineering",
           "sources": [
             {
-              "url": "https://thenextweb.com/news/the-unreleased-ai-metas-model",
-              "name": "The Next Web"
+              "url": "https://interestingengineering.com/ai-robotics/durham-university-debuts-humanoid-robot-ai-research",
+              "name": "Interesting Engineering"
             }
-          ],
-          "sourceUrl": "https://thenextweb.com/news/the-unreleased-ai-metas-model",
-          "sourceName": "The Next Web"
+          ]
         }
       ],
-      "totalScanned": 8,
-      "relevant": 8,
-      "critical": 4,
-      "watch": 4,
+      "totalScanned": 10,
+      "relevant": 10,
+      "critical": 5,
+      "watch": 5,
       "low": 0
     },
     "2026-04-03": {
