@@ -728,7 +728,7 @@
           "tag": "CRITICAL",
           "category": "API Deprecations",
           "headline": "Google deprecates Gemini 2.0 and 2.5 model families with June shutdown deadlines",
-          "description": "Google is deprecating Gemini 2.0 (June 1) and 2.5 (June 17) model families. All variants including Flash, Pro, and experimental models are affected. Migration to Gemini 3.x required before shutdown dates.",
+          "description": "Google has set two deprecation deadlines for older Gemini models. Gemini 2.0 Flash and Gemini 2.0 Flash Lite shut down on June 1, 2026, with both models already restricted to existing customers only since March 6. Gemini 2.5 Flash and Gemini 2.5 Pro follow on June 17, 2026. The migration path for 2.0 models is Gemini 2.5 Flash Lite or Gemini 3.1 Flash Lite. For 2.5 models, Google recommends Gemini 3.1 Flash and Gemini 3.1 Pro respectively. Four model families retiring in a 17 day window.",
           "action": "Inventory all Gemini API calls across automation workflows. Map each model reference to its replacement: 2.0 Flash to 3.1 Flash Lite, 2.5 Flash to 3.1 Flash, 2.5 Pro to 3.1 Pro. Test replacement models for output quality and pricing differences before the June 1 cutoff.",
           "clientPitch": "Google is retiring four Gemini models in June. Any workflow calling these models will break. We need to audit and update all Gemini integrations within the next 8 weeks, starting with the 2.0 models that go first.",
           "useCase": "All Make.com, n8n, and Zapier scenarios using Gemini API nodes. Custom integrations with hardcoded Gemini model IDs. Vertex AI pipelines referencing 2.0 or 2.5 model versions.",
@@ -739,7 +739,7 @@
             "n8n",
             "Zapier"
           ],
-          "timeline": "Gemini 2.0 models shut down June 1. Gemini 2.5 models shut down June 17. 57 and 73 days remaining.",
+          "timeline": "June 1 and June 17, 2026",
           "confidence": "verified",
           "sourceTier": 1,
           "sourceUrl": "https://ai.google.dev/gemini-api/docs/deprecations",
