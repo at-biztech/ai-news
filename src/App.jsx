@@ -14,7 +14,12 @@ function cleanSource(name) {
   return name
 }
 function getSources(item) {
-  if (item.sources?.length) return item.sources
+  if (item.sources?.length) {
+    return item.sources.map(s => {
+      if (typeof s === 'string') { try { const u = new URL(s); return { url: s, name: u.hostname.replace('www.','') } } catch { return null } }
+      return s
+    }).filter(Boolean)
+  }
   if (item.sourceUrl) return [{ url: item.sourceUrl, name: item.sourceName || '' }]
   return []
 }
@@ -55,7 +60,6 @@ function Item({ item, dateKey, onSave, autoOpen, onAutoOpened }) {
         <div className="item-card" onClick={e => e.stopPropagation()}>
           <div className="card-head">
             <span className="card-cat">{item.category}</span>
-            {item.timeline && <span className="card-tl">{item.timeline}</span>}
             <button className="card-close" onClick={() => setOpen(false)}>&times;</button>
           </div>
           <h3 className="card-hl">{item.headline}</h3>
