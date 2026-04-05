@@ -43,8 +43,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 
 /* Toolbar */
 .toolbar { display: flex; align-items: center; justify-content: space-between; padding: .6rem 0; position: sticky; top: 0; background: var(--bg); z-index: 10; }
-.nav-arrows { display: flex; gap: .1rem; }
-.nav-right { display: flex; gap: .1rem; }
+.toolbar > *:first-child { flex: 1; }
+.nav-arrows { display: flex; gap: .1rem; justify-content: center; flex: 1; }
+.nav-right { display: flex; gap: .1rem; flex: 1; justify-content: flex-end; }
 .icon { background: none; border: none; color: var(--text3); cursor: pointer; padding: 6px; border-radius: 6px; display: inline-flex; align-items: center; transition: color .12s; }
 .icon:hover { color: var(--text); }
 .icon:disabled { opacity: .2; cursor: default; }
