@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-07",
     "2026-04-06",
     "2026-04-05",
     "2026-04-04",
@@ -1195,6 +1196,115 @@
       "critical": 0,
       "watch": 3,
       "low": 1
+    },
+    "2026-04-07": {
+      "dateKey": "2026-04-07",
+      "date": "April 7, 2026",
+      "summary": "Anthropic unlocks 300K output tokens on the Message Batches API for Claude 4.6 models, n8n ships native MCP client and server nodes, Google opens Lyria 3 music generation to the Gemini API, and ChatGPT voice mode arrives on Apple CarPlay.",
+      "totalScanned": 4,
+      "relevant": 2,
+      "critical": 0,
+      "watch": 2,
+      "low": 2,
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "APIs and Platforms",
+          "headline": "Anthropic raises Message Batches API output limit to 300K tokens for Claude 4.6 models",
+          "description": "A new beta header (output-300k-2026-03-24) raises the max_tokens cap to 300,000 on the Message Batches API for Claude Opus 4.6 and Sonnet 4.6. The feature is exclusive to batch processing and not available on the synchronous Messages API or third party hosts such as Bedrock and Vertex AI. Standard batch pricing at 50% of synchronous rates applies.",
+          "action": "",
+          "clientPitch": "Claude can now generate book length outputs in a single API call through batch processing, opening up large scale document generation, code scaffolding, and data extraction pipelines.",
+          "useCase": "Enables long form generation workflows such as full report drafting, large codebase scaffolding, and exhaustive structured extraction that previously required chaining multiple API calls.",
+          "tools": [
+            "Claude API",
+            "Message Batches API"
+          ],
+          "timeline": "Available now",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+          "sourceName": "Anthropic Platform Docs",
+          "sources": [
+            "https://platform.claude.com/docs/en/build-with-claude/batch-processing",
+            "https://platform.claude.com/docs/en/release-notes/overview"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Workflow Automation",
+          "headline": "n8n adds native MCP client and server nodes with Azure Cosmos DB and Milvus integrations",
+          "description": "n8n version 1.88 introduces MCP client and server tool nodes, allowing workflows to connect directly to any MCP compatible tool server or expose n8n workflows as MCP servers to AI agents. The same release adds Azure Cosmos DB and Milvus vector store nodes, plus an IMAP UID trigger for email automation.",
+          "action": "",
+          "clientPitch": "n8n can now plug into the MCP ecosystem natively, meaning your automation workflows can both consume and serve AI agent tools without custom code.",
+          "useCase": "Connects n8n directly to the growing MCP tool ecosystem. Workflows can call external MCP servers for AI agent capabilities, or expose existing automations as tools that any MCP compatible agent can invoke.",
+          "tools": [
+            "n8n",
+            "MCP",
+            "Azure Cosmos DB",
+            "Milvus"
+          ],
+          "timeline": "Available now",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sourceUrl": "https://github.com/n8n-io/n8n/releases",
+          "sourceName": "n8n GitHub Releases",
+          "sources": [
+            "https://github.com/n8n-io/n8n/releases",
+            "https://docs.n8n.io/release-notes/"
+          ]
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "APIs and Platforms",
+          "headline": "Google opens Lyria 3 music generation models in public preview via Gemini API and Vertex AI",
+          "description": "Lyria 3 Clip generates 30 second high quality audio clips optimized for speed, while Lyria 3 Pro produces full tracks up to three minutes with structural coherence, vocals, and timed lyrics. Both models accept text or image prompts and output 48kHz stereo audio with SynthID watermarking. Available through Google AI Studio, the Gemini API, and Vertex AI.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "Adds programmatic music generation to the Gemini API surface area. Relevant for media production pipelines, marketing content automation, or any workflow that currently sources stock audio manually.",
+          "tools": [
+            "Gemini API",
+            "Vertex AI",
+            "Google AI Studio"
+          ],
+          "timeline": "March 25, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://blog.google/innovation-and-ai/technology/developers-tools/lyria-3-developers/",
+          "sourceName": "Google Blog",
+          "sources": [
+            "https://blog.google/innovation-and-ai/technology/developers-tools/lyria-3-developers/",
+            "https://ai.google.dev/gemini-api/docs/music-generation"
+          ]
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Integrations",
+          "headline": "ChatGPT voice mode launches on Apple CarPlay with iOS 26.4",
+          "description": "OpenAI shipped ChatGPT as the first third party conversational AI on Apple CarPlay, enabled by a new iOS 26.4 entitlement for voice based apps. The integration is audio only with no visual responses, no vehicle controls, and no wake word. Users must manually open the app to start a conversation.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "Signals Apple opening CarPlay to third party AI assistants beyond Siri. For teams building voice based customer or field service tools, this creates a new distribution surface on the car dashboard.",
+          "tools": [
+            "ChatGPT",
+            "Apple CarPlay",
+            "iOS"
+          ],
+          "timeline": "April 2, 2026",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sourceUrl": "https://www.macrumors.com/2026/03/31/openai-chatgpt-carplay/",
+          "sourceName": "MacRumors",
+          "sources": [
+            "https://www.macrumors.com/2026/03/31/openai-chatgpt-carplay/",
+            "https://www.engadget.com/ai/openai-brings-chatgpts-voice-mode-to-carplay-191422297.html",
+            "https://techpp.com/2026/04/04/chatgpt-on-apple-carplay/"
+          ]
+        }
+      ]
     }
   }
 }
