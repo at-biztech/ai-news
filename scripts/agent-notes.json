@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-07T10:00+06:00",
+  "lastUpdated": "2026-04-08T10:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://docs.anthropic.com/en/release-notes/overview returned 403 on 2026-04-03. Use WebSearch as fallback.",
@@ -46,6 +46,12 @@
     "2026-04-07: All 6 primary WebFetch sources still return 403. Skipped WebFetch attempts entirely based on agent notes history. WebSearch only.",
     "2026-04-07: Claude.ai had a major outage April 6 (resolved same day). Not included in digest as it is an operational event, not a capability or API change.",
     "2026-04-07: n8n MCP client/server nodes (v1.88) are highly relevant for the reader who uses both n8n and MCP. Exact release date of 1.88 unclear but recent.",
-    "2026-04-07: Detached HEAD issue on git push. Fixed by checking out main and merging. Future runs should ensure they are on main branch before committing."
+    "2026-04-07: Detached HEAD issue on git push. Fixed by checking out main and merging. Future runs should ensure they are on main branch before committing.",
+    "2026-04-08: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). Gemini 3.1 Ultra (2M context, GPQA 94.3%), OpenAI legacy Codex model removal (6 models, April 14 cutoff), n8n 2.16.0 Data Table MCP tool.",
+    "2026-04-08: All 6 primary WebFetch sources still return 403. llm-stats.com also returns 403. Skipped WebFetch attempts entirely. WebSearch only.",
+    "2026-04-08: GitHub releases pages (github.com/n8n-io/n8n/releases) remain fetchable via WebFetch. Good source for n8n release details.",
+    "2026-04-08: Gemini 3.1 Ultra release date ambiguous across sources (some say March, others April 5). Used April 5 based on most specific source. Not in any previous digest so included regardless.",
+    "2026-04-08: Claude outage continued April 7 (elevated errors, 1700+ Downdetector reports). Excluded per established precedent of skipping operational events.",
+    "2026-04-08: Detached HEAD issue recurred. Fixed again by checking out main and merging. The repo enters detached HEAD state between sessions."
   ]
 }
