@@ -1310,90 +1310,161 @@
     "2026-04-08": {
       "dateKey": "2026-04-08",
       "date": "April 8, 2026",
-      "summary": "Google delivers Gemini 3.1 Ultra with the largest production context window at two million tokens, OpenAI begins pulling six legacy GPT-5 models from Codex ahead of an April 14 hard cutoff, and n8n 2.16.0 opens its data tables to AI agents through MCP.",
+      "summary": "Anthropic unveils Claude Mythos Preview for defensive cybersecurity under Project Glasswing, OpenAI and Google join Anthropic in sharing distillation threat intelligence through the Frontier Model Forum, and Google cuts Veo 3.1 Fast video generation pricing by up to 33%.",
+      "totalScanned": 6,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
+      "low": 2,
       "items": [
         {
-          "score": 8,
+          "score": 9,
           "tag": "CRITICAL",
-          "category": "APIs and Platforms",
-          "headline": "Google ships Gemini 3.1 Ultra to developers with two million token context window",
-          "description": "Google DeepMind released Gemini 3.1 Ultra across the Gemini API, AI Studio, and Vertex AI with a two million token context window and a 94.3% score on GPQA Diamond. The model supports native multimodal reasoning across text, image, audio, and video inputs. It is the largest production context window currently available from any major API provider.",
-          "action": "Test Gemini 3.1 Ultra for workloads requiring context beyond one million tokens and benchmark against current model selections for quality and cost.",
-          "clientPitch": "",
-          "useCase": "Doubles the usable context ceiling for production pipelines. Relevant for any workflow processing long documents, large codebases, or multi-source analysis that currently requires chunking or summarization to fit within smaller context windows.",
+          "category": "AI Models",
+          "headline": "Anthropic restricts Claude Mythos Preview to defensive security research under Project Glasswing",
+          "description": "Anthropic released Claude Mythos Preview, its most capable model to date, but limited access to a gated set of security partners including Amazon, Apple, Broadcom, Cisco, CrowdStrike, the Linux Foundation, Microsoft, and Palo Alto Networks. The model autonomously found a 17 year old FreeBSD remote code execution vulnerability and has already identified thousands of high severity flaws across every major operating system and browser. Anthropic committed $100M in usage credits and $4M in direct donations to open source security organizations.",
+          "action": "Review your security posture. If your organization maintains critical open source infrastructure, monitor Project Glasswing partner channels for vulnerability disclosures that may affect your stack.",
+          "clientPitch": "Anthropic built the most capable AI model ever and chose to deploy it exclusively for cybersecurity defense, signaling that AI driven vulnerability detection is now a production capability, not a research concept.",
+          "useCase": "Signals a new class of AI model restricted by capability rather than cost. For system builders, the immediate question is whether Mythos class models will eventually reach general API access, and what the security disclosure pipeline means for dependencies in your stack.",
           "tools": [
-            "Gemini API",
-            "Vertex AI",
-            "Google AI Studio"
+            "Claude API",
+            "Project Glasswing"
           ],
-          "timeline": "April 5, 2026",
+          "timeline": "April 7, 2026",
           "confidence": "verified",
           "sourceTier": 1,
-          "sourceUrl": "https://ai.google.dev/gemini-api/docs/changelog",
-          "sourceName": "Google AI Changelog",
+          "sourceUrl": "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/",
+          "sourceName": "TechCrunch",
           "sources": [
-            {
-              "url": "https://ai.google.dev/gemini-api/docs/changelog",
-              "name": "Google AI Changelog"
-            },
-            {
-              "url": "https://smartchunks.com/google-gemini-3-1-ultra-gpqa-diamond-benchmark/",
-              "name": "SmartChunks"
-            }
+            "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/",
+            "https://www.anthropic.com/glasswing",
+            "https://www.cnbc.com/2026/04/07/anthropic-claude-mythos-ai-hackers-cyberattacks.html",
+            "https://fortune.com/2026/04/07/anthropic-claude-mythos-model-project-glasswing-cybersecurity/"
           ]
         },
         {
           "score": 7,
           "tag": "WATCH",
-          "category": "APIs and Platforms",
-          "headline": "OpenAI removes six legacy GPT-5 and Codex models from picker ahead of April 14 full cutoff",
-          "description": "Starting April 7, the Codex model picker no longer shows gpt-5, gpt-5.1, gpt-5.1-codex, gpt-5.1-codex-mini, gpt-5.1-codex-max, and gpt-5.2-codex. Full removal from Codex for ChatGPT sign-in is scheduled for April 14. Remaining model options are gpt-5.4, gpt-5.4-mini, gpt-5.3-codex, and gpt-5.2.",
+          "category": "Industry",
+          "headline": "OpenAI, Anthropic, and Google share distillation threat intelligence through the Frontier Model Forum",
+          "description": "The three leading US AI labs began sharing attack pattern data through the Frontier Model Forum to detect adversarial distillation, where rivals fire queries at frontier models to train cheaper clones. Anthropic documented 16 million such exchanges originating from DeepSeek, Moonshot AI, and MiniMax. The collaboration mirrors cybersecurity threat intelligence sharing and is the first coordinated defense against model copying.",
           "action": "",
-          "clientPitch": "OpenAI is retiring six older model versions from Codex with one week notice, requiring teams to verify and update any pinned model references before April 14.",
-          "useCase": "Any orchestration, automation, or API call referencing these six model IDs will need updating. Check n8n, Make, Zapier, and custom integrations for hardcoded model strings before the April 14 deadline.",
+          "clientPitch": "The three biggest US AI providers are now cooperating to protect their models from being cloned, which strengthens the long term value and differentiation of building on their APIs.",
+          "useCase": "Reduces the risk that frontier API capabilities get rapidly commoditized through unauthorized distillation. For integration builders, this reinforces the case for investing in official API ecosystems rather than third party clones that may lose capability parity.",
           "tools": [
             "OpenAI API",
-            "Codex"
+            "Claude API",
+            "Gemini API",
+            "Frontier Model Forum"
           ],
-          "timeline": "April 14, 2026",
+          "timeline": "April 6, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.bloomberg.com/news/articles/2026-04-06/openai-anthropic-google-unite-to-combat-model-copying-in-china",
+          "sourceName": "Bloomberg",
+          "sources": [
+            "https://www.bloomberg.com/news/articles/2026-04-06/openai-anthropic-google-unite-to-combat-model-copying-in-china",
+            "https://www.japantimes.co.jp/business/2026/04/07/tech/openai-anthropic-google-china-copy/",
+            "https://letsdatascience.com/blog/openai-anthropic-google-sharing-intelligence-china"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "API Changes",
+          "headline": "OpenAI removes six legacy GPT-5 and Codex models from picker ahead of April 14 full cutoff",
+          "description": "Starting April 7, the Codex model picker no longer shows gpt-5.2-codex, gpt-5.1-codex-mini, gpt-5.1-codex-max, gpt-5.1-codex, gpt-5.1, or gpt-5. On April 14 these models will be fully removed from Codex for ChatGPT sign in users. Available alternatives are gpt-5.4, gpt-5.4-mini, gpt-5.3-codex, and gpt-5.2, with ChatGPT Pro users also getting gpt-5.3-codex-spark.",
+          "action": "",
+          "clientPitch": "OpenAI is removing older model versions from its coding agent. Teams relying on specific GPT-5.1 or 5.2 Codex models for code generation must switch to newer alternatives before April 14.",
+          "useCase": "If any automated coding pipelines or developer tooling pins a specific Codex model version, those configurations will break on April 14. Verify model references and test with gpt-5.4 or gpt-5.3-codex.",
+          "tools": [
+            "OpenAI Codex",
+            "OpenAI API"
+          ],
+          "timeline": "April 7, 2026",
           "confidence": "verified",
           "sourceTier": 1,
           "sourceUrl": "https://developers.openai.com/codex/changelog",
-          "sourceName": "OpenAI Developers",
+          "sourceName": "OpenAI Codex Changelog",
           "sources": [
             "https://developers.openai.com/codex/changelog",
-            "https://developers.openai.com/api/docs/deprecations"
+            "https://releasebot.io/updates/openai/codex"
           ]
         },
         {
           "score": 6,
           "tag": "WATCH",
-          "category": "Workflow Automation",
-          "headline": "n8n 2.16.0 ships Data Table MCP tool with Notion OAuth and Anthropic node fixes",
-          "description": "n8n version 2.16.0, released as a pre-release on April 7, introduces a Data Table MCP tool that exposes workflow data tables to MCP compatible agents. The release also adds OAuth support for the Notion node and fixes bugs in the Anthropic and Chat Trigger nodes. The stable branch remains at version 2.15.0.",
+          "category": "Pricing",
+          "headline": "Google cuts Veo 3.1 Fast video generation pricing by up to 33 percent",
+          "description": "Google reduced pricing on the Veo 3.1 Fast video generation model by 14 to 33 percent starting April 7. After the price drop, the 720p version of Fast is only twice the cost of the new Lite tier, while retaining premium features including 4K output, reference image support, and video extension. The move follows OpenAI discontinuing Sora in late March.",
           "action": "",
-          "clientPitch": "n8n now lets AI agents access workflow data tables directly through MCP, turning the automation platform into both a tool executor and a live data source for intelligent agents.",
-          "useCase": "Extends the MCP integration from v1.88 by making n8n a data provider, not just a tool provider. AI agents can now query structured data stored in n8n without building custom API endpoints, useful for agentic workflows that need lookup tables or configuration data.",
+          "clientPitch": "Google is making AI video generation significantly cheaper, positioning it as the default choice now that OpenAI has exited the consumer video space with Sora's shutdown.",
+          "useCase": "Lowers the cost threshold for integrating AI video generation into production workflows. If you deferred video generation due to per second costs, the Fast tier is now closer to viable for marketing automation, dynamic ad creation, or product demo pipelines.",
           "tools": [
-            "n8n",
-            "MCP",
-            "Notion"
+            "Gemini API",
+            "Veo 3.1 Fast",
+            "Veo 3.1 Lite",
+            "Google AI Studio"
           ],
           "timeline": "April 7, 2026",
           "confidence": "verified",
           "sourceTier": 1,
+          "sourceUrl": "https://developers.googleblog.com/veo-3-and-veo-3-fast-new-pricing-new-configurations-and-better-resolution/",
+          "sourceName": "Google Developers Blog",
+          "sources": [
+            "https://developers.googleblog.com/veo-3-and-veo-3-fast-new-pricing-new-configurations-and-better-resolution/",
+            "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-lite/"
+          ]
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Developer Tools",
+          "headline": "OpenAI Codex CLI adds Windows sandbox networking and MCP startup improvements",
+          "description": "The Codex CLI update on April 7 introduces Windows sandbox proxy only networking, ChatGPT device code sign in, prompt plus stdin support in codex exec, and dynamic bearer token refresh for custom model providers. The release also improves file protection, Linux sandbox reliability, TUI workflows, and MCP startup handling.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "Improves Codex CLI as a self hosted coding agent. The Windows sandbox networking and MCP startup fixes make it more viable for enterprise environments where security isolation and tool interoperability matter.",
+          "tools": [
+            "OpenAI Codex CLI",
+            "MCP"
+          ],
+          "timeline": "April 7, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://developers.openai.com/codex/changelog",
+          "sourceName": "OpenAI Codex Changelog",
+          "sources": [
+            "https://developers.openai.com/codex/changelog",
+            "https://releasebot.io/updates/openai/codex"
+          ]
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Workflow Automation",
+          "headline": "n8n 2.16.0 ships Data Table MCP tool with Notion OAuth and Anthropic node fixes",
+          "description": "n8n version 2.16.0 adds an MCP compatible Data Table tool, enabling AI agents to query and manipulate n8n data tables through the Model Context Protocol. The release also includes Notion OAuth2 authentication support and fixes for the Anthropic chat model node.",
+          "action": "",
+          "clientPitch": "",
+          "useCase": "Extends n8n's MCP surface area beyond workflow execution to structured data access. AI agents can now read and write to n8n data tables, adding a lightweight database layer to MCP enabled agentic workflows.",
+          "tools": [
+            "n8n",
+            "MCP",
+            "Notion",
+            "Claude API"
+          ],
+          "timeline": "April 7, 2026",
+          "confidence": "low",
+          "sourceTier": 2,
           "sourceUrl": "https://github.com/n8n-io/n8n/releases",
           "sourceName": "n8n GitHub Releases",
           "sources": [
-            "https://github.com/n8n-io/n8n/releases"
+            "https://github.com/n8n-io/n8n/releases",
+            "https://docs.n8n.io/release-notes/"
           ]
         }
-      ],
-      "totalScanned": 3,
-      "relevant": 3,
-      "critical": 1,
-      "watch": 2,
-      "low": 0
+      ]
     }
   }
 }
