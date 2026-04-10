@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-10",
     "2026-04-09",
     "2026-04-08",
     "2026-04-07",
@@ -1598,6 +1599,93 @@
       "critical": 2,
       "watch": 2,
       "low": 1
+    },
+    "2026-04-10": {
+      "dateKey": "2026-04-10",
+      "date": "April 10, 2026",
+      "summary": "Anthropic ships two major Claude Platform milestones with the advisor tool public beta and Claude Cowork general availability, while researchers from Google DeepMind and Microsoft propose an Agentic Risk Standard to put underwriting behind autonomous money moving AI agents.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Anthropic API",
+          "headline": "Anthropic launches advisor tool in public beta to pair executor models with higher intelligence guidance",
+          "description": "The advisor tool lets developers pair a faster executor model such as Sonnet or Haiku with a higher intelligence advisor model that supplies strategic guidance mid generation. Anthropic says long horizon agentic workloads can reach close to advisor solo quality while the bulk of token generation stays at executor rates. Requests must include the beta header advisor-tool-2026-03-01.",
+          "action": "Test the advisor tool on existing long horizon agent flows by routing planning turns to Opus 4.6 while keeping Sonnet or Haiku as the executor. Benchmark cost and completion quality against your current single model setup before migrating.",
+          "clientPitch": "",
+          "useCase": "Long horizon agent workflows where cost is dominated by executor token volume but quality depends on a few strategic decisions at key branch points. The advisor pattern lets you mix a premium reasoning model with a cheaper runtime model to reshape the cost quality curve without rebuilding the agent.",
+          "tools": [
+            "Claude API",
+            "Claude Opus 4.6",
+            "Claude Sonnet 4.6",
+            "Claude Haiku 4.5"
+          ],
+          "timeline": "Apr 9",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic Release Notes",
+          "sources": [
+            "https://platform.claude.com/docs/en/release-notes/overview",
+            "https://www.testingcatalog.com/anthropic-launches-advisor-tool-for-claude-platform-api-users/"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Agent Platforms",
+          "headline": "Anthropic makes Claude Cowork generally available with role based access and OpenTelemetry support",
+          "description": "Anthropic moved Claude Cowork, its autonomous desktop assistant, out of research preview and into general availability across all paid Claude plans. Enterprise admins get role based access controls via SCIM, group spend limits, usage analytics, expanded OpenTelemetry export, per tool connector controls, and a new Zoom MCP connector for meeting driven automation. Anthropic says non engineering teams now account for the majority of Cowork usage among early adopters.",
+          "action": "Audit Cowork deployments against the new SCIM group controls and per tool connector scoping. Wire OpenTelemetry into your observability stack and enable the Zoom MCP connector if meetings feed operational workflows.",
+          "clientPitch": "",
+          "useCase": "Cowork becomes a defensible shared corporate tool rather than a scattered per user install. Ops, finance, legal and marketing teams can delegate multi step workflows while admins retain guardrails, usage analytics and telemetry needed to justify the spend and stay compliant.",
+          "tools": [
+            "Claude Cowork",
+            "SCIM",
+            "OpenTelemetry",
+            "Zoom MCP connector"
+          ],
+          "timeline": "Apr 9",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://venturebeat.com/orchestration/anthropic-says-claude-code-transformed-programming-now-claude-cowork-is",
+          "sourceName": "VentureBeat",
+          "sources": [
+            "https://venturebeat.com/orchestration/anthropic-says-claude-code-transformed-programming-now-claude-cowork-is",
+            "https://thenewstack.io/anthropic-takes-claude-cowork-out-of-preview-and-straight-into-the-enterprise/",
+            "https://9to5mac.com/2026/04/09/anthropic-scales-up-with-enterprise-features-for-claude-cowork-and-managed-agents/",
+            "https://www.testingcatalog.com/anthropic-launches-claude-cowork-in-general-availability/"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Agent Safety",
+          "headline": "Google DeepMind and Microsoft researchers propose Agentic Risk Standard to underwrite autonomous AI agents",
+          "description": "A team from Google DeepMind, Microsoft Research, Columbia University and T54 Labs published the Agentic Risk Standard as an open framework on GitHub. ARS formalizes AI agent financial transactions as a deterministic state machine with underwriters that evaluate risk, may require collateral, and commit to reimbursing users under specified failure conditions. The accompanying paper includes a simulation study of 5,000 episodes covering users, agent providers and underwriters.",
+          "action": "",
+          "clientPitch": "Autonomous AI agents that handle money need the equivalent of escrow and insurance, and ARS is the first open standard attempting to bring auditable financial guarantees to agent transactions.",
+          "useCase": "Agent frameworks that touch payments, currency conversion, trading or financial APIs need a way to cap downside when a model makes a mistake. ARS gives builders a reference architecture for escrow, underwriting and collateral rather than reinventing settlement logic inside every agent.",
+          "tools": [
+            "GitHub",
+            "T54 Labs"
+          ],
+          "timeline": "Apr 8",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://fortune.com/2026/04/08/agent-hallucinations-protocol-money-financial-system-economy/",
+          "sourceName": "Fortune",
+          "sources": [
+            "https://fortune.com/2026/04/08/agent-hallucinations-protocol-money-financial-system-economy/",
+            "https://globalcrypto.tv/researchers-from-google-deepmind-microsoft-columbia-university-and-t54-labs-propose-financial-risk-standard-for-ai-agents/"
+          ]
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 2,
+      "watch": 1,
+      "low": 0
     }
   }
 }
