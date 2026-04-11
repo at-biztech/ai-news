@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-11",
     "2026-04-10",
     "2026-04-09",
     "2026-04-08",
@@ -1685,6 +1686,118 @@
       "relevant": 3,
       "critical": 2,
       "watch": 1,
+      "low": 0
+    },
+    "2026-04-11": {
+      "dateKey": "2026-04-11",
+      "date": "April 11, 2026",
+      "summary": "OpenAI fills its pricing gap with a $100 ChatGPT Pro tier built around Codex while joining Anthropic in restricting its next cybersecurity model to vetted partners, Claude Code ships team onboarding and enterprise certificate trust in v2.1.101, and Alibaba reveals it created the Happy Horse video model topping global text to video rankings.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "OpenAI API",
+          "headline": "OpenAI launches $100 ChatGPT Pro plan with five times the Codex usage of Plus",
+          "description": "OpenAI introduced a $100 per month ChatGPT Pro tier sitting between the $20 Plus plan and the $200 Pro plan, granting all Pro features and five times the Codex usage of Plus. Through May 31 the new tier ships with up to ten times the Plus Codex limit as a launch promotion. OpenAI also lowered the annual price of ChatGPT Business and added Codex only seats with pay as you go pricing on Business and Enterprise.",
+          "action": "Re-price your Codex heavy workflows against the new $100 tier before May 31 to capture the temporary 10x Plus allowance, and review whether Codex only Business seats can replace full ChatGPT Business licenses for engineers who only use the coding agent.",
+          "clientPitch": "",
+          "useCase": "Reshapes the cost curve for any team running Codex sessions at scale. The $100 plan is now the natural anchor for individual builders who outgrew Plus but cannot justify the $200 plan, and Codex only seats let you carve out a coding budget that does not pay for full ChatGPT seats for every developer.",
+          "tools": [
+            "ChatGPT",
+            "OpenAI Codex",
+            "ChatGPT Business",
+            "ChatGPT Enterprise"
+          ],
+          "timeline": "Apr 9",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+          "sourceName": "TechCrunch",
+          "sources": [
+            "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+            "https://venturebeat.com/orchestration/openai-introduces-chatgpt-pro-usd100-tier-with-5x-usage-limits-for-codex",
+            "https://9to5mac.com/2026/04/09/openai-introduces-100-month-pro-plan-aimed-at-codex-users-heres-what-it-includes/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Cybersecurity",
+          "headline": "OpenAI to release new cybersecurity model only through Trusted Access for Cyber program",
+          "description": "Axios reported that OpenAI is finalizing a cybersecurity model that will ship exclusively to vetted partners through the Trusted Access for Cyber program OpenAI announced in February. The move makes OpenAI the second frontier lab in a week to gate a flagship cyber capable model behind identity checks, after Anthropic restricted Claude Mythos Preview to roughly 40 organizations under Project Glasswing on April 7. OpenAI has previously committed $10 million in API credits to participants of the program.",
+          "action": "",
+          "clientPitch": "Frontier AI labs are building cybersecurity grade models so dangerous that they will only be sold to verified defenders, signaling a new tier of AI capability that will not appear in normal API price lists.",
+          "useCase": "Confirms a two tier market is forming where frontier cyber capable models live behind identity checked partner programs and will not be exposed through standard API endpoints. Builders integrating AI into security workflows now have to plan procurement as a partnership exercise rather than an API key purchase, and competitive intelligence on which firms hold Trusted Access status becomes a real input to architecture decisions.",
+          "tools": [
+            "OpenAI API",
+            "GPT-5.3 Codex",
+            "Claude Mythos Preview"
+          ],
+          "timeline": "Apr 9",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.axios.com/2026/04/09/openai-new-model-cyber-mythos-anthopic",
+          "sourceName": "Axios",
+          "sources": [
+            "https://www.axios.com/2026/04/09/openai-new-model-cyber-mythos-anthopic",
+            "https://decrypt.co/363858/openai-cyber-model-anthropic-mythos",
+            "https://dataconomy.com/2026/04/10/openai-plans-cybersecurity-model-to-rival-anthropics-claude-mythos/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "Claude Code 2.1.101 ships team onboarding command and enterprise certificate trust",
+          "description": "Anthropic released Claude Code v2.1.101 on April 10 with a new /team-onboarding command that auto generates teammate ramp up guides from local Claude Code usage. The release also enables OS CA certificate store trust by default for enterprise TLS proxies, hooks /ultraplan and remote sessions to auto created cloud environments, and ships clearer rate limit and refusal error messages with reset times. The April 9 v2.1.98 release added an interactive Vertex AI setup wizard, Linux subprocess sandboxing with PID namespace isolation, and a Monitor tool for streaming background script events.",
+          "action": "",
+          "clientPitch": "Claude Code can now generate a personalised onboarding guide for new engineers based on how your existing team actually uses it, turning AI tooling adoption into a self propagating playbook.",
+          "useCase": "The /team-onboarding command is the first time a coding agent ships institutional memory transfer as a built in primitive. Combined with default OS certificate trust and per session cloud environments, Anthropic is moving Claude Code from a single user CLI to a coordinated team tool, which changes how integrators bring AI agents into regulated enterprise networks without rebuilding the trust store on every machine.",
+          "tools": [
+            "Claude Code",
+            "Google Vertex AI",
+            "Anthropic API"
+          ],
+          "timeline": "Apr 10",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases",
+          "sourceName": "Claude Code GitHub Releases",
+          "sources": [
+            "https://github.com/anthropics/claude-code/releases",
+            "https://code.claude.com/docs/en/changelog"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Open Source Models",
+          "headline": "Alibaba reveals it built Happy Horse video model topping global text to video rankings",
+          "description": "Alibaba disclosed that its Token Hub innovation unit is the team behind Happy Horse 1.0, a stealth submitted text to video model that climbed to first place in both text to video and image to video blind tests on the Artificial Analysis leaderboard after debuting anonymously on April 7. The model jointly generates video and synchronized audio from a single text prompt and is currently in beta. Alibaba has not yet published API pricing, parameter counts, or a permissive open weights license.",
+          "action": "",
+          "clientPitch": "A Chinese tech giant has overtaken every Western text to video lab on independent benchmarks, putting a new low cost option on the roadmap for any business that needs branded video at scale.",
+          "useCase": "Reshapes the video generation tier of the AI stack. Until now the credible options for production text to video were Veo, Sora, and Kling, all priced as premium generation services. A Chinese frontier model with joint audio generation entering the same league forces builders to keep an abstraction layer over any video provider rather than hardcoding to one vendor.",
+          "tools": [
+            "Happy Horse",
+            "Artificial Analysis",
+            "Alibaba Cloud"
+          ],
+          "timeline": "Apr 10",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.bloomberg.com/news/articles/2026-04-10/stealth-alibaba-video-ai-model-tops-global-ranking-on-debut",
+          "sourceName": "Bloomberg",
+          "sources": [
+            "https://www.bloomberg.com/news/articles/2026-04-10/stealth-alibaba-video-ai-model-tops-global-ranking-on-debut",
+            "https://www.cnbc.com/2026/04/10/alibaba-happyhorse-ai-video-model-benchmark-reveal.html",
+            "https://techstartups.com/2026/04/10/alibaba-reveals-its-behind-the-mysterious-happyhorse-ai-video-model-dominating-global-leaderboards/"
+          ]
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
       "low": 0
     }
   }
