@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-12",
     "2026-04-11",
     "2026-04-10",
     "2026-04-09",
@@ -1798,6 +1799,95 @@
       "relevant": 4,
       "critical": 1,
       "watch": 3,
+      "low": 0
+    },
+    "2026-04-12": {
+      "dateKey": "2026-04-12",
+      "date": "April 12, 2026",
+      "summary": "DeepSeek confirms its V4 trillion parameter model will land in late April running deeply on Huawei Ascend chips while Tencent prepares a parallel Hunyuan 3.0 release, OpenAI ships Codex CLI 0.120 with Realtime voice v2 default and MCP output schema typing, and GitHub Copilot CLI quietly retires its legacy MCP config path while adding direct agent mode flags.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Open Source Models",
+          "headline": "DeepSeek targets late April for trillion parameter V4 launch on Huawei Ascend chips",
+          "description": "DeepSeek founder Liang Wenfeng confirmed in an internal communication, reported by CnTechPost on April 10, that the V4 flagship will officially launch in late April with a trillion parameter mixture of experts architecture, a one million token context window, and native multimodal generation across text, image, and video. V4 is the first major frontier model designed to run deeply on Huawei Ascend chips rather than Nvidia CUDA, and Alibaba, ByteDance, and Tencent have each pre ordered hundreds of thousands of next generation domestic AI chips to host it. Tencent is preparing a parallel Hunyuan 3.0 release led by former OpenAI researcher Yao Shunyu in the same window.",
+          "action": "Add a DeepSeek V4 endpoint to your model abstraction layer now so you can A/B test against Claude Sonnet 4.6 and Gemini 3.1 Pro the day weights drop, and start checking whether your inference vendors plan to host V4 on Ascend or fall back to Nvidia.",
+          "clientPitch": "",
+          "useCase": "This is the first credible attempt at a frontier scale model that exits the CUDA monoculture entirely, which matters for any builder routing through Chinese compute or planning multi region deployments. A trillion parameter MoE with one million token context and native video output also extends what an open weights API call can do in a single round trip, putting pressure on the closed providers to drop long context surcharges and stop charging separately for video models.",
+          "tools": [
+            "DeepSeek V4",
+            "Huawei Ascend",
+            "Tencent Hunyuan",
+            "Alibaba Cloud"
+          ],
+          "timeline": "Apr 10",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://cntechpost.com/2026/04/10/chinese-ai-star-deepseek-targets-late-apr-v4-model-release/",
+          "sourceName": "CnTechPost",
+          "sources": [
+            "https://cntechpost.com/2026/04/10/chinese-ai-star-deepseek-targets-late-apr-v4-model-release/",
+            "https://news.aibase.com/news/26230",
+            "https://www.gizchina.com/ai/deepseek-v4-expected-to-launch-in-late-april-with-massive-parameter-scale",
+            "https://hongkongfp.com/2026/04/11/waiting-for-deepseek-new-model-to-test-chinas-ai-ambitions/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "OpenAI Codex CLI 0.120 streams background agents and types MCP outputs",
+          "description": "OpenAI shipped Codex CLI v0.119.0 on April 10 and v0.120.0 on April 11, making Realtime voice v2 with WebRTC the default voice transport, expanding MCP capabilities with resource reads and file uploads on remote servers, and adding output schema declarations so MCP tool results return precisely typed structures instead of free form JSON. The 0.120 release also lets Realtime V2 stream background agent progress while work continues and queue follow up responses, fixes Windows split filesystem sandbox handling, and lets SessionStart hooks distinguish a /clear from a fresh resume.",
+          "action": "",
+          "clientPitch": "OpenAI Codex now streams what your agent is doing in the background while it works and accepts typed outputs from external tools, making it harder for a long running task to silently desynchronise from your app.",
+          "useCase": "Realtime V2 as the Codex default normalises WebRTC voice for terminal agents, which closes the gap with the Anthropic ant CLI shipped last week and removes the last technical excuse to keep voice off your dev workflow. The MCP outputSchema field is the more important change for integrators because it gives your client static guarantees on tool result shape, so RAG pipelines and downstream typed code can finally consume MCP responses without runtime parsers.",
+          "tools": [
+            "OpenAI Codex CLI",
+            "Model Context Protocol",
+            "OpenAI Realtime API",
+            "WebRTC"
+          ],
+          "timeline": "Apr 11",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/openai/codex/releases",
+          "sourceName": "OpenAI Codex GitHub Releases",
+          "sources": [
+            "https://github.com/openai/codex/releases",
+            "https://x.com/Codex_Changelog/status/2042801634435084335",
+            "https://developers.openai.com/codex/changelog"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "GitHub Copilot CLI 1.0.24 adds direct agent mode flags after retiring legacy MCP config",
+          "description": "GitHub shipped Copilot CLI v1.0.23 and v1.0.24 on April 10, adding new --mode, --autopilot, and --plan flags so you can launch the agent directly in a specific operating mode and updating preToolUse hooks to honour modifiedArgs, updatedInput, and additionalContext fields. The previous v1.0.22 release on April 9 removed the legacy .vscode/mcp.json configuration source and now requires teams to migrate their MCP server lists into a top level .mcp.json file, while improving JSON sanitising for non standard MCP schemas and fixing sub agent and hook routing for BYOM and BYOK Anthropic models.",
+          "action": "",
+          "clientPitch": "GitHub Copilot has added one click switches to launch its terminal agent in autopilot or planning mode, but if your team uses MCP servers in VS Code you also have to move them to a new config file before the next upgrade or the tools stop loading.",
+          "useCase": "Direct mode flags eliminate the wrapper scripts that teams had been writing to force Copilot CLI into autopilot for CI runs, which makes it cheaper to slot the agent into existing GitHub Actions and headless build pipelines. The .vscode/mcp.json removal is the migration to watch because any internal documentation, dotfile repositories, or onboarding scripts that still point at the old path will silently lose every MCP tool the next time a developer upgrades.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "Model Context Protocol",
+            "GitHub Actions"
+          ],
+          "timeline": "Apr 10",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/github/copilot-cli/releases",
+          "sourceName": "GitHub Copilot CLI Releases",
+          "sources": [
+            "https://github.com/github/copilot-cli/releases",
+            "https://github.com/github/copilot-cli/blob/main/changelog.md"
+          ]
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
       "low": 0
     }
   }
