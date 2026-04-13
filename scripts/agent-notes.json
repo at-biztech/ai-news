@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-12T12:00+06:00",
+  "lastUpdated": "2026-04-13T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -100,6 +100,14 @@
     "2026-04-12: Tether QVAC SDK April 9 launch is a meaningful local-first AI framework but exceeds 48 hour window relative to today. Skipped to avoid stale relabel.",
     "2026-04-12: Sarvam AI $350M funding (April 11) is excluded per funding rule. Microsoft India $17.5B commitment is broader infrastructure context, not a product change.",
     "2026-04-12: ElevenLabs ElevenMusic iOS app (early April) is consumer music product, in topicsLowInterest. Skipped.",
-    "2026-04-12: Sources for Codex CLI dates conflict slightly across UI surfaces. Confirmed v0.120.0 as April 11 via Codex_Changelog tweet announcement and primary GitHub release page."
+    "2026-04-12: Sources for Codex CLI dates conflict slightly across UI surfaces. Confirmed v0.120.0 as April 11 via Codex_Changelog tweet announcement and primary GitHub release page.",
+    "2026-04-13: 2 items (1 CRITICAL, 1 WATCH, 0 LOW). Anthropic completes Microsoft Office push with Claude for Word public beta plus Excel/PowerPoint cross-app shared context, Skills support inside the add-ins, and LLM gateway routing through Bedrock/Vertex AI/Foundry (CRITICAL, dated April 10 but included on Axios precedent for highly significant items just outside the 48 hour window). Claude Code 2.1.104 adds explicit approve/deny prompts for tool calls outside permission settings (WATCH).",
+    "2026-04-13: Quiet weekend (April 12 was Sunday). platform.claude.com/docs release notes still show April 9 advisor tool as latest entry, already covered. No new n8n releases between April 11-13. github.com/anthropics/claude-code/releases shows v2.1.104 within window; ClaudeCodeLog X post confirmed release was 1d 7h 49m after 2.1.101 (so ~April 12 02:53 UTC). github.com/openai/codex/releases shows only 0.121.0-alpha.1 and alpha.2 within window, both pre-release alphas, skipped per established pre-release precedent.",
+    "2026-04-13: Claude for Word launched April 10 (3 days back) but included as CRITICAL because it completes the Microsoft Office triplet, introduces shared cross-app context across Word/Excel/PowerPoint, and enables LLM gateway routing through cloud Claude. Multiple Tier 1 sources (VentureBeat, TheNextWeb, Benzinga, Artificial Lawyer). Not in any prior digest. Treated similar to Axios March 30 inclusion on April 3 (4 days late).",
+    "2026-04-13: Claude Code 2.1.104 release is small (+30 LOC, +1.3 kB bundle) but the tool-call permission approval prompt is a real security/UX change that affects builders running Claude Code in restricted modes. Worth a WATCH item even at minor release size, in contrast to prior n8n bugfix-only skip precedents.",
+    "2026-04-13: Codex CLI 0.121.0-alpha.1 and alpha.2 (both April 11) bring Realtime V2 and MCP enhancements but are pre-release alphas. Skipped per consistent pre-release exclusion precedent. Will revisit when 0.121.0 stable lands.",
+    "2026-04-13: Cursor 3 (Agents Window, Design Mode) confirmed as April 2. Outside 48 hour window and outside even the wider Axios precedent buffer. Skipped.",
+    "2026-04-13: GitHub Copilot CLI no new releases April 11-13. Latest remains v1.0.24 from April 10, already covered yesterday.",
+    "2026-04-13: Detached HEAD recurred again (commits ee30a3a behind). Fixed by checking out main, fast-forwarding from the detached HEAD commit chain (4a2fc57..ee30a3a), then committing on top. Root cause: sessions still start in detached HEAD state."
   ]
 }
