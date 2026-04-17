@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-17",
     "2026-04-16",
     "2026-04-15",
     "2026-04-14",
@@ -2451,6 +2452,119 @@
             "https://www.macrumors.com/2026/04/15/google-gemini-mac-app/",
             "https://9to5google.com/2026/04/15/gemini-app-mac/",
             "https://gemini.google/mac/"
+          ]
+        }
+      ]
+    },
+    "2026-04-17": {
+      "dateKey": "2026-04-17",
+      "date": "April 17, 2026",
+      "summary": "Anthropic ships Claude Opus 4.7 as the most capable generally available model on the Claude API, Bedrock, Vertex AI, and Foundry with a new tokenizer that forces a cost and migration review, Claude Code 2.1.111 lands xhigh effort plus auto mode for Max subscribers, the European Parliament votes to delay high risk AI Act obligations by more than a year, and GitHub Copilot CLI 1.0.29 adds native Opus 4.7 routing.",
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 2,
+      "watch": 2,
+      "low": 0,
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Model Releases",
+          "headline": "Anthropic launches Claude Opus 4.7 with a new tokenizer, xhigh effort, and breaking changes versus Opus 4.6",
+          "description": "Anthropic made Claude Opus 4.7 generally available on the Claude API, Amazon Bedrock, Google Cloud Vertex AI, and Microsoft Foundry at the same $5 per million input and $25 per million output pricing as Opus 4.6. A rebuilt tokenizer produces roughly 1.0x to 1.35x more tokens for the same prompts, so same price per token translates into an effective cost increase on existing workloads. Opus 4.7 adds an xhigh effort level, task budgets for agent loops, 3.75 megapixel image support, and removes Extended Thinking Budgets, certain sampling parameters, and assistant prefill.",
+          "action": "Before migrating, rerun the messages count_tokens endpoint on representative prompts to forecast the token bump, raise max_tokens headroom and compaction triggers, and drop any prefill or manual thinking budgets from your Opus 4.6 code paths. In Claude Code run /claude-api migrate to rewrite projects to claude-opus-4-7 automatically.",
+          "clientPitch": "The most capable generally available Anthropic model just shipped at unchanged list pricing but with a tokenizer that raises the effective bill by up to 35 percent and breaks prefilled assistants. Any Opus 4.6 workload needs a migration review this week, not next quarter.",
+          "useCase": "Long horizon coding agents, complex document and image analysis over 3.75 megapixel scans and PDFs, and multi step workflows that previously hit Opus 4.6 quality ceilings and can now exploit the xhigh effort and task budget primitives.",
+          "tools": [
+            "Claude API",
+            "Amazon Bedrock",
+            "Google Vertex AI",
+            "Microsoft Foundry",
+            "Claude Code"
+          ],
+          "timeline": "April 16, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic platform release notes",
+          "sources": [
+            "https://platform.claude.com/docs/en/release-notes/overview",
+            "https://venturebeat.com/technology/anthropic-releases-claude-opus-4-7-narrowly-retaking-lead-for-most-powerful-generally-available-llm",
+            "https://aws.amazon.com/blogs/aws/introducing-anthropics-claude-opus-4-7-model-in-amazon-bedrock/",
+            "https://www.finout.io/blog/claude-opus-4.7-pricing-the-real-cost-story-behind-the-unchanged-price-tag"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Developer Tools",
+          "headline": "Claude Code 2.1.111 ships xhigh effort slider, Max tier auto mode on Opus 4.7, and a parallel agent ultrareview command",
+          "description": "Anthropic shipped Claude Code v2.1.111 alongside the Opus 4.7 launch, exposing the new xhigh effort level through an interactive /effort slider and making auto mode available to Max subscribers on Opus 4.7 without the enable-auto-mode flag. The release adds /ultrareview for multi agent code review, a /less-permission-prompts skill that scans transcripts to populate settings allowlists, a progressive PowerShell tool rollout on Windows toggled by CLAUDE_CODE_USE_POWERSHELL_TOOL, and plan files now named after the originating prompt. Hotfix v2.1.112 the same day resolves a claude-opus-4-7 temporarily unavailable error in auto mode.",
+          "action": "Upgrade Claude Code to 2.1.112 before routing Opus 4.7 traffic through auto mode, switch long session effort to xhigh via the slider, and run /less-permission-prompts on recent transcripts to shrink the approval surface in team settings.",
+          "clientPitch": "Claude Code is now the reference harness for Opus 4.7, with the new effort ladder, parallel review agents, and PowerShell support for Windows engineering teams that were previously stuck with bash only workflows.",
+          "useCase": "Max tier engineering teams delegating deep reviews and architecture passes to Opus 4.7, Windows first shops adopting Claude Code without WSL, and projects trimming permission prompts to streamline autonomous runs.",
+          "tools": [
+            "Claude Code",
+            "Claude API",
+            "Claude Opus 4.7",
+            "PowerShell"
+          ],
+          "timeline": "April 16, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases",
+          "sourceName": "Anthropic claude-code releases",
+          "sources": [
+            "https://github.com/anthropics/claude-code/releases",
+            "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Regulation",
+          "headline": "European Parliament votes to delay core AI Act obligations into late 2027 and 2028",
+          "description": "MEPs approved a compromise with the Commission that pushes application of the high risk AI system rules from August 2, 2026 to December 2, 2027, and for AI systems tied to sectoral safety legislation to August 2, 2028. The watermarking and content provenance obligations for generative providers move to November 2, 2026 rather than August. The package still needs Council of the European Union sign off, targeted before June, for the delay to take legal effect before the original deadline.",
+          "action": "Do not pause your AI Act readiness work, the original August 2, 2026 dates remain enforceable until the Council confirms. Use the new calendar to sequence watermarking first, then high risk system conformity, and revisit EU deployment contracts that referenced the 2026 dates.",
+          "clientPitch": "Europe just gave AI builders a real breather on the hardest compliance work but only if the Council approves the delay in the next eight weeks. Treat the new dates as a working target, not a guarantee.",
+          "useCase": "EU facing AI deployments in critical infrastructure, education, employment, and law enforcement that were previously racing an August 2026 deadline, and generative content workflows planning watermarking controls.",
+          "tools": [
+            "EU AI Act",
+            "Content provenance",
+            "Compliance tooling"
+          ],
+          "timeline": "April 16, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.cio.com/article/4150989/european-parliament-delays-implementation-of-parts-of-the-eu-ai-act.html",
+          "sourceName": "CIO",
+          "sources": [
+            "https://www.cio.com/article/4150989/european-parliament-delays-implementation-of-parts-of-the-eu-ai-act.html",
+            "https://www.dpocentre.com/news/eu-ai-act-delayed-timelines/",
+            "https://www.helpnetsecurity.com/2026/04/16/eu-ai-act-logging-requirements/"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "GitHub Copilot CLI 1.0.29 through 1.0.31 add Opus 4.7 routing, statusline command, and image clipboard paste",
+          "description": "GitHub shipped three Copilot CLI releases on April 16 bringing native Claude Opus 4.7 support, a /statusline command to customize the status bar, and restored Ctrl+V and Meta+V image clipboard paste across platforms. Remote MCP server configuration now permits omitting the type field, session environment variable COPILOT_AGENT_SESSION_ID is forwarded to shell commands and MCP servers, and rendering issues on Windows and Ubuntu prompt frames are fixed. Skills plugin discovery and git remote repository owner parsing also got targeted fixes.",
+          "action": "Upgrade Copilot CLI to 1.0.31 to pick up the Windows and Ubuntu frame fix before any demos, switch default model to claude-opus-4-7 if you standardized on Anthropic, and audit custom MCP server configs to take advantage of the relaxed type field.",
+          "clientPitch": "GitHub is tracking Anthropic releases within hours, Copilot CLI now speaks Opus 4.7 the same day as Claude Code, so there is no longer a tooling gap between the two major coding agents on the Anthropic stack.",
+          "useCase": "Developer teams standardized on Copilot CLI who want Opus 4.7 without switching harnesses, Windows shells that previously showed distorted prompt frames, and agents wiring remote MCP servers with minimal config.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "Model Context Protocol",
+            "Claude Opus 4.7"
+          ],
+          "timeline": "April 16, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/github/copilot-cli/releases",
+          "sourceName": "GitHub copilot-cli releases",
+          "sources": [
+            "https://github.com/github/copilot-cli/releases"
           ]
         }
       ]
