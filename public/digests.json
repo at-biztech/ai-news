@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-18",
     "2026-04-17",
     "2026-04-16",
     "2026-04-15",
@@ -2565,6 +2566,166 @@
           "sourceName": "GitHub copilot-cli releases",
           "sources": [
             "https://github.com/github/copilot-cli/releases"
+          ]
+        }
+      ]
+    },
+    "2026-04-18": {
+      "dateKey": "2026-04-18",
+      "date": "April 18, 2026",
+      "summary": "Anthropic launches Claude Design, an AI design tool powered by Opus 4.7 that generates prototypes and slide decks from prompts and sent Figma shares down 7 percent, OpenAI ships native sandbox execution and a model harness into the Agents SDK with seven third party sandbox providers, Claude Haiku 3 retires tomorrow, and Google previews Gemini 3.1 Flash TTS with 200 plus audio tags across 70 languages.",
+      "totalScanned": 6,
+      "relevant": 6,
+      "critical": 2,
+      "watch": 4,
+      "low": 0,
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Product Launch",
+          "headline": "Anthropic launches Claude Design, an AI prototyping and visual design tool that sent Figma shares down 7 percent",
+          "description": "Anthropic released Claude Design on April 17, a new product powered by Claude Opus 4.7 that lets users generate prototypes, slide decks, marketing one pagers, and app mockups from text prompts. During onboarding Claude Design reads a team's codebase and design files and builds a persistent design system of colours, typography, and components that it applies to every subsequent project. Refinement happens through chat, inline comments, direct text editing, and custom adjustment sliders that Claude itself generates.",
+          "action": "Evaluate Claude Design against current Figma and Canva workflows for internal slide decks, client pitch decks, and landing page mockups. If your team already pays for Claude Pro or Max the feature is included at no extra cost, so test it on a real deliverable this week.",
+          "clientPitch": "Anthropic just shipped an AI design surface that auto reads your codebase and produces brand consistent prototypes, decks, and one pagers from a prompt. Figma dropped 7 percent on the news. For teams already on Claude Pro or above this is a zero marginal cost addition to the stack.",
+          "useCase": "Rapid client deliverable generation, internal deck creation, app prototype iteration without a dedicated designer, and brand consistent marketing collateral for teams that already use Claude for code and copy.",
+          "tools": [
+            "Claude",
+            "Figma",
+            "Canva"
+          ],
+          "timeline": "April 17, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/",
+          "sourceName": "TechCrunch",
+          "sources": [
+            "https://techcrunch.com/2026/04/17/anthropic-launches-claude-design-a-new-product-for-creating-quick-visuals/",
+            "https://venturebeat.com/technology/anthropic-just-launched-claude-design-an-ai-tool-that-turns-prompts-into-prototypes-and-challenges-figma",
+            "https://gizmodo.com/anthropic-launches-claude-design-figma-stock-immediately-nosedives-2000748071",
+            "https://www.theregister.com/2026/04/17/anthropic_debuts_claude_design/"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Developer Tools",
+          "headline": "OpenAI Agents SDK ships native sandbox execution and a model harness with seven third party providers",
+          "description": "OpenAI released a major Agents SDK update adding native sandbox execution and a model native harness. The sandbox lets agents run in controlled environments with file and tool access, with built in support for Blaxel, Cloudflare, Daytona, E2B, Modal, Runloop, and Vercel, or bring your own provider. The harness adds configurable memory, standardised integrations, portable workspace support, and built in snapshotting with rehydration so agent runs survive container loss.",
+          "action": "If you build OpenAI agents, migrate from custom sandbox wrappers to the native SDK sandbox. Pick a provider that matches your existing infra. Review the Assistants API migration guide since OpenAI confirmed a formal deprecation with a mid 2026 target sunset.",
+          "clientPitch": "OpenAI just made agent sandboxing a first class SDK primitive instead of a DIY stack. Seven providers are supported out of the box, agent state survives crashes via checkpointing, and the Assistants API is now on a confirmed deprecation path toward mid 2026.",
+          "useCase": "Enterprise agent deployments that need isolated execution, file system access, and durability. Any workflow automation agent that currently uses a custom sandbox layer can now standardise on the SDK primitive and reduce maintenance overhead.",
+          "tools": [
+            "OpenAI API",
+            "E2B",
+            "Cloudflare",
+            "Vercel",
+            "Modal"
+          ],
+          "timeline": "April 16, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/",
+          "sourceName": "TechCrunch",
+          "sources": [
+            "https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/",
+            "https://www.helpnetsecurity.com/2026/04/16/openai-agents-sdk-harness-and-sandbox-update/",
+            "https://dataconomy.com/2026/04/17/openai-updates-agents-sdk-with-sandboxed-execution-tools/",
+            "https://github.com/openai/openai-agents-python/releases"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Deprecation",
+          "headline": "Claude Haiku 3 retires tomorrow and all API requests to the model will begin returning errors",
+          "description": "Anthropic's Claude Haiku 3 model (claude-3-haiku-20240307) reaches its retirement date on April 19, 2026. After retirement all API requests to this model ID will return errors. Anthropic announced the deprecation on February 19 with the recommended migration path to Claude Haiku 4.5 (claude-haiku-4-5-20251001).",
+          "action": "Search your codebase and automation configurations for any reference to claude-3-haiku-20240307 or the claude-3-haiku alias today. Replace with claude-haiku-4-5-20251001 or the claude-haiku-4-5 alias. Test before tomorrow's cutoff.",
+          "clientPitch": "If any client integration still points at Claude Haiku 3 it will break tomorrow. Haiku 4.5 is a direct replacement at the same speed and cost tier with better capability. This is a zero excuse migration that needs to ship today.",
+          "useCase": "Any production pipeline, automation, or integration that sends API requests to the claude-3-haiku-20240307 model ID, including Make.com and n8n HTTP request nodes with hardcoded model strings.",
+          "tools": [
+            "Claude API",
+            "Make.com",
+            "n8n",
+            "Zapier"
+          ],
+          "timeline": "April 19, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+          "sourceName": "Anthropic model deprecations",
+          "sources": [
+            "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+            "https://platform.claude.com/docs/en/release-notes/overview",
+            "https://claudelab.net/en/blog/claude-haiku-3-deprecation"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "Claude Code 2.1.113 switches to a native binary, adds domain deny lists, and hardens sandbox security",
+          "description": "Claude Code v2.1.113 shipped April 17 with a structural change: the CLI now spawns a native per platform binary instead of bundled JavaScript. A new sandbox.network.deniedDomains setting blocks specific domains even when a broader allowedDomains wildcard would otherwise permit them. Security hardening treats macOS /private paths as dangerous removal targets, matches Bash commands wrapped in env, sudo, watch, and similar exec wrappers against deny rules, and stops find -exec and find -delete from auto approving under Bash(find:*) allow rules.",
+          "action": "Update Claude Code to 2.1.113. Review any custom Bash allow rules that relied on find:* auto approving exec or delete subcommands. If you use sandbox.network.allowedDomains, consider pairing it with deniedDomains to block specific hosts within a broad wildcard.",
+          "clientPitch": "Claude Code moved to a native binary and closed several sandbox bypass vectors including exec wrapper evasion and find command auto approval. If you run Claude Code in production or client environments the security hardening alone justifies the update.",
+          "useCase": "Agentic coding sessions in restricted enterprise environments, CI pipelines that grant Claude Code limited tool permissions, and any deployment where sandbox domain control needs to block specific endpoints within a broader allow policy.",
+          "tools": [
+            "Claude Code"
+          ],
+          "timeline": "April 17, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases",
+          "sourceName": "GitHub anthropics/claude-code releases",
+          "sources": [
+            "https://github.com/anthropics/claude-code/releases"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Developer Tools",
+          "headline": "GitHub Copilot CLI 1.0.32 adds automatic model selection, usage limit warnings, and document file attachments",
+          "description": "GitHub Copilot CLI v1.0.32 shipped April 17 with an auto model selector that routes prompts to the best available model without manual configuration. Usage limit warnings now fire at 75 and 90 percent thresholds so teams see consumption before they hit the wall. Document file attachment lets agents reason over uploaded files, and a new --connect flag enables direct remote session connection without the picker flow.",
+          "action": "Update to Copilot CLI 1.0.32. Try the auto model selector by passing --model auto and compare output quality versus your current pinned model. If your team runs close to usage limits the new 75 percent warning gives lead time to adjust plans before throttling hits.",
+          "clientPitch": "Copilot CLI now picks the best model automatically, warns before you hit rate limits, and lets agents read attached documents. The auto model selector alone removes a recurring decision point for teams that previously pinned a specific model and missed capability improvements.",
+          "useCase": "Developer teams using Copilot CLI for code generation, code review, and documentation tasks where automatic model routing reduces configuration overhead and the usage warnings prevent surprise throttling mid sprint.",
+          "tools": [
+            "GitHub Copilot"
+          ],
+          "timeline": "April 17, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/github/copilot-cli/releases",
+          "sourceName": "GitHub copilot-cli releases",
+          "sources": [
+            "https://github.com/github/copilot-cli/releases"
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Model Releases",
+          "headline": "Google previews Gemini 3.1 Flash TTS with 200 plus audio tags, 70 languages, and top Elo on the TTS leaderboard",
+          "description": "Google released Gemini 3.1 Flash TTS in preview on the Gemini API, Google AI Studio, and Vertex AI on April 15. The model introduces over 200 audio tags that control vocal style, pace, and delivery by embedding natural language commands directly into text input across more than 70 languages. On the Artificial Analysis TTS leaderboard it reached an Elo score of 1211, overtaking ElevenLabs. All generated audio is watermarked with SynthID.",
+          "action": "Test Gemini 3.1 Flash TTS via the Gemini API for any voice AI pipeline or IVR workflow. Compare latency and quality against your current ElevenLabs or Cloud TTS provider. The 200 plus audio tags give fine grained style control that may eliminate post processing steps.",
+          "clientPitch": "Google's new TTS model topped the public leaderboard on day one and supports 200 plus inline style tags across 70 languages. For any client running voice workflows, IVR, or audio content generation this is worth a head to head test against the incumbent provider.",
+          "useCase": "Voice AI pipelines, interactive voice response systems, audio content generation, multilingual customer support agents, and any workflow that currently calls a separate TTS API and could consolidate onto the Gemini API.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio",
+            "Vertex AI"
+          ],
+          "timeline": "April 15, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
+          "sourceName": "Google AI Blog",
+          "sources": [
+            "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
+            "https://winbuzzer.com/2026/04/16/google-launches-gemini-31-flash-tts-for-developers-xcxwbn/",
+            "https://www.marktechpost.com/2026/04/15/google-ai-launches-gemini-3-1-flash-tts-a-new-benchmark-in-expressive-and-controllable-ai-voice/",
+            "https://siliconangle.com/2026/04/15/googles-gemini-3-1-flash-tts-offers-unparalleled-control-ai-voices/"
           ]
         }
       ]
