@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-20",
     "2026-04-18",
     "2026-04-17",
     "2026-04-16",
@@ -2726,6 +2727,99 @@
             "https://winbuzzer.com/2026/04/16/google-launches-gemini-31-flash-tts-for-developers-xcxwbn/",
             "https://www.marktechpost.com/2026/04/15/google-ai-launches-gemini-3-1-flash-tts-a-new-benchmark-in-expressive-and-controllable-ai-voice/",
             "https://siliconangle.com/2026/04/15/googles-gemini-3-1-flash-tts-offers-unparalleled-control-ai-voices/"
+          ]
+        }
+      ]
+    },
+    "2026-04-20": {
+      "dateKey": "2026-04-20",
+      "date": "April 20, 2026",
+      "summary": "Claude Haiku 3 retired yesterday with all API requests now returning errors, Cloudflare shipped its Agents Week infrastructure stack with AI Gateway routing 70 plus models across 14 providers through a single endpoint, and Zhipu AI's GLM-5 leaves NVIDIA NIM today with its replacement not yet available.",
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 2,
+      "watch": 1,
+      "low": 0,
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Deprecation",
+          "headline": "Claude Haiku 3 retired yesterday and all API requests to the model now return errors",
+          "description": "Anthropic's Claude Haiku 3 model (claude-3-haiku-20240307) reached its retirement date on April 19. All API requests to this model ID now return errors instead of completions. The migration target is Claude Haiku 4.5 (claude-haiku-4-5-20251001), which offers a 64K output window up from 4K, extended thinking support, and the same speed tier at $1/$5 per million tokens input/output.",
+          "action": "Search all codebases, automation platforms, and integration configs for claude-3-haiku-20240307 or the claude-3-haiku alias immediately. Any reference that was not migrated before yesterday is now producing errors in production. Replace with claude-haiku-4-5-20251001.",
+          "clientPitch": "If any client system still references Claude Haiku 3 it is broken right now. The migration to Haiku 4.5 is a direct swap with better capability at the same speed tier. Any pipeline that hardcodes the old model string needs an emergency update today.",
+          "useCase": "Any production pipeline, Make.com scenario, n8n workflow, Zapier Zap, or custom integration that sends API requests to the claude-3-haiku-20240307 model ID. Also applies to Bedrock and Vertex AI deployments referencing the retired model.",
+          "tools": [
+            "Claude API",
+            "Make.com",
+            "n8n",
+            "Zapier",
+            "Amazon Bedrock",
+            "Google Vertex AI"
+          ],
+          "timeline": "April 19, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic release notes",
+          "sources": [
+            "https://platform.claude.com/docs/en/release-notes/overview",
+            "https://dev.to/peytongreen_dev/claude-3-haiku-is-being-deprecated-april-19-heres-how-to-find-and-fix-every-reference-in-your-1c14",
+            "https://claudelab.net/en/blog/claude-haiku-3-deprecation",
+            "https://findskill.ai/blog/claude-haiku-3-retirement-migration-guide/"
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Cloudflare Agents Week ships AI Gateway with 70 plus models across 14 providers and a single API endpoint",
+          "description": "Cloudflare's Agents Week (April 13 to 17) delivered a full agent infrastructure stack. AI Gateway now routes to 70 plus models across 14 providers including OpenAI, Anthropic, Google, Groq, xAI, Alibaba Cloud, and others through one API endpoint with unified billing and one line model switching. The week also shipped Dynamic Workers (isolate based runtime 100x faster than containers for agent code execution), Sandboxes GA (persistent isolated environments with shell and filesystem), Cloudflare Mesh for agent to agent communication, Agent Memory, Browser Run, and Artifacts (git compatible versioned storage in private beta).",
+          "action": "Evaluate Cloudflare AI Gateway as a unified inference layer if you currently manage separate API keys and billing across multiple LLM providers. The single endpoint with automatic failover, spend monitoring, and one line model switching directly simplifies multi provider orchestration in Make.com and n8n HTTP request nodes.",
+          "clientPitch": "Cloudflare just shipped the infrastructure layer for running agents at scale: one API endpoint for 70 plus models across 14 providers with unified billing, millisecond cold start sandboxes, and git compatible artifact storage. For any client running multi provider AI workloads this collapses API key sprawl, billing fragmentation, and failover logic into a single managed service.",
+          "useCase": "Multi provider LLM routing in production automations, agent sandboxing without container overhead, unified AI spend tracking across OpenAI and Anthropic and Google, and durable agent state with Artifacts for workflows that need versioned output storage.",
+          "tools": [
+            "Cloudflare",
+            "OpenAI API",
+            "Claude API",
+            "Gemini API",
+            "Make.com",
+            "n8n"
+          ],
+          "timeline": "April 13 to 17, 2026",
+          "confidence": "verified",
+          "sourceTier": 1,
+          "sourceUrl": "https://www.cloudflare.com/agents-week/updates/",
+          "sourceName": "Cloudflare",
+          "sources": [
+            "https://www.cloudflare.com/agents-week/updates/",
+            "https://blog.cloudflare.com/ai-platform/",
+            "https://lushbinary.com/blog/cloudflare-agents-week-2026-everything-released/",
+            "https://www.startuphub.ai/ai-news/technology/2026/cloudflare-unifies-ai-model-access"
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Deprecation",
+          "headline": "Zhipu AI GLM-5 deprecated on NVIDIA NIM today with the GLM-5.1 replacement not yet available on the platform",
+          "description": "Zhipu AI's GLM-5, a 744B mixture of experts model, reaches its deprecation date on NVIDIA NIM on April 20. The recommended successor GLM-5.1 offers stronger coding and agentic capabilities but was flagged by developers on the NVIDIA forums as not yet available through the NIM API at the time of the deprecation announcement, creating a potential coverage gap for teams that built on GLM-5 through NVIDIA's inference platform.",
+          "action": "If you route inference through NVIDIA NIM and use GLM-5, check whether GLM-5.1 is now live on the platform. If not, switch to an alternative model on NIM or route GLM-5.1 requests through another provider until NVIDIA resolves the availability gap.",
+          "clientPitch": "GLM-5 is gone from NVIDIA NIM today and the replacement may not be live yet. Any workflow routing through NIM for GLM-5 inference needs an immediate fallback plan, either GLM-5.1 if it has landed or an alternative model on the same platform.",
+          "useCase": "Any inference pipeline using GLM-5 through NVIDIA NIM API, particularly teams that chose GLM-5 for its mixture of experts efficiency in agentic and reasoning tasks. Also relevant for teams evaluating Chinese foundation models through NVIDIA's managed platform.",
+          "tools": [
+            "NVIDIA NIM"
+          ],
+          "timeline": "April 20, 2026",
+          "confidence": "verified",
+          "sourceTier": 2,
+          "sourceUrl": "https://forums.developer.nvidia.com/t/urgent-glm-5-deprecation-april-20-2026-replacement-z-ai-glm-5-1-not-available-in-nim-api/366610",
+          "sourceName": "NVIDIA Developer Forums",
+          "sources": [
+            "https://forums.developer.nvidia.com/t/urgent-glm-5-deprecation-april-20-2026-replacement-z-ai-glm-5-1-not-available-in-nim-api/366610",
+            "https://build.nvidia.com/z-ai/glm5/modelcard",
+            "https://catalog.ngc.nvidia.com/orgs/nim/teams/zai-org/containers/glm-5"
           ]
         }
       ]
