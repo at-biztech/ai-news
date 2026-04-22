@@ -2926,7 +2926,7 @@
     "2026-04-22": {
       "dateKey": "2026-04-22",
       "date": "April 22, 2026",
-      "summary": "OpenAI ships gpt-image-2 with reasoning and 2K resolution to the API, Anthropic runs a pricing test that briefly strips Claude Code from the twenty dollar Pro plan, and both Codex CLI and Claude Code receive meaningful releases.",
+      "summary": "Google renames Vertex AI to Gemini Enterprise Agent Platform and turns any REST API into an MCP server via Apigee at Cloud Next, OpenAI ships gpt-image-2 to the API, and Anthropic signals a Claude Code pricing restructure.",
       "items": [
         {
           "score": 9,
@@ -2971,6 +2971,45 @@
           "sourceName": ""
         },
         {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Google renames Vertex AI to Gemini Enterprise Agent Platform with full agent orchestration stack",
+          "description": "Announced at Google Cloud Next 2026, Vertex AI is now the Gemini Enterprise Agent Platform, Google's unified surface for building, scaling, governing, and optimising agents. The platform ships Agent Studio (low-code visual builder), Agent Development Kit with graph-based sub-agent networks and multimodal streaming, Agent Memory Bank for persistent long-term context, Agent Gateway for secure unified connectivity, and Agent Anomaly Detection. All future Vertex AI services will be delivered exclusively through this platform, with Model Garden hosting 200-plus models including Claude Opus, Sonnet, and Haiku.",
+          "action": "Existing Vertex AI API calls continue working. Evaluate the Agent Development Kit if you currently use LangGraph, CrewAI, or Semantic Kernel, as Google now ships native integrations. Check docs.cloud.google.com/gemini-enterprise-agent-platform for the migration guide and updated API references.",
+          "tools": [
+            "Vertex AI",
+            "Gemini Enterprise Agent Platform",
+            "Agent Development Kit",
+            "Google Cloud"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
+              "name": "Google Cloud Blog"
+            },
+            {
+              "url": "https://techcrunch.com/2026/04/22/google-makes-an-interesting-choice-with-its-new-agent-building-tool-for-enterprises/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://siliconangle.com/2026/04/22/google-puts-gemini-enterprise-heart-new-agentic-taskforce-enterprise-automation/",
+              "name": "SiliconANGLE"
+            },
+            {
+              "url": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era",
+              "name": "TheNextWeb"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
           "score": 8,
           "tag": "CRITICAL",
           "category": "Tools",
@@ -3003,6 +3042,36 @@
             {
               "url": "https://thenewstack.io/anthropic-claude-code-limits/",
               "name": "The New Stack"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Apigee becomes MCP bridge translating any REST API into a discoverable agent tool without code changes",
+          "description": "Google announced at Cloud Next 2026 that Apigee, its API management platform, can now translate any existing REST API into a fully governed MCP server. No code changes are required to existing APIs; Apigee uses existing OpenAPI specs and handles transcoding, infrastructure, and lifecycle automatically. All 30-plus Apigee security and governance policies apply to MCP tool calls, including OAuth, rate limiting, and threat detection.",
+          "action": "If your organisation manages REST APIs through Apigee, you can expose them as MCP tools to agents immediately with no redevelopment. For teams not yet on Apigee, this significantly changes the cost-benefit calculation since MCP server management overhead disappears. Review the Cloud API Registry for discoverable trusted MCP tools.",
+          "tools": [
+            "Apigee",
+            "MCP",
+            "Google Cloud API Gateway"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/mcp-support-for-apigee",
+              "name": "Google Cloud Blog"
+            },
+            {
+              "url": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era",
+              "name": "TheNextWeb"
             }
           ],
           "clientPitch": "",
@@ -3065,6 +3134,38 @@
           "sourceName": ""
         },
         {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Agent2Agent protocol reaches v1.2 with cryptographic agent identity at 150 organisations in production",
+          "description": "At Google Cloud Next 2026, A2A reached version 1.2 under Linux Foundation governance with signed agent cards using cryptographic signatures for domain verification. The protocol is running in production across 150 organisations including Microsoft, AWS, Salesforce, SAP, and ServiceNow. Native A2A support is now built into Google's Agent Development Kit, LangGraph, CrewAI, LlamaIndex Agents, Semantic Kernel, and AutoGen.",
+          "action": "A2A now has sufficient adoption that agent-to-agent communication across vendor boundaries is a real architectural option. If you build multi-agent systems spanning platforms, evaluate A2A as the transport layer. The cryptographic agent cards in v1.2 address identity spoofing concerns that previously made cross-org A2A risky to deploy.",
+          "tools": [
+            "A2A Protocol",
+            "Google Agent Development Kit",
+            "LangGraph",
+            "CrewAI",
+            "Semantic Kernel"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade",
+              "name": "Google Cloud Blog"
+            },
+            {
+              "url": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era",
+              "name": "TheNextWeb"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
           "score": 6,
           "tag": "WATCH",
           "category": "Tools",
@@ -3114,10 +3215,10 @@
           "sourceName": ""
         }
       ],
-      "totalScanned": 6,
-      "relevant": 6,
-      "critical": 2,
-      "watch": 4,
+      "totalScanned": 9,
+      "relevant": 9,
+      "critical": 4,
+      "watch": 5,
       "low": 0
     }
   },
