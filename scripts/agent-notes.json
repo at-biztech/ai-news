@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-18T12:00+06:00",
+  "lastUpdated": "2026-04-22T12:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -198,6 +198,20 @@
     "2026-04-20: No new Zapier, Make.com, or Airtable product updates found for April 18 to 20.",
     "2026-04-20: Quiet weekend. Saturday and Sunday produce fewer product launches. Three items is appropriate for the news volume.",
     "2026-04-20: No detached HEAD issue this session. Started on main, up to date with origin/main.",
-    "2026-04-20: Push successful using git push -u origin main with token URL after setting remote URL. Initial push failed due to local proxy URL."
+    "2026-04-20: Push successful using git push -u origin main with token URL after setting remote URL. Initial push failed due to local proxy URL.",
+    "2026-04-22: 6 items (2 CRITICAL, 4 WATCH, 0 LOW). OpenAI gpt-image-2 API launch with reasoning and 2K resolution (CRITICAL 9, April 21, confirmed via SiliconAngle/VentureBeat/TechCrunch/Axios), Anthropic Claude Code pricing A/B test briefly removed Claude Code from Pro plan then reverted (CRITICAL 8, April 22, confirmed via The Register/Simon Willison/XDA), Claude Code 2.1.116 and 2.1.117 (WATCH 7, April 20-22), OpenAI Codex CLI 0.122.0 stable (WATCH 7, April 20), GitHub Copilot CLI 1.0.33 (WATCH 6, April 20), xAI file storage billing begins (WATCH 6, April 20).",
+    "2026-04-22: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. Latest entry remains April 20 Haiku 3 retirement. No new entries for April 21 or 22.",
+    "2026-04-22: github.com/anthropics/claude-code/releases fetchable. v2.1.116 (April 20 22:18 UTC) and v2.1.117 (April 22 00:04 UTC) both within window. v2.1.116 is the polish/reliability update; v2.1.117 adds concurrent MCP default, effort high for Pro/Max, and agent frontmatter mcpServers. Combined into one WATCH item.",
+    "2026-04-22: github.com/openai/codex/releases fetchable. v0.122.0 stable (April 20 14:38 UTC) is within window with meaningful feature set. v0.123.0-alpha series (April 21) all pre-release, skipped per established precedent.",
+    "2026-04-22: github.com/github/copilot-cli/releases fetchable. v1.0.33 (April 20 17:05 UTC) is the latest stable with slash command picker and usage warnings. v1.0.34 (April 20) just rate limit messaging clarification. v1.0.35-0 through v1.0.35-2 (April 21) are pre-releases, skipped per precedent.",
+    "2026-04-22: github.com/n8n-io/n8n/releases fetchable. n8n@2.17.3 (April 20) and n8n@2.17.4 (April 22) are minor bug fixes. n8n@2.18.0 (April 21) is a pre-release. All skipped per established minor bugfix and pre-release precedent.",
+    "2026-04-22: GPT-5.2-Codex has a real openai.com URL but conflicting date info (one source says January 14, others say April 21). Skipped to avoid stale relabel. If April 21 is confirmed in a future run via direct primary source, revisit.",
+    "2026-04-22: Codex Labs developer training service (SiliconAngle April 21) is a business/training partnership launch, not an API or product capability change. Skipped.",
+    "2026-04-22: Gemini 2.0 Flash deprecation (June 1 deadline) was announced February 18 and covered in April 5 digest. Skipped as duplicate.",
+    "2026-04-22: xAI storage billing (April 20) included as WATCH 6. Collections API at $2.50 per 1,000 searches confirmed via docs.x.ai. Exact per-GB storage pricing not publicly documented but the April 20 effective date is confirmed.",
+    "2026-04-22: No new Zapier, Make.com, or Airtable product updates found for April 21-22.",
+    "2026-04-22: DeepSeek V4 still not released. Multiple sources still pointing to late April but no hard date.",
+    "2026-04-22: No detached HEAD issue this session. Started on main, up to date with origin/main.",
+    "2026-04-22: 1M token context window beta retirement for Sonnet 4.5 and Sonnet 4 is April 30 (announced March 30, covered April 3). Not re-included as it was already in prior digests."
   ]
 }
