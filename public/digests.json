@@ -1,6 +1,7 @@
 {
   "dates": [
     "2026-04-22",
+    "2026-04-21",
     "2026-04-20",
     "2026-04-18",
     "2026-04-17",
@@ -2824,6 +2825,103 @@
           ]
         }
       ]
+    },
+    "2026-04-21": {
+      "dateKey": "2026-04-21",
+      "date": "April 21, 2026",
+      "summary": "Systemic MCP STDIO design flaw exposes 150 million downloads to arbitrary code execution as Anthropic declines to fix the protocol, while Moonshot AI open sources Kimi K2.6, a trillion parameter open weight agentic model topping GPT-5.4 on coding benchmarks.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Systemic MCP STDIO design flaw exposes 150 million downloads to remote code execution as Anthropic declines to fix the protocol",
+          "description": "OX Security disclosed that Anthropic's official MCP SDK contains a fundamental design flaw in the STDIO transport: the server launch command executes regardless of whether the target process starts, allowing any attacker who can influence MCP configuration to run arbitrary OS commands across all supported SDK languages including Python, TypeScript, Java, and Rust. The exposure spans an estimated 200,000 vulnerable servers and over 150 million downloads, with 14 assigned CVEs and more than 30 confirmed RCE issues affecting LiteLLM, LangFlow, Windsurf, Cursor, Flowise, DocsGPT, and GPT Researcher. Anthropic confirmed the behavior is by design and declined to modify the protocol, shifting sanitization responsibility entirely to individual developers and third-party vendors.",
+          "action": "Audit every MCP STDIO transport integration in your stack immediately. Block public IP access to MCP servers, run MCP services inside network-isolated sandboxes, monitor tool invocations for unexpected OS commands, and treat all external MCP configuration input as untrusted. Check whether LiteLLM, Flowise, DocsGPT, and other affected tools in your stack have released patched versions.",
+          "tools": [
+            "MCP protocol",
+            "Claude Code",
+            "n8n",
+            "LiteLLM",
+            "Flowise",
+            "LangFlow",
+            "Cursor",
+            "Windsurf"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/04/anthropic-mcp-design-vulnerability.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/",
+              "name": "OX Security"
+            },
+            {
+              "url": "https://www.infosecurity-magazine.com/news/systemic-flaw-mcp-expose-150/",
+              "name": "Infosecurity Magazine"
+            },
+            {
+              "url": "https://bdtechtalks.com/2026/04/20/anthropic-mcp-vulnerability/",
+              "name": "BDTechTalks"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "OpenSource",
+          "headline": "Moonshot AI open sources Kimi K2.6 with 300 agent swarms and 4000 coordinated steps topping GPT-5.4 on agentic coding benchmarks",
+          "description": "Moonshot AI released Kimi K2.6, a 1 trillion parameter mixture of experts model, as open weight under a Modified MIT License with weights published on Hugging Face and API access at platform.moonshot.ai using an OpenAI-compatible interface. The model's defining capability is hierarchical agent swarm orchestration: a single task can spawn up to 300 specialized sub-agents executing across 4,000 coordinated steps, enabling days-long autonomous execution on complex engineering goals without human checkpoints. On SWE-Bench Pro, K2.6 scores 58.6 ahead of GPT-5.4 xhigh at 57.7 and Claude Opus 4.6 max effort at 53.4, while remaining freely deployable under permissive open weight terms.",
+          "action": "Pull Kimi K2.6 weights from Hugging Face for self-hosted agentic coding pipelines or test the API at platform.moonshot.ai using the OpenAI-compatible interface with no configuration changes. Benchmark K2.6 against your current models for long-horizon tasks where autonomous multi-step execution matters more than single-turn accuracy.",
+          "tools": [
+            "Hugging Face",
+            "Kimi API",
+            "n8n"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.marktechpost.com/2026/04/20/moonshot-ai-releases-kimi-k2-6-with-long-horizon-coding-agent-swarm-scaling-to-300-sub-agents-and-4000-coordinated-steps/",
+              "name": "MarkTechPost"
+            },
+            {
+              "url": "https://venturebeat.com/orchestration/kimi-k2-6-runs-agents-for-days-and-exposes-the-limits-of-enterprise-orchestration",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://www.yicaiglobal.com/news/chinas-moonshot-ai-releases-kimi-k26-pushing-boundaries-in-coding-multi-agent-capabilities",
+              "name": "Yicai Global"
+            },
+            {
+              "url": "https://the-decoder.com/open-weight-kimi-k2-6-takes-on-gpt-5-4-and-claude-opus-4-6-with-agent-swarms/",
+              "name": "The Decoder"
+            },
+            {
+              "url": "https://huggingface.co/moonshotai/Kimi-K2.6",
+              "name": "HuggingFace"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 2,
+      "relevant": 2,
+      "critical": 2,
+      "watch": 0,
+      "low": 0
     },
     "2026-04-22": {
       "dateKey": "2026-04-22",
