@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-23",
     "2026-04-22",
     "2026-04-21",
     "2026-04-20",
@@ -3219,6 +3220,135 @@
       "relevant": 9,
       "critical": 4,
       "watch": 5,
+      "low": 0
+    },
+    "2026-04-23": {
+      "dateKey": "2026-04-23",
+      "date": "April 23, 2026",
+      "summary": "OpenAI launches persistent Workspace Agents for ChatGPT Business and Enterprise teams on April 22, Google makes BigQuery directly queryable by any MCP agent at GA, and Claude Code gains MCP tool invocation from hooks.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "OpenAI launches Workspace Agents in ChatGPT, letting teams run persistent Codex-powered agents around the clock",
+          "description": "Workspace Agents are shared, always-on agents that teams on ChatGPT Business, Enterprise, Edu, and Teachers plans can create and configure to handle long-running tasks autonomously in the cloud. They are an evolution of GPTs powered by Codex and can write code, prepare reports, and respond to messages without requiring a human in the loop. Free to use until May 6, 2026, with credit-based pricing starting that date.",
+          "action": "Evaluate Workspace Agents for clients already on ChatGPT Business or Enterprise before the May 6 billing start. This is a direct alternative to standalone automation tools for teams already paying for ChatGPT seats.",
+          "tools": [
+            "ChatGPT Business",
+            "ChatGPT Enterprise",
+            "OpenAI Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/introducing-workspace-agents-in-chatgpt/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://9to5mac.com/2026/04/22/openai-updates-chatgpt-with-codex-powered-workspace-agents-for-teams/",
+              "name": "9to5Mac"
+            },
+            {
+              "url": "https://decrypt.co/365220/openai-workspace-agents-feature-chatgpt",
+              "name": "Decrypt"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Google makes BigQuery Remote MCP Server generally available and ships Data Agent Kit for Claude Code, Codex, and VS Code",
+          "description": "Announced at Google Cloud Next 2026 on April 22, BigQuery Remote MCP Server reaches GA, allowing any MCP-compatible agent to query BigQuery directly without custom connectors. The Google Cloud Data Agent Kit (Preview) is a portable suite of MCP tools and skills that integrates into VS Code, Claude Code, Gemini CLI, and Codex, automatically selecting the right framework such as BigQuery, dbt, Apache Spark, or Airflow and generating production-ready code. Spanner, AlloyDB, and Cloud SQL MCP support also launched in preview alongside Looker MCP.",
+          "action": "Replace custom BigQuery connectors in agent pipelines with the managed MCP server. Pilot the Data Agent Kit in Claude Code or Codex for any client with data engineering workflows running on Google Cloud.",
+          "tools": [
+            "BigQuery",
+            "Claude Code",
+            "OpenAI Codex",
+            "Gemini CLI",
+            "Google ADK",
+            "Spanner",
+            "AlloyDB"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://cloud.google.com/blog/products/data-analytics/unveiling-new-bigquery-capabilities-for-the-agentic-era",
+              "name": "Google Cloud Blog"
+            },
+            {
+              "url": "https://siliconangle.com/2026/04/22/google-delivers-connective-tissue-autonomous-ai-agents-access-data-without-restrictions/",
+              "name": "SiliconANGLE"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.118 adds MCP tool invocation from hooks, custom themes, Vim visual modes, and unified usage command",
+          "description": "The April 23 release adds hooks that can now invoke MCP tools directly using type: mcp_tool, enabling hooks to trigger external services as part of automated workflow steps. Other additions include Vim visual mode and visual-line mode with full selection and operator support, named custom themes editable as JSON in ~/.claude/themes/, the /usage command consolidating /cost and /stats, and a DISABLE_UPDATES env var for stricter update blocking. WSL on Windows can now inherit Windows-side managed settings.",
+          "action": "Update to 2.1.118 and test MCP tool hooks in your most complex Claude Code pipelines. The hook-to-MCP bridge opens up new automation patterns that were previously only possible through shell exec workarounds.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.118",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Codex CLI 0.123.0 stable adds built-in Amazon Bedrock provider and MCP verbose diagnostics",
+          "description": "Version 0.123.0, released April 23, ships a built-in Amazon Bedrock model provider with AWS profile support, letting teams route Codex through Bedrock's compliance and access controls without a separate adapter. The enhanced /mcp verbose command provides comprehensive server diagnostics for debugging MCP integrations. Improved realtime handoffs allow background agents to receive transcript updates mid-task.",
+          "action": "Test the --provider=bedrock flag if any clients require Codex in AWS-controlled or regulated environments. The Bedrock route also opens native SageMaker and IAM integration for enterprise deployments.",
+          "tools": [
+            "OpenAI Codex CLI",
+            "Amazon Bedrock"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases/tag/v0.123.0",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 2,
+      "watch": 2,
       "low": 0
     }
   },
