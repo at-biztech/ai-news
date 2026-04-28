@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-27T08:00+06:00",
+  "lastUpdated": "2026-04-28T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -275,6 +275,18 @@
     "2026-04-27: 1M token context window retirement April 30 is 3 days away. Already covered April 3. Not re-included per duplication rule. Next run (April 30) should reframe as completed event.",
     "2026-04-27: No new Zapier, Make.com, or Airtable product updates found for April 26-27.",
     "2026-04-27: No detached HEAD issue this session. Started on main branch and up to date with origin/main.",
-    "2026-04-27: Anthropic Engineering blog (anthropic.com/engineering/*) returns 403 via WebFetch. Used WebSearch summaries + primary URL from search results. Source confirmed as valid via multiple Tier 1 citations."
+    "2026-04-27: Anthropic Engineering blog (anthropic.com/engineering/*) returns 403 via WebFetch. Used WebSearch summaries + primary URL from search results. Source confirmed as valid via multiple Tier 1 citations.",
+    "2026-04-28: 3 items (0 CRITICAL, 3 WATCH, 0 LOW). Claude Code 2.1.121 with alwaysLoad MCP option and PostToolUse hook tool output replacement (WATCH 7), DeepSeek cache hit pricing cut to one-tenth across all API models (WATCH 6, Bloomberg/Dataconomy/TechBriefly April 27), GitHub Copilot CLI 1.0.37 with copilot completion shell script generation and location-based permission persistence (WATCH 6, April 27 23:07 UTC).",
+    "2026-04-28: Quiet day. No new Anthropic API entries after April 24 Rate Limits API. No new OpenAI product launches. Gemini API changelog returned 403. Codex CLI 0.126.x still in alpha. n8n 2.17.8 (April 27) was very minor (AI Gateway/free credits conflict disable) skipped per established n8n minor bugfix precedent. n8n 2.18.x still pre-release.",
+    "2026-04-28: DeepSeek cache hit pricing to one-tenth (April 27) is ambiguously new vs part of the April 24 V4 launch. Bloomberg, Reuters, Dataconomy, TechBriefly all dated April 27 as new news. Included as WATCH 6 because Bloomberg tier 1 coverage specifically framed as separate announcement from V4 launch, and cache hit pricing affects entire API lineup (not just V4 promotion). Confidence set to reported.",
+    "2026-04-28: 1M context window retirement (April 30) is 2 days away. Already covered April 3. Not re-included per duplication rule. Next run (April 30 or later) should reframe as completed event.",
+    "2026-04-28: gemini-robotics-er-1.5-preview shutdown (April 30) was not included - the Gemini Robotics-ER 1.6 was covered in April 18 digest, and the 1.5 preview shutdown is part of normal model lifecycle. Announcement date was ambiguous.",
+    "2026-04-28: ChatGPT for Clinicians (April 23) is now 5 days old. Outside 72h exception window. Healthcare vertical product, not an API capability change. Skipped.",
+    "2026-04-28: ICLR 2026 conference ended April 28. Largest ML venue on Earth (19,797 submissions). No specific builder-relevant product launches from conference papers. Papers at academic conferences are research artifacts, not production capabilities.",
+    "2026-04-28: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists: sessions still start in detached HEAD state.",
+    "2026-04-28: github.com/anthropics/claude-code/releases still fetchable. v2.1.121 (April 28 00:31 UTC) is the freshest entry.",
+    "2026-04-28: github.com/github/copilot-cli/releases still fetchable. v1.0.37 (April 27 23:07 UTC) is the freshest stable release.",
+    "2026-04-28: github.com/n8n-io/n8n/releases shows n8n@2.17.8 (April 27) as the latest stable, n8n@2.18.4 as pre-release. n8n 2.17.8 is very minor (skip per precedent). n8n 2.18.x still pre-release.",
+    "2026-04-28: github.com/openai/codex/releases shows only 0.126.0-alpha.4 through 0.126.0-alpha.8 (April 27). All pre-release. Most recent stable is 0.125.0 from April 24, already covered April 25."
   ]
 }

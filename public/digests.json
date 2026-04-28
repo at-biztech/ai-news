@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-28",
     "2026-04-27",
     "2026-04-26",
     "2026-04-25",
@@ -3893,6 +3894,76 @@
       "critical": 1,
       "watch": 2,
       "low": 0
+    },
+    "2026-04-28": {
+      "dateKey": "2026-04-28",
+      "date": "April 28, 2026",
+      "summary": "Claude Code adds persistent MCP server loading and hook-based tool output interception; DeepSeek slashes cache hit pricing to one-tenth across all API models; and Copilot CLI ships shell script generation with location-aware permission persistence.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code adds persistent MCP tool loading and hook-based tool output replacement",
+          "description": "Version 2.1.121, released April 28, introduces alwaysLoad in MCP server config to permanently bypass tool-search deferral for trusted servers, so their tools are always available without selection overhead. PostToolUse hooks can now replace any tool's output before it reaches the model via hookSpecificOutput.updatedToolOutput, enabling centralized output sanitization and transformation. The claude plugin prune command removes orphaned auto-installed plugin dependencies, and a type-to-filter search box lands in the skills panel.",
+          "action": "Add alwaysLoad: true to MCP servers you always need in production, removing the tool-search selection step. Wire PostToolUse hooks to standardize or sanitize tool outputs before they enter the context window.",
+          "tools": [
+            "Claude Code",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.121",
+              "name": "GitHub Releases"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "DeepSeek cuts cache hit API pricing to one-tenth across all models as price war intensifies",
+          "description": "DeepSeek announced April 27 that input cache hit fees across its entire API lineup have been reduced to one-tenth of their original price, applying to deepseek-chat, deepseek-reasoner, V4-Pro, and V4-Flash. The move coincides with a 75 percent limited-time discount on V4-Pro through May 5. Bloomberg reported the announcement triggered stock drops at competing Chinese AI providers Zhipu and Minimax.",
+          "action": "Cache hit pricing is the dominant cost lever in production agentic workflows that repeatedly send similar system prompts. Recalculate your DeepSeek infrastructure cost model with the new cache hit rates before committing to V4-Pro integrations.",
+          "tools": [
+            "DeepSeek API"
+          ],
+          "confidence": "reported",
+          "sources": [
+            {
+              "url": "https://www.bloomberg.com/news/articles/2026-04-27/deepseek-slashes-fees-for-new-ai-model-in-chinese-price-war",
+              "name": "Bloomberg"
+            },
+            {
+              "url": "https://dataconomy.com/2026/04/27/deepseek-slashes-v4-pro-api-pricing-with-major-discount/",
+              "name": "Dataconomy"
+            },
+            {
+              "url": "https://techbriefly.com/2026/04/27/deepseek-slashes-v4-api-prices-to-one-tenth-of-previous-rates/",
+              "name": "TechBriefly"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Copilot CLI gains shell script generation command and location-based permission persistence",
+          "description": "Version 1.0.37, released April 27, ships the copilot completion subcommand for generating shell script completions and enables location-based permission persistence by default so approvals granted in a project directory carry forward across sessions. The session picker gains a sort key, cycling through relevance, last used, created, and name order by pressing s. Markdown rendering in ask responses and X11 handle leaks on Linux are also fixed.",
+          "action": "Enable location-based permission persistence to eliminate repeated tool call approvals in established project directories. Use copilot completion to generate shell-native command completions for scripted CI workflows.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.37",
+              "name": "GitHub Releases"
+            }
+          ]
+        }
+      ]
     }
   },
   "items": [],
