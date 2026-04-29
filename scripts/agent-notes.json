@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T09:00+06:00",
+  "lastUpdated": "2026-04-29T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -287,6 +287,19 @@
     "2026-04-28: github.com/anthropics/claude-code/releases still fetchable. v2.1.121 (April 28 00:31 UTC) is the freshest entry.",
     "2026-04-28: github.com/github/copilot-cli/releases still fetchable. v1.0.37 (April 27 23:07 UTC) is the freshest stable release.",
     "2026-04-28: github.com/n8n-io/n8n/releases shows n8n@2.17.8 (April 27) as the latest stable, n8n@2.18.4 as pre-release. n8n 2.17.8 is very minor (skip per precedent). n8n 2.18.x still pre-release.",
-    "2026-04-28: github.com/openai/codex/releases shows only 0.126.0-alpha.4 through 0.126.0-alpha.8 (April 27). All pre-release. Most recent stable is 0.125.0 from April 24, already covered April 25."
+    "2026-04-28: github.com/openai/codex/releases shows only 0.126.0-alpha.4 through 0.126.0-alpha.8 (April 27). All pre-release. Most recent stable is 0.125.0 from April 24, already covered April 25.",
+    "2026-04-29: 6 items (1 CRITICAL, 5 WATCH, 0 LOW). OpenAI ends Azure exclusivity and ships GPT-5.4 on Amazon Bedrock same day (CRITICAL 9, April 27-28, Microsoft Blog/OpenAI/AWS/CNBC/The Register), Anthropic 9 creative MCP connectors Adobe+Blender+Autodesk+Ableton (WATCH 7, April 28, 9to5Mac/MacRumors/Anthropic), Microsoft Entra ID Agent ID Administrator role privilege escalation patched (WATCH 7, April 28 disclosure, The Hacker News/Silverfort), Claude Code 2.1.122 with Bedrock service tier env var and Vertex AI structured output fix (WATCH 7, April 28, GitHub), n8n 2.18.4 stable graduation with AI agent max steps 5 to 60 (WATCH 6, April 27, GitHub), Copilot CLI 1.0.39 ACP session permission toggle (WATCH 6, April 28, GitHub).",
+    "2026-04-29: OpenAI on Amazon Bedrock is the biggest story of the week. The day-one Bedrock integration (April 28) followed the Microsoft exclusivity end announcement (April 27) within 24 hours. GPT-5.4 in limited preview now, GPT-5.5/Codex/Managed Agents coming weeks. Builders already on Bedrock can add OpenAI models to their multi-provider Bedrock routers without new API key management.",
+    "2026-04-29: n8n 2.18.4 was tagged as pre-release in the April 28 agent notes. It was promoted to Latest stable overnight between April 28 and 29. The 2.18.x graduation brings AI builder max steps from 5 to 60, computer use toggle, private npm auth. This pattern (overnight pre-release to Latest stable promotion) is now documented.",
+    "2026-04-29: GitHub Copilot CLI v1.0.39 stable confirmed via GitHub releases WebFetch. The naming convention -N suffix = pre-release (v1.0.39-0), no suffix = stable (v1.0.39). v1.0.39 stable released April 28 with ACP session permission toggle.",
+    "2026-04-29: github.com/anthropics/claude-code/releases fetchable. v2.1.122 (April 28 22:05 UTC) adds ANTHROPIC_BEDROCK_SERVICE_TIER env var and PR URL detection in /resume.",
+    "2026-04-29: github.com/openai/codex/releases shows only 0.126.0-alpha.9 through 0.126.0-alpha.11 (April 28). All pre-release. Most recent stable remains 0.125.0 from April 24, already covered April 25.",
+    "2026-04-29: Flowise CVE-2026-40933 (CVSS 10.0, MCP adapter RCE) published April 21 - too old for today's window. Not included.",
+    "2026-04-29: Microsoft Entra ID Agent ID Administrator flaw was patched April 9 but publicly disclosed April 28 by Silverfort after coordinated disclosure. Including the disclosure date as the event date is correct per supply chain attack precedent. The action is to audit, not to patch.",
+    "2026-04-29: 1M token context window retirement (April 30) not re-included per duplication rule. Already covered April 3. Next run (April 30) should reframe as completed event.",
+    "2026-04-29: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains April 24 (Rate Limits API). No new entries April 27-29.",
+    "2026-04-29: aboutamazon.com/news/aws/bedrock-openai-models returned 403 via WebFetch. Used WebSearch and openai.com/index/openai-on-aws/ plus aws.amazon.com/about-aws/whats-new/ instead.",
+    "2026-04-29: No new Zapier or Make.com product updates found for April 27-29.",
+    "2026-04-29: No detached HEAD issue this session. Likely started on main."
   ]
 }

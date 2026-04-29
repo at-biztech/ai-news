@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-04-29",
     "2026-04-28",
     "2026-04-27",
     "2026-04-26",
@@ -3964,14 +3965,204 @@
           ]
         }
       ]
+    },
+    "2026-04-29": {
+      "dateKey": "2026-04-29",
+      "date": "April 29, 2026",
+      "summary": "OpenAI ends Azure exclusivity and lands GPT-5.4 on Amazon Bedrock within 24 hours; Anthropic ships 9 MCP connectors spanning Adobe, Blender, and Autodesk; and Microsoft patches an Entra ID role flaw that let AI agents escalate to service principal takeover.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "OpenAI ends Azure exclusivity and ships GPT-5.4 on Amazon Bedrock the same day",
+          "description": "Microsoft and OpenAI restructured their partnership on April 27, ending the exclusive Azure cloud commitment and making the IP license explicitly non-exclusive through 2032. Within 24 hours, GPT-5.4 went live in limited preview on Amazon Bedrock, with GPT-5.5, Codex, and OpenAI Managed Agents to follow. Bedrock access inherits native AWS controls including IAM, PrivateLink, CloudTrail logging, and guardrails, removing the need for a separate OpenAI API key management layer.",
+          "action": "Test OpenAI model access through your existing Bedrock infrastructure. Teams already routing Anthropic and Gemini via Bedrock can now add GPT-5.4 without changing auth or billing architecture.",
+          "tools": [
+            "Amazon Bedrock",
+            "OpenAI API",
+            "GPT-5.4",
+            "Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blogs.microsoft.com/blog/2026/04/27/the-next-phase-of-the-microsoft-openai-partnership/",
+              "name": "Microsoft Blog"
+            },
+            {
+              "url": "https://openai.com/index/openai-on-aws/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/04/bedrock-openai-models-codex-managed-agents/",
+              "name": "AWS"
+            },
+            {
+              "url": "https://www.cnbc.com/2026/04/28/openai-brings-models-to-aws-after-ending-exclusivity-with-microsoft.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://www.theregister.com/2026/04/28/openai_climbs_into_amazons_bedrock/",
+              "name": "The Register"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Anthropic releases 9 MCP connectors spanning Adobe Creative Cloud, Blender, Autodesk, and Ableton",
+          "description": "Anthropic launched MCP connectors for Adobe Creative Cloud (Photoshop, Premiere, Express plus 47 other apps), Blender, Autodesk Fusion, Ableton, Splice, Affinity, SketchUp, and Resolume, accessible through Claude Cowork and the Claude apps. The Blender connector enables analysing and scripting entire 3D scenes; the Adobe connector spans the full Creative Cloud portfolio. Anthropic simultaneously joined the Blender Development Fund as a patron to support the Python API used by the connector.",
+          "action": "Enable the Adobe or Blender connector in Claude Cowork for any client running a creative production workflow. The Adobe connector bridges the 50-app Creative Cloud suite through a single MCP endpoint without custom integration work.",
+          "tools": [
+            "Claude Cowork",
+            "Adobe Creative Cloud",
+            "Blender",
+            "Autodesk Fusion",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://9to5mac.com/2026/04/28/anthropic-releases-9-new-claude-connectors-for-creative-tools-including-blender-and-adobe/",
+              "name": "9to5Mac"
+            },
+            {
+              "url": "https://www.macrumors.com/2026/04/28/claude-creative-tool-connectors/",
+              "name": "MacRumors"
+            },
+            {
+              "url": "https://www.anthropic.com/news/claude-for-creative-work",
+              "name": "Anthropic"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Microsoft patches Entra ID agent role that let AI agents escalate to tenant-wide service principal takeover",
+          "description": "Silverfort disclosed on April 28 that the Agent ID Administrator built-in role in Entra ID, introduced as part of Microsoft's agent identity platform, had scope overreach allowing any assigned user to become owner of arbitrary service principals beyond agent-related identities. Exploiting this on a privileged service principal could grant tenant-wide control. Microsoft patched the role scope on April 9 after Silverfort's March 1 report; Silverfort's public disclosure on April 28 confirmed 99 percent of enterprise tenants had at least one privileged service principal meeting the escalation conditions.",
+          "action": "Audit all Agent ID Administrator role assignments in Entra ID tenants running AI agents. The Microsoft patch applied April 9 is server-side with no action needed, but any service principal that was compromised before that date should be reviewed for unexpected owners or credentials.",
+          "tools": [
+            "Microsoft Entra ID",
+            "Azure"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/04/microsoft-patches-entra-id-role-flaw.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://www.silverfort.com/blog/agent-id-administrator-scope-overreach-service-principal-takeover-in-entra-id/",
+              "name": "Silverfort"
+            },
+            {
+              "url": "https://www.scworld.com/news/microsoft-patches-entra-id-bug-that-let-ai-agents-escalate-privileges",
+              "name": "SC Media"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.122 adds Bedrock service tier selection and fixes structured output errors on Vertex AI",
+          "description": "Version 2.1.122, released April 28, adds the ANTHROPIC_BEDROCK_SERVICE_TIER environment variable to select default, flex, or priority capacity tiers in Bedrock deployments. Pasting a PR URL into the /resume search now automatically finds the session that created that PR across GitHub, GitLab, and Bitbucket. Fixes resolve a Vertex AI and Bedrock structured-output 400 error and a Vertex AI count_tokens 400 behind proxy gateways.",
+          "action": "Set ANTHROPIC_BEDROCK_SERVICE_TIER=priority in production Bedrock environments if capacity consistency is required. The /resume PR URL detection reduces context loss when returning to multi-repo agent sessions.",
+          "tools": [
+            "Claude Code",
+            "Amazon Bedrock",
+            "Vertex AI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.122",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "n8n 2.18.4 graduates to stable with AI agent max steps raised from 5 to 60",
+          "description": "The 2.18.x line reached stable status with version 2.18.4, released April 27. The AI builder orchestrator maximum steps ceiling increased from 5 to 60, enabling significantly longer autonomous agent runs without manual workflow continuation. The release also adds a computer use toggle to the chat sidebar, private npm package authentication for community node installations, and OIDC configuration via environment variables.",
+          "action": "Update to n8n 2.18.4. The 12x increase in AI agent max steps removes the most common bottleneck in long-running automation workflows. Review any workflows that previously hit the 5-step limit and re-run with increased depth.",
+          "tools": [
+            "n8n"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.18.4",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Copilot CLI 1.0.39 adds ACP session permission mode toggle and background task execution",
+          "description": "Version 1.0.39, released April 28, lets ACP clients toggle allow-all permission mode via session configuration without modifying global settings. New slash commands /compact, /context, /usage, and /env are available inside ACP sessions. Background task execution via Ctrl+X then B moves a running task to the background while continuing in the terminal, mirroring the Claude Code workflow.",
+          "action": "Update to 1.0.39 and use the ACP session permission mode toggle for scripted environments where you want allow-all scoped to a single session rather than persisted globally.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.39",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 6,
+      "relevant": 6,
+      "critical": 1,
+      "watch": 5,
+      "low": 0
     }
-  },
-  "items": [],
-  "totalScanned": 0,
-  "relevant": 0,
-  "critical": 0,
-  "watch": 0,
-  "low": 0,
-  "dateKey": "2026-04-22",
-  "date": "April 22, 2026"
+  }
 }
