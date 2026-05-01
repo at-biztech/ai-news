@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-01",
     "2026-04-30",
     "2026-04-29",
     "2026-04-28",
@@ -4236,6 +4237,72 @@
       "relevant": 2,
       "critical": 1,
       "watch": 1,
+      "low": 0
+    },
+    "2026-05-01": {
+      "dateKey": "2026-05-01",
+      "date": "May 1, 2026",
+      "summary": "OpenAI Codex CLI v0.128.0 ships persisted slash goal task workflows with app-server pause and resume controls; NVIDIA open-sources Nemotron 3 Nano Omni, a 30B multimodal model covering vision, audio, and text on 25 GB RAM.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Codex CLI v0.128.0 ships persisted goal workflows with app server pause and resume controls",
+          "description": "Codex CLI v0.128.0, released April 30, is the first stable build with persistent /goal workflows: tasks survive process restarts and can be paused, forked, or resumed via new app-server APIs and TUI controls. The release also adds configurable terminal keymaps, expanded permission profiles with sandbox-aware built-in defaults, remote plugin bundle caching, and external agent session import for bringing sessions from other tools into Codex. MultiAgentV2 configuration is now explicit, giving orchestrators fine-grained control over subagent behavior.",
+          "action": "Update to v0.128.0 and migrate long-running task automation from ephemeral sessions to /goal workflows. Review the new permission profile defaults to ensure sandbox CLI profiles match your security posture before enabling remote bundle caching.",
+          "tools": [
+            "OpenAI Codex CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases/tag/v0.128.0",
+              "name": "GitHub"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "OpenSource",
+          "headline": "NVIDIA releases Nemotron 3 Nano Omni open multimodal model combining vision speech and text on 25 GB RAM",
+          "description": "Nemotron 3 Nano Omni is a 30B hybrid Mixture-of-Experts model that activates only 3B parameters per token, combining vision, audio, and language in a single open model that fits in 25 GB of GPU memory. NVIDIA reports up to 9x higher throughput than comparable open omni models on video and document workloads and tops six leaderboards for complex document intelligence and video and audio understanding. The model is available via Hugging Face, OpenRouter, build.nvidia.com, and more than 25 partner platforms.",
+          "action": "Evaluate as a single-model replacement for separate vision and speech pipelines in document intelligence or multimodal agent workflows. Available immediately on OpenRouter with pay-per-token pricing for rapid prototyping before committing to self-hosted deployment.",
+          "tools": [
+            "Hugging Face",
+            "OpenRouter",
+            "build.nvidia.com"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://siliconangle.com/2026/04/28/nvidia-introduces-nemotron-3-nano-omni-vision-speech-powerful-agentic-ai-use/",
+              "name": "SiliconANGLE"
+            },
+            {
+              "url": "https://blogs.nvidia.com/blog/nemotron-3-nano-omni-multimodal-ai-agents/",
+              "name": "NVIDIA Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 2,
+      "relevant": 2,
+      "critical": 0,
+      "watch": 2,
       "low": 0
     }
   }

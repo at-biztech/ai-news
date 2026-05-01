@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-30T09:00+06:00",
+  "lastUpdated": "2026-05-01T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -310,6 +310,18 @@
     "2026-04-30: n8n 2.18.5 (April 28) main features: AI builder 'hide and reap intermediate AI-created workflows', AI Gateway credential warning on publish, OpenAI Node dynamic image editing model select. Skipped per established n8n minor bugfix/feature precedent.",
     "2026-04-30: No detached HEAD issue this session. Repo was on main branch and up to date with origin/main.",
     "2026-04-30: Gemini API changelog returned 403 again (consistent with sourceNotes). WebSearch used as fallback.",
-    "2026-04-30: No new Zapier, Make.com, or Airtable product updates found for April 29-30."
+    "2026-04-30: No new Zapier, Make.com, or Airtable product updates found for April 29-30.",
+    "2026-05-01: 2 items (0 CRITICAL, 2 WATCH, 0 LOW). OpenAI Codex CLI v0.128.0 with persisted /goal workflows, app-server APIs, TUI keymaps, expanded permission profiles, and MultiAgentV2 config (WATCH 7, April 30 16:40 UTC, GitHub releases direct fetch). NVIDIA Nemotron 3 Nano Omni open multimodal model 30B MoE with 3B active params, vision/audio/text, 25GB RAM, available on HuggingFace and OpenRouter (WATCH 6, April 28, SiliconANGLE confirmed).",
+    "2026-05-01: Quiet Friday. No new Claude Code releases (v2.1.123 April 29 was OAuth bugfix only, skipped). No new n8n stable (2.18.5 was minor, 2.19.x still pre-release). GitHub Copilot CLI v1.0.40-x all pre-release. No new Anthropic API entries (latest still April 24 Rate Limits API on platform.claude.com).",
+    "2026-05-01: OpenAI macOS certificate revocation requiring update before May 8 - original announcement was April 8-11 per CNBC (openai.com/index/axios-developer-tool-compromise/). Hipther aggregator framed it as 'April 29 urgent alert' but that appears to be approaching-deadline re-reporting of the April 11 announcement. Skipped as stale (20+ days old).",
+    "2026-05-01: OpenAI Realtime API Beta deprecation May 7 was announced February 27, 2026. Already skipped in April 27 digest. Not re-included.",
+    "2026-05-01: DALL-E 2/3 retirement May 12, 2026 announced November 2025. Not in prior digests but too stale to include now (6 months old announcement). Skipped.",
+    "2026-05-01: Vercel AI Gateway GPT-5.5 and DeepSeek V4 additions - both models were added to the gateway around April 23-24 when they launched, outside the 48-hour window for May 1. Skipped.",
+    "2026-05-01: GLM-5.1 (Zhipu AI) release date confirmed as April 7. Way outside window. Skipped.",
+    "2026-05-01: Microsoft Agent Governance Toolkit released April 2-3. Way outside window. Skipped.",
+    "2026-05-01: NVIDIA Nemotron 3 Nano Omni is NOT in topicsLowInterest (which lists: AI art, music, gaming, autonomous vehicles, robotics hardware, quantum computing, space AI). It is a model release available on OpenRouter and HuggingFace, relevant for builders building document intelligence and multimodal agent workflows. Scored WATCH 6.",
+    "2026-05-01: github.com/openai/codex/releases direct fetch succeeded. v0.128.0 stable (April 30 16:40 UTC) is confirmed. v0.129.0-alpha.1 (April 30 22:09) is pre-release, skipped per established precedent.",
+    "2026-05-01: No detached HEAD issue this session. Started on main branch and up to date with origin/main.",
+    "2026-05-01: No new Zapier, Make.com, or Airtable product updates found for April 29 to May 1."
   ]
 }
