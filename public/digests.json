@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-02",
     "2026-05-01",
     "2026-04-30",
     "2026-04-29",
@@ -4303,6 +4304,174 @@
       "relevant": 2,
       "critical": 0,
       "watch": 2,
+      "low": 0
+    },
+    "2026-05-02": {
+      "dateKey": "2026-05-02",
+      "date": "May 2, 2026",
+      "summary": "Google patches a CVSS 10.0 remote code execution flaw in Gemini CLI CI headless mode, Microsoft launches Agent 365 as a universal AI agent governance platform with native MCP tool controls, and Cursor IDE discloses a CVSS 9.9 git hook RCE patched in February.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Google patches CVSS 10.0 remote code execution flaw in Gemini CLI CI headless mode",
+          "description": "Gemini CLI versions below 0.39.1 contained a maximum severity RCE: in headless mode the tool automatically trusted any workspace folder, allowing an attacker to place a malicious GEMINI.md config file that executed commands on the host before the agent sandbox initialized, turning any CI pipeline running gemini headless into a supply chain attack surface. The flaw was discovered by Novee Security and Pillar Security and fixed in @google/gemini-cli 0.39.1 and 0.40.0-preview.3. Any automated code review or AI-assisted CI workflow using Gemini CLI on GitHub Actions, GitLab CI, or similar was exposed.",
+          "action": "Update Gemini CLI to 0.39.1 or later immediately. Audit CI pipelines that call gemini in headless mode for unexpected config files. Review workspace trust settings if you self-host Gemini agents.",
+          "tools": [
+            "Gemini CLI",
+            "GitHub Actions",
+            "GitLab CI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.theregister.com/2026/04/30/googles_fix_for_critical_gemini/",
+              "name": "The Register"
+            },
+            {
+              "url": "https://thehackernews.com/2026/04/google-fixes-cvss-10-gemini-cli-ci-rce.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://novee.security/blog/google-gemini-cli-rce-vulnerability-cvss-10-critical-security-advisory/",
+              "name": "Novee Security"
+            },
+            {
+              "url": "https://www.csoonline.com/article/4165470/max-severity-rce-flaw-found-in-google-gemini-cli.html",
+              "name": "CSO Online"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Microsoft Agent 365 launches as universal AI agent governance platform with native MCP tool controls",
+          "description": "Microsoft Agent 365 is now generally available at $15 per user per month as a unified control plane for enterprise AI agents regardless of framework (Anthropic Claude Code SDK, OpenAI Agents SDK, LangChain, Copilot Studio, and any third-party implementation) or hosting provider (Azure, AWS, GCP, on-premises). Agents register via the Agent 365 SDK or CLI and expose standardized MCP interfaces; administrators can centrally view, allow, or block MCP tools tenant-wide and detect overprivileged maker credentials in agent configurations. Agent 365 is bundled in the new Microsoft 365 E7 Frontier Suite at $99 per user per month alongside M365 Copilot and Entra Suite, with local agent discovery and blocking entering preview.",
+          "action": "If you build agents for enterprise clients on Microsoft 365, register agents via the Agent 365 SDK for centralized MCP tool governance and audit trails. Evaluate E7 bundle pricing versus standalone if your clients already pay for E5 plus Copilot.",
+          "tools": [
+            "Microsoft Agent 365",
+            "Claude Code SDK",
+            "OpenAI Agents SDK",
+            "LangChain",
+            "Copilot Studio",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/",
+              "name": "Microsoft Security Blog"
+            },
+            {
+              "url": "https://techcommunity.microsoft.com/blog/agent-365-blog/what%E2%80%99s-new-in-agent-365-may-2026/4516340",
+              "name": "Microsoft Tech Community"
+            },
+            {
+              "url": "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
+              "name": "Microsoft Learn"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "CVE-2026-26268 Cursor IDE CVSS 9.9 git hook RCE disclosed after February patch",
+          "description": "Novee Security disclosed CVE-2026-26268, a CVSS 9.9 remote code execution vulnerability in Cursor IDE versions below 2.5: an attacker embeds a malicious pre-commit hook in a nested bare repository, which Cursor's AI agent triggers automatically during routine git operations such as checkout, executing arbitrary code on the developer's machine without user interaction or warning. The root cause is agentic git workflows operating on untrusted repositories without hook sandboxing. Patched in Cursor 2.5 in February 2026; public disclosure followed April 28 after coordinated disclosure.",
+          "action": "Update Cursor to version 2.5 or later. Treat any cloned third-party repository as untrusted when using Cursor's AI-driven git features until the repo is audited.",
+          "tools": [
+            "Cursor IDE"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://novee.security/blog/cursor-ide-cve-2026-26268-git-hook-arbitrary-code-execution/",
+              "name": "Novee Security"
+            },
+            {
+              "url": "https://thehackernews.com/2026/04/google-fixes-cvss-10-gemini-cli-ci-rce.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://www.csoonline.com/article/4164250/critical-cursor-bug-could-turn-routine-git-into-rce.html",
+              "name": "CSO Online"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.126 adds gateway model discovery and terminal OAuth paste for containerized installs",
+          "description": "The model picker in Claude Code now queries the /v1/models endpoint from any Anthropic-compatible gateway when ANTHROPIC_BASE_URL is set, enabling dynamic model selection on custom proxies and self-hosted deployments without hardcoding model IDs. A new claude project purge command deletes all project-level state including transcripts, tasks, file history, and config entries with dry-run and interactive safety modes. OAuth login now accepts codes pasted directly in the terminal, unblocking WSL2, SSH, and container environments where browser callbacks cannot reach localhost. A security fix corrects allowManagedDomainsOnly and allowManagedReadPathsOnly being silently bypassed when a higher-priority managed settings source lacked a sandbox block.",
+          "action": "Update to 2.1.126 if running Claude Code behind a custom ANTHROPIC_BASE_URL gateway: the model picker now auto-discovers available models from your gateway. Use claude project purge for clean-slate resets in CI or ephemeral environments.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.126",
+              "name": "GitHub"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.40 adds client credentials OAuth for headless MCP server authentication",
+          "description": "Copilot CLI v1.0.40 adds the client_credentials OAuth grant type for MCP servers, enabling fully headless server-to-server authentication without browser redirects for automated MCP orchestration pipelines. The release also adds automatic Azure DevOps repository detection with GitHub MCP server disabling to prevent conflicting repository context when working in ADO environments. A CPU hang caused by large file attachments is resolved, async CA certificate loading speeds up CLI startup, and session history plus file tracking are now available to all users.",
+          "action": "Use client_credentials OAuth to connect Copilot CLI-managed MCP servers into headless automation pipelines without user login steps. Test ADO workspace detection if you operate in both GitHub and Azure DevOps environments.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.40",
+              "name": "GitHub"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 5,
+      "critical": 2,
+      "watch": 3,
       "low": 0
     }
   }

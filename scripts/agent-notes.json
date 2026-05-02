@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-01T09:00+06:00",
+  "lastUpdated": "2026-05-02T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -322,6 +322,22 @@
     "2026-05-01: NVIDIA Nemotron 3 Nano Omni is NOT in topicsLowInterest (which lists: AI art, music, gaming, autonomous vehicles, robotics hardware, quantum computing, space AI). It is a model release available on OpenRouter and HuggingFace, relevant for builders building document intelligence and multimodal agent workflows. Scored WATCH 6.",
     "2026-05-01: github.com/openai/codex/releases direct fetch succeeded. v0.128.0 stable (April 30 16:40 UTC) is confirmed. v0.129.0-alpha.1 (April 30 22:09) is pre-release, skipped per established precedent.",
     "2026-05-01: No detached HEAD issue this session. Started on main branch and up to date with origin/main.",
-    "2026-05-01: No new Zapier, Make.com, or Airtable product updates found for April 29 to May 1."
+    "2026-05-01: No new Zapier, Make.com, or Airtable product updates found for April 29 to May 1.",
+    "2026-05-02: 5 items (2 CRITICAL, 3 WATCH, 0 LOW). Gemini CLI CVSS 10.0 RCE patched in 0.39.1 (CRITICAL 9, The Register/THN April 30, Novee Security April 30), Microsoft Agent 365 GA as universal AI agent governance platform with MCP tool controls at $15/user/month (CRITICAL 8, Microsoft Security Blog May 1), CVE-2026-26268 Cursor IDE CVSS 9.9 RCE via git hooks disclosed after February patch (WATCH 7, Novee Security April 28, THN April 30), Claude Code 2.1.126 with gateway model discovery and terminal OAuth paste (WATCH 7, GitHub May 1), GitHub Copilot CLI 1.0.40 with client_credentials OAuth for headless MCP auth (WATCH 6, GitHub May 1).",
+    "2026-05-02: Gemini CLI CVSS 10.0 RCE is the biggest security story of the week. Headless mode auto-trusted workspace folders, turning any CI pipeline using gemini headless into a supply chain attack surface. Fixed in 0.39.1. Confirmed via The Register April 30 (primary) and THN April 30. Both are Tier 1 sources.",
+    "2026-05-02: Microsoft Agent 365 GA is a structural platform launch. It governs Claude Code SDK, OpenAI Agents SDK, LangChain agents via MCP interfaces. Any builder who manages agents for enterprise Microsoft 365 clients needs to know this exists. It introduces a new market category: AI agent governance platform.",
+    "2026-05-02: CVE-2026-26268 (Cursor IDE) was patched February 2026 but publicly disclosed April 28. Included per LMDeploy and MCP STDIO precedents (include at public disclosure date, not patch date). CVSS 9.9, covered by THN April 30 within 48h window.",
+    "2026-05-02: Claude Code 2.1.126 gateway model discovery (/v1/models endpoint) is significant for proxy and self-hosted users. Until now model selection required hardcoding when using ANTHROPIC_BASE_URL. The project purge command and WSL2 OAuth fix are useful operationally.",
+    "2026-05-02: Copilot CLI 1.0.40 client_credentials OAuth for MCP is the headless auth pattern builders need for server-to-server MCP pipelines. Azure DevOps detection resolves a real pain point for cross-platform teams.",
+    "2026-05-02: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains April 30 (1M context window beta retirement). No new entries May 1-2.",
+    "2026-05-02: github.com/anthropics/claude-code/releases fetchable. v2.1.126 (May 1 02:05 UTC) is freshest. No v2.1.127 as of this run.",
+    "2026-05-02: github.com/github/copilot-cli/releases fetchable. v1.0.40 stable (May 1) with client_credentials MCP OAuth and Azure DevOps detection. v1.0.40-0 through v1.0.40-3 were pre-releases on April 29-30, all skipped per pre-release precedent.",
+    "2026-05-02: github.com/openai/codex/releases shows only 0.129.0-alpha.1 and alpha.2 (May 1). All pre-release, skipped per established precedent. Latest stable remains 0.128.0 from April 30 (already covered May 1 digest).",
+    "2026-05-02: n8n 2.19.2 still pre-release (May 1). n8n 2.18.5 remains latest stable (April 28, covered April 29). Skipped per pre-release precedent.",
+    "2026-05-02: OpenAI Realtime API Beta deprecation May 7 - announcement date confirmed as February 27, 2026. Stale announcement, not included. Noted again for May 7 run: reframe as completed event.",
+    "2026-05-02: DALL-E 2/3 retirement May 12 - announced November 2025. Way stale. Not included.",
+    "2026-05-02: DeepSeek model alias deprecation (deepseek-chat, deepseek-reasoner) scheduled July 24 is a future event, not new news. Skipped.",
+    "2026-05-02: No detached HEAD issue this session. Repo started on main branch and up to date with origin/main.",
+    "2026-05-02: No new Zapier, Make.com, or Airtable product updates found for May 1-2."
   ]
 }
