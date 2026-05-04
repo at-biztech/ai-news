@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-03T09:00+06:00",
+  "lastUpdated": "2026-05-04T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -351,6 +351,15 @@
     "2026-05-03: No new Zapier, Make.com, or Airtable product updates found for May 2-3.",
     "2026-05-03: No detached HEAD issue this session. Started on main branch and up to date with origin/main.",
     "2026-05-03: DALL-E 2/3 retirement covered today (May 3). Future May 12 run should reframe as completed event, similar to Haiku 3 (April 20) and 1M context window (April 30).",
-    "2026-05-03: OpenAI Realtime API Beta retirement covered today (May 3) as countdown. Future May 7 run should reframe as completed event. Do NOT re-include as a new item after it is complete."
+    "2026-05-03: OpenAI Realtime API Beta retirement covered today (May 3) as countdown. Future May 7 run should reframe as completed event. Do NOT re-include as a new item after it is complete.",
+    "2026-05-04: 1 item (0 CRITICAL, 1 WATCH, 0 LOW). DeepSeek V4-Pro 75 percent discount extended to May 31 (WATCH 7, May 3, DeepSeek AI X post status/2049312932014813344, confirmed by API docs).",
+    "2026-05-04: Quiet weekend. No new Claude Code releases after v2.1.126 (May 1, covered May 2). No new n8n stable (2.19.x still pre-release, latest stable 2.18.5). No new GitHub Copilot CLI after v1.0.40 (May 1, covered May 2). No new OpenAI Codex CLI stable after v0.128.0 (April 30, covered May 1). Gemini CLI latest stable v0.40.1 (April 30). LiteLLM latest stable v1.83.14-stable (April 27).",
+    "2026-05-04: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains April 30 (1M context window beta retirement). No new Anthropic API entries May 1-4.",
+    "2026-05-04: DeepSeek V4-Pro discount extension (May 3, Twitter snowflake analysis confirms ~May 3 publish date for status 2049312932014813344). Original deadline was May 5 as announced April 27; extended to May 31. Note: Claude Code integration (deepseek-v4-pro[1m] for 1M context) was part of the original April 27 announcement, not new, but was never covered in any prior digest. Included both in this item.",
+    "2026-05-04: Items evaluated and rejected due to date: Writer event-based triggers for enterprise AI agents (April 30, Businesswire, 4 days old - outside 48h window), IBM Granite 4.1 3B/8B/30B Apache 2.0 (April 29-30, 4-5 days old, WATCH 6 - outside window), CVE-2026-3854 GitHub Enterprise RCE (April 28 disclosure, 6 days old, no active exploitation found).",
+    "2026-05-04: Items confirmed as already covered in prior digests: Gemini Deep Research Max (April 26), Gemini Embedding 2 GA (April 21 - also too old), OpenAI Realtime API Beta retirement May 7 (covered May 3), DALL-E 2/3 retirement May 12 (covered May 3), LiteLLM CVE-2026-42208 (covered May 3 agent notes as outside window).",
+    "2026-05-04: No detached HEAD issue this session. Repository was on main branch and up to date with origin/main.",
+    "2026-05-04: No new Zapier, Make.com, or Airtable product updates found for May 2-4.",
+    "2026-05-04: Claude Sonnet 4.8 rumored for May (search results) but no confirmed announcement. Skip as speculation."
   ]
 }

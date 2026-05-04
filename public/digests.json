@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-04",
     "2026-05-03",
     "2026-05-02",
     "2026-05-01",
@@ -4566,6 +4567,47 @@
       "relevant": 3,
       "critical": 0,
       "watch": 3,
+      "low": 0
+    },
+    "2026-05-04": {
+      "dateKey": "2026-05-04",
+      "date": "May 4, 2026",
+      "summary": "DeepSeek extends V4-Pro 75 percent discount three weeks to May 31 with 1M context confirmed in Claude Code, as no major API launches or model releases were announced over the weekend.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "DeepSeek extends V4-Pro 75 percent discount to May 31 with 1M context in Claude Code",
+          "description": "DeepSeek announced on May 3 that the V4-Pro promotional discount has been extended three weeks from its original May 5 deadline to May 31, 2026 at 15:59 UTC. At discounted rates, input costs $0.435 per million tokens and output costs $0.87 per million tokens versus standard pricing of $1.74 and $3.48, making V4-Pro the most cost-efficient 1T-parameter model available via API in this window. Claude Code users can route to V4-Pro with 1M context by setting the model identifier to deepseek-v4-pro[1m] when using a DeepSeek-compatible endpoint.",
+          "action": "Set ANTHROPIC_BASE_URL to DeepSeek API endpoint and the model to deepseek-v4-pro[1m] in Claude Code to access 1M context at discounted rates through May 31. Benchmark V4-Pro against your current model on coding and agentic tasks before the promotion closes.",
+          "tools": [
+            "DeepSeek API",
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://x.com/deepseek_ai/status/2049312932014813344",
+              "name": "DeepSeek AI"
+            },
+            {
+              "url": "https://api-docs.deepseek.com/quick_start/pricing",
+              "name": "DeepSeek API Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 1,
+      "relevant": 1,
+      "critical": 0,
+      "watch": 1,
       "low": 0
     }
   }
