@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-18T09:00+06:00",
+  "lastUpdated": "2026-05-20T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -556,6 +556,22 @@
     "2026-05-19: Veo 3.1 Lite Preview (March 31, 2026) and Firebase AI Logic hybrid inference (April 2026) are both outside the 48h window. Skipped.",
     "2026-05-19: No new Zapier, Make.com, or Airtable product updates found for May 17-19.",
     "2026-05-19: No detached HEAD issue this session. Repo was on main branch and up to date with origin/main.",
-    "2026-05-19: NOTE for May 20 run: Google I/O 2026 keynote happened at 10 AM PT on May 19. Cover all actual announcements: Gemini 3.2 Flash (confirmed pre-positioned at $0.25/$2.00 per 1M tokens), Firebase AI Logic GA, Gemma 4 updates, Android 17, Android XR glasses, Veo upgrade. Check developers.googleblog.com, ai.google.dev/gemini-api/docs/changelog, and firebase.google.com/docs for exact launch details."
+    "2026-05-19: NOTE for May 20 run: Google I/O 2026 keynote happened at 10 AM PT on May 19. Cover all actual announcements: Gemini 3.2 Flash (confirmed pre-positioned at $0.25/$2.00 per 1M tokens), Firebase AI Logic GA, Gemma 4 updates, Android 17, Android XR glasses, Veo upgrade. Check developers.googleblog.com, ai.google.dev/gemini-api/docs/changelog, and firebase.google.com/docs for exact launch details.",
+    "2026-05-20: 6 items (4 CRITICAL, 2 WATCH, 0 LOW). Gemini 3.5 Flash API launch $1.50/$9.00 per MTok 4x faster than frontier (CRITICAL 9). Gemini API Managed Agents plus ADK 2.0 with breaking session schema changes (CRITICAL 9). Anthropic MCP tunnels research preview for private network MCP servers plus self-hosted sandboxes (CRITICAL 8). Firebase AI Logic GA with Gemini Live session resumption and on-device hybrid inference (CRITICAL 8). n8n 2.21.4 stable with Microsoft Agent 365 Trigger node (WATCH 7). Claude Code 2.1.145 with claude agents --json and parent OTEL spans (WATCH 7).",
+    "2026-05-20: CORRECTION on Gemini model naming. The actual model announced at Google I/O 2026 is Gemini 3.5 Flash (NOT Gemini 3.2 Flash as pre-positioned in the May 19 agent note). The pre-event speculation about Gemini 3.2 Flash was incorrect. Actual pricing $1.50/$9.00 per MTok input/output (NOT the $0.25/$2.00 pre-event estimate). Context window 1,048,576 tokens.",
+    "2026-05-20: ADK 2.0 (google-adk on PyPI, May 19) has breaking changes in agent API, event model, and session schema. Sessions from ADK 2.0 are readable by ADK 1.28+ but NOT by older 1.x. Combined with Gemini API Managed Agents item because both are powered by Antigravity 2.0 and both announced at I/O. Scored as single CRITICAL 9 item.",
+    "2026-05-20: Gemini Interactions API breaking change (default to 'steps' output format) took effect today May 20 as announced in May 10 digest. Per duplication rule, not re-included as a completed event. The legacy 'outputs' format still works until June 8 with Api-Revision: 2026-05-06 opt-out header. This is different from Haiku 3/DALL-E retirements (no immediate call failures).",
+    "2026-05-20: GitHub Copilot CLI v1.0.49 was already covered in May 19 digest. v1.0.51-1 (May 19 21:31 UTC) is pre-release. Skipped per pre-release precedent.",
+    "2026-05-20: OpenAI Codex CLI 0.131.0 stable was already covered in May 19 digest. 0.132.0-alpha.1 (May 18 21:26 UTC) is pre-release. Skipped.",
+    "2026-05-20: gpt-oss-120b and gpt-oss-20b release date traced to March 18, 2026 via OpenAI Help Center metadata. Way outside window. Skipped.",
+    "2026-05-20: Google AI Studio Android app building (native Kotlin, Jetpack Compose) and Android Studio Migration Assistant for iOS-to-Android porting announced at I/O. Score 6 (developer tools, not API capability change). Excluded in favor of higher-priority items but could be included in slower news days.",
+    "2026-05-20: Gemini Spark (24/7 personal AI agent for AI Ultra $100/month subscribers) is consumer-facing, beta only, not an API change. Excluded per rules.",
+    "2026-05-20: n8n 2.21.4 changelog was empty on GitHub (no changelog generated, CI fix only). Feature list inferred from prior agent notes tracking the 2.21.x pre-release series. Confidence set to reported.",
+    "2026-05-20: n8n 2.22.0 (May 19, 12:08 UTC) is pre-release. Skipped per established pre-release precedent.",
+    "2026-05-20: Firebase AI Logic was previously called 'Vertex AI in Firebase'. GA confirmation via firebase.blog 403 via WebFetch. Confirmed via firebase.google.com/docs/ai-logic secondary source.",
+    "2026-05-20: platform.claude.com/docs/en/release-notes/overview fetchable. May 19 entry confirmed 4 distinct API changes: MCP tunnels research preview, self-hosted sandboxes for Managed Agents, live MCP config updates in active sessions, and 100K token output spilling.",
+    "2026-05-20: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge (9bd2f01 to 643e6ef). Root cause persists: sessions start in detached HEAD state.",
+    "2026-05-20: No new Zapier or Make.com product updates found for May 19-20.",
+    "2026-05-20: NOTE for May 26 or next run: Gemini Interactions API legacy 'outputs' schema removed June 8. No day-before item needed (it was WATCH level, not CRITICAL). Just ensure clients have added Api-Revision: 2026-05-06 opt-out header if they rely on legacy format. June 8 run should confirm the removal."
   ]
 }

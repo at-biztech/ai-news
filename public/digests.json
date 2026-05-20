@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-20",
     "2026-05-19",
     "2026-05-18",
     "2026-05-17",
@@ -6226,6 +6227,195 @@
           "sourceName": ""
         }
       ]
+    },
+    "2026-05-20": {
+      "dateKey": "2026-05-20",
+      "date": "May 20, 2026",
+      "summary": "Google I/O 2026 delivers Gemini 3.5 Flash to the API and managed agent execution in isolated sandboxes; Anthropic adds MCP tunnels for private networks and self-hosted agent sandboxes.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Google launches Gemini 3.5 Flash via API at I/O 2026",
+          "description": "Gemini 3.5 Flash is available immediately in the Gemini API and Google AI Studio following the I/O 2026 keynote. The model surpasses Gemini 3.1 Pro across coding, agentic, and multimodal benchmarks while running four times faster than comparable frontier models, at $1.50/$9.00 per million input/output tokens with a 1,048,576-token context window. It is 12x faster within the Antigravity agent harness, making it the new default engine for production agentic pipelines on Google.",
+          "action": "Replace gemini-3.1-pro with gemini-3.5-flash in agentic pipelines that previously hit speed or cost ceilings; benchmark against GPT-5.5 for tasks where 4x speed and 40% lower cost per token versus 3.1 Pro matter.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.cnbc.com/2026/05/19/google-ai-ultra-gemini-spark-omni.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://openrouter.ai/google/gemini-3.5-flash",
+              "name": "OpenRouter"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Gemini API gains one-call managed agent execution in isolated Linux sandboxes",
+          "description": "Google introduced Managed Agents in the Gemini API at I/O 2026, allowing a single Interactions API call to provision a fully managed agent that reasons, uses tools, and executes code in an ephemeral isolated Linux sandbox. Agents are powered by the Antigravity 2.0 harness and Gemini 3.5 Flash, configurable via AGENTS.md files or inline parameters, and support persistent multi-turn environments where files and state survive between calls. ADK 2.0, released simultaneously on PyPI, ships a graph-based workflow engine as the companion SDK with routing, fan-out, loops, retry, state management, and Task API for agent-to-agent delegation, but introduces breaking changes in the agent API, event model, and session schema incompatible with ADK versions below 1.28.",
+          "action": "Test Gemini Managed Agents via the Interactions API as an alternative to self-managing agent execution; if using ADK 1.x, review breaking changes in ADK 2.0 before upgrading as session schema is incompatible below ADK 1.28.",
+          "tools": [
+            "Gemini API",
+            "Interactions API",
+            "Google AI Studio",
+            "Antigravity",
+            "ADK"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
+              "name": "Google Developer Blog"
+            },
+            {
+              "url": "https://siliconangle.com/2026/05/19/google-accelerates-agent-native-software-development-expanded-antigravity-platform/",
+              "name": "SiliconANGLE"
+            },
+            {
+              "url": "https://pypi.org/project/google-adk/",
+              "name": "PyPI"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Anthropic adds MCP tunnels for private networks and self-hosted agent sandboxes",
+          "description": "The May 19 Anthropic API release introduces MCP tunnels in Research Preview, enabling Claude Managed Agents to connect to MCP servers inside private networks without exposing internal endpoints to the public internet. The same release adds self-hosted sandboxes as an alternative to Anthropic-managed infrastructure for tool execution, live MCP server and tool configuration updates within active sessions, and automatic file spilling for tool outputs exceeding 100K tokens to keep context windows manageable.",
+          "action": "Pilot MCP tunnels to connect Claude agents to internal databases and APIs not reachable publicly; evaluate self-hosted sandbox option for data-residency or compliance requirements where Anthropic-managed execution is not acceptable.",
+          "tools": [
+            "Claude API",
+            "Claude Managed Agents",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Release Notes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Firebase AI Logic reaches GA with Gemini Live session resumption and hybrid on-device inference",
+          "description": "Firebase AI Logic (formerly Vertex AI in Firebase) graduated to general availability at Google I/O 2026, providing direct access to Gemini 3.x models from mobile and web clients under the same Firebase security model as Firestore, with no API key management required in client code. New production capabilities include Gemini Live API session resumption and context compression for resilient long-running voice features on unstable networks, hybrid on-device inference for iOS and Android using Gemma 4, and web inference graduating to GA in Chrome with automatic cloud fallback.",
+          "action": "Migrate mobile and web Gemini integrations to the Firebase AI Logic SDK to remove client-side API key exposure; enable Gemini Live session resumption for any voice or real-time assistant feature that must survive network interruptions.",
+          "tools": [
+            "Firebase AI Logic",
+            "Gemini API",
+            "Firebase",
+            "Android",
+            "iOS"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://firebase.blog/posts/2026/05/google-io-2026-announcements/",
+              "name": "Firebase Blog"
+            },
+            {
+              "url": "https://firebase.google.com/docs/ai-logic",
+              "name": "Firebase AI Logic Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "n8n 2.21 stable brings Microsoft Agent 365 Trigger node to production",
+          "description": "n8n version 2.21.4 graduated from pre-release to stable on May 19, making the Microsoft Agent 365 Trigger node production-ready. The node enables n8n workflows to surface as native team members inside Microsoft 365 apps including Teams and Outlook, meeting users where collaboration already happens. The 2.21 series also includes Airtable and Salesforce node updates, AI Builder archived workflow restoration, and a security fix for password reset token logging present in earlier builds.",
+          "action": "Upgrade n8n to 2.21.4 and test the Microsoft Agent 365 Trigger node to expose automation agents as Microsoft 365 team members; audit password reset flows if your n8n installation uses built-in user management.",
+          "tools": [
+            "n8n",
+            "Microsoft Agent 365",
+            "Microsoft 365"
+          ],
+          "confidence": "reported",
+          "sources": [
+            {
+              "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.21.4",
+              "name": "n8n GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.145 adds JSON agent listing and parent span OTEL tracking",
+          "description": "Claude Code 2.1.145 (May 19 UTC) introduces claude agents --json for scripting live session enumeration in tools such as tmux-resurrect, status bars, and session pickers, and adds agent_id plus parent_agent_id attributes to tool-level OTEL spans enabling distributed tracing across nested agent hierarchies. Status line JSON now includes detected GitHub repository and pull request information, and plugin discovery screens expose full metadata including commands, agents, skills, hooks, and MCP servers before installation.",
+          "action": "Add OTEL parent span tracking to existing monitoring pipelines to trace parent-child agent call chains; use claude agents --json to build custom orchestration scripts or terminal dashboards around live Claude Code sessions.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.145",
+              "name": "Claude Code GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 6,
+      "relevant": 6,
+      "critical": 4,
+      "watch": 2,
+      "low": 0
     }
   },
   "items": [],
