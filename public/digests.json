@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-24",
     "2026-05-20",
     "2026-05-19",
     "2026-05-18",
@@ -6415,6 +6416,150 @@
       "relevant": 6,
       "critical": 4,
       "watch": 2,
+      "low": 0
+    },
+    "2026-05-24": {
+      "dateKey": "2026-05-24",
+      "date": "May 24, 2026",
+      "summary": "MCP protocol locks stateless release candidate with breaking session and initialization changes while OpenAI demonstrates autonomous mathematical discovery.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "MCP 2026-07-28 release candidate locks stateless core with breaking session changes",
+          "description": "The release candidate for MCP 2026-07-28 was locked on May 21, removing the initialize handshake and Mcp-Session-Id header entirely so any request can land on any server instance behind a standard round-robin load balancer. Breaking changes include error code -32002 renamed to -32602, a redesigned Tasks extension API, and formal deprecation of Roots, Sampling, and Logging. Two extensions graduate: MCP Apps (server-rendered HTML UIs in sandboxed iframes) and Tasks (long-running work via stateless tasks/get, tasks/update, tasks/cancel). SDK maintainers have a 10-week validation window; Tier 1 SDKs must ship support before the final July 28 specification.",
+          "action": "Audit all MCP server and client implementations for session ID usage and initialize handshake dependencies. Migrate error handling from -32002 to -32602. Test against the RC schema; final breaking changes lock on July 28.",
+          "tools": [
+            "MCP",
+            "Claude Managed Agents",
+            "Copilot CLI",
+            "n8n MCP",
+            "Gemini CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+              "name": "MCP Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Research",
+          "headline": "OpenAI reasoning model autonomously disproves 80-year Erdos geometry conjecture",
+          "description": "An internal general-purpose OpenAI reasoning model independently disproved the planar unit distance conjecture posed by Paul Erdos in 1946, discovering an infinite family of point configurations via Golod-Shafarevich algebraic number theory that yields polynomial improvement over square grids. The model was not trained for mathematics, was not guided step-by-step, and received only the problem statement. Fields medalist Tim Gowers called it a milestone in AI mathematics; Princeton mathematician Will Sawin independently refined the exponent to delta 0.014. This is the first confirmed instance of AI autonomously solving a prominent open problem in a core mathematical subfield.",
+          "action": "Monitor how OpenAI packages this long-chain cross-domain reasoning capability for API access. The same sustained reasoning across disparate domains applies to biology, engineering, and materials science. Consider how research automation agents could leverage these capabilities when exposed via API.",
+          "tools": [
+            "OpenAI reasoning models"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://techcrunch.com/2026/05/20/openai-claims-it-solved-an-80-year-old-math-problem-for-real-this-time/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://dataconomy.com/2026/05/21/openai-model-disproves-erdos-geometry-conjecture/",
+              "name": "Dataconomy"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.147 and 2.1.149 ship code review command, per-category cost tracking, and enterprise MCP setting",
+          "description": "v2.1.147 (May 21) renamed /simplify to /code-review with configurable effort levels (low through max) and a --comment flag that posts findings as inline GitHub PR comments, while pinned background sessions now stay alive when idle and restart in place during updates. v2.1.149 (May 22) adds a per-category breakdown to /usage showing costs split by skills, subagents, plugins, and individual MCP servers, an enterprise allowAllClaudeAiMcps managed setting for bulk-approving cloud MCP connectors, and security fixes for a PowerShell permission bypass and a sandbox write allowlist regression in git worktrees.",
+          "action": "Update Claude Code and run /code-review high on security-sensitive PRs. Use /usage to identify which MCP servers or subagents drive cost in multi-tool pipelines. Enterprise admins can use allowAllClaudeAiMcps to pre-approve all claude.ai cloud connectors without per-server configuration.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Gemini CLI 0.43.0 adds session export and surgical edit steering",
+          "description": "Released May 22, v0.43.0 introduces session portability so active sessions can be exported to files and imported later via a CLI flag, enabling debugging handoffs between team members without restating context. The release also steers Gemini models to prefer the edit tool for surgical file modifications over full rewrites, reducing token usage and latency on large codebases, and adds an adaptive token calculator for more accurate context window estimation.",
+          "action": "Use session export to hand off complex debugging sessions without restating context. The surgical edit steering is automatic and should reduce latency on large file edits. The adaptive token calculator helps avoid context-window surprises on large repos.",
+          "tools": [
+            "Gemini CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://geminicli.com/docs/changelogs/latest/",
+              "name": "Gemini CLI Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.52 adds custom agent tool loading and MCP OAuth improvements",
+          "description": "Released May 23, v1.0.52 lets teams inject custom proprietary tools directly into Copilot CLI agent sessions without wrapping them as MCP servers, alongside MCP OAuth enhancements for more reliable auth across server connections. The release also improves context window enforcement during sessions and adds a vertical scrollbar with mouse drag for navigating long agent outputs.",
+          "action": "Teams building internal tooling can now expose custom tools to the Copilot CLI agent directly. Review the custom agent tool loading API documentation to plan migration of existing shell scripts or internal CLI tools.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 5,
+      "critical": 2,
+      "watch": 3,
       "low": 0
     }
   },
