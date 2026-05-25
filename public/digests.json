@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-25",
     "2026-05-24",
     "2026-05-20",
     "2026-05-19",
@@ -5370,7 +5371,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -6561,6 +6562,98 @@
       "critical": 2,
       "watch": 3,
       "low": 0
+    },
+    "2026-05-25": {
+      "dateKey": "2026-05-25",
+      "date": "May 25, 2026",
+      "summary": "Gemini 3.1 Flash Lite preview model retires today with all API calls now erroring, while a June 15 compound Anthropic deadline combines Sonnet 4 and Opus 4 model retirement with the new Agent SDK billing split.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Gemini 3.1 Flash Lite preview model retired today forcing immediate pipeline migration",
+          "description": "The gemini-3.1-flash-lite-preview model reached its scheduled shutdown date today and all API calls to it now return errors. Google deprecated the preview alias on May 11 with a two-week sunset window; the stable replacement gemini-3.1-flash-lite has been generally available since May 7 at a lower per-token price. Any workflow, n8n node, Make scenario, or agent using the preview model ID breaks immediately with no fallback.",
+          "action": "Replace gemini-3.1-flash-lite-preview with gemini-3.1-flash-lite in all integrations immediately. Audit MCP server configs, environment variables, and hardcoded model strings across orchestration frameworks and agent definitions.",
+          "tools": [
+            "Gemini API",
+            "n8n",
+            "Make.com",
+            "Zapier"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "name": "Gemini API Deprecations"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "June 15 Anthropic deadline pairs Sonnet 4 and Opus 4 retirement with Agent SDK billing split",
+          "description": "Three weeks from today two separate Anthropic changes land on the same date: claude-sonnet-4-20250514 and claude-opus-4-20250514 are retired and API calls to either will return an error, and all programmatic Claude usage migrates to a new monthly credit pool separate from interactive subscriptions. Anthropic sends the credit claim email on June 8, giving one week to act before enforcement. Builders who have not updated model IDs and have not claimed credits face both model errors and billing disruption simultaneously.",
+          "action": "Update model IDs to claude-sonnet-4-6 or claude-opus-4-7 now. Monitor inbox for the Anthropic June 8 email to claim Agent SDK credit allocation before June 15 enforcement.",
+          "tools": [
+            "Claude API",
+            "Claude Agent SDK"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "name": "Anthropic Model Deprecations"
+            },
+            {
+              "url": "https://thenewstack.io/anthropic-agent-sdk-credits/",
+              "name": "The New Stack"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.53 and 1.0.54 fix bash session hang and multiline prompt clipping",
+          "description": "v1.0.53 (May 24) resolves a bash session freeze triggered when PS0 or PROMPT_COMMAND environment variables are set, fixes multiline prompts being cut off in the TUI, and restores the --config-dir flag to the skills picker. v1.0.54 follows with general stability fixes. Both releases build on the 1.0.52 feature release shipped yesterday.",
+          "action": "Update to v1.0.54 if bash session hangs or multiline prompt display issues appeared after the 1.0.52 upgrade.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Copilot CLI Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 2,
+      "critical": 1,
+      "watch": 1,
+      "low": 1
     }
   },
   "items": [],

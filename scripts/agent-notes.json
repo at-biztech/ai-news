@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-24T09:00+06:00",
+  "lastUpdated": "2026-05-25T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -589,6 +589,15 @@
     "2026-05-24: No new Zapier, Make.com, or Airtable product updates found for May 21-24.",
     "2026-05-24: No detached HEAD issue this session. Repo started on main branch and up to date with origin/main.",
     "2026-05-24: NOTE for next run: OpenAI Codex CLI 0.132.0 + 0.133.0 were excluded today by strict date rules. Include in next digest if no newer 0.134.0 stable has shipped. OpenAI TanStack certificate revocation deadline June 12 - consider coverage around June 5-6 as day-before-ish urgency item. Gemini Interactions API legacy schema removal June 8 (covered May 10) - reframe as completed event.",
-    "2026-05-24: lastUpdated timestamp updated to 2026-05-24T09:00+06:00."
+    "2026-05-24: lastUpdated timestamp updated to 2026-05-24T09:00+06:00.",
+    "2026-05-25: 3 items (1 CRITICAL, 1 WATCH, 1 LOW). Gemini 3.1 Flash Lite Preview forced shutdown today - gemini-3.1-flash-lite-preview retired May 25 with all API calls now returning errors, GA replacement gemini-3.1-flash-lite available since May 7 (CRITICAL 8). June 15 Anthropic compound deadline with Sonnet 4 and Opus 4 retirement plus Agent SDK billing split happening simultaneously - credit claim email arrives June 8 (WATCH 7). GitHub Copilot CLI v1.0.53 and v1.0.54 fix bash session hang and multiline prompt clipping (LOW 5).",
+    "2026-05-25: Quiet news day. No new OpenAI announcements May 24-25. n8n 2.22.2 (May 22 10:01 UTC) is pre-release, skipped per established precedent. Claude Code v2.1.150 (May 23) is infrastructure-only with no user-facing changes, skipped per minor internal precedent.",
+    "2026-05-25: OpenAI Codex CLI 0.132.0 + 0.133.0 deferred again per May 24 note. If 0.134.0 stable ships before next run, combine all three into one item. If not, include 0.132.0 + 0.133.0 on next run using extended window precedent.",
+    "2026-05-25: Gemini Interactions API legacy schema removal is 14 days away (June 8). Covered in May 10 digest as a future-dated change. Consider reframing as completion event on June 8 run. The Api-Revision: 2026-05-06 header is the key mitigation for clients still using legacy format.",
+    "2026-05-25: OpenAI TanStack supply chain attack certificate revocation deadline June 12 (18 days away) - still too far for urgency item. Per May 24 note, target June 5-6 as inclusion point.",
+    "2026-05-25: June 15 compound deadline (Sonnet 4/Opus 4 retirement + Agent SDK billing split) synthesizes two previously covered items (April 15 and May 15 digests) into new actionable compound intelligence. Justified inclusion because: (1) combined deadline creates double migration obligation not covered in either individual item, (2) June 8 credit claim email trigger is new time-sensitive sub-action, (3) 21-day countdown is actionable planning horizon.",
+    "2026-05-25: Anthropic Stainless acquisition (May 18, TechCrunch) - remains outside all exception windows at 7 days old. No follow-up API capability changes found May 24-25. Monitor for concrete SDK or MCP tooling changes that result from the acquisition.",
+    "2026-05-25: ai.google.dev/gemini-api/docs/deprecations returned 403 via WebFetch. Gemini shutdown confirmed through multiple WebSearch results including ai.google.dev/gemini-api/docs/changelog.md.txt (also 403) and indirect source confirmation.",
+    "2026-05-25: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains May 19 (MCP tunnels, self-hosted sandboxes). No new Anthropic API entries May 20-25."
   ]
 }
