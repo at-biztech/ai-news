@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25T09:00+06:00",
+  "lastUpdated": "2026-05-26T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -598,6 +598,18 @@
     "2026-05-25: June 15 compound deadline (Sonnet 4/Opus 4 retirement + Agent SDK billing split) synthesizes two previously covered items (April 15 and May 15 digests) into new actionable compound intelligence. Justified inclusion because: (1) combined deadline creates double migration obligation not covered in either individual item, (2) June 8 credit claim email trigger is new time-sensitive sub-action, (3) 21-day countdown is actionable planning horizon.",
     "2026-05-25: Anthropic Stainless acquisition (May 18, TechCrunch) - remains outside all exception windows at 7 days old. No follow-up API capability changes found May 24-25. Monitor for concrete SDK or MCP tooling changes that result from the acquisition.",
     "2026-05-25: ai.google.dev/gemini-api/docs/deprecations returned 403 via WebFetch. Gemini shutdown confirmed through multiple WebSearch results including ai.google.dev/gemini-api/docs/changelog.md.txt (also 403) and indirect source confirmation.",
-    "2026-05-25: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains May 19 (MCP tunnels, self-hosted sandboxes). No new Anthropic API entries May 20-25."
+    "2026-05-25: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains May 19 (MCP tunnels, self-hosted sandboxes). No new Anthropic API entries May 20-25.",
+    "2026-05-26: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). TrapDoor multi-ecosystem supply chain attack poisoning AI assistant context files (CRITICAL 9, May 22-25, The Hacker News/Socket.dev/BanklessTimes May 25). Gemini Interactions API steps schema default change effective today May 26 not May 20 as previously reported (WATCH 7). Alibaba Qwen 3.7 Max API launch from May 19-20, overlooked during Google I/O week, extended window inclusion (WATCH 7).",
+    "2026-05-26: TrapDoor is the most sophisticated supply chain attack against AI developers to date. The CLAUDE.md and .cursorrules poisoning technique in PRs to browser-use, langchain, and langflow is a direct evolution of prompt injection attacks, now weaponized for credential theft at scale. Socket.dev detected the campaign on May 22 UTC; The Hacker News and BanklessTimes coverage is May 25. Within 48-hour window.",
+    "2026-05-26: Gemini Interactions API date discrepancy resolved. May 20 digest said the change happened May 20. Agent notes for May 24 flagged the discrepancy (Gemini CLI docs said May 26). Official Google migration guide confirms May 26 as the actual default change date. Legacy removed June 8. Opt-out: Api-Revision: 2026-05-07. This is a correction of an earlier digest.",
+    "2026-05-26: Qwen 3.7 Max (May 19-20) included at WATCH 7 under extended window precedent. 6-7 days old at time of inclusion - at the outer edge of the Cloudflare Agents Week precedent (7 days). Included because: (1) not in any prior digest despite strong relevance, (2) overlooked due to Google I/O density on May 20, (3) agent-first positioning directly competes with Claude Opus 4.6 for builders, (4) DashScope OpenAI-compatible API enables direct substitution. No open weights available.",
+    "2026-05-26: No new Claude Code releases after v2.1.150 (May 23, internal only). No stable OpenAI Codex CLI after v0.133.0 (May 21, borderline). No stable n8n after 2.21.7 (May 21, minor fixes). No new GitHub Copilot CLI stable after v1.0.54 (May 24, already covered in May 25 digest). No new Anthropic API entries after May 19.",
+    "2026-05-26: GitHub Copilot token-based billing June 1 (announced April 27) not included: 29 days old, far outside all precedent extension windows. Not in any prior digest but announcement age precludes inclusion.",
+    "2026-05-26: OpenAI fine-tuning wind-down (May 7 announcement) not included: 19 days old, outside 48h window.",
+    "2026-05-26: DeepSeek deepseek-chat and deepseek-reasoner names scheduled for deprecation July 24, 2026. This was announced at V4 launch (April 24, already covered in April 25 digest). Not re-included per duplication rule.",
+    "2026-05-26: Detached HEAD issue did not recur. Branch was already on main.",
+    "2026-05-26: NOTE for June 1 digest: GitHub Copilot billing transition takes effect June 1. If there are news articles dated June 1 about the change actually taking effect, include as a completed-event item (similar to Haiku 3 retirement on April 20).",
+    "2026-05-26: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as a completed-event item.",
+    "2026-05-26: NOTE for June 12 area: OpenAI TanStack supply chain attack June 12 certificate revocation deadline (originally noted in May 24 agent notes). Cover around June 5-6 when within 7 days."
   ]
 }

@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-26",
     "2026-05-25",
     "2026-05-24",
     "2026-05-20",
@@ -6654,6 +6655,122 @@
       "critical": 1,
       "watch": 1,
       "low": 1
+    },
+    "2026-05-26": {
+      "dateKey": "2026-05-26",
+      "date": "May 26, 2026",
+      "summary": "TrapDoor supply chain attack poisons AI assistant context files across npm, PyPI, and Crates.io while Gemini Interactions API defaults to steps schema today and Qwen 3.7 Max enters the agentic model market.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "TrapDoor worms through npm, PyPI and Crates.io poisoning AI assistant context files in active repos",
+          "description": "A coordinated supply chain attack active since May 22 has spread 34 malicious packages and 384 artifacts across three registries, specifically targeting AI and crypto developers. The campaign's distinctive technique embeds malicious CLAUDE.md and .cursorrules instructions in pull requests opened against popular AI repositories including langchain-ai/langchain, langflow-ai/langflow, and browser-use/browser-use, tricking AI coding assistants into running a fake security scan that exfiltrates SSH keys, GitHub tokens, AWS credentials, API keys, browser logins, and crypto wallets. Packages self-execute on import in Python, via postinstall hooks in npm, and through build.rs in Rust.",
+          "action": "Audit all packages installed from PyPI, npm, and Crates.io in the past week. Inspect open PRs on your repositories for CLAUDE.md or .cursorrules files containing scan or security audit instructions. Check CI logs for unexpected outbound requests to GitHub Pages domains.",
+          "tools": [
+            "npm",
+            "PyPI",
+            "Crates.io",
+            "Claude Code",
+            "Cursor",
+            "langchain",
+            "langflow",
+            "browser-use"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/05/trapdoor-supply-chain-attack-spreads.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://socket.dev/blog/trapdoor-crypto-stealer-npm-pypi-crates",
+              "name": "Socket Security"
+            },
+            {
+              "url": "https://www.banklesstimes.com/articles/2026/05/25/crypto-and-ai-developers-hit-by-trapdoor-malware-supply-chain-attack/",
+              "name": "BanklessTimes"
+            },
+            {
+              "url": "https://cybersecuritynews.com/supply-chain-trapdoor-malware/",
+              "name": "CyberSecurityNews"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Gemini Interactions API defaults to steps schema today with June 8 hard removal of legacy outputs",
+          "description": "The Gemini Interactions API changed its default response format from the legacy outputs array to the new steps schema today May 26, the actual effective date per the official migration guide. Earlier coverage from the May 20 digest reported the change as that day, but the API docs confirm May 26. Builders who have not migrated can use the Api-Revision: 2026-05-07 header to continue receiving legacy outputs format until June 8 when the legacy schema is permanently removed. Any Gemini API features released after May 7 are only available in the steps schema.",
+          "action": "Add Api-Revision: 2026-05-07 header immediately to any Gemini Interactions API requests that parse the outputs format. Plan and complete migration to the steps schema before June 8 to avoid hard failures.",
+          "tools": [
+            "Gemini API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026",
+              "name": "Google AI Docs: Interactions Breaking Changes"
+            },
+            {
+              "url": "https://byteiota.com/gemini-interactions-api-migrate-before-june-8/",
+              "name": "ByteIota"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Alibaba Qwen 3.7 Max launches as agent-first model with 1M context beating Claude Opus 4.6 on agentic coding",
+          "description": "Alibaba released Qwen 3.7 Max via the DashScope API on May 19 at the Alibaba Cloud Summit, but the launch was overlooked in the digest during Google I/O week. The model is purpose-built for long-running autonomous workflows with a 1M token context window and native extended-thinking mode, scoring SWE-Pro 60.6, Terminal-Bench 2.0 69.7, and GPQA Diamond 92.4 which puts it ahead of DeepSeek V4 Pro and Claude Opus 4.6 on agentic coding benchmarks. Pricing is $2.50 per million input tokens and $7.50 per million output tokens with no open weights published yet.",
+          "action": "Evaluate Qwen 3.7 Max as a parallel or fallback inference provider for agentic coding and long-horizon agent tasks where current Claude Opus or GPT-5.5 costs are limiting. DashScope API supports the OpenAI-compatible request format.",
+          "tools": [
+            "DashScope API",
+            "Qwen"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://technode.com/2026/05/21/alibaba-introduces-qwen3-7-max-as-next-gen-ai-agent-model/",
+              "name": "TechNode"
+            },
+            {
+              "url": "https://www.marktechpost.com/2026/05/21/qwen-introduces-qwen3-7-max-a-reasoning-agent-model-with-a-1m-token-context-window/",
+              "name": "MarkTechPost"
+            },
+            {
+              "url": "https://decrypt.co/368499/alibaba-qwen-3-7-max-preview-review",
+              "name": "Decrypt"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
+      "low": 0
     }
   },
   "items": [],
