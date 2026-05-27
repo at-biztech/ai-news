@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-26T09:00+06:00",
+  "lastUpdated": "2026-05-27T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -610,6 +610,18 @@
     "2026-05-26: Detached HEAD issue did not recur. Branch was already on main.",
     "2026-05-26: NOTE for June 1 digest: GitHub Copilot billing transition takes effect June 1. If there are news articles dated June 1 about the change actually taking effect, include as a completed-event item (similar to Haiku 3 retirement on April 20).",
     "2026-05-26: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as a completed-event item.",
-    "2026-05-26: NOTE for June 12 area: OpenAI TanStack supply chain attack June 12 certificate revocation deadline (originally noted in May 24 agent notes). Cover around June 5-6 when within 7 days."
+    "2026-05-26: NOTE for June 12 area: OpenAI TanStack supply chain attack June 12 certificate revocation deadline (originally noted in May 24 agent notes). Cover around June 5-6 when within 7 days.",
+    "2026-05-27: 2 items (0 CRITICAL, 2 WATCH, 0 LOW). OpenAI Codex CLI 0.134.0 with local history search, per-server MCP OAuth, and concurrent read-only tool execution (WATCH 7, May 26 19:13 UTC, GitHub releases). Iranian state group Nimbus Manticore first confirmed nation-state actor to deploy AI-written malware in live campaigns via MiniFast backdoor (WATCH 7, May 26, The Hacker News/Check Point Research).",
+    "2026-05-27: Quiet Tuesday. No new Claude Code releases after v2.1.150 (May 23, internal only, skipped). No new n8n stable after 2.21.7 (latest stable, prior digests). No new GitHub Copilot CLI stable after v1.0.54 (May 24, covered May 25). No new Anthropic API entries after May 19. No new GitHub Copilot App features beyond the existing technical preview covered May 16.",
+    "2026-05-27: OpenAI Codex CLI 0.134.0 cumulates the previously deferred 0.133.0 (goals enabled by default) and 0.132.0 (Python SDK first-class auth). Agent notes from May 24 said 'if 0.134.0 stable ships, include all three combined.' Now fulfilled. Primary coverage of 0.134.0 with 0.133.0 and 0.132.0 features noted in description.",
+    "2026-05-27: Nimbus Manticore MiniFast item confirmed via The Hacker News (May 26) and Check Point Research primary advisory. IRGC attribution confirmed. This follows the pattern of prior AI security items (MCP STDIO vulnerability April 21, LmDeploy April 26, LangChain April 27, Flowise April 21, ClaudeBleed May 9, PraisonAI May 16, NGINX May 18). AI-assisted malware development is now a confirmed nation-state technique.",
+    "2026-05-27: Gemini 2.0 Flash June 1 retirement (5 days away) NOT included per established precedent. April 22 agent note explicitly said to skip as already covered in April 5 digest. Different from DALL-E pattern ('never covered + imminent') because Gemini 2.0 Flash WAS covered April 5.",
+    "2026-05-27: Zapier Functions deprecation (September 1, 2026) - announcement confirmed as March 31, 2026 based on search results. Way outside all inclusion windows. Skipped.",
+    "2026-05-27: Karpathy joining Anthropic pretraining team (May 19) - talent/people news, not an API or tool capability change. Per established rules (no funding, layoffs, or VC stats), talent moves also excluded as they do not directly change what builders can build.",
+    "2026-05-27: No new Zapier, Make.com, or Airtable product updates found for May 26-27.",
+    "2026-05-27: No detached HEAD issue this session. Repo was on main branch and up to date with origin/main.",
+    "2026-05-27: NOTE for June 1 digest: GitHub Copilot billing transition takes effect June 1 (reiterating from May 26 note). Cover as completed-event if news articles confirm the transition. Gemini 2.0 Flash retirement June 1 - do NOT include (already covered April 5, skipped April 22).",
+    "2026-05-27: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema permanently removed June 8. Include as completed-event.",
+    "2026-05-27: lastUpdated timestamp updated to 2026-05-27T09:00+06:00."
   ]
 }

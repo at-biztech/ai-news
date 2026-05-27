@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-27",
     "2026-05-26",
     "2026-05-25",
     "2026-05-24",
@@ -6769,6 +6770,68 @@
       "totalScanned": 3,
       "relevant": 3,
       "critical": 1,
+      "watch": 2,
+      "low": 0
+    },
+    "2026-05-27": {
+      "dateKey": "2026-05-27",
+      "date": "May 27, 2026",
+      "summary": "Codex CLI 0.134.0 delivers local history search and concurrent MCP tool execution while Iran-linked hackers become the first confirmed state actor to deploy AI-written malware in live campaigns.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.134.0 ships local history search and per-server MCP OAuth with concurrent tool execution",
+          "description": "OpenAI Codex CLI 0.134.0 landed May 26 with case-insensitive search across local conversation history including result previews, elevating --profile as the primary selector across all CLI and permissions flows, and enabling per-server MCP environment targeting with OAuth credential options. Read-only MCP tools can now execute concurrently when annotated, reducing latency in parallel tool pipelines. The release cumulates the deferred 0.133.0 (goals enabled by default with dedicated storage) and 0.132.0 (Python SDK first-class auth, TUI batched probes, codex exec resume).",
+          "action": "Update Codex CLI to 0.134.0. Add readOnly annotations to MCP server configs to unlock concurrent execution. Use codex history search to surface reusable prompt and task patterns across projects.",
+          "tools": [
+            "OpenAI Codex CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases/tag/v0.134.0",
+              "name": "OpenAI Codex CLI GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Iranian state group becomes first confirmed nation-state actor to deploy AI-written malware in live campaigns",
+          "description": "Check Point Research confirmed IRGC-linked Nimbus Manticore used AI assistance to develop the MiniFast backdoor, citing evidence including verbose error handling, descriptive function naming, detailed debug strings, and modular code structure atypical for simple malware. The campaign targeted aviation, software, telecom, and energy organizations in the US, Europe, and Middle East via phishing lures and SEO poisoning that directed targets to spoofed download sites delivering weaponized installers. This is the first public attribution of AI-assisted malware authorship at the nation-state level.",
+          "action": "Brief security teams on AI-assisted malware heuristics. Audit public download pages and software distribution infrastructure for domain spoofing. Prioritize code-signing verification for any software packages your clients distribute.",
+          "tools": [],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/05/iranian-hackers-deploy-minifast-and.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://research.checkpoint.com/2026/fast-and-furious-nimbus-manticore-operations-during-the-iranian-conflict/",
+              "name": "Check Point Research"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 2,
+      "relevant": 2,
+      "critical": 0,
       "watch": 2,
       "low": 0
     }
