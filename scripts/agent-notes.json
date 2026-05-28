@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-27T09:00+06:00",
+  "lastUpdated": "2026-05-28T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -622,6 +622,22 @@
     "2026-05-27: No detached HEAD issue this session. Repo was on main branch and up to date with origin/main.",
     "2026-05-27: NOTE for June 1 digest: GitHub Copilot billing transition takes effect June 1 (reiterating from May 26 note). Cover as completed-event if news articles confirm the transition. Gemini 2.0 Flash retirement June 1 - do NOT include (already covered April 5, skipped April 22).",
     "2026-05-27: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema permanently removed June 8. Include as completed-event.",
-    "2026-05-27: lastUpdated timestamp updated to 2026-05-27T09:00+06:00."
+    "2026-05-27: lastUpdated timestamp updated to 2026-05-27T09:00+06:00.",
+    "2026-05-28: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). Anthropic Claude Compliance API with 28 vendor integrations for SIEM, DLP, SASE, CASB, eDiscovery, AI security posture management (CRITICAL 8, May 25-27, Help Net Security/SecurityWeek/Cloudflare Blog/TechTimes May 27). Claude Code 2.1.152 with MessageDisplay hook, disallowed-tools skill frontmatter, --fallback-model, /reload-skills, SessionStart hook extensions (WATCH 7, May 27, GitHub releases). Malicious npm package mouse5212-super-formatter targeting /mnt/user-data Claude directory via GitHub exfiltration, campaign Malware-Slop, 676 downloads still live on npm (WATCH 7, May 26-27, The Hacker News).",
+    "2026-05-28: Anthropic Compliance API was announced May 25 (Help Net Security, SecurityWeek) and covered by TechTimes on May 27 (within 48h). Included under 72h CRITICAL extended window. Not in any prior digest. Original announcement date May 25 confirmed.",
+    "2026-05-28: Claude Code v2.1.152 is the first release after v2.1.150 (May 23, internal only). v2.1.149 and v2.1.147 were covered in May 24 digest. v2.1.150 was skipped (internal only per agent notes May 25-26). v2.1.152 is fresh for today.",
+    "2026-05-28: mouse5212-super-formatter npm attack: GitHub account created May 26, first malicious version uploaded then. THN article May 27. Campaign name: Malware-Slop. Still live on npm registry. Targets /mnt/user-data which is Claude AI tool file upload/output directory. This is a different vector from TrapDoor (May 26 digest, repo CLAUDE.md poisoning) and Nimbus Manticore (May 27 digest, AI-written malware). Third consecutive security story in digests targeting AI developer tooling.",
+    "2026-05-28: ServiceNow Build Agent GA (Knowledge 2026 conference, May 6) is outside all inclusion windows. Not included.",
+    "2026-05-28: GitHub Copilot billing June 1 transition deferred to June 1 per established agent note plan. Claude Opus 4.7 multiplier escalation: 7.5x (April 16) -> 15x (May 1) -> 27x (June 1 for annual plan holders). VentureBeat article about 4 supply-chain attacks in 50 days noted but publication date unclear; TanStack attack June 12 certificate revocation still targeted for June 5-6 inclusion window per May 24/25 notes.",
+    "2026-05-28: Gemini 3.5 Flash (May 19) and Gemini Managed Agents / Antigravity 2.0 (May 19) are both already covered in May 20 digest. Not re-included.",
+    "2026-05-28: MCP spec RC (May 21) already covered in May 24 digest. Not re-included.",
+    "2026-05-28: n8n 2.22.4 (May 27) was a single bugfix (temp directory cleanup). Skipped per established minor bugfix precedent.",
+    "2026-05-28: GitHub Copilot CLI v1.0.55-x (all May 26-27) are pre-releases. Latest stable remains v1.0.54 (May 24), already covered in May 25 digest.",
+    "2026-05-28: Anthropic 0B+ funding round excluded per rules (no funding rounds/VC stats).",
+    "2026-05-28: NOTE for June 1 digest: GitHub Copilot billing transition takes effect June 1. Claude Opus 4.7 multiplier hits 27x for annual plan holders. Include as completed-event item with specific cost impact numbers.",
+    "2026-05-28: NOTE for June 5-6 digest: OpenAI TanStack supply chain attack certificate revocation deadline June 12. Include around June 5-6 when within 7 days.",
+    "2026-05-28: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as completed-event item.",
+    "2026-05-28: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
+    "2026-05-28: No detached HEAD issue this session. Started on main branch and up to date."
   ]
 }

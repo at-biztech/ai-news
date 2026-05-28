@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-28",
     "2026-05-27",
     "2026-05-26",
     "2026-05-25",
@@ -5373,7 +5374,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -6832,6 +6833,107 @@
       "totalScanned": 2,
       "relevant": 2,
       "critical": 0,
+      "watch": 2,
+      "low": 0
+    },
+    "2026-05-28": {
+      "dateKey": "2026-05-28",
+      "date": "May 28, 2026",
+      "summary": "Anthropic opens Claude enterprise governance to 28 security vendors via a new Compliance API while a targeted npm package steals files from Claude user directories and Claude Code 2.1.152 ships new hook primitives and skill controls.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Anthropic Compliance API connects Claude to 28 enterprise security vendors including Cloudflare, Microsoft Purview and CrowdStrike",
+          "description": "The Claude Compliance API gives IT and security teams programmatic access to two data streams from Claude Enterprise: conversation content (chats, uploaded files, projects) and activity events from Claude Enterprise and the Claude Platform. Organisations can pipe these streams into existing security stacks without building custom extractors. The 28 integrations span DLP, SASE, data security posture, SIEM, security operations, identity management, eDiscovery, AI security posture management, and observability tools from vendors including Cloudflare CASB, Microsoft Purview, CrowdStrike, Wiz, Okta, Snyk, Netskope, Palo Alto Networks, IBM Guardium, Datadog, and Zscaler.",
+          "action": "If you are deploying Claude Enterprise for clients with SIEM or DLP obligations, review the 28 vendor list and map Claude compliance data flows into existing security tooling before the audit cycle. Cloudflare CASB integration is the fastest path for organisations already running Cloudflare Zero Trust.",
+          "tools": [
+            "Claude Enterprise",
+            "Cloudflare CASB",
+            "Microsoft Purview",
+            "CrowdStrike",
+            "Wiz"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.helpnetsecurity.com/2026/05/25/anthropic-security-compliance-integrations-claude/",
+              "name": "Help Net Security"
+            },
+            {
+              "url": "https://www.securityweek.com/anthropic-expands-claudes-enterprise-security-reach-with-28-new-integrations/",
+              "name": "SecurityWeek"
+            },
+            {
+              "url": "https://blog.cloudflare.com/casb-anthropic-integration/",
+              "name": "Cloudflare Blog"
+            },
+            {
+              "url": "https://www.techtimes.com/articles/317272/20260527/claude-enterprise-security-integrations-28-vendors-now-route-ai-activity-existing-siem-dlp-tools.htm",
+              "name": "TechTimes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.152 adds MessageDisplay hook, disallowed-tools skill frontmatter and auto model fallback",
+          "description": "The May 27 release ships three new extensibility primitives: the MessageDisplay hook lets hooks intercept and transform or hide assistant message text before it renders; skills and slash commands can declare disallowed-tools in frontmatter to restrict which tools Claude can call while that skill is active; and the new --fallback-model flag makes Claude Code switch models gracefully instead of failing when the primary model is unavailable. The release also adds /reload-skills to re-scan skill directories without restarting, extends SessionStart hooks to set session titles and trigger skill reloads, and makes auto mode opt-in-free.",
+          "action": "Update to 2.1.152. Add disallowed-tools constraints to skills that should not use file system or network tools in restricted contexts. Wire MessageDisplay hooks to apply output filters or redaction before display. Set --fallback-model in CI configs to avoid hard failures on model quota.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.152",
+              "name": "Claude Code GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Malicious npm package mouse5212-super-formatter steals files from Claude user directory via GitHub exfiltration",
+          "description": "The npm package mouse5212-super-formatter, uploaded May 26 as part of a campaign named Malware-Slop, targets the /mnt/user-data directory used by the Claude AI tool to handle uploads and outputs. During postinstall it authenticates to GitHub using either an environment-resident token or a hard-coded fallback, then synchronises local workspace files into an attacker-controlled repository. The package received 676 downloads and remains live on the npm registry. The threat actor shows signs of using AI to generate the malware code itself, citing verbose error handling, descriptive naming, and modular structure atypical for simple infostealers.",
+          "action": "Run npm audit across all projects that install packages in environments where Claude Code or Claude Desktop is active. Check for mouse5212-super-formatter in node_modules and package-lock.json. Restrict GitHub token scopes in developer CI environments and rotate any tokens that exist in process.env on shared machines.",
+          "tools": [
+            "Claude Code",
+            "Claude Desktop"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/05/malicious-npm-package-stole-files-from.html",
+              "name": "The Hacker News"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
       "watch": 2,
       "low": 0
     }
