@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-29",
     "2026-05-28",
     "2026-05-27",
     "2026-05-26",
@@ -5374,7 +5375,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -6936,6 +6937,112 @@
       "critical": 1,
       "watch": 2,
       "low": 0
+    },
+    "2026-05-29": {
+      "dateKey": "2026-05-29",
+      "date": "May 29, 2026",
+      "summary": "Anthropic launches Claude Opus 4.8 at the same price as Opus 4.7 with mid-conversation system messages, adaptive thinking and dynamic workflows capped at 1,000 subagents, while Codex CLI 0.135.0 adds named permission profiles for teams.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Anthropic launches Claude Opus 4.8 with mid-conversation system messages, adaptive thinking and dynamic workflows at same Opus 4.7 price",
+          "description": "Claude Opus 4.8 ships at $5/$25 per MTok with a 1M token context window by default and 128k max output, same pricing as Opus 4.7. Two new API primitives launch alongside: mid-conversation system messages let harnesses update instructions mid-run while preserving the prompt cache, and refusal categories in stop_details let applications route different refusal types to the right fallback. Adaptive thinking triggers reasoning only when a turn needs it, spending similar tokens to Opus 4.7 at the same effort level with measurably better results; setting temperature, top_p, or top_k to non-default values now returns a 400 error, the same breaking change as Opus 4.7. Fast mode for Opus 4.8 is a research preview on the Claude API at 2x rate for 2.5x speed; fast mode for Opus 4.6 is deprecated with removal approximately 30 days after launch. Anthropic also confirmed Mythos-class models will reach all customers in the coming weeks.",
+          "action": "Drop-in upgrade: swap claude-opus-4-7 for claude-opus-4-8 at same cost. Add mid-conversation system messages for agentic runs that need instruction pivots without cache invalidation. Verify your harness does not pass non-default temperature, top_p, or top_k or add the migration check before rollout. Migrate off Opus 4.6 fast mode before late June.",
+          "tools": [
+            "Claude API",
+            "Claude Code",
+            "AWS Bedrock",
+            "GitHub Copilot"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Release Notes"
+            },
+            {
+              "url": "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://www.axios.com/2026/05/28/anthropic-opus-release-mythos",
+              "name": "Axios"
+            },
+            {
+              "url": "https://github.blog/changelog/2026-05-28-claude-opus-4-8-is-generally-available-for-github-copilot/",
+              "name": "GitHub Changelog"
+            },
+            {
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/05/claude-opus-4.8-aws/",
+              "name": "AWS"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.154 ships dynamic workflows research preview with up to 1000 subagents per run and background shell commands",
+          "description": "Claude Code 2.1.154 pairs with the Opus 4.8 launch to introduce dynamic workflows, where Claude writes a JavaScript orchestration script from your task description and a runtime executes it across up to 16 concurrent and 1,000 total subagents per session. Verified results from parallel agents are aggregated before they reach you, and active runs are tracked via the new /workflows command. Background shell commands now run with the ! shorthand without blocking the main session, and the computer use browser picker lets you target a specific connected browser via /chrome. The lean system prompt is now the default for all models except Haiku, Sonnet, and Opus 4.7 and earlier, trimming overhead on long agentic runs.",
+          "action": "Upgrade Claude Code to 2.1.154. Describe a large codebase or data task and let Claude generate a workflow; use /workflows to monitor. The ! shortcut replaces the need to open a separate terminal for background jobs. Lean system prompt as default means token counts will drop for Opus 4.8 sessions.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            },
+            {
+              "url": "https://www.marktechpost.com/2026/05/28/anthropic-ships-claude-opus-4-8-alongside-dynamic-workflows-and-cheaper-fast-mode-with-workflows-capped-at-1000-subagents/",
+              "name": "MarkTechPost"
+            },
+            {
+              "url": "https://thenewstack.io/claude-opus-48-release/",
+              "name": "The New Stack"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.135.0 adds named permission profiles and text-object Vim editing for shared team configurations",
+          "description": "Codex CLI 0.135.0 stable release adds named permission profiles to the /permissions command, letting teams define and share approval rulesets without respecifying them per session. Vim mode gains text-object editing and configurable keybindings, and codex doctor now reports richer environment and Git diagnostics for faster debug sessions.",
+          "action": "Define named permission profiles for your team's standard Codex CLI access patterns and commit them to your project config. Teams running multiple developers on shared Codex sessions will benefit most from the shared ruleset approach.",
+          "tools": [
+            "Codex CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ]
     }
   },
   "items": [],

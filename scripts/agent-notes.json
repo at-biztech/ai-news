@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T09:00+06:00",
+  "lastUpdated": "2026-05-29T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -638,6 +638,20 @@
     "2026-05-28: NOTE for June 5-6 digest: OpenAI TanStack supply chain attack certificate revocation deadline June 12. Include around June 5-6 when within 7 days.",
     "2026-05-28: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as completed-event item.",
     "2026-05-28: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
-    "2026-05-28: No detached HEAD issue this session. Started on main branch and up to date."
+    "2026-05-28: No detached HEAD issue this session. Started on main branch and up to date.",
+    "2026-05-29: 3 items (2 CRITICAL, 1 WATCH, 0 LOW). Claude Opus 4.8 launch at same $5/$25 pricing as Opus 4.7 with 1M context default, mid-conversation system messages, refusal categories, adaptive thinking, fast mode research preview (2x rate/2.5x speed), and fast mode for Opus 4.6 deprecated ~June 27 (CRITICAL 9, May 28, platform.claude.com release notes + TechCrunch/Axios/9to5Mac/MacRumors/Bloomberg). Claude Code 2.1.154 with dynamic workflows research preview capped at 1000 subagents per run, background shell commands via ! shortcut, browser selector, lean system prompt now default (CRITICAL 8, May 28, github.com/anthropics/claude-code/releases). Codex CLI 0.135.0 with named permission profiles, Vim text-object editing, enhanced codex doctor (WATCH 6, May 28, github.com/openai/codex/releases).",
+    "2026-05-29: Claude Opus 4.8 is the biggest story. Mid-conversation system messages are the most impactful API primitive: harnesses can update instructions mid-agentic-run without invalidating the prompt cache. Builders can now inject new instructions at any position in the messages array using role: system. The breaking change (temperature/top_p/top_k non-default = 400 error) applies same as Opus 4.7 - migration guide exists at platform.claude.com/docs/en/about-claude/models/migration-guide.",
+    "2026-05-29: Dynamic workflows (Claude Code research preview) are capped at 16 concurrent and 1000 total subagents per run. Claude writes a JavaScript orchestration script from your task description, runs it in background. /workflows command tracks active runs. Confirmed via MarkTechPost May 28 which had the 1000 subagent cap number not in the primary Anthropic release notes.",
+    "2026-05-29: NVIDIA Nemotron 3 Nano Omni appeared in May 27 search results but was already covered in May 1 digest (April 28 original release). Confirmed via digests.json NVIDIA search. Removed from today's digest per no-duplicate rule. The May 27 NVIDIA blog appears to be a re-surfacing of the same model, not a new release.",
+    "2026-05-29: platform.claude.com/docs/en/release-notes/overview is still fetchable. May 28 entry is the freshest. The release notes confirmed Opus 4.8 details including the mid-conversation system messages and refusal categories. Primary and authoritative source.",
+    "2026-05-29: github.com/anthropics/claude-code/releases still fetchable. v2.1.154 (May 28, 18:00) is the freshest release. v2.1.153 (May 28, 00:52) preceded it with MCP fixes and GitHub plugin skipLfs. Both within window; combined into a single item with 2.1.154 as the focal version.",
+    "2026-05-29: github.com/openai/codex/releases still fetchable. v0.135.0 stable (May 28) confirmed. v0.135.0-alpha.1 and alpha.2 (May 27) were pre-releases, skipped per established precedent.",
+    "2026-05-29: n8n 2.23.0 (May 27) is pre-release. n8n 2.22.5 (May 28) stable is 'asset updates' only. n8n 1.123.49 (May 28) is 'Drain webhook close functions to prevent MCP connection leaks' - specific MCP fix but too minor for a standalone item. All skipped per established minor bugfix and pre-release precedent.",
+    "2026-05-29: No detached HEAD issue this session. Started on main branch and up to date.",
+    "2026-05-29: NOTE for June 1 digest: GitHub Copilot billing transition takes effect June 1 (reiterated from May 26/27/28 notes). Gemini 2.0 Flash retirement June 1 - do NOT include (already covered April 5). Anthropic Opus 4.6 fast mode deprecation ~June 27 (covered today). Claude Sonnet 4 and Opus 4 retirement June 15 (covered April 15).",
+    "2026-05-29: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as completed-event item.",
+    "2026-05-29: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
+    "2026-05-29: NOTE for June 12 area: OpenAI TanStack supply chain attack certificate revocation deadline June 12. Cover around June 5-6 when within 7 days.",
+    "2026-05-29: lastUpdated timestamp updated to 2026-05-29T09:00+06:00."
   ]
 }
