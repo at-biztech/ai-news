@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-29T09:00+06:00",
+  "lastUpdated": "2026-05-30T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -652,6 +652,23 @@
     "2026-05-29: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as completed-event item.",
     "2026-05-29: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
     "2026-05-29: NOTE for June 12 area: OpenAI TanStack supply chain attack certificate revocation deadline June 12. Cover around June 5-6 when within 7 days.",
-    "2026-05-29: lastUpdated timestamp updated to 2026-05-29T09:00+06:00."
+    "2026-05-29: lastUpdated timestamp updated to 2026-05-29T09:00+06:00.",
+    "2026-05-30: 5 items (1 CRITICAL, 4 WATCH, 0 LOW). Claude Managed Agents full stack on Claude Platform on AWS (CRITICAL 8, May 29, platform.claude.com release notes + AWS What's New). OpenAI Rosalind Biodefense Program (WATCH 7, May 29, Axios/openai.com). Claude Code 2.1.157 local plugin auto-load from skills directories (WATCH 7, May 29, GitHub releases). GitHub Copilot CLI v1.0.55 and v1.0.56 with Opus 4.8 support and per-MCP-server token metrics (WATCH 6, May 28-29, GitHub releases). OpenAI Frontier Governance Framework mapping to EU AI Act and California law (WATCH 6, May 29, openai.com).",
+    "2026-05-30: Google I/O 2026 was May 19 (keynote). Gemini 3.5 Flash, Managed Agents in Gemini API, and Antigravity 2.0 were all covered in May 20 digest. Not re-included today per duplication rule. Confirmed via MacRumors, 9to5Google date stamps.",
+    "2026-05-30: NSA MCP Security guidance (CSI document U/OO/6030316-26, Ver 1.0) published May 20. Outside all inclusion windows at 10 days old. Skipped.",
+    "2026-05-30: DeepSeek V4-Pro 75% price lock confirmed as May 25 announcement. Outside 48h window. V4 was already covered in April 25 digest. Skipped.",
+    "2026-05-30: Gemini CLI v0.43.0 confirmed as May 22 release. Outside 48h window. Skipped.",
+    "2026-05-30: n8n@2.22.5 (May 28) stable but no features - just asset updates. n8n@1.123.49 is minor MCP connection leak fix. n8n@2.23.1 is pre-release. All skipped per established minor bugfix and pre-release precedent.",
+    "2026-05-30: Codex CLI 0.136.0-alpha.1 (May 29) is pre-release. Skipped per established pre-release exclusion precedent.",
+    "2026-05-30: Claude Managed Agents on AWS (May 29) was NOT in the May 29 digest which covered Opus 4.8, Code 2.1.154, and Codex 0.135.0 only. Confirmed via primary release notes. The Claude Platform on AWS initial launch (May 11) was covered in a prior digest; today's item is the specific expansion of Managed Agents features (webhooks + multiagent orchestration + self-hosted sandboxes) to AWS, which is a new event.",
+    "2026-05-30: OpenAI Rosalind Biodefense is the third domain-restricted model access program in 2026: Claude Mythos (cybersecurity, April 7), GPT-5.4-Cyber (cyber defense, April 14), and now Rosalind (biodefense, May 29). Pattern of restricting high-stakes models to vetted programs is now established across two providers.",
+    "2026-05-30: GitHub Copilot CLI v1.0.55 (May 28) was NOT in May 28 digest (Compliance API, Code 2.1.152, npm malware) or May 29 digest (Opus 4.8, Code 2.1.154, Codex 0.135.0). Combined v1.0.55 + v1.0.56 into one WATCH item.",
+    "2026-05-30: Claude Code v2.1.157 (May 29 20:20 UTC = May 30 02:20 Almaty) is within today's Almaty window. v2.1.156 (May 29 01:42 UTC) was a one-line bugfix for thinking blocks, bundled context into 2.1.157 item.",
+    "2026-05-30: No detached HEAD issue this session. Repo was on main branch and up to date.",
+    "2026-05-30: NOTE for June 1 digest: GitHub Copilot billing transition takes effect June 1. Include as completed-event with specific cost impact (premium requests replaced by AI Credits, monthly Pro/Pro+ auto-migrates). Gemini 2.0 Flash retirement June 1 - do NOT include (already covered April 5). Claude Sonnet 4/Opus 4 retirement June 15 (already covered April 15).",
+    "2026-05-30: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema permanently removed June 8. Include as completed-event.",
+    "2026-05-30: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
+    "2026-05-30: NOTE for June 12 area: OpenAI TanStack supply chain attack certificate revocation deadline June 12. Cover around June 5-6 when within 7 days.",
+    "2026-05-30: lastUpdated timestamp updated to 2026-05-30T09:00+06:00."
   ]
 }

@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-05-30",
     "2026-05-29",
     "2026-05-28",
     "2026-05-27",
@@ -7041,6 +7042,125 @@
           "sourceTier": 0,
           "sourceUrl": "",
           "sourceName": ""
+        }
+      ]
+    },
+    "2026-05-30": {
+      "dateKey": "2026-05-30",
+      "date": "May 30, 2026",
+      "summary": "Anthropic extends the full Managed Agents stack to Claude Platform on AWS while OpenAI opens free GPT-Rosalind API to vetted biodefense developers and publishes its first public governance framework aligned with EU and California AI law.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Anthropic brings full Managed Agents stack to Claude Platform on AWS with webhooks, multiagent orchestration and self-hosted sandboxes",
+          "description": "Builders using Claude Platform on AWS can now access the complete Managed Agents feature set: webhook notifications for session and vault lifecycle events, multiagent orchestration for parallel agent workloads, and self-hosted sandboxes that move tool execution onto their own AWS infrastructure while keeping orchestration on Anthropic. The new AnthropicSelfHostedEnvironmentAccess managed IAM policy gives AWS teams granular access control without requiring separate Anthropic credentials. This closes the parity gap between the direct Claude API and the AWS-hosted platform that existed since Claude Platform on AWS launched May 11.",
+          "action": "Attach the AnthropicSelfHostedEnvironmentAccess managed policy to the IAM principal your agent worker runs as; configure webhook endpoints for session lifecycle monitoring in production pipelines.",
+          "tools": [
+            "Claude Platform on AWS",
+            "Claude Managed Agents"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Release Notes"
+            },
+            {
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/",
+              "name": "AWS What's New"
+            },
+            {
+              "url": "https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws",
+              "name": "Claude Platform on AWS Docs"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "OpenAI opens free GPT-Rosalind API to vetted developers building pandemic preparedness and biodefense tools",
+          "description": "The Rosalind Biodefense Program grants free GPT-Rosalind API access to academic, nonprofit, and mission-driven teams working on biosurveillance, epidemiological modeling, vaccine research, and non-pharmaceutical interventions. Partners Lawrence Livermore, Johns Hopkins APL, and CEPI are already using the model to advance protein engineering and pandemic preparedness. This is the third domain-restricted model access program this year after Claude Mythos for cybersecurity and GPT-5.4-Cyber for cyber defense, establishing gated access to specialized models as a standard pattern for high-stakes AI work.",
+          "action": "Apply via openai.com/form/rosalind-biodefense-program if building AI tooling for public health, biosurveillance, or pandemic preparedness; note the program is U.S.-government-aligned with select international partners.",
+          "tools": [
+            "GPT-Rosalind",
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.axios.com/2026/05/29/openai-biodefense-program",
+              "name": "Axios"
+            },
+            {
+              "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/",
+              "name": "OpenAI"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.157 auto-loads plugins from local skills directories and adds plugin scaffolding command",
+          "description": "Plugins placed in any `.claude/skills` directory now load automatically without requiring marketplace installation, letting teams distribute custom capabilities entirely within their own codebase. The new `claude plugin init <name>` command scaffolds a plugin structure in the local skills directory, and tab-autocomplete now surfaces installed plugin names and available subcommands inline. Dispatched agent sessions now also honor the `agent` field in `settings.json`, enabling per-project agent defaults for multi-repo workflows.",
+          "action": "Move team plugins to `.claude/skills` to eliminate the marketplace dependency; run `claude plugin init <name>` to scaffold new plugins from the terminal.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "Claude Code GitHub Releases"
+            },
+            {
+              "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code",
+              "name": "npm"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI ships Opus 4.8 support and per MCP server token usage metrics across two rapid releases",
+          "description": "v1.0.55 (May 28) adds Claude Opus 4.8 as a supported model, reasoning token reporting that separates thinking tokens from output tokens, and per-MCP-server token usage metrics for multi-server deployments; the cell-based terminal renderer also switches to default for all users. v1.0.56 (May 29) extends model selection to free and student accounts, introduces a continuous-scroll diff view with sticky file and hunk headers, and adds atomic config file writes to prevent data loss during concurrent process updates.",
+          "action": "Teams tracking LLM spend across multiple MCP servers should update to v1.0.55+ to get per-server token breakdowns; verify atomic config writes resolve any settings corruption seen in concurrent CI environments.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Copilot CLI Releases"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Regulation",
+          "headline": "OpenAI publishes Frontier Governance Framework mapping safety risk tiers to EU AI Act and California transparency law",
+          "description": "The Frontier Governance Framework is OpenAI's first public document translating its internal Preparedness Framework into compliance language for specific regulatory obligations under the EU AI Act Code of Practice for General Purpose AI and California's Transparency in Frontier AI Act. Risk categories cover cyber offense, CBRN threats, harmful manipulation, and loss of control, each with defined assessment, mitigation, and reporting procedures. This establishes a public baseline for how frontier AI providers are expected to document and operationalize safety practices under emerging law.",
+          "action": "EU and California-facing operators building on OpenAI should review the risk category definitions to align their own acceptable-use policies and incident response procedures with the legal standards OpenAI is now documenting publicly.",
+          "tools": [
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/openai-frontier-governance-framework/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://www.artificialintelligence-news.com/news/scaling-safe-enterprise-ai-openai-governance-frameworks/",
+              "name": "AI News"
+            }
+          ]
         }
       ]
     }
