@@ -1,0 +1,125 @@
+{
+  "dateKey": "2026-05-31",
+  "date": "May 31, 2026",
+  "summary": "GitHub Copilot switches all plans to AI Credits token billing in under 24 hours as Claude Code 2.1.158 extends Auto mode to Bedrock, Vertex and Foundry and DeepSeek permanently locks its 75 percent V4 Pro price cut.",
+  "items": [
+    {
+      "score": 8,
+      "tag": "CRITICAL",
+      "category": "Tools",
+      "headline": "GitHub Copilot token billing replaces flat premium requests across all plans in under 24 hours",
+      "description": "On June 1, all GitHub Copilot plans move from premium request units (PRUs) to AI Credits, where every model interaction is billed at the underlying model's API rate (1 credit = $0.01). Pro ($29/mo), Pro+ ($39/mo), Business ($19/user/mo) and Enterprise ($39/user/mo) each receive a monthly AI Credits allotment equal to their plan cost in dollars; interactions beyond the allotment consume pay-as-you-go credits. Free and Student plan users on monthly billing are automatically migrated today; annual subscribers stay on PRU pricing until their term ends. Heavier usage of Claude Sonnet 4.6, GPT-5.5, or Gemini 3.5 Flash inside Copilot will exceed allotments faster than GPT-4.1 mini, which is included at no credit cost.",
+      "action": "Log into Billing Overview on github.com now to see the projected AI Credits preview for your team; set a spending limit before midnight to avoid unbounded credit charges on June 1.",
+      "tools": [
+        "GitHub Copilot",
+        "GitHub Copilot CLI"
+      ],
+      "confidence": "confirmed",
+      "sources": [
+        {
+          "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+          "name": "GitHub Blog"
+        },
+        {
+          "url": "https://docs.github.com/en/copilot/how-tos/manage-and-track-spending/prepare-for-your-move-to-usage-based-billing",
+          "name": "GitHub Docs"
+        }
+      ],
+      "clientPitch": "",
+      "useCase": "",
+      "timeline": "",
+      "sourceTier": 0,
+      "sourceUrl": "",
+      "sourceName": ""
+    },
+    {
+      "score": 7,
+      "tag": "WATCH",
+      "category": "Tools",
+      "headline": "Claude Code 2.1.158 extends Auto mode to Bedrock, Vertex AI and Microsoft Foundry for Opus 4.7 and 4.8",
+      "description": "Auto mode, which dynamically selects effort level and subagent count for each task, is now available on AWS Bedrock, Google Vertex AI, and Microsoft Foundry for Claude Opus 4.7 and Opus 4.8. Teams on cloud-hosted Claude must opt in via the CLAUDE_CODE_ENABLE_AUTO_MODE=1 environment variable; the default remains manual mode on these platforms. This closes the gap with direct Claude API deployments, where Auto mode shipped alongside Opus 4.8 on May 29. The release also carries 50+ bug fixes across worktree management, background sessions, and cross-platform issues.",
+      "action": "Set CLAUDE_CODE_ENABLE_AUTO_MODE=1 in your Bedrock or Vertex Claude Code environment to enable adaptive task planning; test with Opus 4.8 first as it defaults effort to high.",
+      "tools": [
+        "Claude Code",
+        "AWS Bedrock",
+        "Google Vertex AI",
+        "Microsoft Foundry"
+      ],
+      "confidence": "confirmed",
+      "sources": [
+        {
+          "url": "https://github.com/anthropics/claude-code/releases",
+          "name": "Claude Code GitHub Releases"
+        }
+      ],
+      "clientPitch": "",
+      "useCase": "",
+      "timeline": "",
+      "sourceTier": 0,
+      "sourceUrl": "",
+      "sourceName": ""
+    },
+    {
+      "score": 7,
+      "tag": "WATCH",
+      "category": "Tools",
+      "headline": "OpenAI Codex Pro 2x usage promotion expires today reverting capacity to standard 5x for Plus",
+      "description": "The promotional doubling of Codex capacity that launched with ChatGPT Pro in April ends on May 31. After today, the $100/month Pro plan reverts from 10x Plus usage to the standard 5x, and the 5-hour Codex window at 25x Plus drops to 20x. The $200/month Pro tier retains its 2x multiplier as a permanent benefit. Teams that built Codex-heavy workflows under the doubled limits will see execution quotas halved starting June 1, which may surface as rate limit errors on long-running agentic tasks.",
+      "action": "Audit Codex task queue depths and rate limit headroom before June 1; consider moving high-volume Codex tasks to the Codex CLI via API key if Pro plan limits are no longer sufficient.",
+      "tools": [
+        "OpenAI Codex",
+        "ChatGPT Pro"
+      ],
+      "confidence": "confirmed",
+      "sources": [
+        {
+          "url": "https://developers.openai.com/codex/pricing",
+          "name": "OpenAI Codex Pricing"
+        },
+        {
+          "url": "https://help.openai.com/en/articles/20001106-codex-rate-card",
+          "name": "OpenAI Codex Rate Card"
+        }
+      ],
+      "clientPitch": "",
+      "useCase": "",
+      "timeline": "",
+      "sourceTier": 0,
+      "sourceUrl": "",
+      "sourceName": ""
+    },
+    {
+      "score": 6,
+      "tag": "WATCH",
+      "category": "Models",
+      "headline": "DeepSeek V4 Pro permanent pricing confirmed at 75 percent below launch price as promotional window closes",
+      "description": "DeepSeek's API documentation confirms the promotional discount introduced at the V4 Pro launch is permanent, with V4 Pro now priced at $0.435 per million input tokens and $0.87 per million output tokens as of May 31. The discount will not revert now that the original promotional expiry date has passed. At $0.87 per million output tokens, V4 Pro is 34.5x cheaper than GPT-5.5 ($30/1M output) and 10x cheaper than Claude Opus 4.8 ($25/1M output) while delivering comparable coding and reasoning results on SWE-Bench Pro.",
+      "action": "Benchmark DeepSeek V4 Pro on your highest-volume reasoning and coding agent tasks; the permanent pricing makes it viable as a primary model for cost-sensitive production pipelines that can tolerate Chinese data routing.",
+      "tools": [
+        "DeepSeek API"
+      ],
+      "confidence": "confirmed",
+      "sources": [
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "name": "DeepSeek API Docs"
+        },
+        {
+          "url": "https://www.engadget.com/2180062/deepseek-permanently-reduces-the-price-of-its-flagship-v4-model-by-75-percent/",
+          "name": "Engadget"
+        }
+      ],
+      "clientPitch": "",
+      "useCase": "",
+      "timeline": "",
+      "sourceTier": 0,
+      "sourceUrl": "",
+      "sourceName": ""
+    }
+  ],
+  "totalScanned": 4,
+  "relevant": 4,
+  "critical": 1,
+  "watch": 3,
+  "low": 0
+}
