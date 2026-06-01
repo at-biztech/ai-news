@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-31T09:00+06:00",
+  "lastUpdated": "2026-06-01T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -682,6 +682,25 @@
     "2026-05-31: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema permanently removed June 8. Include as completed-event.",
     "2026-05-31: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
     "2026-05-31: No detached HEAD issue this session. Repo was on main branch and up to date.",
-    "2026-05-31: lastUpdated timestamp updated to 2026-05-31T09:00+06:00."
+    "2026-05-31: lastUpdated timestamp updated to 2026-05-31T09:00+06:00.",
+    "2026-06-01: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). GitHub Copilot AI Credits billing NOW LIVE as completed-event (CRITICAL 8, June 1 effective, GitHub Blog/Docs). OpenAI Codex Computer Use on Windows with mobile remote steering and Codex Profiles (WATCH 7, May 29-30, Neowin/Thurrott). OpenAI schedules GPT-4.5 June 27 and o3 August 26 retirement from ChatGPT (WATCH 6, TechRadar May 30, no API impact).",
+    "2026-06-01: GitHub Copilot billing item is the completed-event version of the May 31 CRITICAL 8 item. The May 31 item framed it as 'in under 24 hours'. Today's frames it as 'now live' with the specific allotment numbers per plan tier. Precedent: Haiku 3 retirement covered twice (retires tomorrow April 18, now effective April 20).",
+    "2026-06-01: OpenAI Codex Computer Use on Windows was announced May 29 (changelog v26.527) with media coverage May 30. The 48h window (May 30 00:00 Almaty = May 29 18:00 UTC) means May 29 items published after 18:00 UTC qualify. Neowin and Thurrott coverage is dated May 30. Within window.",
+    "2026-06-01: GPT-4.5 and o3 retirement: OpenAI announcement was approximately May 28 (30-day sunset from June 27). TechRadar article metadata shows '2 days ago' from June 1 = May 30. Included based on TechRadar source being within 48h window. No API impact, ChatGPT only. Score 6 is appropriate.",
+    "2026-06-01: NOTE for June 2 digest: Microsoft Build 2026 runs June 2-3 at Fort Mason, San Francisco. Keynote by Satya Nadella at 9:30am PT. Expect Windows Agent Framework APIs, Azure AI Foundry updates, GitHub Copilot multi-agent support, Windows Local AI. Monitor closely for API and developer tool capability changes.",
+    "2026-06-01: NOTE for June 5-6 digest: OpenAI TanStack supply chain attack (Mini Shai-Hulud, May 11-12) certificate revocation deadline June 12. Include around June 5-6 when within 7 days.",
+    "2026-06-01: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema permanently removed June 8. Include as completed-event.",
+    "2026-06-01: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
+    "2026-06-01: Claude Code v2.1.159 (May 31 19:42 UTC = June 1 01:42 Almaty) is infrastructure only, no user-facing changes. Skipped per minor internal improvement precedent.",
+    "2026-06-01: GitHub Copilot CLI v1.0.57-0 through v1.0.57-4 (May 29-31) are all pre-releases. Skipped per established pre-release exclusion precedent. v1.0.56 already covered in May 30 digest.",
+    "2026-06-01: Codex CLI 0.136.0-alpha.2 (May 31) is pre-release. Skipped per established precedent.",
+    "2026-06-01: n8n: No new stable releases after 2.22.5 (May 28). All 2.23.x are pre-release. Skipped.",
+    "2026-06-01: Anthropic platform.claude.com release notes show May 29 as latest entry (Managed Agents on AWS). No new entries May 30-31.",
+    "2026-06-01: Gemini API changelog latest entry is May 28. No new entries May 29-31. Gemini image model deprecations (gemini-3.1-flash-image-preview, gemini-3-pro-image-preview announced May 28) are outside 48h window.",
+    "2026-06-01: Gemini CLI to Antigravity CLI transition (announced May 19, deadline June 18) already covered in May 20 digest as 'Antigravity 2.0'. Not re-included.",
+    "2026-06-01: Anthropic June 15 billing change (Agent SDK separate credit pool, announced May 14) is 18 days old. Way outside any inclusion window. Not included. NOTE: Anthropic will send email on June 8 for users to claim credits. Track this for June 8 digest.",
+    "2026-06-01: No new Zapier, Make.com, or Airtable product updates found for May 30 to June 1.",
+    "2026-06-01: No detached HEAD issue this session. Repo was on main branch and up to date.",
+    "2026-06-01: lastUpdated timestamp updated to 2026-06-01T09:00+06:00."
   ]
 }

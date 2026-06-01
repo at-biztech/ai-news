@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-01",
     "2026-05-31",
     "2026-05-30",
     "2026-05-29",
@@ -5377,7 +5378,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -7288,6 +7289,84 @@
       "relevant": 4,
       "critical": 1,
       "watch": 3,
+      "low": 0
+    },
+    "2026-06-01": {
+      "dateKey": "2026-06-01",
+      "date": "June 1, 2026",
+      "summary": "GitHub Copilot AI Credits billing goes live ending flat PRU pricing as OpenAI extends Codex computer use to Windows and announces the last GPT-4.x models will leave ChatGPT by August.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "GitHub Copilot AI Credits billing goes live replacing flat premium requests across all plans",
+          "description": "All GitHub Copilot plans switched to token-based AI Credits billing effective today. Monthly allotments match subscription price: Pro gets $10, Pro+ $39, Business $19 per user, Enterprise $39 per user. Every Copilot interaction consumes credits at the underlying model's listed API token rates. Inline completion and Next Edit Suggestions remain free on all plans including the Free tier.",
+          "action": "Review your billing overview at github.com to see projected costs under the new model. Set a monthly spend cap if you run high-volume agent workloads, since heavy use of Claude Opus or GPT-5 class models will consume allotments faster than the flat PRU model did. Unused credits do not roll over.",
+          "tools": [
+            "GitHub Copilot"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+              "name": "GitHub Blog"
+            },
+            {
+              "url": "https://docs.github.com/en/copilot/concepts/billing/usage-based-billing-for-individuals",
+              "name": "GitHub Docs"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Codex brings computer use to Windows with mobile remote steering and usage profiles",
+          "description": "Codex app version 26.527 ships foreground computer use on Windows, letting the agent see the screen and drive keyboard and mouse across native Windows desktop apps. Remote continuation from iOS, Android, or Mac now lets users start or steer Windows Codex sessions from a phone. New Codex Profiles surface per-thread token activity and usage history for cost tracking.",
+          "action": "Windows users can now run Codex agentic tasks on native apps without a Mac or VM workaround. Note the foreground-only constraint: Codex cannot quietly background-operate Windows sessions while you use the same machine. Computer use is not available in the EEA, UK, or Switzerland at launch.",
+          "tools": [
+            "OpenAI Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.neowin.net/news/openai-rolls-out-major-codex-for-windows-update-with-computer-use-and-mobile-access/",
+              "name": "Neowin"
+            },
+            {
+              "url": "https://www.thurrott.com/a-i/openai-a-i/336754/openai-brings-computer-use-to-codex-app-on-windows",
+              "name": "Thurrott"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "OpenAI schedules GPT-4.5 and o3 retirement from ChatGPT as last GPT-4 era models depart",
+          "description": "GPT-4.5 will be removed from ChatGPT on June 27 following a 30-day sunset and o3 will follow on August 26 after a 90-day window. Both remain accessible only to paid users via ChatGPT model settings until their respective dates. No API changes are planned; the retirements affect the ChatGPT UI only and clear the interface for GPT-5 class models.",
+          "action": "Brief users or internal teams relying on GPT-4.5 or o3 through the ChatGPT UI on the June 27 and August 26 deadlines. No migration is needed for API workloads as these retirements are ChatGPT-only.",
+          "tools": [
+            "ChatGPT"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://help.openai.com/en/articles/20001051-retiring-gpt-4o-and-other-chatgpt-models",
+              "name": "OpenAI Help Center"
+            },
+            {
+              "url": "https://www.techradar.com/ai-platforms-assistants/chatgpt/openai-just-quietly-retired-the-last-of-the-gpt-4-models-and-it-feels-like-the-end-of-an-ai-era",
+              "name": "TechRadar"
+            }
+          ]
+        }
+      ],
+      "totalScanned": 12,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
       "low": 0
     }
   },
