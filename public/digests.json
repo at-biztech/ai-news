@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-02",
     "2026-06-01",
     "2026-05-31",
     "2026-05-30",
@@ -7368,14 +7369,157 @@
       "critical": 1,
       "watch": 2,
       "low": 0
+    },
+    "2026-06-02": {
+      "dateKey": "2026-06-02",
+      "date": "June 2, 2026",
+      "summary": "Microsoft Build 2026 keynote cuts GitHub Copilot loose from OpenAI with Project Polaris in August and open-sources the Windows Agent Framework; Codex CLI and Copilot CLI ship stable updates.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Microsoft replaces OpenAI in GitHub Copilot with Project Polaris from August 2026",
+          "description": "At Build 2026, Microsoft unveiled Project Polaris, a proprietary mixture-of-experts model with language-specific sub-modules, as the new default reasoning engine for GitHub Copilot, replacing GPT-4 Turbo from August 2026. Automatic migration happens with no action required; teams get a three-month opt-out window to stay on GPT-4 while the transition completes. This ends Microsoft's dependence on OpenAI inference for its flagship developer tool and marks the first time Copilot runs on a non-OpenAI model by default.",
+          "action": "Audit Copilot quality benchmarks and prompting guides tuned to GPT-4 Turbo behavior before August; plan a validation sprint on Polaris outputs when the beta becomes available for testing.",
+          "tools": [
+            "GitHub Copilot",
+            "GitHub Copilot CLI",
+            "GitHub Copilot App"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://windowsnews.ai/article/microsoft-build-2026-homegrown-ai-models-to-power-github-copilot.420887",
+              "name": "Windows News"
+            },
+            {
+              "url": "https://chatforest.com/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/",
+              "name": "ChatForest Build Recap"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Windows Agent Framework goes MIT, Copilot Workspace exits beta, Windows Agent Store opens at Build 2026",
+          "description": "Microsoft open-sourced the Windows Agent Framework under an MIT license, making the agent lifecycle library available for building agents that run across local Windows machines, Windows 365 Cloud PCs, and Azure Arc-enabled edge devices. Copilot Workspace moved to general availability, letting developers file a plain-language issue and receive a multi-file plan, diff, and pull request without writing a line of code. The Windows Agent Store launched as a curated marketplace for agent manifests with security reviews enforced and an 85 percent revenue share for developers.",
+          "action": "Evaluate Windows Agent Framework for enterprise clients on Windows 365 or Azure Arc. Explore Copilot Workspace GA for offloading repetitive issue-to-PR pipelines. List agent manifests on the Windows Agent Store if building for Windows-first enterprise workflows.",
+          "tools": [
+            "GitHub Copilot",
+            "Windows Agent Framework",
+            "Azure Arc",
+            "Windows 365"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://windowsnews.ai/article/build-2026-microsoft-makes-windows-an-agent-platform-for-ai-developers.420496",
+              "name": "Windows News"
+            },
+            {
+              "url": "https://aitoolsrecap.com/Blog/microsoft-build-2026-windows-agent-framework-wsl3-azure-mesh",
+              "name": "AI Tools Recap"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "WSL 3 re-architecture gives AI workloads near-native GPU and NPU access on Windows",
+          "description": "Microsoft announced WSL 3 at Build 2026, a complete re-architecture that moves the Linux kernel into a lightweight VM with paravirtualized access to the Windows GPU and NPU. AI and ML workloads running inside WSL now operate at near-native speed without GPU passthrough workarounds. Azure Agent Mesh was also announced as a control plane for federated agent execution across Windows servers, Cloud PCs, and Azure Arc, targeting Q4 2026 general availability.",
+          "action": "Plan WSL 3 adoption for any ML team running local training or inference in WSL on Windows machines. Monitor Azure Agent Mesh preview for builders managing hybrid on-premises and cloud agent deployments.",
+          "tools": [
+            "WSL",
+            "Azure Agent Mesh",
+            "Azure Arc"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://aitoolsrecap.com/Blog/microsoft-build-2026-windows-agent-framework-wsl3-azure-mesh",
+              "name": "AI Tools Recap"
+            },
+            {
+              "url": "https://windowsnews.ai/article/microsoft-build-2026-windows-becomes-the-platform-for-ai-agents.420503",
+              "name": "Windows News"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Codex CLI 0.136.0 adds session archiving and closes supply chain attack vector in diff tool",
+          "description": "Codex CLI 0.136.0 shipped June 1 with session archiving via an /archive command, TUI markdown rendering with clickable web links, and a security fix preventing /diff from executing repository-provided Git helpers, closing a vector where malicious repo-side scripts could run during diff operations. ChatGPT auth now proactively refreshes tokens before the expiry window, eliminating mid-session auth failures in long-running agentic tasks.",
+          "action": "Update Codex CLI to 0.136.0 immediately for the /diff security fix. Session archiving enables cost-effective storage of long coding sessions for audit or replay.",
+          "tools": [
+            "OpenAI Codex CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.57 terminates process trees on shell command cancellation",
+          "description": "Version 1.0.57 released June 1 fixes orphaned process handling by terminating the full process tree when a shell command is cancelled, preventing background resource leaks in long-running agent sessions. Canvas providers now accept file:// URLs enabling local file preview without an HTTP server, and HTTP/1.1 is set as the default networking transport for more reliable operation behind proxies.",
+          "action": "Update to 1.0.57 if running Copilot CLI in automated pipelines or CI environments where cancelled commands previously left orphaned processes.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 4,
+      "critical": 2,
+      "watch": 2,
+      "low": 1
     }
-  },
-  "items": [],
-  "totalScanned": 0,
-  "relevant": 0,
-  "critical": 0,
-  "watch": 0,
-  "low": 0,
-  "dateKey": "2026-05-11",
-  "date": "May 11, 2026"
+  }
 }

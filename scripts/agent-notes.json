@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-01T09:00+06:00",
+  "lastUpdated": "2026-06-02T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -701,6 +701,26 @@
     "2026-06-01: Anthropic June 15 billing change (Agent SDK separate credit pool, announced May 14) is 18 days old. Way outside any inclusion window. Not included. NOTE: Anthropic will send email on June 8 for users to claim credits. Track this for June 8 digest.",
     "2026-06-01: No new Zapier, Make.com, or Airtable product updates found for May 30 to June 1.",
     "2026-06-01: No detached HEAD issue this session. Repo was on main branch and up to date.",
-    "2026-06-01: lastUpdated timestamp updated to 2026-06-01T09:00+06:00."
+    "2026-06-01: lastUpdated timestamp updated to 2026-06-01T09:00+06:00.",
+    "2026-06-02: 5 items (2 CRITICAL, 2 WATCH, 1 LOW). Microsoft Project Polaris replaces OpenAI in GitHub Copilot from August 2026 (CRITICAL 9, Build keynote June 2, WindowsNews/ChatForest). Windows Agent Framework MIT-licensed plus Copilot Workspace GA plus Windows Agent Store (CRITICAL 8, Build keynote June 2). WSL 3 with paravirtualized GPU/NPU plus Azure Agent Mesh preview (WATCH 7, Build keynote June 2). OpenAI Codex CLI 0.136.0 with session archiving and /diff security hardening (WATCH 6, June 1, GitHub releases). GitHub Copilot CLI 1.0.57 with process tree termination and file:// canvas URLs (LOW 5, June 1, GitHub releases).",
+    "2026-06-02: Microsoft Build 2026 keynote (June 2, SF) is the dominant story. Project Polaris is the biggest single structural change: Copilot's model will no longer be OpenAI's GPT-4. MoE architecture with language-specific sub-modules. August 2026 rollout with 3-month GPT-4 fallback. Confirmed via WindowsNews, ChatForest Build Recap.",
+    "2026-06-02: Windows Agent Framework was MIT-licensed at Build. This is the same WAF v1.0 that shipped April 2, but the MIT license and Build keynote positioning are new. The Agent Store with 85% revenue share and security reviews is new. Copilot Workspace GA is new (was in beta).",
+    "2026-06-02: WSL 3 is a paravirtualized Linux VM architecture with direct GPU/NPU access. For ML builders on Windows this is significant. Azure Agent Mesh (Q4 2026 GA) is the federated agent execution control plane. Combined into one WATCH 7 item.",
+    "2026-06-02: OpenAI Codex CLI 0.136.0 (June 1) confirmed via GitHub releases WebFetch. The /diff security hardening is the most urgent fix (prevents repo-provided Git helpers from executing during diff). Session archiving (/archive) enables persistent session storage. 0.135.0 was covered in May 29 digest.",
+    "2026-06-02: GitHub Copilot CLI v1.0.57 (June 1) confirmed via GitHub releases WebFetch. Process tree termination prevents orphaned background processes when shell commands are cancelled in agent sessions. Canvas file:// URL support is new capability for local preview workflows. v1.0.56 (May 29) was not in any prior digest but scored 5 (same precedent as LOW items); v1.0.57 is within window.",
+    "2026-06-02: n8n 2.22.6 (June 1) was all bug fixes (insights paywall, code-builder thread, MCP registry slug, timestamptz). Skipped per established minor bugfix precedent. n8n 1.123.50 (June 1) added S3 configurable retries for the legacy 1.x branch. Both skipped.",
+    "2026-06-02: SymJack (Adversa AI) original publication was May 27 - outside 48h window. SecurityWeek coverage also May 27. TrustFall (Adversa AI) was May 7. Neither within window. Skip both.",
+    "2026-06-02: Anthropic IPO filing (June 1, NBC News) excluded per rules (no funding rounds/VC stats). IPO filing falls under excluded category.",
+    "2026-06-02: Anthropic June 15 compound deadline (Sonnet 4/Opus 4 retirement + Agent SDK billing split) covered in May 25 digest. Not re-included per duplication rule. June 8 digest should include Anthropic credit claim email as actionable trigger.",
+    "2026-06-02: Gemini Interactions API legacy outputs schema removed June 8 (covered May 10). June 8 run should reframe as completed event.",
+    "2026-06-02: OpenAI TanStack supply chain attack certificate revocation deadline June 12. Agent notes from May 24-31 say to cover around June 5-6 (7 days out). June 2 is 10 days away - too early per established guidance. Cover June 5-6.",
+    "2026-06-02: AWS Copilot CLI (the ECS deployment tool, NOT GitHub Copilot) reaches end of support June 12. Not in any prior digest. Announcement was early 2026 (outside window). Could cover June 5-6 as countdown item at WATCH 6. Not the same as GitHub Copilot CLI.",
+    "2026-06-02: Detached HEAD recurred at session start (HEAD detached from refs/heads/main). Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists: sessions start in detached HEAD state.",
+    "2026-06-02: No new Anthropic API entries (platform.claude.com shows May 29 as latest). No new Claude Code releases after 2.1.159 (May 31, infrastructure only). No new Gemini API or Gemini CLI updates within window. No new Zapier, Make.com, or Airtable updates found.",
+    "2026-06-02: NOTE for June 5-6 digest: OpenAI TanStack certificate revocation deadline June 12 (7 days). Include as countdown. AWS Copilot CLI end of support June 12 - consider coverage.",
+    "2026-06-02: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as completed-event. Anthropic credit claim email goes out June 8 for Agent SDK billing split. Include as actionable item.",
+    "2026-06-02: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
+    "2026-06-02: NOTE for June 15 digest: Claude Sonnet 4 and Opus 4 retire June 15 (covered April 15). Agent SDK billing split takes effect June 15 (covered May 15). Both already in prior digests - do NOT re-include. But do include as completed-event framing.",
+    "2026-06-02: lastUpdated timestamp updated to 2026-06-02T09:00+06:00."
   ]
 }
