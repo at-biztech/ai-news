@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-03",
     "2026-06-02",
     "2026-06-01",
     "2026-05-31",
@@ -5379,7 +5380,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -7520,6 +7521,238 @@
       "critical": 2,
       "watch": 2,
       "low": 1
+    },
+    "2026-06-03": {
+      "dateKey": "2026-06-03",
+      "date": "June 3, 2026",
+      "summary": "OpenAI brings GPT-5.5 and Codex to Amazon Bedrock, Microsoft debuts its first reasoning model MAI-Thinking-1 at Build 2026, and MiniMax ships an open-weight model combining frontier coding with 1M context and multimodality.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "OpenAI GPT-5.5, GPT-5.4 and Codex go generally available on Amazon Bedrock",
+          "description": "GPT-5.5 and GPT-5.4 are now GA on Amazon Bedrock alongside Codex, giving AWS customers access to OpenAI frontier models through existing IAM, VPC, procurement, and compliance workflows. GPT-5.5 is live in US East (Ohio) and GPT-5.4 in two regions; Codex routes inference through Bedrock across its app, CLI, and IDE surfaces. Enterprises no longer need separate OpenAI accounts or direct API contracts to run frontier models in production.",
+          "action": "If your clients are AWS-native, evaluate migrating OpenAI inference to Bedrock to consolidate billing, governance, and network egress policies.",
+          "tools": [
+            "Amazon Bedrock",
+            "GPT-5.5",
+            "GPT-5.4",
+            "OpenAI Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://aws.amazon.com/blogs/aws/get-started-with-openai-gpt-5-5-gpt-5-4-models-and-codex-on-amazon-bedrock/",
+              "name": "AWS Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Microsoft debuts MAI-Thinking-1 reasoning model and six companion MAI models at Build 2026",
+          "description": "Microsoft's AI Superintelligence Team released seven in-house models at Build 2026, anchored by MAI-Thinking-1: a 35B active parameter reasoning model with 256K context, trained without distillation on commercially licensed data and matching Opus 4.6 on SWE-Bench Pro. Companion releases include MAI-Code-1 for GitHub, MAI-Image-2.5 for text-to-image and image-to-image workflows, MAI-Voice-2 in 15 additional languages, and MAI-Transcribe-1.5 across 43 languages. MAI-Thinking-1 is in private preview on Azure Foundry.",
+          "action": "Request MAI-Thinking-1 private preview access on Foundry if you build on Azure; compare cost per reasoning step against Opus 4.7 and GPT-5.5 for complex multi-step workflows.",
+          "tools": [
+            "Azure Foundry",
+            "MAI-Thinking-1",
+            "MAI-Code-1",
+            "MAI-Image-2.5",
+            "GitHub Copilot"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/",
+              "name": "Microsoft Blog"
+            },
+            {
+              "url": "https://windowsforum.com/threads/microsoft-mai-models-at-build-2026-reasoning-code-voice-and-the-shift-to-model-ownership.421643/",
+              "name": "Windows Forum"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "OpenSource",
+          "headline": "MiniMax M3 launches as first open-weight model combining frontier coding, 1M context and multimodality",
+          "description": "MiniMax released M3 on June 1 via API, claiming the first open-weight model to unify frontier-level coding, a 1-million-token context window, and native multimodality in a single release using a sparse MSA architecture. M3 tops the open-weight SWE-Bench Pro leaderboard at 59.0%. Open weights and a technical report are due on Hugging Face within ten days of launch.",
+          "action": "Test M3 via the MiniMax API now; plan self-hosted integration once weights land on Hugging Face around June 10-11 for long-context multimodal and agentic coding workflows.",
+          "tools": [
+            "MiniMax API",
+            "Hugging Face"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.marktechpost.com/2026/06/01/minimax-releases-minimax-m3-with-msa-architecture-supporting-1m-token-context-native-multimodality-and-agentic-coding/",
+              "name": "MarkTechPost"
+            },
+            {
+              "url": "https://www.scmp.com/tech/tech-trends/article/3355529/minimax-debuts-ai-model-built-long-and-complex-coding-tasks",
+              "name": "South China Morning Post"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude API adds advisor tool output cap and stops billing on refusal responses",
+          "description": "Two platform changes landed on June 2: the advisor tool now accepts a max_tokens parameter to hard-cap advisor model output per call, reducing latency and output token cost in Opus-advises-Sonnet orchestration patterns. Separately, API requests that return stop_reason of refusal without generating any output are no longer charged.",
+          "action": "Add max_tokens to advisor tool definitions in production to tune cost against quality; remove any billing workarounds built around refusal responses in cost tracking code.",
+          "tools": [
+            "Claude API",
+            "Claude Managed Agents"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code renames workflow trigger to ultracode and adds shell startup write prompts in v2.1.160 and v2.1.161",
+          "description": "v2.1.160 (June 2) contains a breaking rename: the workflow trigger keyword is now ultracode. The release also prompts before writing to shell startup files (.zshenv, .bash_login) and build-tool config files (.npmrc, .yarnrc). v2.1.161 adds OTEL resource attributes as metric labels for custom dimension slicing and prevents a failed parallel Bash call from cancelling sibling calls in the same batch.",
+          "action": "Update any scripts, prompts, or CI configurations that reference the workflow trigger keyword to use ultracode before next deployment; verify shell startup files are not silently modified in agent sessions.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI workspace agents gain GPT-5.5, role-based publishing and enterprise app templates",
+          "description": "ChatGPT Business and Enterprise workspace agents now support GPT-5.5 with configurable reasoning effort controls, audio file output, and role-based publishing for the shared agent directory. App templates with guided setup are available for GitHub Enterprise, Snowflake, and Databricks. The free usage period for workspace agents has been extended to July 6.",
+          "action": "Configure role-based publishing before credit billing begins July 6; test the Databricks and Snowflake app templates for data-pipeline agent use cases.",
+          "tools": [
+            "ChatGPT Business",
+            "ChatGPT Enterprise",
+            "GPT-5.5"
+          ],
+          "confidence": "reported",
+          "sources": [
+            {
+              "url": "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes",
+              "name": "OpenAI Help Center"
+            },
+            {
+              "url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+              "name": "OpenAI Help Center Enterprise"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI ships scheduled prompt commands and on-device voice dictation in v1.0.58 and v1.0.59",
+          "description": "v1.0.58 (June 2) enables the Rubber Duck agent and remote JSON-RPC by default and adds experimental /every and /after commands for scheduling recurring or delayed prompts inside CLI sessions. v1.0.59 adds a /voice command that transcribes speech using a local model, keeping audio data on device without a cloud STT API.",
+          "action": "Test /every and /after for scheduled agent tasks in Copilot CLI sessions; the local voice dictation removes the cloud STT dependency for voice-driven copilot workflows.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Gemini 3.5 Flash becomes mandatory in Gemini Enterprise on June 8 as admin toggle is removed",
+          "description": "Starting June 8, the feature management toggle allowing admins to disable Gemini 3.5 Flash in the Gemini Enterprise app will be removed; the model becomes enabled by default and cannot be turned off. Gemini 3.5 Flash launched at Google I/O on May 19 at $1.50/$9 per million input/output tokens, triple the prior Gemini 3 Flash pricing.",
+          "action": "Review Gemini Enterprise workspace configurations before June 8; update budget models to reflect the 3x pricing uplift if Gemini 3.5 Flash was not previously enabled.",
+          "tools": [
+            "Gemini Enterprise",
+            "Gemini 3.5 Flash"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+              "name": "Google Cloud Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 8,
+      "relevant": 8,
+      "critical": 3,
+      "watch": 5,
+      "low": 0
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-02T09:00+06:00",
+  "lastUpdated": "2026-06-03T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -721,6 +721,18 @@
     "2026-06-02: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8. Include as completed-event. Anthropic credit claim email goes out June 8 for Agent SDK billing split. Include as actionable item.",
     "2026-06-02: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements.",
     "2026-06-02: NOTE for June 15 digest: Claude Sonnet 4 and Opus 4 retire June 15 (covered April 15). Agent SDK billing split takes effect June 15 (covered May 15). Both already in prior digests - do NOT re-include. But do include as completed-event framing.",
-    "2026-06-02: lastUpdated timestamp updated to 2026-06-02T09:00+06:00."
+    "2026-06-02: lastUpdated timestamp updated to 2026-06-02T09:00+06:00.",
+    "2026-06-03: 8 items (3 CRITICAL, 5 WATCH, 0 LOW). OpenAI GPT-5.5/GPT-5.4/Codex GA on Amazon Bedrock (CRITICAL 9, June 2, openai.com + AWS Blog), Microsoft MAI-Thinking-1 reasoning model plus 6 companion MAI models at Build 2026 (CRITICAL 8, June 2, blogs.microsoft.com), MiniMax M3 open-weight model with 1M context + multimodal + coding (CRITICAL 8, June 1, MarkTechPost), Claude API advisor max_tokens + refusal billing fix (WATCH 7, June 2, platform.claude.com), Claude Code 2.1.160/161 workflow-to-ultracode rename (WATCH 7, June 2, GitHub releases), OpenAI workspace agents GPT-5.5 upgrade (WATCH 6, reported), Copilot CLI v1.0.58/1.0.59 scheduled prompts + voice (WATCH 6, June 2), Gemini 3.5 Flash mandatory June 8 countdown (WATCH 6).",
+    "2026-06-03: Claude Code workflow trigger renamed to ultracode in v2.1.160 (June 2). Breaking change for any existing automation that triggers the workflow keyword. This is the first breaking keyword rename in Claude Code history.",
+    "2026-06-03: MiniMax M3 open weights not yet on Hugging Face at time of writing (due ~June 10-11). API is live. Include weights release in June 10-11 digest context if confirmed.",
+    "2026-06-03: Microsoft Build 2026 (June 2-3) produced items split across June 2 and June 3 digests. June 2 covered WAF MIT, Copilot Workspace, WSL 3. June 3 covers MAI models. Avoid re-including Build 2026 items already covered.",
+    "2026-06-03: Gemini 3.5 Flash admin toggle removal is June 8. June 8 digest should reframe as completed-event alongside Gemini Interactions API legacy outputs schema removal (same date, covered in May 10 digest).",
+    "2026-06-03: OpenAI fine-tuning wind-down announced May 7 (outside 48h window). Phased: July 2 new orgs lose access; Jan 6 2027 all lose access. Include June 30 (1 week before July 2 deadline) as countdown.",
+    "2026-06-03: Copilot CLI v1.0.58 scheduled prompts (/every, /after) are experimental. Will revisit when stable.",
+    "2026-06-03: No new n8n stable releases June 1-3 (2.23.2 was June 1, all bug fixes, skipped per minor bugfix precedent). No new Codex CLI stable releases June 2-3 (0.136.0 covered in June 2 digest). No new Anthropic API entries June 3 (June 2 was latest).",
+    "2026-06-03: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists: sessions still start in detached HEAD state.",
+    "2026-06-03: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8 (covered May 10). Gemini 3.5 Flash admin toggle removed June 8 (covered today as countdown). Anthropic Agent SDK credit claim email goes June 8. Include as completed-events.",
+    "2026-06-03: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic announcements. MiniMax M3 open weights expected ~June 10-11 on Hugging Face.",
+    "2026-06-03: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25."
   ]
 }
