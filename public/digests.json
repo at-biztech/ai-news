@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-04",
     "2026-06-03",
     "2026-06-02",
     "2026-06-01",
@@ -5380,7 +5381,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -7752,6 +7753,163 @@
       "relevant": 8,
       "critical": 3,
       "watch": 5,
+      "low": 0
+    },
+    "2026-06-04": {
+      "dateKey": "2026-06-04",
+      "date": "June 4, 2026",
+      "summary": "OpenAI turns Codex into a hosted app platform with role plugins at Intelligence at Work, Anthropic expands Project Glasswing cybersecurity AI to 150 organizations across 15 countries, and Microsoft ships a kernel-level agent sandbox for Windows at Build 2026.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "OpenAI adds hosted app builder, six role plugins and Annotations to Codex as it enters ChatGPT app",
+          "description": "At the Intelligence at Work event on June 2, OpenAI shipped three Codex capability layers: Sites (Business and Enterprise preview) lets Codex deploy interactive dashboards, internal tools, and web apps hosted by OpenAI directly from prompts; six role-specific plugins for finance, legal, HR, sales, operations, and research teams; and Annotations for in-document collaboration across documents, spreadsheets, and slides. Codex is also being embedded inside the ChatGPT app, putting all these capabilities at an existing five million weekly user base.",
+          "action": "Evaluate Sites as a deployment endpoint for Codex-generated dashboards and data apps; review role plugins for overlap with existing Make.com or n8n workflows serving knowledge workers. The ChatGPT embed means non-technical stakeholders can now trigger Codex runs without a separate account.",
+          "tools": [
+            "OpenAI Codex",
+            "ChatGPT"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://venturebeat.com/orchestration/openais-codex-update-lets-agents-build-interactive-enterprise-workspaces-via-sites-and-role-specific-plugins",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://9to5mac.com/2026/06/02/openai-putting-codex-inside-chatgpt-app-everywhere-releasing-6-business-plugins/",
+              "name": "9to5Mac"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Research",
+          "headline": "Anthropic expands Project Glasswing to 150 organizations across 15 countries as Mythos finds 10,000 critical vulnerabilities",
+          "description": "Anthropic is extending Claude Mythos access to approximately 150 new organizations in more than 15 countries, adding sectors underrepresented at launch: power, water, healthcare, communications, and hardware. Named new participants include NATO, the EU cybersecurity agency ENISA, Okta, Samsung, SK Hynix, and SK Telecom. Since the program began, Glasswing partners have surfaced more than 10,000 high or critical-severity vulnerabilities in production systems.",
+          "action": "Builders in regulated or critical infrastructure sectors should submit Glasswing applications now that the program is open beyond the initial launch cohort. Monitor partner disclosures for vulnerability patterns affecting shared open-source dependencies in your stacks.",
+          "tools": [
+            "Claude Mythos"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.cnbc.com/2026/06/02/anthropic-mythos-ai-project-glasswing.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://techcrunch.com/2026/06/02/anthropic-scales-claude-mythos-to-critical-infrastructure-in-15-countries/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://www.helpnetsecurity.com/2026/06/03/anthropic-project-glasswing-expansion/",
+              "name": "Help Net Security"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Microsoft ships MXC kernel sandbox for AI agents with process, session and micro-VM isolation on Windows",
+          "description": "Announced at Build 2026, Microsoft Execution Containers (MXC) is a policy-driven execution layer baked into the Windows kernel that lets developers define exactly what an AI agent can access at runtime. It supports three isolation levels: fast process isolation (already adopted by GitHub Copilot CLI), session isolation that binds the agent to a strong user identity to block UI spoofing and input injection, and micro-VM isolation backed by the hypervisor for high-risk workloads. OpenAI Codex and Nvidia are already on board; Defender, Entra, Intune, and Purview integration arrives in July preview.",
+          "action": "Architects building Windows-hosted AI agents should read the MXC policy model before the July Intune preview. The containment granularity directly addresses TrustFall- and SymJack-class attacks at the OS level, making it relevant for enterprise agent deployments where SymJack mitigations in individual tools are not enough.",
+          "tools": [
+            "Windows",
+            "GitHub Copilot CLI",
+            "OpenAI Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://venturebeat.com/security/microsoft-launches-mxc-an-os-level-sandbox-for-ai-agents-with-openai-and-nvidia-already-on-board",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/",
+              "name": "Windows Developer Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Regulation",
+          "headline": "Trump signs voluntary AI model pre-release review order and establishes AI cybersecurity clearinghouse",
+          "description": "Signed June 2, the executive order asks AI companies on a voluntary basis to submit frontier models for a government cybersecurity capability assessment up to 30 days before public release; models deemed covered frontier models face additional scrutiny. A new AI Cybersecurity Clearinghouse will coordinate with industry and critical infrastructure operators to identify and remediate software vulnerabilities at scale. The order expressly prohibits any mandatory licensing, pre-clearance, or permitting requirement for AI development or distribution.",
+          "action": "Builders at enterprises selling AI products or services to US government agencies should monitor the voluntary review process; the clearinghouse creates a new official channel for vulnerability disclosures that could accelerate patch availability for infrastructure libraries.",
+          "tools": [],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.cnbc.com/2026/06/02/trump-executive-order-ai.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+              "name": "White House"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.162 surfaces agent wait state, dedicated search tools and Remote Control status pill",
+          "description": "Released June 3, v2.1.162 adds a waitingFor field to claude agents --json output so orchestration scripts can distinguish blocked agents from working ones. Explicitly listing Grep or Glob in --tools now provisions dedicated search tools on native builds with embedded search, and the /effort command confirms when a chosen level persists as the session default. Slash command autocomplete now fills the prompt without auto-executing, requiring an Enter keystroke.",
+          "action": "Update any monitoring pipeline using claude agents --json to inspect the new waitingFor field for early detection of stalled permission prompts. Review --tools declarations in any Claude Code wrapper that expects search capabilities on native builds.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.162",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 5,
+      "critical": 2,
+      "watch": 3,
       "low": 0
     }
   }

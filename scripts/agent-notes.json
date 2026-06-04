@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-03T09:00+06:00",
+  "lastUpdated": "2026-06-04T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -733,6 +733,18 @@
     "2026-06-03: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists: sessions still start in detached HEAD state.",
     "2026-06-03: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8 (covered May 10). Gemini 3.5 Flash admin toggle removed June 8 (covered today as countdown). Anthropic Agent SDK credit claim email goes June 8. Include as completed-events.",
     "2026-06-03: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic announcements. MiniMax M3 open weights expected ~June 10-11 on Hugging Face.",
-    "2026-06-03: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25."
+    "2026-06-03: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-04: 5 items (2 CRITICAL, 3 WATCH, 0 LOW). OpenAI Codex Sites hosted app builder plus 6 role plugins plus Annotations at Intelligence at Work event and Codex embedded into ChatGPT app (CRITICAL 8, June 2, TechCrunch/VentureBeat/9to5Mac). Anthropic Project Glasswing expands to 150 organizations in 15+ countries including NATO and EU ENISA with 10,000+ critical vulnerabilities found (CRITICAL 8, June 2-3, CNBC/TechCrunch/HelpNetSecurity). Microsoft MXC kernel-level sandbox for AI agents with 3 isolation tiers and OpenAI and Nvidia on board (WATCH 7, June 2, VentureBeat/Windows Blog). White House AI Innovation and Security EO with voluntary 30-day pre-release model review and AI Cybersecurity Clearinghouse (WATCH 7, June 2, CNBC/whitehouse.gov). Claude Code 2.1.162 with waitingFor field in agents JSON, dedicated Grep/Glob on native builds, /effort persistence confirmation (WATCH 6, June 3, GitHub releases).",
+    "2026-06-04: Claude Opus 4.8 was released May 28 (confirmed via platform.claude.com release notes). Covered indirectly in May 30 digest (GitHub Copilot CLI Opus 4.8 support). The full API capabilities item (mid-conversation system messages, 1M context default, 1024-token cache threshold, adaptive thinking, fast mode research preview) has NEVER been the primary headline in any digest. However, May 28 is 7 days before June 4 - outside all windows. If a follow-up Opus 4.8 story (e.g. fast mode GA, pricing change) appears, include it.",
+    "2026-06-04: Anthropic June 15 billing split was covered in May 15 digest as primary item. Do not re-include.",
+    "2026-06-04: Amazon Kiro (spec-driven AI IDE replacing Amazon Q Developer) launched in May 2026 with May 15 new signup cutoff. Outside window and not in any digest. CRITICAL miss. If Kiro ships a major update (e.g. stable GA, new model support, plugin system), include it.",
+    "2026-06-04: SymJack (symlink-hijack RCE affecting 6 AI coding agents, Adversa AI May 27) outside 48h window. TrustFall (one-click RCE in Claude Code/Cursor/Gemini CLI/Copilot, May 7) also outside window. Both now contextually referenced in MXC item as the threat class MXC addresses.",
+    "2026-06-04: 1Password + OpenAI Codex credential MCP server integration was May 20. Outside window. Already missed. Include if 1Password expands to Claude Code or other agents.",
+    "2026-06-04: Anthropic IPO confidential S-1 filed June 1 (TechCrunch, CNBC). Excluded per funding/financial events rule. Within window but not a builder capability change.",
+    "2026-06-04: OpenAI Codex Goal mode went GA May 21. Outside window. Appshots (macOS) launched as part of the June 2 Intelligence at Work bundle - included in the Codex Sites item.",
+    "2026-06-04: No new n8n stable releases June 2-4 (2.23.2 was June 1, all bug fixes). No new Codex CLI stable (0.136.0 covered June 2). Copilot CLI 1.0.59 covered in June 3 digest.",
+    "2026-06-04: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists.",
+    "2026-06-04: NOTE for June 8 digest: Anthropic Agent SDK credit claim email goes June 8 (covered May 15 as billing split). Gemini 3.5 Flash admin toggle removed June 8 (covered June 3 as countdown). Reframe as completed events.",
+    "2026-06-04: NOTE for future digest: Microsoft MXC Defender/Entra/Intune/Purview integration arrives in July preview. Include when July preview ships."
   ]
 }
