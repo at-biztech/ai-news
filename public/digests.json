@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-05",
     "2026-06-04",
     "2026-06-03",
     "2026-06-02",
@@ -5381,7 +5382,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -7911,6 +7912,153 @@
       "critical": 2,
       "watch": 3,
       "low": 0
+    },
+    "2026-06-05": {
+      "dateKey": "2026-06-05",
+      "date": "June 5, 2026",
+      "summary": "GitHub Copilot opens its agent runtime as a general-purpose SDK across six languages and adds a one-million-token context window with configurable reasoning, transforming it from an IDE plugin into a developer platform.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "GitHub Copilot SDK reaches general availability in six languages with MCP and BYOK support",
+          "description": "GitHub shipped the Copilot SDK to general availability on June 2, giving developers programmatic access to the same agent runtime that powers GitHub Copilot, including planning, tool invocation, file edits, streaming, and multi-turn sessions. Available in Node.js/TypeScript, Python, Go, .NET, Rust, and Java, the SDK supports custom tool registration, MCP server connections, and multi-client sessions where different clients contribute tools to the same agent session. Non-Copilot users can access it via BYOK, and all existing Copilot subscribers including the free plan gain access at no extra charge.",
+          "action": "Replace custom orchestration layers with the Copilot SDK if you are building editor-integrated or CLI-integrated agents; the MCP connector support means existing MCP tool surfaces plug directly into Copilot's planning loop without rewiring.",
+          "tools": [
+            "GitHub Copilot",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/",
+              "name": "GitHub Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "GitHub Copilot gains one-million-token context and configurable reasoning across VS Code, CLI and Copilot app",
+          "description": "GitHub expanded Copilot on June 4 with a one-million-token context window available in VS Code, Copilot CLI, and the Copilot app, enabling full-codebase analysis without truncation on the largest codebases. Configurable reasoning levels let developers dial between speed and extended thinking depth for architectural and debugging problems, consuming more AI credits per interaction at higher settings. A separate June 4 changelog entry also extends Fix with Copilot for failing Actions to Pro, Pro+, and Max plans, letting Copilot diagnose and suggest fixes for failing GitHub Actions runs.",
+          "action": "Use the 1M context window for whole-repo refactoring, migration audits, and large schema analysis that previously required chunking; enable extended reasoning for architecture reviews while keeping low reasoning for routine edits to manage credit spend.",
+          "tools": [
+            "GitHub Copilot",
+            "VS Code",
+            "Copilot CLI",
+            "GitHub Actions"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/",
+              "name": "GitHub Changelog"
+            },
+            {
+              "url": "https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max/",
+              "name": "GitHub Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.163 adds managed version lock settings and MCP session identity for enterprise deployments",
+          "description": "Released June 4 at 21:52 UTC, v2.1.163 adds requiredMinimumVersion and requiredMaximumVersion fields to managed settings, letting administrators pin Claude Code to a specific version range across an organization. Hooks can now return hookSpecificOutput.additionalContext to feed feedback back into the agent without flagging it as an error, and stdio MCP servers receive CLAUDE_CODE_SESSION_ID on --resume so server-side session continuity is preserved across reconnects. The release also fixes claude -p hanging after the final result, Bash failures under Bazel and EDR-protected workflows, and Windows file permission errors on session-env directories.",
+          "action": "If you manage Claude Code across a team, set requiredMinimumVersion now to prevent version drift; if you build Claude Code hooks or MCP servers, update to pass additionalContext and read the session ID for continuity tracking.",
+          "tools": [
+            "Claude Code",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.163",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.137.0 ships multi-agent v2 runtime and enterprise monthly credit limit controls",
+          "description": "The stable v0.137.0 release on June 4 upgrades the multi-agent runtime to v2, which keeps model selection with each spawned thread and cleans up follow-up and metadata defaults across agent hierarchies. Remote-control client pairing is now available via app-server v2 RPCs, enabling controllers to list and revoke pairing grants programmatically. Enterprise and admin flows gain visibility into monthly credit limits and can apply cloud-managed config bundles including EDU workspace settings; TUI markdown now renders clickable links and supports F13 through F24 keybindings.",
+          "action": "Upgrade to v0.137.0 if you run multi-agent Codex pipelines; the v2 runtime changes thread-level model selection so test existing orchestration scripts against changed defaults before rolling to production.",
+          "tools": [
+            "Codex CLI",
+            "OpenAI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases/tag/0.137.0",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Models",
+          "headline": "GPT-Rosalind expands to global API access with 31 percent lower token cost for genomics workloads",
+          "description": "OpenAI published substantial updates to GPT-Rosalind on June 3, opening the life-sciences model to eligible organizations worldwide and adding Codex plugins connecting researchers to over 50 scientific databases spanning genomics, transcriptomics, and structural biology. Three new evaluations show the updated model completes quantitative biology analyses using 31 percent fewer tokens than GPT-5.5, lowering cost for high-volume research pipelines. Novo Nordisk joined earlier partners Amgen, Moderna, Allen Institute, and Thermo Fisher Scientific in the program.",
+          "action": "If you build automation workflows for pharma, biotech, or clinical research clients, evaluate GPT-Rosalind as a drop-in for general-purpose model calls on biology-heavy tasks to reduce token spend.",
+          "tools": [
+            "GPT-Rosalind",
+            "OpenAI Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://www.techtimes.com/articles/317754/20260604/gpt-rosalind-drug-discovery-update-openai-cuts-genomics-compute-expands-global-access.htm",
+              "name": "TechTimes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 4,
+      "critical": 2,
+      "watch": 2,
+      "low": 1
     }
   }
 }

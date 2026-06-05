@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-04T09:00+06:00",
+  "lastUpdated": "2026-06-05T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -745,6 +745,17 @@
     "2026-06-04: No new n8n stable releases June 2-4 (2.23.2 was June 1, all bug fixes). No new Codex CLI stable (0.136.0 covered June 2). Copilot CLI 1.0.59 covered in June 3 digest.",
     "2026-06-04: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists.",
     "2026-06-04: NOTE for June 8 digest: Anthropic Agent SDK credit claim email goes June 8 (covered May 15 as billing split). Gemini 3.5 Flash admin toggle removed June 8 (covered June 3 as countdown). Reframe as completed events.",
-    "2026-06-04: NOTE for future digest: Microsoft MXC Defender/Entra/Intune/Purview integration arrives in July preview. Include when July preview ships."
+    "2026-06-04: NOTE for future digest: Microsoft MXC Defender/Entra/Intune/Purview integration arrives in July preview. Include when July preview ships.",
+    "2026-06-05: 5 items (2 CRITICAL, 2 WATCH, 1 LOW). GitHub Copilot SDK GA in 6 languages with MCP and BYOK (CRITICAL 8, June 2, via 72h exception, not in any prior digest). GitHub Copilot 1M context window + configurable reasoning + Fix for failing Actions (CRITICAL 8, June 4, github.blog/changelog). Claude Code 2.1.163 managed version lock + MCP session ID (WATCH 7, June 4 21:52 UTC). Codex CLI 0.137.0 multi-agent v2 + enterprise credit limits (WATCH 6, June 4). GPT-Rosalind global access + 31 percent token reduction for genomics (LOW 5, June 3).",
+    "2026-06-05: GitHub Copilot SDK GA (June 2) was missed by June 2 and June 3 digest runs. Included via 72h CRITICAL exception. github.blog/changelog is a reliable, fetchable source for Copilot announcements. Future runs: check github.blog/changelog/label/copilot/ daily.",
+    "2026-06-05: Claude API release notes: latest entry is June 2 (advisor tool max_tokens, no billing on refusals) which was already covered in June 3 digest. No new entries June 3-5.",
+    "2026-06-05: Gemini image models (flash-image, pro-image) GA was May 28. Confirmed outside 48h window. Should be in a prior May 28 or May 29 digest.",
+    "2026-06-05: n8n: all June 3-4 releases (2.23.3, 1.123.52) were bug fixes or minor patches. 2.25.3 is pre-release. Skipped per established precedent.",
+    "2026-06-05: GitHub Copilot CLI: latest stable is v1.0.59 (June 2, already covered in June 3 digest). v1.0.60-0 (June 4) is pre-release only. Skipped.",
+    "2026-06-05: ZAYA1-8B from Zyphra was released May 6. Outside window. Ignore unless a new major version ships.",
+    "2026-06-05: Make.com, Zapier, Airtable: no new product updates found for June 4-5.",
+    "2026-06-05: NOTE for June 15 digest: Claude Sonnet 4 (claude-sonnet-4-20250514) and Opus 4 (claude-opus-4-20250514) retire from the Claude API on June 15. Covered in April 15 digest. Reframe as completed event. Agent SDK billing split also takes effect June 15 (covered May 15).",
+    "2026-06-05: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists.",
+    "2026-06-05: Codex CLI v0.137.0 multi-agent v2 runtime changes thread-level model selection. This is a potential breaking change for existing multi-agent orchestration scripts. Noted in action item."
   ]
 }
