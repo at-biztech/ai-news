@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-06",
     "2026-06-05",
     "2026-06-04",
     "2026-06-03",
@@ -5382,7 +5383,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -8059,6 +8060,151 @@
       "critical": 2,
       "watch": 2,
       "low": 1
+    },
+    "2026-06-06": {
+      "dateKey": "2026-06-06",
+      "date": "June 6, 2026",
+      "summary": "OpenAI retires Agent Builder, Evals platform and prompt objects by November 30; Claude Opus 4.1 deprecated with August 5 deadline; OpenAI macOS signing certificates expire June 12 after TanStack supply chain breach.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "OpenAI retires Agent Builder, Evals platform and reusable prompt objects by November 30",
+          "description": "OpenAI notified developers on June 3 of three simultaneous deprecations: Agent Builder and the Evals platform become read-only October 31 and shut down November 30, 2026; the v1/prompts reusable prompt objects API also shuts down November 30. Agent Builder users must migrate to the Agents SDK or ChatGPT Workspace Agents; Evals users must build custom evaluation pipelines; prompt objects must move into application code where versioning is fully developer-controlled.",
+          "action": "Audit any production workflows using OpenAI Agent Builder, the Evals API, or v1/prompts. Begin migration to Agents SDK for agentic workloads and remove prompt object dependencies before October 31 read-only cutover.",
+          "tools": [
+            "OpenAI Agent Builder",
+            "OpenAI Evals",
+            "OpenAI Agents SDK",
+            "ChatGPT Workspace Agents"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://community.openai.com/t/deprecation-notice-agent-builder/1382650",
+              "name": "OpenAI Developer Community"
+            },
+            {
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "name": "OpenAI API Deprecations"
+            },
+            {
+              "url": "https://developers.openai.com/api/docs/guides/prompting/migrate-from-prompt-object",
+              "name": "OpenAI Migration Guide"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Claude Opus 4.1 deprecated with 60-day countdown to August 5 retirement",
+          "description": "Anthropic announced on June 5 via the primary deprecation page that claude-opus-4-1-20250805 is deprecated effective today, with a retirement date of August 5, 2026. The recommended replacement is claude-opus-4-8, which is already the default on Max, Team Premium, Enterprise pay-as-you-go, and the API. Any workflow hardcoded to the 4.1 model string will begin failing in 60 days.",
+          "action": "Search codebases and API configurations for claude-opus-4-1-20250805 and replace with claude-opus-4-8. The deprecation page now also shows that temperature, top_p, and top_k are API errors on Opus 4.7 and later.",
+          "tools": [
+            "Claude API",
+            "Amazon Bedrock",
+            "Vertex AI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "name": "Anthropic Model Deprecations"
+            },
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Claude Platform Release Notes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "OpenAI macOS app signing certificates expire June 12 forcing update deadline",
+          "description": "Following the May 11 TanStack npm supply chain attack in which TeamPCP exfiltrated credentials from two OpenAI employee devices, OpenAI is revoking compromised code-signing certificates on June 12. After that date, macOS Gatekeeper will block launches of any ChatGPT Desktop, Codex App, Codex CLI, or Atlas build signed with the old certificate. Windows and iOS users are unaffected.",
+          "action": "Update all macOS OpenAI desktop apps before June 12. Builders running Codex CLI in macOS CI pipelines must update the binary or add the new certificate to trust stores before the revocation date or automated pipelines will break.",
+          "tools": [
+            "ChatGPT Desktop",
+            "Codex App",
+            "Codex CLI",
+            "Atlas"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/",
+              "name": "OpenAI Security Response"
+            },
+            {
+              "url": "https://thehackernews.com/2026/05/tanstack-supply-chain-attack-hits-two.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://securityonline.info/openai-chatgpt-codex-certificate-rotation-tanstack-incident/",
+              "name": "Security Online"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "OpenAI replaces ChatGPT saved memories with Dreaming V3 background synthesis architecture",
+          "description": "OpenAI began rolling out Dreaming V3 on June 4 for ChatGPT Plus and Pro users in the US, replacing the manually curated saved-memories list with a background synthesis process that reads across conversation history and updates itself automatically over time. A hierarchical memory structure separates short-term conversation context from long-term user knowledge, allowing memories to stay current without user prompting. OpenAI published the Memory API and invited external privacy researchers to review its guarantees.",
+          "action": "Builders integrating ChatGPT into workflows that depend on explicit user-managed memory should review the new Memory API documentation. Expect ChatGPT to behave differently for long-term users as background synthesis accumulates context that was previously only in saved notes.",
+          "tools": [
+            "ChatGPT",
+            "OpenAI Memory API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/chatgpt-memory-dreaming/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://www.ghacks.net/2026/06/05/openai-upgrades-chatgpt-memory-with-new-dreaming-architecture-for-plus-and-pro-users/",
+              "name": "gHacks"
+            },
+            {
+              "url": "https://www.techtimes.com/articles/317840/20260605/chatgpt-memory-dreaming-update-openai-rewrites-personalization-engine-limits-audit-trail.htm",
+              "name": "TechTimes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
+      "low": 0
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-05T09:00+06:00",
+  "lastUpdated": "2026-06-06T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -756,6 +756,24 @@
     "2026-06-05: Make.com, Zapier, Airtable: no new product updates found for June 4-5.",
     "2026-06-05: NOTE for June 15 digest: Claude Sonnet 4 (claude-sonnet-4-20250514) and Opus 4 (claude-opus-4-20250514) retire from the Claude API on June 15. Covered in April 15 digest. Reframe as completed event. Agent SDK billing split also takes effect June 15 (covered May 15).",
     "2026-06-05: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists.",
-    "2026-06-05: Codex CLI v0.137.0 multi-agent v2 runtime changes thread-level model selection. This is a potential breaking change for existing multi-agent orchestration scripts. Noted in action item."
+    "2026-06-05: Codex CLI v0.137.0 multi-agent v2 runtime changes thread-level model selection. This is a potential breaking change for existing multi-agent orchestration scripts. Noted in action item.",
+    "2026-06-06: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). OpenAI Agent Builder + Evals + Prompt Objects triple deprecation Nov 30 (CRITICAL 8, June 3, 72h extension). Claude Opus 4.1 deprecated retirement Aug 5 (WATCH 7, June 5, primary source). OpenAI macOS TanStack certificate revocation June 12 (WATCH 7). ChatGPT Dreaming V3 memory architecture (WATCH 6, June 4-5).",
+    "2026-06-06: Claude Opus 4.1 (claude-opus-4-1-20250805) confirmed deprecated June 5 via platform.claude.com/docs/en/about-claude/model-deprecations (primary source, fetchable). Retirement August 5, 2026. Replace with claude-opus-4-8.",
+    "2026-06-06: OpenAI Agent Builder + Evals + Prompt Objects deprecation was June 3. 72h extension applied: significant for builders on OpenAI platform, three tools simultaneously sunset Nov 30 2026, not in any prior digest.",
+    "2026-06-06: TanStack certificate deadline June 12 included per agent notes from June 1 specifying coverage on June 5-6 when within 7 days. Affects macOS ChatGPT Desktop, Codex App, Codex CLI, Atlas.",
+    "2026-06-06: ChatGPT Dreaming V3 rolled out June 4-5. Consumer feature but Memory API published for developers. Not in any prior digest. Score 6.",
+    "2026-06-06: Managed Agents self-hosted sandboxes and MCP tunnels were announced May 19 at Code w/ Claude London. Too old for inclusion. Compliance API was May 21. Rate limits doubled was May 6. All predated the window; Tokyo conference (June 5-6) was reannouncing these, not making new launches.",
+    "2026-06-06: Gemini 2.5 Flash deprecation delayed from June to October 16, 2026 per Google emails. Deprecation page last updated June 1 (5 days old, outside 48h window). Skip.",
+    "2026-06-06: GitHub Copilot CLI v1.0.60 (June 5) adds max reasoning effort for Anthropic models. Potentially covered by June 5 digest CRITICAL 8 'GitHub Copilot gains one-million-token context and configurable reasoning'. Skip to avoid duplication.",
+    "2026-06-06: Claude Code v2.1.165 (June 5 05:45 UTC) is bug fixes and reliability improvements only. Skipped per minor bugfix precedent.",
+    "2026-06-06: n8n 2.25.5 (June 5) is a pre-release. All June 3-5 n8n releases are either pre-release or minor bug fixes. Skipped per established precedent.",
+    "2026-06-06: Codex CLI 0.138.0-alpha.4 and alpha.5 (June 4-5) are pre-release alphas. Skipped per established precedent.",
+    "2026-06-06: OpenAI older GPT Image model deprecation (June 2, removal Dec 1 2026) was 4 days old and specific model names unclear. Outside 48h window, skipped.",
+    "2026-06-06: AWS Copilot CLI end of support June 12 noted but excluded as ECS deployment tooling not relevant to AI automation builder reader profile.",
+    "2026-06-06: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists.",
+    "2026-06-06: NOTE for June 8 digest: Gemini Interactions API legacy outputs schema removed June 8 (covered May 10). Gemini 3.5 Flash admin toggle removed June 8 (covered June 3). Anthropic Agent SDK credit claim email goes June 8. Reframe as completed events.",
+    "2026-06-06: NOTE for June 15 digest: Claude Sonnet 4 and Opus 4 retire June 15 (covered April 15). Agent SDK billing split takes effect June 15 (covered May 15). Reframe as completed events. Do NOT re-include per duplication rule.",
+    "2026-06-06: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-06: lastUpdated timestamp updated to 2026-06-06T09:00+06:00."
   ]
 }
