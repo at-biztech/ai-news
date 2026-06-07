@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-07",
     "2026-06-06",
     "2026-06-05",
     "2026-06-04",
@@ -8198,6 +8199,140 @@
           "sourceTier": 0,
           "sourceUrl": "",
           "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
+      "low": 0
+    },
+    "2026-06-07": {
+      "dateKey": "2026-06-07",
+      "date": "June 7, 2026",
+      "summary": "Miasma worm plants credential harvesting payloads in 73 Microsoft Azure GitHub repositories targeting Claude Code and Gemini CLI users; OpenAI launches Lockdown Mode for ChatGPT; Claude Code gains fallback model resilience; Gemini Interactions API legacy schema permanently removed June 8.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Miasma worm plants credential harvesting payloads in 73 Microsoft Azure GitHub repositories targeting AI coding tools",
+          "description": "On June 5, the Miasma self-replicating supply chain worm reached Microsoft's Azure GitHub organizations, planting config files in 73 repositories across Azure, Azure-Samples, Microsoft, and MicrosoftDocs that silently harvest developer credentials when a repository is opened in Claude Code, Gemini CLI, Cursor, or VS Code. GitHub's automated systems disabled all 73 affected repos in 105 seconds, but any developer who cloned between June 4 and June 5 and opened the repo in an affected tool may have had credentials exfiltrated. Miasma is assessed as a variant of the Mini Shai-Hulud worm family tied to the same campaign as the May TanStack supply chain attack.",
+          "action": "Audit any repositories cloned from the Azure, Azure-Samples, Microsoft, or MicrosoftDocs GitHub organizations between June 4 and June 5 for unexpected changes to CLAUDE.md, .cursorrules, or .vscode/settings.json. Rotate API keys, GitHub tokens, and cloud credentials for any machine where affected repos were opened in Claude Code, Gemini CLI, Cursor, or VS Code during that window.",
+          "tools": [
+            "Claude Code",
+            "Gemini CLI",
+            "Cursor",
+            "VS Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://thenextweb.com/news/miasma-worm-microsoft-github-supply-chain",
+              "name": "The Next Web"
+            },
+            {
+              "url": "https://thecybersecguru.com/news/miasma-worm-targets-ai-coding-agents-github-microsoft/",
+              "name": "CyberSec Guru"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 1,
+          "sourceUrl": "https://thehackernews.com/2026/06/miasma-worm-hits-73-microsoft-github.html",
+          "sourceName": "The Hacker News"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI launches ChatGPT Lockdown Mode to block prompt injection data exfiltration for all accounts",
+          "description": "OpenAI launched Lockdown Mode on June 6, an opt-in security setting available to all ChatGPT accounts that disables web browsing, agent mode, deep research, file downloads, external connectors, and canvas networking to block the final exfiltration stage of prompt injection attacks. Enterprise admins can enforce Lockdown Mode workspace-wide via RBAC and the Compliance API. Lockdown Mode and Developer Mode are mutually exclusive: enabling one disables the other, so any enterprise workflow using Developer Mode must choose between agentic capability and network lockdown.",
+          "action": "Review enterprise ChatGPT agentic workflows that rely on web access, agent mode, or file downloads before rolling out Lockdown Mode to users. Document the security tradeoff for clients: Lockdown Mode stops exfiltration but breaks multi-step agent tasks that require external data fetching.",
+          "tools": [
+            "ChatGPT",
+            "OpenAI Compliance API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://cybersecuritynews.com/chatgpt-lockdown-mode/",
+              "name": "Cybersecurity News"
+            },
+            {
+              "url": "https://betanews.com/article/lockdown-mode-is-rolling-out-to-all-chatgpt-accounts/",
+              "name": "BetaNews"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 1,
+          "sourceUrl": "https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt/",
+          "sourceName": "OpenAI"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.166 adds fallback model configuration with three model cascade and global tool deny glob",
+          "description": "Claude Code v2.1.166 (June 6, 00:55 UTC) adds a fallbackModel setting that lets builders configure up to three fallback models that are activated automatically when the primary model is overloaded or unavailable, enabling resilient production deployments without custom retry logic. Glob pattern support in deny rules now allows using a wildcard to deny all tools in a single rule, which simplifies locked-down execution environments. MAX_THINKING_TOKENS=0 and the new --thinking disabled flag now correctly disable thinking on default-thinking models such as Opus 4.8.",
+          "action": "Add a fallbackModel array to your Claude Code project config pointing to claude-sonnet-4-6 or claude-opus-4-7 as failover targets for Opus 4.8 deployments. Use the wildcard deny glob in high-security automation contexts where no shell access should be granted.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "Claude Code GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases",
+          "sourceName": "Claude Code GitHub Releases"
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Gemini Interactions API permanently removes legacy outputs schema June 8 with no opt-out remaining",
+          "description": "The legacy outputs response format in the Gemini Interactions API is permanently removed June 8, 2026, one day from today. All applications using the legacy schema that have not migrated to the steps format or upgraded to Python SDK 2.0.0 or JavaScript SDK 2.0.0 will receive errors after the cutoff. The Api-Revision: 2026-05-07 opt-out header ceases to function after June 8; there is no rollback or extension available after this date.",
+          "action": "Immediately audit all Gemini Interactions API integrations. Upgrading Python SDK to 2.0.0 or JavaScript SDK to 2.0.0 automatically handles the new steps schema with no code changes to response reading. If you cannot upgrade today, add the Api-Revision: 2026-05-07 header as an emergency stopgap before the June 8 cutoff, then migrate fully this week.",
+          "tools": [
+            "Gemini API",
+            "Google AI Python SDK",
+            "Google AI JavaScript SDK"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026",
+              "name": "Google Gemini API Migration Guide"
+            },
+            {
+              "url": "https://byteiota.com/gemini-interactions-api-migrate-before-june-8/",
+              "name": "byteiota"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 1,
+          "sourceUrl": "https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026",
+          "sourceName": "Google Gemini API Migration Guide"
         }
       ],
       "totalScanned": 4,
