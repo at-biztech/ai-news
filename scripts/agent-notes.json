@@ -797,6 +797,25 @@
     "2026-06-07: NOTE for June 15 digest: Claude Sonnet 4 and Opus 4 retire June 15 (covered April 15). Agent SDK billing split takes effect June 15 (covered May 15). Reframe as completed events.",
     "2026-06-07: NOTE for June 18: Gemini CLI stops serving requests June 18, replaced by Antigravity CLI. Covered in May 20 digest as Antigravity 2.0. Consider day-before item June 17 for builders who missed May 20 coverage.",
     "2026-06-07: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
-    "2026-06-07: lastUpdated timestamp updated to 2026-06-07T09:00+06:00."
+    "2026-06-07: lastUpdated timestamp updated to 2026-06-07T09:00+06:00.",
+    "2026-06-08: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). Apple iOS 27 Extensions opens system-level AI to Claude, Gemini, and ChatGPT at WWDC 2026 (CRITICAL 9). Gemini Interactions API legacy outputs schema permanently removed as completed event (WATCH 7). Anthropic Agent SDK credit claim email arrives with one week before June 15 billing split (WATCH 7). Gemini 3.5 Flash admin toggle removed from Gemini Enterprise (WATCH 6).",
+    "2026-06-08: Apple WWDC 2026 (June 8 keynote, 10am PT) is the dominant story. iOS 27 Extensions framework lets users set Claude, Gemini, or ChatGPT as system-level AI provider for Siri, Writing Tools, and Image Playground. Siri rebuilt on custom Google Gemini 1.2T param model ($1B/year). Developer betas available immediately, consumer launch fall 2026. This is a new distribution channel for Claude at the OS level.",
+    "2026-06-08: Gemini Interactions API legacy outputs permanently removed. Completed event following May 10 (countdown), June 7 (day-before) pattern. Three-item coverage complete for this deprecation.",
+    "2026-06-08: Anthropic Agent SDK credit claim email: One-time opt-in to claim monthly credits before June 15 billing split. Pro $20/mo, Max 5x $100/mo, Max 20x $200/mo. Teams running shared CI pipelines on multiple accounts cannot pool credits.",
+    "2026-06-08: Gemini 3.5 Flash admin toggle removal: Effective today. No further items needed for this - the toggle is gone, completed event framing not needed since it was WATCH 6 level (not the three-item Haiku pattern which applies to CRITICAL-level retirements).",
+    "2026-06-08: Checked Claude Platform release notes - latest entry remains June 5 (Opus 4.1 deprecation, covered June 6). No new entries June 6-8.",
+    "2026-06-08: Claude Code latest stable is v2.1.168 (June 6 23:41 UTC, bug fixes only). No new stable releases June 7-8. Already skipped per agent notes June 7.",
+    "2026-06-08: GitHub Copilot CLI latest stable is v1.0.60 (June 5, covered in June 5-6 review, skipped per June 6 notes as potentially covered by June 5 CRITICAL 8 item). No new stable releases June 6-8.",
+    "2026-06-08: OpenAI Codex CLI: 0.138.0-alpha.6 (June 6) is pre-release only. No stable in window.",
+    "2026-06-08: n8n: 2.25.x still pre-release. No new stable releases June 6-8.",
+    "2026-06-08: NVIDIA Llama Embed Nemotron 8B confirmed as October 2025 release, not a June 2026 launch. Skip.",
+    "2026-06-08: Claude Code source map leak (March 31, 2026) was already a known story from April 2026. Not included (10 weeks old).",
+    "2026-06-08: No new Zapier, Make.com, or Airtable product updates found for June 6-8.",
+    "2026-06-08: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists.",
+    "2026-06-08: NOTE for June 10 digest: Code w/ Claude Tokyo conference is June 10. May produce new Anthropic product announcements. MiniMax M3 open weights expected ~June 10-11 on Hugging Face. Also check for WWDC follow-up developer items (Extensions SDK details, developer previews).",
+    "2026-06-08: NOTE for June 15 digest: Claude Sonnet 4 (claude-sonnet-4-20250514) and Opus 4 (claude-opus-4-20250514) retire from the Claude API on June 15. Agent SDK billing split also takes effect June 15. Reframe as completed events. Opus 4.1 (claude-opus-4-1-20250805) deprecated June 5, retires August 5.",
+    "2026-06-08: NOTE for June 17 digest: Gemini CLI stops serving requests June 18 (Antigravity CLI transition). Consider day-before item for builders who missed May 20 coverage.",
+    "2026-06-08: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-08: lastUpdated timestamp updated to 2026-06-08T09:00+06:00."
   ]
 }

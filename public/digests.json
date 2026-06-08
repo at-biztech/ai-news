@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-08",
     "2026-06-07",
     "2026-06-06",
     "2026-06-05",
@@ -8333,6 +8334,147 @@
           "sourceTier": 1,
           "sourceUrl": "https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026",
           "sourceName": "Google Gemini API Migration Guide"
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
+      "low": 0
+    },
+    "2026-06-08": {
+      "dateKey": "2026-06-08",
+      "date": "June 8, 2026",
+      "summary": "Apple opens iOS 27 AI layer to Claude, Gemini, and ChatGPT as system-level providers at WWDC 2026; Google Interactions API legacy schema permanently removed; Anthropic Agent SDK credit claim email arrives with one week to act before June 15 billing split.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Apple opens iOS 27 AI layer to Claude, Gemini, and ChatGPT as system providers",
+          "description": "At WWDC 2026, Apple announced iOS 27 Extensions, a system-wide framework letting users set Claude, Gemini, or ChatGPT as the AI provider for Siri, Writing Tools, and Image Playground across iOS 27, iPadOS 27, and macOS 27. Siri itself is rebuilt on a custom 1.2-trillion-parameter Google Gemini model licensed at approximately 1 billion dollars per year. An Extensions API published to Apple Developer today lets any AI provider ship native OS-level integration through the App Store, with developer betas available immediately and consumer launch in fall 2026.",
+          "action": "Enroll in Apple Developer Program and review the iOS 27 Extensions API documentation to begin integration planning for fall 2026. This is the first time Apple has made third-party AI a first-class OS citizen; Claude-based products can now reach users without requiring a separate app launch.",
+          "tools": [
+            "Claude",
+            "iOS 27",
+            "Siri",
+            "Apple Intelligence",
+            "Apple Developer Program"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://cryptobriefing.com/apple-wwdc-2026-siri-ai-overhaul/",
+              "name": "CryptoBriefing"
+            },
+            {
+              "url": "https://letsdatascience.com/news/apple-unveils-gemini-powered-siri-and-ios-27-at-wwdc-2026-b757953c",
+              "name": "Let's Data Science"
+            },
+            {
+              "url": "https://www.bloomberg.com/news/articles/2026-06-05/wwdc-2026-preview-ios-27-siri-ai-features-macos-27-more-apple-will-announce",
+              "name": "Bloomberg"
+            },
+            {
+              "url": "https://developer.apple.com/wwdc26/",
+              "name": "Apple Developer"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Gemini Interactions API legacy outputs schema permanently removed",
+          "description": "Today is the hard removal date for the legacy outputs array in the Gemini Interactions API. There is no opt-out header available after today. All integrations still sending requests with the outputs-based schema will now receive errors. The steps array replacement was introduced in May with the default shifting to it on May 26, and SDK versions 2.0.0 and above already use steps by default.",
+          "action": "Audit Gemini Interactions API integrations for any remaining outputs usage. If calls are failing today, migrate to the steps schema or upgrade to SDK 2.0.0 and above which handles the migration automatically.",
+          "tools": [
+            "Gemini API",
+            "ADK"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026",
+              "name": "Google AI for Developers"
+            },
+            {
+              "url": "https://byteiota.com/gemini-interactions-api-migrate-before-june-8/",
+              "name": "Byteiota"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Anthropic Agent SDK credit claim email arrives; one week before June 15 billing split",
+          "description": "Anthropic is sending eligible subscribers a one-time opt-in email today to claim monthly Agent SDK credits before the June 15 billing split. Credits are 20 dollars per month for Pro, 100 dollars per month for Max 5x, and 200 dollars per month for Max 20x. After June 15, all claude -p, GitHub Actions, and programmatic Agent SDK usage moves to this separate credit pool billed at API list prices. Interactive Claude Code terminal sessions are not affected.",
+          "action": "Check email and claim credits via Claude account settings today. The claim is one-time; credits refresh automatically each billing cycle after that. Teams running shared CI pipelines on multiple accounts cannot pool credits and should switch to direct API key billing before June 15.",
+          "tools": [
+            "Claude API",
+            "Agent SDK",
+            "Claude Code",
+            "GitHub Actions"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://chatforest.com/reviews/anthropic-claude-agent-sdk-billing-split-june-15-2026-credit-pool-developer-guide/",
+              "name": "ChatForest"
+            },
+            {
+              "url": "https://codersera.com/blog/anthropic-june-2026-billing-change-claude-code/",
+              "name": "CodersEra"
+            },
+            {
+              "url": "https://thenewstack.io/anthropic-agent-sdk-credits/",
+              "name": "The New Stack"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Gemini 3.5 Flash admin disable toggle removed from Gemini Enterprise app",
+          "description": "Effective today, the feature management toggle that allowed workspace admins to disable Gemini 3.5 Flash for users is no longer available in the Gemini Enterprise app. Gemini 3.5 Flash is now permanently enabled by default and cannot be turned off across all regions including Global, US, and EU multi-regions.",
+          "action": "If enterprise deployments relied on disabling Gemini 3.5 Flash for compliance or cost control, audit current Gemini Enterprise configurations. Account-level or project-level restrictions must now be used instead of the removed model toggle.",
+          "tools": [
+            "Gemini Enterprise",
+            "Gemini 3.5 Flash"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+              "name": "Google Cloud Documentation"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
         }
       ],
       "totalScanned": 4,
