@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-09",
     "2026-06-08",
     "2026-06-07",
     "2026-06-06",
@@ -8481,6 +8482,101 @@
       "relevant": 4,
       "critical": 1,
       "watch": 3,
+      "low": 0
+    },
+    "2026-06-09": {
+      "dateKey": "2026-06-09",
+      "date": "June 9, 2026",
+      "summary": "Claude Sonnet 4 and Opus 4 API model strings expire in six days with no failover; Claude Code 2.1.169 ships safe-mode isolation and cache-preserving directory switch; Codex CLI 0.138.0 adds desktop handoff for macOS and Windows agents.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Claude Sonnet 4 and Opus 4 API model strings expire in six days with no failover",
+          "description": "On June 15 at 09:00 PT, API calls to claude-sonnet-4-20250514 and claude-opus-4-20250514 return hard errors with no automatic redirect to a successor model. This is separate from the Agent SDK billing split also on June 15 covered in yesterday's digest. The migration is a single-line swap to claude-sonnet-4-6 or claude-opus-4-8 respectively; Anthropic has confirmed no prompt rewrites are required across 4.x generations.",
+          "action": "Grep every codebase, config file, environment variable, and third-party integration for both model strings. Also check any orchestration layers including n8n, Make, and Zapier that may pass Claude model names as parameters. Must complete before June 15 09:00 PT.",
+          "tools": [
+            "Claude API",
+            "claude-sonnet-4-20250514",
+            "claude-opus-4-20250514"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "name": "Anthropic Platform Docs"
+            },
+            {
+              "url": "https://www.mindstudio.ai/blog/claude-sonnet-4-opus-4-deprecation-migration-guide",
+              "name": "MindStudio"
+            },
+            {
+              "url": "https://enterprisedna.co/resources/news/anthropic-claude-june-15-retirements-billing-2026/",
+              "name": "Enterprise DNA"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.169 ships safe-mode isolation and cache-preserving directory switch",
+          "description": "The --safe-mode flag and CLAUDE_CODE_SAFE_MODE environment variable disable all customizations including CLAUDE.md, plugins, skills, hooks, and MCP servers for clean troubleshooting without touching project files. The new /cd command moves a session to a new working directory while keeping the prompt cache intact, eliminating the cold-start cost when switching between project roots mid-session. Enterprise MCP policy enforcement via allowedMcpServers and deniedMcpServers is now correctly applied on reconnect and IDE-typed configs, closing a security gap for managed deployments.",
+          "action": "Add --safe-mode to CI steps that run Claude Code in sandboxed or restricted environments. Use /cd instead of opening a new session when navigating between repos to keep cache warm. Verify enterprise MCP policies are enforced correctly after reconnect in multi-repo setups.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.138.0 ships desktop handoff and image path exposure for agent pipelines",
+          "description": "The /app command routes a Codex CLI session to a native macOS or Windows desktop application, enabling agents to interact with GUI tools and system-level APIs unavailable from the terminal. Image file paths produced in earlier pipeline steps are now passed directly to the model without re-uploading, enabling coherent multi-step image workflows. Account token usage is now visible inside app-server integrations, giving teams cost visibility in automated Codex pipelines.",
+          "action": "Test /app handoff if your pipelines involve GUI-dependent tools on macOS or Windows. Review token usage reporting in app-server mode if you run Codex in CI pipelines with cost budgets.",
+          "tools": [
+            "Codex CLI",
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
       "low": 0
     }
   }

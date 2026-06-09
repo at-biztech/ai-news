@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-06T09:00+06:00",
+  "lastUpdated": "2026-06-09T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -816,6 +816,21 @@
     "2026-06-08: NOTE for June 15 digest: Claude Sonnet 4 (claude-sonnet-4-20250514) and Opus 4 (claude-opus-4-20250514) retire from the Claude API on June 15. Agent SDK billing split also takes effect June 15. Reframe as completed events. Opus 4.1 (claude-opus-4-1-20250805) deprecated June 5, retires August 5.",
     "2026-06-08: NOTE for June 17 digest: Gemini CLI stops serving requests June 18 (Antigravity CLI transition). Consider day-before item for builders who missed May 20 coverage.",
     "2026-06-08: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
-    "2026-06-08: lastUpdated timestamp updated to 2026-06-08T09:00+06:00."
+    "2026-06-08: lastUpdated timestamp updated to 2026-06-08T09:00+06:00.",
+    "2026-06-09: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). Claude Sonnet 4 and Opus 4 API model strings expire June 15 with no failover (CRITICAL 8, 6 days away, distinct from Agent SDK billing split covered June 8). Claude Code 2.1.169 with --safe-mode isolation, /cd cache-preserving directory switch, disableBundledSkills, enterprise MCP policy fix (WATCH 7, June 8 21:57 UTC). Codex CLI 0.138.0 with /app desktop handoff for macOS and Windows, image path exposure, token usage visibility (WATCH 6, June 8 stable).",
+    "2026-06-09: Anthropic SpaceX compute deal and Claude Code rate limit doubling were May 6-7, 2026. Outside 48h window. Skipped.",
+    "2026-06-09: MCP stateless specification RC was locked May 21, 2026. Outside 48h window. Final spec ships July 28, 2026. Note for future digests when July 28 approaches.",
+    "2026-06-09: Gemini 3.5 Pro still not GA as of June 9. In limited Vertex preview only. Skip until confirmed launch.",
+    "2026-06-09: n8n@1.123.54 (June 8) patched 9 dependency-level security CVEs. Not n8n-specific RCE vulnerabilities. Skipped per minor patch precedent. n8n@2.25.6 is pre-release, also skipped.",
+    "2026-06-09: Chrome DevTools MCP server GA in Chrome 149 was June 2, 2026. Outside 48h window. Not in any prior digest but stale by a week. If another run covers it within window, include as WATCH 7.",
+    "2026-06-09: Code with Claude Tokyo (June 10) and Extended Tokyo (June 11) may produce Anthropic product announcements tomorrow. MiniMax M3 open weights expected Hugging Face ~June 11. Both targets for June 10 digest.",
+    "2026-06-09: OpenAI o3 retirement from ChatGPT August 26, GPT-4.5 retirement June 27 announced June 3. Outside 48h window. Note for June 27 digest countdown.",
+    "2026-06-09: Gemini CLI stops serving requests June 18. Reserving for June 17 digest per established plan.",
+    "2026-06-09: Codex CLI 0.139.0-alpha.1 (June 9) is pre-release. Skipped per established precedent.",
+    "2026-06-09: No detached HEAD issue this session. Started fresh, main branch up to date.",
+    "2026-06-09: NOTE for June 10-11 digest: Code with Claude Tokyo may announce Claude Managed Agents updates, Claude Code enterprise features, or new API capabilities. MiniMax M3 open weights expected on Hugging Face around June 11.",
+    "2026-06-09: NOTE for June 15 digest: claude-sonnet-4-20250514 and claude-opus-4-20250514 retire. Agent SDK billing split also June 15. Reframe as completed events. Opus 4.1 retires August 5.",
+    "2026-06-09: NOTE for June 17 digest: Gemini CLI stops serving requests June 18 (Antigravity CLI transition). Include day-before countdown.",
+    "2026-06-09: NOTE for June 27 digest: GPT-4.5 retires from ChatGPT June 27 (API continues). Begin countdown June 25."
   ]
 }
