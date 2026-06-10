@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-09T09:00+06:00",
+  "lastUpdated": "2026-06-10T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -831,6 +831,19 @@
     "2026-06-09: NOTE for June 10-11 digest: Code with Claude Tokyo may announce Claude Managed Agents updates, Claude Code enterprise features, or new API capabilities. MiniMax M3 open weights expected on Hugging Face around June 11.",
     "2026-06-09: NOTE for June 15 digest: claude-sonnet-4-20250514 and claude-opus-4-20250514 retire. Agent SDK billing split also June 15. Reframe as completed events. Opus 4.1 retires August 5.",
     "2026-06-09: NOTE for June 17 digest: Gemini CLI stops serving requests June 18 (Antigravity CLI transition). Include day-before countdown.",
-    "2026-06-09: NOTE for June 27 digest: GPT-4.5 retires from ChatGPT June 27 (API continues). Begin countdown June 25."
+    "2026-06-09: NOTE for June 27 digest: GPT-4.5 retires from ChatGPT June 27 (API continues). Begin countdown June 25.",
+    "2026-06-10: 5 items (1 CRITICAL, 3 WATCH, 1 LOW). Claude Fable 5 first public Mythos-class model (CRITICAL 10, June 9, platform.claude.com confirmed), GitHub Copilot CLI 1.0.61 Fable 5 routing and natural language scheduling (WATCH 7, June 9), Codex CLI 0.139.0 standalone web search in code mode and oneOf/allOf schema fix (WATCH 7, June 9), n8n 2.26.0 hono/postcss CVE patches and AI Gateway credential export fix (WATCH 6, June 9), Claude Code 2.1.170 Fable 5 access and VS Code transcript fix (LOW 5, June 9).",
+    "2026-06-10: Claude Fable 5 was launched June 9 but not in the June 9 digest (that digest was generated before the launch). Key builder impacts: new tokenizer (+30% tokens vs pre-Opus 4.7), new stop_reason refusal API behavior, opt-in fallbacks parameter in beta, free on subscription through June 22 then requires credits June 23.",
+    "2026-06-10: Claude Mythos 5 also deployed to Project Glasswing participants on June 9. Not a separate item since it is restricted-access, but worth noting in the Fable 5 context.",
+    "2026-06-10: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. June 9 entry confirmed Fable 5 and Mythos 5 launch with full API details. Best primary source.",
+    "2026-06-10: github.com/anthropics/claude-code/releases shows v2.1.170 June 9 17:23 UTC (Fable 5 access + VS Code transcript fix) and v2.1.169 June 8 21:57 UTC (covered June 9 digest). v2.1.170 scored as LOW 5.",
+    "2026-06-10: github.com/openai/codex/releases shows v0.139.0 stable June 9 20:13 UTC and v0.138.0 June 8 (covered in June 9 digest). 0.139.0 included as WATCH 7.",
+    "2026-06-10: github.com/github/copilot-cli/releases shows v1.0.61 June 9 22:02 UTC with Fable 5 support and natural language scheduling for /every and /after. Included as WATCH 7.",
+    "2026-06-10: github.com/n8n-io/n8n/releases shows n8n@2.26.0 June 9 10:50 UTC and n8n@2.26.1 June 9 15:53 UTC (CI-only). 2.26.0 included as WATCH 6 for security patches and AI Gateway fix.",
+    "2026-06-10: MCP 2026-07-28 RC was published May 21. Stateless protocol, MCP Apps, Tasks extension, auth overhaul. 20 days old, well outside 48-hour window. Skipped.",
+    "2026-06-10: WWDC 2026 Anthropic Swift package for Foundation Models and Xcode 27 dual-engine agentic coding are follow-ons to the June 8 Apple iOS 27 WWDC story. Skipped to avoid duplication.",
+    "2026-06-10: OpenAI fine-tuning API wind-down (announced May 7) is outside the 48-hour window. Skipped.",
+    "2026-06-10: No new Zapier or Make.com product updates found for June 9-10.",
+    "2026-06-10: No detached HEAD issue this session. Started on main, up to date with origin/main."
   ]
 }

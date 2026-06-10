@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-10",
     "2026-06-09",
     "2026-06-08",
     "2026-06-07",
@@ -8578,6 +8579,157 @@
       "critical": 1,
       "watch": 2,
       "low": 0
+    },
+    "2026-06-10": {
+      "dateKey": "2026-06-10",
+      "date": "June 10, 2026",
+      "summary": "Anthropic releases Claude Fable 5, first publicly available Mythos-class model at $10/$50 per million tokens with new stop_reason refusal handling and opt-in model fallbacks; CLI tooling updates across Claude Code, Codex CLI, and Copilot CLI ship Fable 5 routing on the same day.",
+      "items": [
+        {
+          "score": 10,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Anthropic releases Claude Fable 5, first publicly available Mythos-class model",
+          "description": "Claude Fable 5 (claude-fable-5) is live on the Claude API, Amazon Bedrock, Google Vertex AI, and Microsoft Foundry at $10/$50 per million input/output tokens, double Opus 4.8 pricing. The model uses the same tokenizer as Opus 4.7, generating roughly 30 percent more tokens than pre-4.7 models on identical text, meaning existing prompts cost more without adjustment. New API behavior: when safety classifiers decline a request in cybersecurity, biology, chemistry, or distillation domains, the Messages API returns HTTP 200 with stop_reason: refusal; an opt-in fallbacks parameter in beta re-runs refused requests on a fallback model at that model's rate. Fable 5 is free on Pro, Max, Team, and seat-based Enterprise plans through June 22; from June 23, continued use requires usage credits at standard API token rates. Project Glasswing participants simultaneously receive Claude Mythos 5.",
+          "action": "Audit all existing prompts using the token counting API with model: claude-fable-5 before switching to size cost impact from the new tokenizer. Add stop_reason refusal handling to error-handling and retry logic in any pipeline that calls Fable 5. Review the fallbacks parameter for automated workflows that may touch cybersecurity or bio/chem domains. Enable usage credits before June 23 if you want subscription plan access to Fable 5 after the free window closes.",
+          "tools": [
+            "Claude API",
+            "Amazon Bedrock",
+            "Google Vertex AI",
+            "Microsoft Foundry",
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Docs"
+            },
+            {
+              "url": "https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://www.cnbc.com/2026/06/09/anthropic-mythos-claude-fable-5.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://www.aboutamazon.com/news/aws/claude-fable-5-anthropic-available-amazon-bedrock",
+              "name": "About Amazon"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.61 adds Claude Fable 5 routing and natural language task scheduling",
+          "description": "Version 1.0.61 routes requests to Claude Fable 5 and ships a Create New Agent wizard in the /agents picker with consistent styling. Natural language scheduling for /every and /after commands replaces cron syntax, so you can schedule tasks with plain text such as every weekday at 9am. MCP server auto-loading from .github/mcp.json is improved, and an indexed search is added for navigating large monorepos.",
+          "action": "Update to 1.0.61 for Fable 5 access in Copilot CLI. Test /every and /after with natural language syntax if you schedule agent tasks. Verify .github/mcp.json MCP auto-loading behavior in multi-repo environments.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.139.0 ships standalone web search in code mode and fixes MCP tool schema flattening",
+          "description": "Web search is now callable as a standalone tool in code mode without switching contexts, enabling agents to pull in fresh API documentation or error references mid-session. Tool schemas now correctly preserve oneOf and allOf structures, fixing a regression where complex MCP tool definitions using union types or allOf patterns were silently flattened, causing tool-calling failures in some MCP server integrations. The codex doctor command gains editor and pager environment diagnostics.",
+          "action": "Update to 0.139.0 if you use Codex CLI with MCP servers that define complex tool schemas using oneOf or allOf. The schema fix may silently resolve tool-calling failures that appeared in 0.138.x. Use web search in code mode to give agents live access to documentation during long coding sessions.",
+          "tools": [
+            "Codex CLI",
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "n8n 2.26.0 patches hono and postcss CVEs and fixes AI Gateway credential export",
+          "description": "n8n 2.26.0 ships security patches for CVEs in its hono and postcss dependencies. A bug where AI Gateway credentials were omitted from workflow export payloads is fixed, resolving broken workflow portability for teams using n8n's AI Gateway integration. OAuth state management and API redaction enforcement are also corrected.",
+          "action": "Update n8n instances to 2.26.0 promptly for the security patches. If you use AI Gateway in n8n and have experienced incomplete workflow exports, this release restores credential inclusion.",
+          "tools": [
+            "n8n",
+            "AI Gateway"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/n8n-io/n8n/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 5,
+          "tag": "LOW",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.170 enables Fable 5 and fixes transcript loss in VS Code terminal",
+          "description": "v2.1.170 adds Claude Fable 5 as a selectable model in Claude Code. A bug where sessions launched from the VS Code integrated terminal or any shell that inherited Claude Code environment variables failed to save transcripts and did not appear in --resume is fixed.",
+          "action": "Update to 2.1.170 to access Fable 5 from Claude Code. If you launch Claude Code from the VS Code terminal and have had missing session history in --resume, this resolves the transcript persistence bug.",
+          "tools": [
+            "Claude Code",
+            "VS Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
+      "low": 1
     }
   }
 }
