@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-11",
     "2026-06-10",
     "2026-06-09",
     "2026-06-08",
@@ -8730,6 +8731,106 @@
       "critical": 1,
       "watch": 3,
       "low": 1
+    },
+    "2026-06-11": {
+      "dateKey": "2026-06-11",
+      "date": "June 11, 2026",
+      "summary": "Claude Managed Agents ships native cron scheduling and vault-secured credential injection for autonomous agent pipelines; Claude Code 2.1.172 unlocks nested sub-agent hierarchies up to five levels deep.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Claude Managed Agents ships native cron scheduling and vault-secured credential injection",
+          "description": "Anthropic put two long-missing enterprise plumbing pieces into Managed Agents public beta: a cron scheduler that fires new agent sessions automatically with no hosting overhead, and vault storage for environment variable credentials that injects secrets at the network boundary without ever placing them in the model context. Scheduled deployments run under existing Claude Platform usage pricing with no separate charge. The two features together address the two most common reasons enterprise agent pilots stall: automated triggering and secure service authentication.",
+          "action": "Enable usage credits on the Claude Platform and set up scheduled deployments for any recurring automation (nightly syncs, weekly reports, daily digests). Move API keys and service credentials out of system prompts and into vault env vars to prevent prompt-injection credential theft.",
+          "tools": [
+            "Claude API",
+            "Claude Managed Agents"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Docs"
+            },
+            {
+              "url": "https://www.techtimes.com/articles/318163/20260610/claude-managed-agents-add-cron-schedules-credential-vaultsanthropic-beta-puts-agents-autopilot.htm",
+              "name": "TechTimes"
+            },
+            {
+              "url": "https://claude.com/blog/whats-new-in-claude-managed-agents",
+              "name": "Anthropic Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.172 lets sub-agents spawn their own sub-agents up to five levels deep",
+          "description": "Before v2.1.172, sub-agents in Claude Code were terminal: they could not delegate further, capping agent hierarchies at two levels. The new release lifts that constraint, allowing up to five levels of nested spawning so a coordinator agent can hand work to specialists that in turn spawn their own workers. The release also fixes Amazon Bedrock region detection to read from the ~/.aws config file when AWS_REGION is not set, and adds a search bar to the marketplace plugin browser in /plugin.",
+          "action": "Update to 2.1.172 to access nested sub-agent spawning for complex multi-agent orchestration. If you use Claude Code with Amazon Bedrock and set your region via ~/.aws config rather than an environment variable, verify Bedrock connectivity after updating.",
+          "tools": [
+            "Claude Code",
+            "Amazon Bedrock"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "OpenAI GPT-5.5, GPT-5.4, and Codex accessible through Oracle Cloud commitments",
+          "description": "OpenAI extended its multi-cloud rollout to Oracle, allowing organizations with existing Oracle Cloud Infrastructure commitments to consume GPT-5.5, GPT-5.4, and Codex against their committed spend. This follows the end of OpenAI's Microsoft exclusivity in late April and the GPT-5.5, GPT-5.4, and Codex GA on Amazon Bedrock on June 1. Pricing matches OpenAI first-party rates with usage counting against existing Oracle commitments.",
+          "action": "Organizations with Oracle Cloud Infrastructure commitments can now evaluate or deploy OpenAI API models without a separate billing relationship. Check the Oracle Cloud console for model availability in your region.",
+          "tools": [
+            "OpenAI API",
+            "Codex",
+            "Oracle Cloud"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/news/",
+              "name": "OpenAI News"
+            },
+            {
+              "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_FWN42I14M:0-openai-access-openai-models-and-codex-through-your-oracle-cloud-commitment/",
+              "name": "Reuters via TradingView"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 2,
+      "watch": 1,
+      "low": 0
     }
   }
 }
