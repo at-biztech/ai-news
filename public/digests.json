@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-12",
     "2026-06-11",
     "2026-06-10",
     "2026-06-09",
@@ -5388,7 +5389,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -8829,6 +8830,51 @@
       "totalScanned": 3,
       "relevant": 3,
       "critical": 2,
+      "watch": 1,
+      "low": 0
+    },
+    "2026-06-12": {
+      "dateKey": "2026-06-12",
+      "date": "June 12, 2026",
+      "summary": "OpenAI agrees to acquire cloud execution startup Ona to give Codex persistent, secure agent environments in regulated industries, directly answering Anthropic Managed Agents' scheduled deployment capability shipped the day before.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI acquires Ona to give Codex persistent cloud execution for enterprise agents",
+          "description": "OpenAI agreed to acquire Ona, a startup that builds secure, pre-configured cloud environments where AI agents run long-horizon tasks persistently, without being tied to a single device or active session. Ona's team joins the Codex division to advance enterprise execution capabilities and scale Codex into regulated industries including finance, healthcare, and government. The deal is subject to regulatory approval; financial terms were not disclosed, and the two companies continue operating independently until close.",
+          "action": "Builders comparing Codex and Anthropic Managed Agents for persistent enterprise workloads should hold final architecture decisions until Ona integration details emerge. The capability gap between Codex and Anthropic Managed Agents is closing; if you need persistent agent sessions today, Anthropic Managed Agents or n8n cloud remain the only production-ready options.",
+          "tools": [
+            "Codex",
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/openai-to-acquire-ona/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://www.cnbc.com/2026/06/11/open-ai-ona-acquisition-codex.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://www.bloomberg.com/news/articles/2026-06-11/openai-to-acquire-cloud-platform-ona-to-support-ai-agents",
+              "name": "Bloomberg"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 1,
+      "relevant": 1,
+      "critical": 0,
       "watch": 1,
       "low": 0
     }
