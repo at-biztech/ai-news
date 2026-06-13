@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-12T09:00+06:00",
+  "lastUpdated": "2026-06-13T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -869,6 +869,16 @@
     "2026-06-12: Connector observability for MCP developers (June 8 Anthropic) was outside window. Also not covered in June 8 digest despite being released same day - was crowded out by Apple WWDC, Gemini schema, Agent SDK credit email.",
     "2026-06-12: n8n 2.26.3 (June 11) is pre-release only. No new stable n8n release. Codex CLI 0.140.x still alpha only. GitHub Copilot CLI last stable was 1.0.61 June 9, already covered June 10.",
     "2026-06-12: No detached HEAD issue this session. Started on main, up to date with origin/main.",
-    "2026-06-12: Gemini 3.5 Flash GA (May 19) confirmed at $1.50/$9.00 per 1M tokens in Gemini API. Already stale, not re-covered."
+    "2026-06-12: Gemini 3.5 Flash GA (May 19) confirmed at $1.50/$9.00 per 1M tokens in Gemini API. Already stale, not re-covered.",
+    "2026-06-13: 2 items (0 CRITICAL, 2 WATCH, 0 LOW). Claude Code 2.1.174 through 2.1.176 with enforceAvailableModels managed setting and Bedrock credential caching fix (WATCH 7). Gemini CLI June 18 retirement deadline countdown for individual/Pro/Ultra users with Antigravity CLI migration required (WATCH 7).",
+    "2026-06-13: Quiet news day. No new Anthropic API entries since June 10. Codex CLI still in 0.140.x alpha series (all pre-releases). Copilot CLI v1.0.62-1 dated June 12 is a pre-release. No stable n8n release since 2.25.7 (June 10, already covered). No Make.com, Zapier, or Airtable updates found for June 12-13.",
+    "2026-06-13: Gemini CLI retirement (June 18) had never appeared in any previous digest despite Gemini CLI being covered for product updates (0.41.0 May 10, 0.43.0 May 24) and a CVE (May 2). The retirement announcement was May 20 (The Register) but was missed in all subsequent digests. Included today as a time-sensitive deadline reminder (5 days). Precedent established: deadline reminders for uncovered events may be included when deadline is imminent regardless of announcement date.",
+    "2026-06-13: Claude Code changelog at code.claude.com/docs/en/changelog remains fetchable and was the clearest source for v2.1.174/175/176 details. github.com/anthropics/claude-code/releases also fetchable and confirmed all three release dates on June 12 UTC.",
+    "2026-06-13: OpenAI S-1 confidential SEC filing (June 8, 2026) confirmed real via multiple sources but outside 48h and even 72h window. Not included. Note: will likely become a major story again when S-1 is made public.",
+    "2026-06-13: Gemini 3.5 Pro still not GA. Limited Vertex preview only. Continue monitoring - expected last full week of June (June 22-26).",
+    "2026-06-13: Grok 5 / Grok V9-Medium still not released. Prediction markets still open. The Grok Imagine video generation (grok-imagine-video-1.5-preview) actually launched June 3-4, not June 11 as secondary sources suggested. Musk's June 11 demo post was secondary coverage of the June 3-4 launch. Stale, skipped.",
+    "2026-06-13: June 15 dual deadline (Sonnet 4/Opus 4 retirement + Agent SDK billing split) now 2 days away. Pattern from agent-notes says re-cover on day-before or day-of. Will re-cover June 14 or June 15.",
+    "2026-06-13: MCP 2026-07-28 RC announced May 21, 2026. Stateless core, Extensions framework, deprecation of Roots/Sampling/Logging. Outside window (24 days old). Will cover when July 28 final spec ships or when RC triggers major SDK updates.",
+    "2026-06-13: No detached HEAD issue this session. Started on main, up to date with origin/main."
   ]
 }
