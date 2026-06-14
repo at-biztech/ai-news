@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-14",
     "2026-06-13",
     "2026-06-12",
     "2026-06-11",
@@ -5390,7 +5391,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -8937,6 +8938,115 @@
           ]
         }
       ]
+    },
+    "2026-06-14": {
+      "dateKey": "2026-06-14",
+      "date": "June 14, 2026",
+      "summary": "Claude Sonnet 4, Opus 4, and Agent SDK billing all change at 9AM PT tomorrow June 15 with no failover; GitHub Copilot CLI 1.0.62 ships a native app integration command and configurable subagent settings; Moonshot AI releases Kimi K2.7 Code as a 1T parameter open-weight coding model under Modified MIT.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Three Anthropic changes hit simultaneously at 9AM PT tomorrow June 15",
+          "description": "Claude Sonnet 4 (claude-sonnet-4-20250514) and Opus 4 (claude-opus-4-20250514) retire from the Claude API with no grace period, making any hard-coded call to those model strings return an error starting June 15. Simultaneously, Agent SDK and claude -p usage exits the subscription rate-limit pool and moves to a separate monthly credit balance billed at standard API list prices. Any workflow that relies on subscription-absorbed Agent SDK tokens will start drawing from credits or fail if the credit balance is empty.",
+          "action": "Search production code for claude-sonnet-4-20250514 and claude-opus-4-20250514 string literals and update to claude-sonnet-4-6 and claude-opus-4-8 respectively. Log into the Claude Console and claim or fund the new Agent SDK credit pool before 9AM PT June 15.",
+          "tools": [
+            "Claude API",
+            "Claude Agent SDK",
+            "Amazon Bedrock",
+            "Vertex AI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://enterprisedna.co/resources/news/anthropic-claude-june-15-retirements-billing-2026/",
+              "name": "Enterprise DNA"
+            },
+            {
+              "url": "https://www.mindstudio.ai/blog/claude-sonnet-4-opus-4-deprecation-migration-guide",
+              "name": "MindStudio"
+            },
+            {
+              "url": "https://www.digitalapplied.com/blog/anthropic-claude-credit-overhaul-june-15-2026",
+              "name": "Digital Applied"
+            },
+            {
+              "url": "https://help.apiyi.com/en/anthropic-claude-subscription-agent-sdk-billing-split-june-2026-en.html",
+              "name": "Apiyi Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.62 adds native app integration command and configurable subagent settings",
+          "description": "The stable release ships a new /app slash command that surfaces direct GitHub repository, PR, and issue context without leaving the CLI, letting agents navigate and act on GitHub resources as a first-class workflow step. Subagent configuration is now adjustable through settings dialogs or inline pickers, giving teams per-project control over agent concurrency and tool access. Dialog scrolling no longer obscures agent output and diff view gains content search with navigation, making large code review sessions usable inline.",
+          "action": "Update to 1.0.62 and test /app in repositories where your agents need GitHub context. Evaluate subagent settings for any team workflows that previously hit concurrency or permission ceilings.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "GitHub"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.62",
+              "name": "GitHub Copilot CLI Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "OpenSource",
+          "headline": "Moonshot AI open-sources Kimi K2.7 Code with 1T parameters and 30 percent fewer reasoning tokens",
+          "description": "Kimi K2.7 Code is a 1-trillion-parameter Mixture-of-Experts model with 32 billion active parameters per token, a 256K-token context window, and support for text, image, and video input, released under a Modified MIT license with weights on Hugging Face. Moonshot reports plus 21.8 percent on Kimi Code Bench v2, plus 11.0 percent on Program Bench, and 30 percent lower reasoning-token usage versus K2.6, reducing the cost of long coding sessions. The API is live on the Kimi platform at $0.95 per million input and $4.00 per million output tokens, compatible with the OpenAI messages format.",
+          "action": "Pull weights from Hugging Face for private cluster deployment or fine-tuning on internal codebases. Benchmark against your current coding agent stack on multi-file refactor and debugging tasks where reasoning token volume is a cost driver.",
+          "tools": [
+            "Kimi API",
+            "Hugging Face"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/",
+              "name": "MarkTechPost"
+            },
+            {
+              "url": "https://cryptobriefing.com/kimi-k2-7-code-open-source-release/",
+              "name": "CryptoBriefing"
+            },
+            {
+              "url": "https://www.digitalapplied.com/blog/kimi-k2-7-code-release-open-source-coding-model",
+              "name": "Digital Applied"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "critical": 1,
+      "watch": 2,
+      "low": 0,
+      "totalScanned": 3,
+      "relevant": 3
     }
   }
 }
