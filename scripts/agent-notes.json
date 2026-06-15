@@ -895,6 +895,21 @@
     "2026-06-14: Gemini CLI June 18 retirement (4 days away) was covered in yesterday's June 13 digest. Not re-included per duplication rule.",
     "2026-06-14: Claude Opus 4.1 deprecation (June 5 announcement, August 5 retirement) - was not covered in any prior digest. 9 days old, outside 48h window. Consider covering on July 15 as 3-week countdown if not yet covered.",
     "2026-06-14: No detached HEAD issue this session. Started on main, up to date with origin/main.",
-    "2026-06-14: lastUpdated timestamp updated to 2026-06-14T09:00+06:00."
+    "2026-06-14: lastUpdated timestamp updated to 2026-06-14T09:00+06:00.",
+    "2026-06-15: 2 items (2 CRITICAL, 0 WATCH, 0 LOW). Claude Sonnet 4 (claude-sonnet-4-20250514) and Opus 4 (claude-opus-4-20250514) retirement completed - API calls now return errors with no failover (CRITICAL 9). Anthropic Agent SDK billing split live - credit pools active, unclaimed accounts have zero automated quota (CRITICAL 8).",
+    "2026-06-15: This is the completed-event version of the June 14 day-before CRITICAL 9 combined item. Follows three-item pattern: June 9 (6-days countdown CRITICAL 8), June 14 (day-before CRITICAL 9), June 15 (completed CRITICAL 9+8). Items split today because the actions are different: one requires code changes (model string update), the other requires billing verification (credit claim check).",
+    "2026-06-15: Confirmed sources: platform.claude.com/docs/en/about-claude/model-deprecations (primary, fetchable), help.make.com (confirms June 15 retirement date), enterprisedna.co, chatforest.com, thenewstack.io, techtimes.com. Multiple tier 1 confirmations for both events.",
+    "2026-06-15: Agent SDK billing: credit amounts are $20 Pro, $100 Max 5x, $200 Max 20x. Per-user, non-pooled, no rollover. Opt-in claim window closed June 15 9AM PT. Overflow billing available in Claude settings as fallback. Interactive chat and terminal Claude Code sessions unaffected.",
+    "2026-06-15: Model retirement: claude-sonnet-4-20250514 replaces with claude-sonnet-4-6; claude-opus-4-20250514 replaces with claude-opus-4-8. Both replacements at identical pricing. No auto-failover - calls to old strings return HTTP error.",
+    "2026-06-15: Items evaluated and rejected: Claude Code v2.1.177 (June 13, changelog-only chore, skipped per minor maintenance precedent). GitHub Copilot CLI v1.0.62 (June 13, covered in June 14 digest). n8n (no new stable releases June 13-15). Codex CLI (still 0.140.x alpha series). Gemini CLI June 18 shutdown (covered June 13, not re-included per duplication rule).",
+    "2026-06-15: MiniMax M3 weights: HuggingFace page exists (search confirms MiniMaxAI/MiniMax-M3 model card) but exact publish date could not be confirmed within 48h window. Agent notes June 11-14 all show 'not confirmed'. Still monitoring.",
+    "2026-06-15: Grok V9-Medium (1.5T params, training complete ~May 25, public release expected mid-June): still not confirmed released as of June 15. Prediction markets give Grok 5 only 33% probability before June 30. Skip until confirmed launch.",
+    "2026-06-15: Claude Enterprise custom roles with admin permissions (billing/privacy without Owner access): appears to be a June 15 feature based on search results, but exact launch date could not be confirmed from primary source (support.claude.com returned 403). Skipped to avoid stale relabel.",
+    "2026-06-15: Detached HEAD recurred at session start. Fixed by fetch origin/main, checkout main, fast-forward merge. Root cause persists.",
+    "2026-06-15: NOTE for June 17 digest: Gemini CLI stops serving requests June 18 (Antigravity CLI transition). Include day-before countdown. Migration: rename GEMINI.md to AGENTS.md, .gemini/skills/ to .agents/skills/, update CLI references from gemini to agy. Four breaking behaviors: default model, streaming format, state dir, exit codes.",
+    "2026-06-15: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-15: NOTE for July 1-2 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
+    "2026-06-15: NOTE for August 5 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown ~August 3.",
+    "2026-06-15: lastUpdated timestamp updated to 2026-06-15T09:00+06:00."
   ]
 }

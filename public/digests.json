@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-15",
     "2026-06-14",
     "2026-06-13",
     "2026-06-12",
@@ -5391,7 +5392,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -9047,6 +9048,95 @@
       "low": 0,
       "totalScanned": 3,
       "relevant": 3
+    },
+    "2026-06-15": {
+      "dateKey": "2026-06-15",
+      "date": "June 15, 2026",
+      "summary": "Claude Sonnet 4 and Opus 4 API model strings now return errors with no failover as the June 15 retirement completes; Anthropic Agent SDK credit pools go live with unclaimed accounts losing automated access.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Claude Sonnet 4 and Opus 4 API strings now dead, calls return errors with no failover",
+          "description": "The retirement of claude-sonnet-4-20250514 and claude-opus-4-20250514 took effect at 9AM PT June 15 (22:00 Almaty June 14). Any API call referencing these model identifiers now returns an error with no automatic redirect to a newer model. Migration targets are claude-sonnet-4-6 and claude-opus-4-8, both at identical pricing and with larger context windows.",
+          "action": "Immediately audit every codebase, CI pipeline, Make/n8n/Zapier integration, and third-party connector for hardcoded strings claude-sonnet-4-20250514 and claude-opus-4-20250514. Replace with claude-sonnet-4-6 or claude-opus-4-8 respectively. Any call still using the old strings is already failing.",
+          "tools": [
+            "Claude API",
+            "Claude Sonnet 4",
+            "Claude Opus 4"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "name": "Anthropic Model Deprecations (primary)"
+            },
+            {
+              "url": "https://enterprisedna.co/resources/news/anthropic-claude-june-15-retirements-billing-2026/",
+              "name": "Enterprise DNA"
+            },
+            {
+              "url": "https://help.make.com/anthropic-claude-model-deprecations-on-june-15-2026",
+              "name": "Make.com Help Center"
+            },
+            {
+              "url": "https://chatforest.com/guides/anthropic-claude-sonnet-4-opus-4-deprecation-june-15-2026/",
+              "name": "ChatForest"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Anthropic Agent SDK credit pools now live, automated workloads halt if credit not claimed",
+          "description": "Starting today, headless Claude usage including claude -p, Claude Code GitHub Actions, Managed Agents SDK, and third-party agents that authenticate through subscription plans no longer draws from Pro, Max, Team, or Enterprise rate limits. Usage moves to a separate monthly credit pool billed at full API rates with no rollover: $20 for Pro, $100 for Max 5x, $200 for Max 20x. The opt-in credit claim window closed June 15 at 9AM PT. Interactive claude.ai chat and terminal Claude Code sessions remain on existing plan limits and are unaffected.",
+          "action": "Verify your credit was claimed via the June 8 opt-in email from Anthropic. If unclaimed, automated agent workloads have zero quota and will fail. Enable overflow billing in Claude settings if you need continued access beyond the monthly credit. Teams running pipelines across multiple accounts cannot pool credits. Check usage dashboards for any automated jobs that stopped.",
+          "tools": [
+            "Claude Agent SDK",
+            "Claude Code GitHub Actions",
+            "Claude Managed Agents",
+            "Anthropic API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thenewstack.io/anthropic-agent-sdk-credits/",
+              "name": "The New Stack"
+            },
+            {
+              "url": "https://usagebox.com/articles/anthropic-june-15-agent-sdk-credit-split-claude-4-retirement",
+              "name": "UsageBox"
+            },
+            {
+              "url": "https://chatforest.com/reviews/anthropic-claude-agent-sdk-billing-split-june-15-2026-credit-pool-developer-guide/",
+              "name": "ChatForest"
+            },
+            {
+              "url": "https://www.techtimes.com/articles/317625/20260602/anthropic-ends-subscription-subsidy-agents-june-15-credit-pool-replaces-flat-rate-access.htm",
+              "name": "TechTimes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 2,
+      "relevant": 2,
+      "critical": 2,
+      "watch": 0,
+      "low": 0
     }
   }
 }
