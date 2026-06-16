@@ -910,6 +910,26 @@
     "2026-06-15: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
     "2026-06-15: NOTE for July 1-2 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
     "2026-06-15: NOTE for August 5 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown ~August 3.",
-    "2026-06-15: lastUpdated timestamp updated to 2026-06-15T09:00+06:00."
+    "2026-06-15: lastUpdated timestamp updated to 2026-06-15T09:00+06:00.",
+    "2026-06-16: 2 items (0 CRITICAL, 2 WATCH, 0 LOW). Claude Code 2.1.178 with Tool(param:value) permission syntax and nested .claude/skills directory loading (WATCH 7, June 15 21:35 UTC = June 16 03:35 Almaty, GitHub releases). OpenAI Codex CLI 0.140.0 with /import from Claude Code, /usage token views, and SQLite auto-recovery (WATCH 6, June 15 21:06 UTC = June 16 03:06 Almaty, GitHub releases).",
+    "2026-06-16: Quiet post-deadline day. June 15 was the major deadline day (Sonnet 4/Opus 4 retirement + Agent SDK billing split). Both Claude Code 2.1.178 and Codex CLI 0.140.0 shipped after midnight UTC on June 15, placing them within the June 16 Almaty window.",
+    "2026-06-16: Claude Code 2.1.178 Tool(param:value) syntax is the most significant builder-facing permission primitive since the allow/deny list was introduced. Agent(model:opus) to block Opus subagents and Bash(command:rm*) to block destructive shell patterns are the key use cases. Previous syntax only matched tool names, not their input parameters.",
+    "2026-06-16: Codex CLI 0.140.0 /import from Claude Code is the first cross-tool session migration command in CLI coding agents. Lets teams evaluate Codex without rebuilding their Claude Code environment from scratch. Previous stable was 0.139.0 (covered June 10 digest).",
+    "2026-06-16: platform.claude.com/docs/en/release-notes/overview still fetchable. Latest entry remains June 15 (Sonnet 4/Opus 4 retirement). No new Anthropic API entries for June 16.",
+    "2026-06-16: github.com/anthropics/claude-code/releases fetchable. v2.1.178 (June 15 21:35 UTC) is the freshest release after v2.1.177 (June 13, changelog-only chore, skipped per minor maintenance precedent).",
+    "2026-06-16: github.com/openai/codex/releases fetchable. v0.140.0 stable (June 15 21:06 UTC) is the first stable after weeks of 0.140.0-alpha series. v0.139.0 was covered in June 10 digest.",
+    "2026-06-16: github.com/n8n-io/n8n/releases fetchable. Latest stable remains n8n@2.25.7 (June 10). n8n@2.26.4 (June 15) is pre-release. n8n@1.123.56 (June 15) patches five hono/vue-i18n security issues in the legacy 1.x branch - minor security patch only, skipped per minor patch precedent.",
+    "2026-06-16: github.com/github/copilot-cli/releases fetchable. Latest stable remains v1.0.62 (June 13, covered in June 14 digest). v1.0.63-0 (June 15) is pre-release. Skipped per established pre-release exclusion precedent.",
+    "2026-06-16: Gemini 3.5 Flash feature management toggle removal from Global/US/EU multi-regions (June 16 per Gemini Enterprise release notes) skipped per duplication rule. The Gemini 3.5 Flash admin toggle removal was already covered in June 8 digest as a WATCH 6 completed event.",
+    "2026-06-16: MiniMax M3 weights (huggingface.co/MiniMaxAI/MiniMax-M3): HuggingFace.co returned 403 via WebFetch. unsloth/MiniMax-M3-GGUF repo exists in search results suggesting weights are available but exact publish date could not be confirmed within 48h window. Skipped per date verification requirement. If confirmed in next run as within window, include as WATCH 7.",
+    "2026-06-16: Grok 5 still not released. Prediction markets at 7% probability for June 30. Skip.",
+    "2026-06-16: Gemini 3.5 Pro still not GA. Limited Vertex preview only. Sundar Pichai said 'give us until next month' at I/O. Expected June 22-26 window. Continue monitoring.",
+    "2026-06-16: No detached HEAD issue this session. Repo was on main branch and up to date with origin/main.",
+    "2026-06-16: No new Zapier, Make.com, or Airtable product updates found for June 15-16.",
+    "2026-06-16: NOTE for June 17 digest: Gemini CLI stops serving requests June 18 (Antigravity CLI transition). Include day-before countdown. Migration: rename GEMINI.md to AGENTS.md, .gemini/skills/ to .agents/skills/, update CLI references from gemini to agy. Four breaking behaviors: default model, streaming format, state dir, exit codes.",
+    "2026-06-16: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-16: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
+    "2026-06-16: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-16: lastUpdated timestamp updated to 2026-06-16T09:00+06:00."
   ]
 }
