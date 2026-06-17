@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-14T09:00+06:00",
+  "lastUpdated": "2026-06-17T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -930,6 +930,24 @@
     "2026-06-16: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
     "2026-06-16: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
     "2026-06-16: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-16: lastUpdated timestamp updated to 2026-06-16T09:00+06:00."
+    "2026-06-16: lastUpdated timestamp updated to 2026-06-16T09:00+06:00.",
+    "2026-06-17: 4 items (0 CRITICAL, 4 WATCH, 0 LOW). Gemini CLI June 18 shutdown day-before warning with Antigravity CLI migration guide (WATCH 7, all free/AI Pro/AI Ultra users affected, enterprise Gemini Code Assist exempt). Microsoft Work IQ APIs GA on June 16 for M365 agent context access (WATCH 7, billed via Copilot Credits, Chat/Context/Tools/Workspaces domains). n8n 2.27.0 stable with execution_entity DB index migration plus OAuth RFC 8707 (WATCH 6, June 16, may take minutes on large instances). GitHub Copilot CLI 1.0.63 with experimental no-git rewind and fork PR visibility (WATCH 6, June 16).",
+    "2026-06-17: Gemini CLI day-before item follows the planned pattern from agent notes (June 6 through June 16 all said to include day-before on June 17). The June 13 digest covered 5-day countdown. This item gives migration specifics: GEMINI.md to AGENTS.md, .gemini/skills/ to .agents/skills/, gemini to agy CLI, four breaking behaviors in default model/streaming format/state dir/exit codes.",
+    "2026-06-17: Microsoft Work IQ APIs GA (June 16) was noted in June 12 agent notes as 'will re-cover if GA produces new API endpoints not announced at Build.' GA date was June 16 per microsoft.com licensing page and Microsoft 365 Blog. Within 48h window. Chat/Context/Tools/Workspaces API domains. No new endpoints beyond Build announcement but the GA date triggers inclusion per the established re-cover note.",
+    "2026-06-17: n8n 2.27.0 appears to be a stable release (no pre-release marker in GitHub releases). DB migration for execution_entity table index is the key upgrade consideration. OAuth RFC 8707 resource parameter support is a capability add for strict enterprise auth servers. Follows n8n 2.26.0 (June 10, WATCH 6) precedent.",
+    "2026-06-17: GitHub Copilot CLI v1.0.63 (June 16) is the stable release after v1.0.63-0 pre-release (June 15). First stable after v1.0.62 (June 13, covered in June 14 digest). Experimental rewind without git is the most novel feature.",
+    "2026-06-17: Claude Code v2.1.179 (June 16 20:22 UTC) is bug fixes only: mid-stream connection drop partial response preservation, WSL2 scrolling regression fix from 2.1.172, sandbox denyRead/allowRead glob fix, minor UI fixes. Skipped per established minor bugfix precedent (matches v2.1.173, v2.1.168, v2.1.165 pattern).",
+    "2026-06-17: No new Anthropic API release notes entries since June 15 (Sonnet 4/Opus 4 retirement). platform.claude.com/docs/en/release-notes/overview shows June 15 as latest.",
+    "2026-06-17: OpenAI Codex CLI 0.141.0-alpha.1, alpha.2, alpha.3 (all June 16) are pre-releases. Skipped per established precedent.",
+    "2026-06-17: MiniMax M3 open weights still could not be confirmed with exact publish date within 48h window. Artificial Analysis article title says 'Leading open weights model, once the weights are released' suggesting weights were not yet published when that article was written. Multiple runs have been unable to confirm exact date. Continue monitoring.",
+    "2026-06-17: Gemini 3.5 Pro still not GA. Limited Vertex preview only. Expected June 22-26.",
+    "2026-06-17: Grok 5 still not released. Polymarket at 7% for June 30. Skip.",
+    "2026-06-17: No new Zapier, Make.com, or Airtable product updates found for June 16-17.",
+    "2026-06-17: No detached HEAD issue this session. Repo was on main branch and up to date with origin/main.",
+    "2026-06-17: NOTE for June 18 digest: Gemini CLI completed retirement event (shuts down at midnight June 18). Reframe as completed event following day-of pattern. Similar to Haiku 3 April 20 and Sonnet 4/Opus 4 June 15 completed events.",
+    "2026-06-17: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-17: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
+    "2026-06-17: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-17: lastUpdated timestamp updated to 2026-06-17T09:00+06:00."
   ]
 }
