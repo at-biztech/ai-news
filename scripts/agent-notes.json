@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-17T09:00+06:00",
+  "lastUpdated": "2026-06-18T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -948,6 +948,26 @@
     "2026-06-17: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
     "2026-06-17: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
     "2026-06-17: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-17: lastUpdated timestamp updated to 2026-06-17T09:00+06:00."
+    "2026-06-17: lastUpdated timestamp updated to 2026-06-17T09:00+06:00.",
+    "2026-06-18: 4 items (2 CRITICAL, 2 WATCH, 0 LOW). Gemini 3.5 Flash GA in Gemini API plus Managed Agents and Antigravity Agent public preview (CRITICAL 9, June 17, ai.google.dev changelog). Claude Fable 5 and Mythos 5 US export-control suspension status update - day 6, still offline (CRITICAL 8, ongoing since June 12, CNBC/NPR/Fortune June 15-16). Gemini CLI retirement completed today for individuals/Pro/Ultra (WATCH 7). Claude Code 2.1.181 with /config syntax and Bun 1.4 (WATCH 6, June 17 22:07 UTC).",
+    "2026-06-18: MAJOR COVERAGE GAP DISCOVERED. Claude Fable 5 and Mythos 5 were suspended by US government export control directive on June 12 at 5:21pm ET (= June 13 05:21 Almaty). The June 12 digest ran before this event, the June 13-17 digests all missed it. First-ever US government forced withdrawal of a commercially available AI model. Included today as CRITICAL 8 with sources from June 15-16 (within 72h CRITICAL extension window). Framed as 'day 6, still suspended, talks ongoing' to give fresh angle.",
+    "2026-06-18: Gemini 3.5 Flash went GA in the Gemini API on June 17 per the ai.google.dev/gemini-api/docs/changelog entry. This is a separate GA event from the Google I/O May 19 announcement; the June 17 entry specifically says 'Released gemini-3.5-flash, the generally available (GA) version.' Prior digests (June 8-17) had not covered this GA milestone.",
+    "2026-06-18: Gemini Managed Agents in Gemini API (public preview) launched June 17 per same changelog entry. Distinct from the April 22 Gemini Enterprise Agent Platform (which was Vertex AI enterprise rebrand). This is the developer API (ai.google.dev) version enabling stateful sandbox agents for all API users. Also included: Antigravity Agent managed agent (antigravity-preview-05-2026) in public preview.",
+    "2026-06-18: Gemini API deprecations from June 17 changelog: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. gemini-3.1-flash-lite-preview already shut down. Folded into the Gemini 3.5 Flash GA item.",
+    "2026-06-18: Claude Code v2.1.181 (June 17 22:07 UTC = June 18 04:07 Almaty) is within the 48h window. Previous version 2.1.179 (June 16 20:22 UTC, bug fixes only) was skipped per minor bugfix precedent in June 17 digest.",
+    "2026-06-18: n8n 2.26.5 and 2.26.6 (both June 17) are stable bug fix releases only. 2.27.1 (June 17) is pre-release. All skipped per established precedent.",
+    "2026-06-18: GitHub Copilot CLI v1.0.64-0 (June 17) is pre-release. Skipped per established pre-release exclusion precedent.",
+    "2026-06-18: OpenAI Codex CLI 0.141.0-alpha.4 through alpha.6 (all June 17) are pre-releases. Skipped per established precedent.",
+    "2026-06-18: Gemini 3.5 Pro still not GA. Expected June 22-26 per prior notes. Continue monitoring.",
+    "2026-06-18: Grok 5 still not released. Prediction market now at 12% for June 30 (down from earlier). Skip.",
+    "2026-06-18: MiniMax M3 weights - HuggingFace repo MiniMaxAI/MiniMax-M3 exists, unsloth GGUF also exists, but exact weight publication date could not be confirmed from primary source. Model API launched June 1, weights promised within 10 days (~June 11) but date never confirmed. Continue monitoring.",
+    "2026-06-18: GPT-5.6 rumors at 83% probability for June 22-28 per Polymarket. Not officially announced. Skipped as speculation. Monitor June 22-24 for potential release.",
+    "2026-06-18: No new Zapier, Make.com, or Airtable product updates found for June 17-18.",
+    "2026-06-18: No detached HEAD issue this session. Repo was on main branch and up to date with origin/main.",
+    "2026-06-18: NOTE for June 25 digest: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Reframe as completed event if not covered before.",
+    "2026-06-18: NOTE for June 25 digest: OpenAI GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-18: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
+    "2026-06-18: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-18: lastUpdated timestamp updated to 2026-06-18T09:00+06:00."
   ]
 }

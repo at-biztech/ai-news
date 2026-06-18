@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-18",
     "2026-06-17",
     "2026-06-16",
     "2026-06-15",
@@ -9321,6 +9322,146 @@
       "relevant": 4,
       "critical": 0,
       "watch": 4,
+      "low": 0
+    },
+    "2026-06-18": {
+      "dateKey": "2026-06-18",
+      "date": "June 18, 2026",
+      "summary": "Gemini 3.5 Flash reaches general availability in the Gemini API alongside Managed Agents public preview; US export controls on Claude Fable 5 and Mythos 5 enter day six with no announced resolution.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Gemini 3.5 Flash goes GA in Gemini API alongside Managed Agents and Antigravity Agent public preview",
+          "description": "Google updated the Gemini API on June 17 to mark gemini-3.5-flash as generally available, lifting preview-tier limitations and locking in SLA guarantees for production workloads. The same release launched Managed Agents in public preview, giving API developers Google-hosted isolated Linux sandboxes for stateful autonomous agents, a direct parallel to Anthropic Managed Agents. The general-purpose Antigravity Agent (antigravity-preview-05-2026) is also in public preview and can plan, write and execute code, manage files, and browse the web inside its container.",
+          "action": "Update production pipelines from gemini-3.5-flash-preview to gemini-3.5-flash for SLA coverage. Evaluate Managed Agents API for use cases currently handled by self-hosted sandboxes. Note: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview are deprecated and shut down June 25.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio",
+            "Gemini Enterprise Agent Platform",
+            "Antigravity"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "name": "Gemini API Changelog June 17"
+            },
+            {
+              "url": "https://wavespeed.ai/blog/posts/gemini-3-5-flash-shipped-leads-agent-benchmarks/",
+              "name": "WaveSpeed Blog"
+            },
+            {
+              "url": "https://letsdatascience.com/news/google-unveils-gemini-35-flash-and-agent-tools-4c521b7c",
+              "name": "Let's Data Science"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Regulation",
+          "headline": "Claude Fable 5 and Mythos 5 remain suspended under US export controls as Anthropic-government talks continue",
+          "description": "The US Commerce Department Bureau of Industry and Security invoked the Export Control Reform Act of 2018 on June 12, requiring Anthropic to suspend all access to Fable 5 and Mythos 5 by any foreign national inside or outside the US, citing a claimed jailbreak of Fable 5 cybersecurity guardrails. Unable to verify nationality in real time, Anthropic disabled both models globally, making this the first US government-mandated withdrawal of a commercially available AI model. Anthropic met with Commerce Department officials June 14-16 to negotiate terms; as of June 18 both models remain offline with no announced restoration date.",
+          "action": "Do not plan new workloads on Fable 5 (claude-fable-5) or Mythos 5 until further notice. Use Claude Opus 4.8 or Sonnet 4.6 as replacements. Monitor Anthropic status page for restoration updates.",
+          "tools": [
+            "Claude Fable 5",
+            "Claude Mythos 5",
+            "Anthropic API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/news/fable-mythos-access",
+              "name": "Anthropic Statement"
+            },
+            {
+              "url": "https://www.cnbc.com/2026/06/15/anthropic-mythos-trump-ai.html",
+              "name": "CNBC June 15"
+            },
+            {
+              "url": "https://www.npr.org/2026/06/16/nx-s1-5859275/anthropic-incident-leaves-confusion-about-trump-administrations-ai-regulation",
+              "name": "NPR June 16"
+            },
+            {
+              "url": "https://fortune.com/2026/06/15/fix-this-code-three-words-behind-us-government-shut-down-anthropic-fable-mythos-ai-models-katie-moussouris-open-letter/",
+              "name": "Fortune June 15"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Gemini CLI stops serving requests as Antigravity CLI becomes the only Google AI terminal client",
+          "description": "As of June 18, Gemini CLI and Gemini Code Assist IDE extensions have stopped serving requests for all Google AI Pro, Google AI Ultra, and free Gemini Code Assist for individuals users. The Antigravity CLI (agy) is the required replacement, offering Go-based startup speed, parallel subagent orchestration, /goal and /schedule slash commands, and Gemini 3.5 Flash as the default model. Enterprise users on Gemini Code Assist Standard or Enterprise licenses and paid API key holders are unaffected.",
+          "action": "Run agy --version to confirm Antigravity CLI is installed. If gemini commands return errors, install Antigravity CLI immediately. Rename GEMINI.md to AGENTS.md and .gemini/skills/ to .agents/skills/ to migrate project configuration.",
+          "tools": [
+            "Gemini CLI",
+            "Antigravity CLI",
+            "Google AI Studio",
+            "Gemini Code Assist"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/",
+              "name": "Google Developers Blog"
+            },
+            {
+              "url": "https://www.aibuilderclub.com/blog/google-kills-gemini-cli-june-18-2026",
+              "name": "AI Builder Club"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.181 adds /config prompt syntax and upgrades bundled Bun to 1.4",
+          "description": "Released June 17 at 22:07 UTC, v2.1.181 lets users set any Claude Code setting directly from the prompt with /config key=value syntax, removing the need to open settings files for ad-hoc overrides. The bundled Bun runtime is upgraded to 1.4 and streaming of long paragraphs is improved with line-by-line display. Additional changes include sandbox.allowAppleEvents for macOS automation and CLAUDE_CLIENT_PRESENCE_FILE to suppress mobile push notifications in shared or remote environments.",
+          "action": "Run claude update to get 2.1.181. Use /config key=value for quick session-level setting overrides without editing settings.json.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "Claude Code GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 2,
+      "watch": 2,
       "low": 0
     }
   }
