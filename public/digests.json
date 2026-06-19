@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-19",
     "2026-06-18",
     "2026-06-17",
     "2026-06-16",
@@ -9461,6 +9462,114 @@
       "totalScanned": 4,
       "relevant": 4,
       "critical": 2,
+      "watch": 2,
+      "low": 0
+    },
+    "2026-06-19": {
+      "dateKey": "2026-06-19",
+      "date": "June 19, 2026",
+      "summary": "Anthropic reversed its Agent SDK billing split before it took effect, leaving subscription usage unchanged; Fable 5 export suspension enters day seven with Washington talks active and a June 20 refund deadline; Codex CLI 0.141.0 ships encrypted remote execution channels.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Anthropic reverses Agent SDK billing split on the day it was due to take effect",
+          "description": "Anthropic paused its planned June 15 billing overhaul for the Agent SDK, the claude -p command, and third-party Claude apps on the same day it was scheduled to go live, emailing developers that nothing changes for now and that the company is working to better align pricing with actual usage patterns. The planned change would have created separate monthly credit pools (0 Pro, 00 Max 5x, 00 Max 20x) that would have been exhausted before overflow billing began. Agent SDK usage, claude -p, and third-party apps continue drawing from regular subscription limits as before, indefinitely until Anthropic reschedules.",
+          "action": "No billing changes are required. If you modified agent pipelines or disabled Agent SDK usage in response to the June 15 announcement, you can safely revert those changes. Watch for a new announcement date before making further billing adjustments.",
+          "tools": [
+            "Claude Agent SDK",
+            "claude -p",
+            "Anthropic API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thenewstack.io/anthropic-pauses-claude-agent-sdk-subscription-change/",
+              "name": "The New Stack"
+            },
+            {
+              "url": "https://the-decoder.com/anthropic-backs-off-unpopular-billing-overhaul-as-price-war-with-openai-looms/",
+              "name": "The Decoder"
+            },
+            {
+              "url": "https://devops.com/anthropic-hits-pause-on-claude-agent-sdk-billing-change-for-now/",
+              "name": "DevOps.com"
+            },
+            {
+              "url": "https://letsdatascience.com/news/anthropic-pauses-claude-agent-sdk-billing-overhaul-1cff2071",
+              "name": "Let's Data Science"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Fable 5 suspension enters day seven as Washington talks advance and refund window closes June 20",
+          "description": "Anthropic dispatched senior technical staff to Washington for in-person talks with Commerce Department officials; as of June 17 negotiations were described as progressing with informal reports suggesting restoration could come within 24 to 48 hours, though neither Anthropic nor Commerce has issued an official timeline. Subscribers who signed up for a Claude plan June 9 to 14 expecting Fable 5 access have until June 20 to request refunds for the unavailable period. Anthropic has not issued updated pricing guidance for when Fable 5 returns.",
+          "action": "If you subscribed to any Claude plan June 9 to 14, request a refund from Anthropic before June 20. Continue using claude-opus-4-8 as the highest available model tier. Do not build new production workflows on Fable 5 until Anthropic confirms restoration.",
+          "tools": [
+            "Claude Fable 5",
+            "Claude Mythos 5",
+            "Anthropic API"
+          ],
+          "confidence": "reported",
+          "sources": [
+            {
+              "url": "https://www.techtimes.com/articles/318376/20260615/anthropic-races-lift-fable-5-export-ban-top-engineers-sent-washington-deal.htm",
+              "name": "TechTimes June 15"
+            },
+            {
+              "url": "https://www.anthropic.com/news/fable-mythos-access",
+              "name": "Anthropic Statement"
+            },
+            {
+              "url": "https://www.explainx.ai/blog/when-will-fable-5-be-available-again-2026",
+              "name": "ExplainX.ai"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Codex CLI 0.141.0 adds encrypted Noise relay channels for remote execution",
+          "description": "Codex CLI 0.141.0 (released June 18, 04:43 UTC) routes remote executor traffic through authenticated, end-to-end encrypted Noise relay channels, removing the need for VPN or direct network access when connecting remote sandboxes. Cross-platform remote execution now preserves the executor-native working directory and shell environment so macOS, Linux, and Windows executors behave consistently regardless of where the CLI runs. Plugin discovery gains marketplace features with auth-specific catalogs, making it easier to scope installed plugins to specific identity contexts.",
+          "action": "Update Codex CLI to 0.141.0 via npm for remote execution security improvements. Enterprise teams running Codex against private compute environments can now connect without VPN, reducing network provisioning overhead.",
+          "tools": [
+            "Codex CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "Codex CLI GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
       "watch": 2,
       "low": 0
     }
