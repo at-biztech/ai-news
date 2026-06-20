@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-20",
     "2026-06-19",
     "2026-06-18",
     "2026-06-17",
@@ -5396,7 +5397,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -9571,6 +9572,149 @@
       "relevant": 3,
       "critical": 1,
       "watch": 2,
+      "low": 0
+    },
+    "2026-06-20": {
+      "dateKey": "2026-06-20",
+      "date": "June 20, 2026",
+      "summary": "Anthropic brings enterprise MCP authorization to stable with zero-touch Okta provisioning; Claude Code 2.1.183 gates destructive git and IaC commands in auto mode; Claude Design adds bidirectional Claude Code sync; Veo 3.0 enters 10-day shutdown window.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Anthropic makes enterprise MCP auth stable removing per-user OAuth across seven SaaS providers",
+          "description": "Anthropic launched Enterprise-Managed Authorization for Claude MCP connectors on June 18, giving IT admins a single provisioning step through Okta that pushes connector access to all employees on first login with no individual OAuth prompts. Seven providers support the standard at launch: Asana, Atlassian, Canva, Figma, Granola, Linear, and Supabase. The underlying spec was adopted by the IETF OAuth working group in September 2025, incorporated into the MCP specification in November 2025, and is now declared stable as a formal MCP authorization extension.",
+          "action": "Enterprise teams on Claude Team or Enterprise plan can enable EMA in the admin console now. New hires automatically inherit all approved MCP connectors without IT tickets. Check which of the seven supported providers your stack uses and provision once.",
+          "tools": [
+            "Claude",
+            "Okta",
+            "Figma",
+            "Atlassian",
+            "Canva",
+            "Linear",
+            "Supabase",
+            "Asana",
+            "Granola"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://claude.com/blog/enterprise-managed-auth",
+              "name": "Anthropic Blog"
+            },
+            {
+              "url": "https://www.okta.com/en-au/newsroom/press-releases/okta-becomes-a-featured-identity-provider-powering-secure-ai-agent-connections-for-claude-enterprise/",
+              "name": "Okta Newsroom"
+            },
+            {
+              "url": "https://www.techtimes.com/articles/318708/20260619/mcp-enterprise-authorization-goes-stable-zero-touch-sso-okta-anthropic-vs-code.htm",
+              "name": "TechTimes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.183 blocks git reset hard and infrastructure destroy commands in auto mode",
+          "description": "Claude Code v2.1.183 (June 19) adds an auto-mode safety classifier that blocks git reset --hard, git checkout -- ., git clean -fd, and git stash drop unless explicitly requested, plus git commit --amend when the prior commit was not made in the current session. Terraform, Pulumi, and CDK destroy commands are similarly gated. The release also adds model deprecation warnings to stderr in print mode and an attribution.sessionUrl setting to strip claude.ai session links from automated commits.",
+          "action": "Upgrade to 2.1.183. Audit any auto-mode pipelines that relied on unchallenged destructive git operations. Use attribution.sessionUrl: false in settings if session URLs in commit messages are unwanted.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            },
+            {
+              "url": "https://startdebugging.net/2026/06/claude-code-2-1-169-safe-mode-and-cd/",
+              "name": "Start Debugging"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Design major overhaul adds design system imports and bidirectional sync with Claude Code",
+          "description": "Anthropic shipped a major Claude Design update on June 17 adding importable design systems from GitHub repos or file uploads, a /design-sync command that creates a bidirectional round-trip between the Claude Code terminal and the Claude Design canvas, and direct WYSIWYG canvas editing. The update also addresses the token-burning problem where repeated regeneration cycles consumed excessive context unnecessarily. Rolling out in beta to paid Claude users.",
+          "action": "Teams using Claude Design alongside Claude Code can now run /design-sync in the Claude Code terminal to pull in real design system components or push output back to the canvas, replacing manual copy-paste. Import your Figma token exports or GitHub design-system package to get brand-consistent prototypes.",
+          "tools": [
+            "Claude Design",
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://venturebeat.com/technology/anthropic-ships-major-claude-design-overhaul-with-design-system-imports-code-round-trips-and-a-fix-for-its-token-burning-problem",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://www.techrepublic.com/article/news-anthropic-claude-design-overhaul-enterprise-teams/",
+              "name": "TechRepublic"
+            },
+            {
+              "url": "https://claude.com/blog/claude-design-stays-on-brand-for-daily-work",
+              "name": "Anthropic Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Google launches Veo 3.1 in Gemini API as Veo 3.0 endpoints reach 10-day shutdown window",
+          "description": "Google launched Veo 3.1 and Veo 3.1 Fast in paid preview via the Gemini API on June 18, replacing the Veo 3.0 generation. The legacy model IDs veo-3.0-generate-001 and veo-3.0-fast-generate-001 are now deprecated with a hard shutdown on June 30, 2026. The Veo 3.1 models are also available as GA via the Gemini Enterprise Agent Platform and Vertex AI.",
+          "action": "Update any integration calling veo-3.0-generate-001 or veo-3.0-fast-generate-001 to the new Veo 3.1 model IDs before June 30 to avoid service interruption.",
+          "tools": [
+            "Gemini API",
+            "Vertex AI",
+            "Gemini Enterprise Agent Platform"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://developers.googleblog.com/introducing-veo-3-1-and-new-creative-capabilities-in-the-gemini-api/",
+              "name": "Google Developers Blog"
+            },
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "name": "Gemini API Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
       "low": 0
     }
   }

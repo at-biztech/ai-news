@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-18T09:00+06:00",
+  "lastUpdated": "2026-06-20T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -989,6 +989,25 @@
     "2026-06-19: NOTE for June 25: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Reframe as completed events. GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25. Veo 3 model deprecation with June 30 shutdown - look for announcement article within 48h window.",
     "2026-06-19: NOTE for June 30: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
     "2026-06-19: NOTE for August 3: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-19: lastUpdated timestamp updated to 2026-06-19T09:00+06:00."
+    "2026-06-19: lastUpdated timestamp updated to 2026-06-19T09:00+06:00.",
+    "2026-06-20: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). Anthropic Enterprise-Managed Authorization for Claude MCP connectors stable with Okta (CRITICAL 8, June 18, claude.com/blog/enterprise-managed-auth, Okta press release). Claude Code 2.1.183 auto-mode safety guard blocking destructive git and IaC commands (WATCH 7, June 19 01:20 UTC, GitHub releases). Claude Design major overhaul with /design-sync bidirectional Claude Code integration and design system imports (WATCH 7, June 17, VentureBeat/TechRepublic - at 72h boundary, not in any prior digest). Veo 3.1 launch plus Veo 3.0 shutdown June 30 countdown (WATCH 6, June 17-18, Google Developers Blog).",
+    "2026-06-20: Enterprise-Managed Authorization (EMA) for MCP is the most important item. IETF OAuth WG adopted September 2025, MCP spec November 2025, declared stable June 18. Zero per-user OAuth screens. 7 providers at launch (Asana, Atlassian, Canva, Figma, Granola, Linear, Supabase). Claude Team and Enterprise customers only.",
+    "2026-06-20: Claude Design update (June 17) was not covered in June 17, 18, or 19 digests despite VentureBeat and TechRepublic coverage. Included at 72h boundary per CRITICAL exception rule (highly significant, not in prior digests). /design-sync is a new Claude Code command enabling bidirectional round-trip with Claude Design canvas.",
+    "2026-06-20: Claude Code v2.1.183 (June 19 01:20 UTC = 07:20 Almaty) is within 48h window. Key features: destructive git guard in auto mode (reset --hard, checkout -- ., clean -fd, stash drop), git commit --amend guard, IaC destroy guard (terraform/pulumi/cdk), model deprecation warnings on stderr, attribution.sessionUrl setting.",
+    "2026-06-20: Veo 3.1 launched June 18 via Gemini API. Veo 3.0 model IDs (veo-3.0-generate-001, veo-3.0-fast-generate-001) shut down June 30. First confirmed the announcement date (June 17-18) as within window after multiple prior runs failed to confirm date.",
+    "2026-06-20: Fable 5/Mythos 5: NOT re-included. Chris Ciauri said 'coming days' at Seoul press conference June 18. Per agent notes rule from June 19: do not re-include unless models actually return. Still suspended as of this run.",
+    "2026-06-20: GPT-5.6: Polymarket at ~75-83% for June 22-28. Not released. Skipped as speculation. Monitor June 22-24.",
+    "2026-06-20: Gemini 3.5 Pro: Still in limited Vertex preview. Not GA. Expected June 22-26.",
+    "2026-06-20: n8n 2.26.7 (June 18) and 2.26.8 (June 19) are minor bug fixes only. 2.27.x still pre-release. All skipped per established precedent.",
+    "2026-06-20: GitHub Copilot CLI v1.0.64-0 (June 17) and v1.0.64-1 (June 19) are both pre-release. Skipped per established pre-release exclusion precedent.",
+    "2026-06-20: OpenAI Codex CLI 0.142.x all pre-release alphas. Skipped per established precedent.",
+    "2026-06-20: OpenAI Partner Network (June 14, 2026): Business/channel partnership program. 6 days old and outside window. Even if within window, it is a channel/consulting program, not an API capability change. Skipped per rules.",
+    "2026-06-20: platform.claude.com/docs/en/release-notes/overview still shows June 15 (Sonnet 4/Opus 4 retirement) as latest API entry. No new Anthropic API platform entries since June 15.",
+    "2026-06-20: No detached HEAD issue this session. Repo was on main branch and up to date.",
+    "2026-06-20: No new Zapier or Make.com product updates found for June 18-20. Make.com latest updates are June 3 and June 6, both outside window.",
+    "2026-06-20: NOTE for June 24-25 digest: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Reframe as completed events. GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25. Veo 3 model shutdown June 30 - cover as completed event.",
+    "2026-06-20: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
+    "2026-06-20: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-20: lastUpdated timestamp updated to 2026-06-20T09:00+06:00."
   ]
 }
