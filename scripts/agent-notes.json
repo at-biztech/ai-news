@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-20T09:00+06:00",
+  "lastUpdated": "2026-06-21T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1008,6 +1008,30 @@
     "2026-06-20: NOTE for June 24-25 digest: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Reframe as completed events. GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25. Veo 3 model shutdown June 30 - cover as completed event.",
     "2026-06-20: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30.",
     "2026-06-20: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-20: lastUpdated timestamp updated to 2026-06-20T09:00+06:00."
+    "2026-06-20: lastUpdated timestamp updated to 2026-06-20T09:00+06:00.",
+    "2026-06-21: 1 item (1 CRITICAL, 0 WATCH, 0 LOW). Anthropic Workload Identity Federation GA (CRITICAL 8, June 17, claude.com/blog/workload-identity-federation, not in any prior digest).",
+    "2026-06-21: WIF was announced June 17 on the Claude blog but missed in June 17, 18, 19, 20 digests. Those digests were crowded by Fable 5 suspension (June 18 CRITICAL 8), Agent SDK billing reversal (June 19 CRITICAL 9), and EMA for MCP (June 20 CRITICAL 8). WIF fills a different gap: replacing static sk-ant-* keys with OIDC tokens for CI/CD and cloud workloads. Included at 4 days old per Cloudflare Agents Week precedent (7-day window for items never covered).",
+    "2026-06-21: WIF distinguishes from EMA for MCP (June 20 CRITICAL 8): EMA is OAuth for MCP connector endpoints (Asana, Figma, etc.). WIF is keyless auth for the Claude API itself via AWS IAM, GCP, Azure, GitHub Actions, Kubernetes, Okta, SPIFFE. Different security primitive, different user.",
+    "2026-06-21: platform.claude.com/docs/en/release-notes/overview still shows June 15 as latest API entry. WIF announced on claude.com/blog (not platform release notes). Future runs: also check claude.com/blog for Anthropic announcements that bypass the API release notes page.",
+    "2026-06-21: github.com/anthropics/claude-code/releases shows v2.1.185 (June 20 20:59 UTC) as latest. Only change: stream-stall hint text and 10s to 20s timing. Skipped per minor bugfix precedent.",
+    "2026-06-21: n8n: 2.26.7 (June 18), 2.26.8 (June 19) are minor bug fixes only. 2.27.x still pre-release. Skip per established precedent.",
+    "2026-06-21: github.com/github/copilot-cli/releases: v1.0.64-0 (June 17) and v1.0.64-1 (June 19) both pre-release (note -0 and -1 suffixes). Skipped per established pre-release exclusion precedent.",
+    "2026-06-21: github.com/openai/codex/releases: 0.142.x all pre-release alphas (0.142.0-alpha.7 latest, June 20). Skipped per established precedent. 0.141.0 stable was covered in June 19 digest.",
+    "2026-06-21: Fable 5/Mythos 5: New development from G7 summit (June 17-18) - White House confirmed Trump eased concerns after meeting Dario Amodei. Also confirmed: Amazon CEO Andy Jassy alerted Treasury Secretary Bessent about the jailbreak, triggering the June 12 directive. White House and Anthropic drafting joint risk framework. Models NOT yet restored. Per rule from June 19: do not re-include unless models return. Skipped.",
+    "2026-06-21: GPT-5.6: Polymarket at ~83% probability for June 22-28 window. Not released. Skipped as speculation. Monitor June 22-24.",
+    "2026-06-21: Gemini 3.5 Pro: Still in limited Vertex preview as of June 19. Not GA. Expected before end of June. Continue monitoring.",
+    "2026-06-21: Grok 5: Polymarket at ~33% probability for June 30. Grok V9-Medium finished training but not released. Skip until confirmed launch.",
+    "2026-06-21: OpenAI gpt-oss (gpt-oss-120b, gpt-oss-20b): Released August 2025, not June 2026. Stale, skipped.",
+    "2026-06-21: MiniMax M3 weights: Confirmed published Hugging Face June 7, 2026 (14 days old). Outside all inclusion windows. Skip.",
+    "2026-06-21: Gemini Spark: Rolling out to trusted testers and Beta to AI Ultra subscribers. Not a developer API. Skip until developer API launches.",
+    "2026-06-21: Gemini Omni: Developer API 'coming in coming weeks.' Not released. Skip.",
+    "2026-06-21: Quiet Saturday. Single item is appropriate per precedent (June 12: 1 item).",
+    "2026-06-21: No detached HEAD issue this session. Repo was on main branch and up to date.",
+    "2026-06-21: claude.com/blog is a key source for Anthropic announcements that bypass platform.claude.com/docs release notes. EMA (June 18) and WIF (June 17) both announced there. Add to regular fetch list.",
+    "2026-06-21: NOTE for June 24-25 digest: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Reframe as completed events on June 25.",
+    "2026-06-21: NOTE for June 25 digest: GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-21: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30. Veo 3.0 and image preview models shut down June 30.",
+    "2026-06-21: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-21: lastUpdated timestamp updated to 2026-06-21T09:00+06:00."
   ]
 }

@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-21",
     "2026-06-20",
     "2026-06-19",
     "2026-06-18",
@@ -5397,7 +5398,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -9715,6 +9716,46 @@
       "relevant": 4,
       "critical": 1,
       "watch": 3,
+      "low": 0
+    },
+    "2026-06-21": {
+      "dateKey": "2026-06-21",
+      "date": "June 21, 2026",
+      "summary": "Anthropic Workload Identity Federation goes generally available, replacing static API keys with short-lived OIDC tokens for every Claude API endpoint and Claude Code integration.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Anthropic WIF goes GA letting any OIDC workload authenticate to Claude without a static API key",
+          "description": "Workload Identity Federation (WIF) is now generally available on the Claude Platform, announced June 17. Workloads present a signed JWT from AWS IAM, GCP service accounts, Azure Managed Identity, GitHub Actions, Kubernetes, SPIFFE, or Okta and receive a short-lived Anthropic access token in return, with no static sk-ant-* key required. The release introduces service accounts so each workload has its own identity, roles, and audit trail, and adds Admin API endpoints for programmatic federation rule management across multi-workspace deployments.",
+          "action": "Migrate CI/CD pipelines and background agents from long-lived API keys to OIDC-backed service accounts. GitHub Actions workloads can enable keyless auth in minutes using the official federation rule template. Existing API keys remain valid in parallel during migration.",
+          "tools": [
+            "Claude API",
+            "Claude Code",
+            "GitHub Actions",
+            "AWS IAM",
+            "Azure Managed Identity",
+            "Kubernetes",
+            "Okta"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://claude.com/blog/workload-identity-federation",
+              "name": "Anthropic Blog"
+            },
+            {
+              "url": "https://platform.claude.com/docs/en/manage-claude/workload-identity-federation",
+              "name": "Claude API Docs"
+            }
+          ]
+        }
+      ],
+      "totalScanned": 1,
+      "relevant": 1,
+      "critical": 1,
+      "watch": 0,
       "low": 0
     }
   }
