@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-22",
     "2026-06-21",
     "2026-06-20",
     "2026-06-19",
@@ -9756,6 +9757,104 @@
       "relevant": 1,
       "critical": 1,
       "watch": 0,
+      "low": 0
+    },
+    "2026-06-22": {
+      "dateKey": "2026-06-22",
+      "date": "June 22, 2026",
+      "summary": "LiteLLM unauthenticated RCE chain hits CISA federal patching deadline; Fable 5 exits subscription free window for credit billing; Claude Mythos Preview retires June 30 with its only replacement still suspended.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "LiteLLM unauthenticated RCE chain reaches CISA federal patching deadline",
+          "description": "CVE-2026-42271 (CVSS 8.7, command injection via /mcp-rest/test endpoints) chains with CVE-2026-48710 (Starlette BadHost host-header bypass) to achieve full unauthenticated RCE against LiteLLM AI Gateway deployments, combined CVSS 10.0. CISA added the exploit to its Known Exploited Vulnerabilities catalog on June 8 with a June 22 federal compliance deadline; Horizon3.ai confirmed active exploitation across exposed instances. Affects LiteLLM 1.74.2 through 1.83.6.",
+          "action": "Upgrade LiteLLM to 1.83.7 and Starlette to 1.0.1 immediately. Disable /mcp-rest/test/connection and /mcp-rest/test/tools/list endpoints if immediate patching is not possible. Audit any exposed LiteLLM proxy for signs of compromise.",
+          "tools": [
+            "LiteLLM"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://thehackernews.com/2026/06/litellm-flaw-cve-2026-42271-exploited.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://www.helpnetsecurity.com/2026/06/09/litellm-vulnerability-under-active-attack-cisa-warns-cve-2026-42271/",
+              "name": "Help Net Security"
+            },
+            {
+              "url": "https://www.rescana.com/post/active-exploitation-alert-cve-2026-42271-and-cve-2026-48710-unauthenticated-rce-in-litellm-ai-gateway-via-starlette-host",
+              "name": "Rescana"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Fable 5 exits free subscription window starting June 23",
+          "description": "From June 9 through today (June 22), Claude Fable 5 was included at no extra cost on Pro, Max, Team, and seat-based Enterprise plans. Starting June 23, usage draws on credits billed at $10 per million input and $50 per million output tokens, double Opus 4.8 pricing. The model remains suspended under the June 12 US export control directive and is not currently accessible on any plan.",
+          "action": "Budget for Fable 5 usage credits going forward. When the export control is lifted and Fable 5 returns, it will no longer be covered by plan limits, so any workflow relying on it will incur per-token charges from day one of restoration.",
+          "tools": [
+            "Claude",
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.developersdigest.tech/blog/claude-fable-5-june-22-deadline",
+              "name": "Developers Digest"
+            },
+            {
+              "url": "https://news.ycombinator.com/item?id=48463982",
+              "name": "Hacker News"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Claude Mythos Preview retires June 30 with replacement still under export ban",
+          "description": "Anthropic's model deprecations page confirms claude-mythos-preview retires on June 30, 2026, eight days from now. The listed migration target is claude-mythos-5, which remains inaccessible under the June 12 export control suspension. Organizations with Project Glasswing access using the preview API identifier face a hard cutoff with no functioning fallback model unless the suspension is lifted before the deadline.",
+          "action": "If your stack calls claude-mythos-preview, contact Anthropic support now to understand options. Monitor the export control resolution timeline closely; if the suspension extends past June 30, Glasswing preview integrations will break.",
+          "tools": [
+            "Claude API",
+            "Claude Mythos"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "name": "Anthropic Model Deprecations"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 1,
+      "watch": 2,
       "low": 0
     }
   }

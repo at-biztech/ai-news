@@ -1032,6 +1032,22 @@
     "2026-06-21: NOTE for June 25 digest: GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
     "2026-06-21: NOTE for June 30 digest: OpenAI fine-tuning API wind-down first milestone July 2 (new orgs lose access). Cover as countdown June 30. Veo 3.0 and image preview models shut down June 30.",
     "2026-06-21: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-21: lastUpdated timestamp updated to 2026-06-21T09:00+06:00."
+    "2026-06-21: lastUpdated timestamp updated to 2026-06-21T09:00+06:00.",
+    "2026-06-22: 3 items (1 CRITICAL, 2 WATCH, 0 LOW). LiteLLM CVE-2026-42271 + CVE-2026-48710 chain = unauthenticated RCE in AI Gateway (CRITICAL 8, CISA KEV deadline June 22, Horizon3.ai chain discovery, HN + Help Net Security coverage). Fable 5 exits free subscription window (WATCH 7, June 9-22 free period ends today, credit billing starts June 23 at $10/$50 per million). Claude Mythos Preview retires June 30 (WATCH 7, discovered via direct fetch of model-deprecations page, replacement claude-mythos-5 still suspended).",
+    "2026-06-22: LiteLLM CVE-2026-42271 was added to CISA KEV on June 8 (Help Net Security June 9). The June 22 federal compliance deadline is the time peg for inclusion today. HN article exists (thehackernews.com/2026/06/) but returned 403 on direct fetch. The CVE-2026-48710 Starlette BadHost bypass chain was discovered by Horizon3.ai and creates unauthenticated RCE with combined CVSS 10.0. Affects LiteLLM 1.74.2-1.83.6. Fix: 1.83.7 + Starlette 1.0.1.",
+    "2026-06-22: Fable 5 credit model change was announced at June 9 launch. The June 22 expiry is the actual billing event. Model still suspended; credits take effect when suspension lifts. Developers building on Fable 5 during the free window need to budget going forward.",
+    "2026-06-22: Claude Mythos Preview (claude-mythos-preview) retiring June 30 was found via direct fetch of platform.claude.com/docs/en/about-claude/model-deprecations. Not announced in any prior digest. Not in API release notes page (which still shows June 15 as latest). The deprecations page is a key separate source to fetch each run.",
+    "2026-06-22: GPT-5.6 prediction window (June 22-28, 83% Polymarket) opened today with no official release. Not included as speculation.",
+    "2026-06-22: Gemini 3.5 Pro still in limited Vertex preview (50-55% odds of GA by June 30). Not included.",
+    "2026-06-22: Fable 5 still suspended. NOT re-included per June 19 rule. No new restoration update.",
+    "2026-06-22: White House AI EO (June 2) and Anthropic S-1 (June 1) and OpenAI S-1 (June 8) are all outside the 48h window. Skipped.",
+    "2026-06-22: Gemini CLI shutoff June 18 (4 days ago, outside 48h). Not covered in any prior digest but now outside all inclusion windows.",
+    "2026-06-22: No new n8n stable releases (2.27.x pre-release). No new Claude Code releases beyond v2.1.185 (minor stream-stall hint, June 20). No Codex CLI stable (0.142.x alpha). No Copilot CLI stable (v1.0.64-1 pre-release).",
+    "2026-06-22: No detached HEAD issue. Repo on main branch and up to date.",
+    "2026-06-22: NOTE for June 24-25 digest: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Reframe as completed events on June 25.",
+    "2026-06-22: NOTE for June 25 digest: GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
+    "2026-06-22: NOTE for June 30 digest: Claude Mythos Preview retires June 30. Cover as completed event (or ongoing suspension crisis). OpenAI fine-tuning API wind-down first milestone July 2. Veo 3.0 shutdown June 30.",
+    "2026-06-22: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-22: lastUpdated timestamp updated to 2026-06-22T09:00+06:00."
   ]
 }
