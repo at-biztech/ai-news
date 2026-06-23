@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-21T09:00+06:00",
+  "lastUpdated": "2026-06-23T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1048,6 +1048,25 @@
     "2026-06-22: NOTE for June 25 digest: GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25.",
     "2026-06-22: NOTE for June 30 digest: Claude Mythos Preview retires June 30. Cover as completed event (or ongoing suspension crisis). OpenAI fine-tuning API wind-down first milestone July 2. Veo 3.0 shutdown June 30.",
     "2026-06-22: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-22: lastUpdated timestamp updated to 2026-06-22T09:00+06:00."
+    "2026-06-22: lastUpdated timestamp updated to 2026-06-22T09:00+06:00.",
+    "2026-06-23: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). Noam Shazeer joins OpenAI as Head of Architecture Research (CRITICAL 8, June 17-18, CNBC/9to5Google, not in any prior digest). Claude Code Artifacts beta for Team/Enterprise with live shareable dashboards (WATCH 7, June 18, VentureBeat/claude.com/testingcatalog, not in any prior digest). Claude Code 2.1.186 with MCP auth CLI commands and bash auto-response (WATCH 7, June 22 20:37 UTC). Codex CLI 0.142.0 stable with token budgets and multi-agent delegation (WATCH 6, June 22 22:19 UTC).",
+    "2026-06-23: Noam Shazeer move (June 17-18) included at 5-6 days old using 'never covered + historically significant' precedent (WIF June 17 covered June 21 at 4 days, Cloudflare Agents Week April 13-17 covered April 20 at 3-7 days). Strictly 72h rule but precedent supports inclusion. Co-author of Attention Is All You Need, Google Gemini co-lead, head of OpenAI architecture research.",
+    "2026-06-23: Claude Code Artifacts (June 18) included at 5 days old. Missed in June 18 digest (crowded by Gemini 3.5 Flash GA and Fable 5 suspension), June 19 (Agent SDK billing reversal), June 20 (EMA for MCP), June 21 (WIF), June 22 (LiteLLM RCE). VentureBeat, claude.com/blog confirmed sources.",
+    "2026-06-23: github.com/anthropics/claude-code/releases fetchable. v2.1.186 (June 22 20:37 UTC = June 23 02:37 Almaty) is within window with MCP auth CLI commands, bash auto-response, background subagent permission surfacing, Skills section in /plugin.",
+    "2026-06-23: github.com/openai/codex/releases fetchable. v0.142.0 stable (June 22 22:19 UTC = June 23 04:19 Almaty) is first stable in 0.142.x series. v0.143.0-alpha.1 (June 22 23:08 UTC) is pre-release, skipped per established precedent.",
+    "2026-06-23: github.com/n8n-io/n8n/releases shows n8n@2.26.9 (June 22) as single-bugfix stable. n8n@2.27.x still pre-release. All skipped per established minor bugfix and pre-release precedent.",
+    "2026-06-23: github.com/github/copilot-cli/releases shows v1.0.64-0 through v1.0.64-3 (June 17-22) all pre-release (note -0, -1, -2, -3 suffixes). Skipped per established pre-release exclusion precedent.",
+    "2026-06-23: GPT-5.6 still not released. Polymarket at 83% for June 22-28 window. Not official. Skipped as speculation. Chief Scientist called it 'meaningful improvement over 5.5' with late-June target. Continue monitoring.",
+    "2026-06-23: Gemini 3.5 Pro still in limited Vertex preview as of June 23. Not GA. Estimated before end of June. Continue monitoring.",
+    "2026-06-23: Fable 5 still suspended. Per June 19 rule: do not re-include unless models return. Claude Android app shows model name in picker as UI artifact but model is not live. Skipped.",
+    "2026-06-23: Claude Mythos Preview retirement June 30 was covered in June 22 WATCH 7. Not re-included per duplication rule.",
+    "2026-06-23: OpenAI Ona acquisition (June 11) was 12 days old. Excluded per date rules.",
+    "2026-06-23: n8n 2.26.9 released June 22 at 11:58 as a single-bugfix release. Skipped per established n8n minor bugfix precedent.",
+    "2026-06-23: No detached HEAD issue this session. Repo on main branch and up to date.",
+    "2026-06-23: NOTE for June 24 digest: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Cover day-before countdown on June 24.",
+    "2026-06-23: NOTE for June 25 digest: GPT-4.5 retires from ChatGPT June 27. Begin countdown June 25. gemini image preview models shut down June 25 - cover as completed events.",
+    "2026-06-23: NOTE for June 30 digest: Claude Mythos Preview retires June 30. Veo 3.0 shutdown June 30. OpenAI fine-tuning API wind-down first milestone July 2.",
+    "2026-06-23: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-23: lastUpdated timestamp updated to 2026-06-23T09:00+06:00."
   ]
 }

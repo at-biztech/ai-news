@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-23",
     "2026-06-22",
     "2026-06-21",
     "2026-06-20",
@@ -9855,6 +9856,134 @@
       "relevant": 3,
       "critical": 1,
       "watch": 2,
+      "low": 0
+    },
+    "2026-06-23": {
+      "dateKey": "2026-06-23",
+      "date": "June 23, 2026",
+      "summary": "Transformer co-author Noam Shazeer leaves Google to lead OpenAI architecture research; Anthropic ships live team Artifacts for Claude Code; Claude Code 2.1.186 adds MCP auth CLI commands and bash auto-response.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Transformer co-author Shazeer leaves Google to head OpenAI architecture research",
+          "description": "Noam Shazeer, Google VP of Engineering and Gemini co-lead, announced June 17 that he is joining OpenAI as Head of Architecture Research. Shazeer co-authored the 2017 'Attention Is All You Need' paper that introduced the transformer and was brought back to Google from Character.AI via a $2.7 billion deal in 2024. The move is the single largest talent shift from Google DeepMind to a rival since that deal was struck, and hands OpenAI a foundational architect of the transformer era at a moment when architectural efficiency is the primary cost lever in model deployment.",
+          "action": "Track architectural changes in OpenAI models over the next 12 to 18 months. The last time Shazeer ran architecture research he rewrote Character.AI inference from scratch for latency. Expect OpenAI to accelerate work on MoE routing, speculative decoding, and sub-quadratic attention variants. Gemini model velocity may slow as Google backfills.",
+          "tools": [
+            "OpenAI",
+            "Google Gemini"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html",
+              "name": "CNBC"
+            },
+            {
+              "url": "https://9to5google.com/2026/06/17/geminis-co-lead-is-leaving-google-to-join-openai/",
+              "name": "9to5Google"
+            },
+            {
+              "url": "https://letsdatascience.com/news/noam-shazeer-joins-openai-from-google-d1a5663e",
+              "name": "Let's Data Science"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code Artifacts turns coding sessions into live shareable dashboards for teams",
+          "description": "Anthropic launched Artifacts for Claude Code in beta on June 18 for Team and Enterprise plans, accessible from both CLI and desktop app. Each Claude Code session can now emit a live, interactive HTML page at a shareable URL that updates in real time as the agent works, making dashboards, app prototypes, and data views visible to teammates without requiring them to join the terminal session. Pages are hosted by Anthropic and viewable in any browser.",
+          "action": "Test for internal tooling: project status pages fed by autonomous Claude Code runs, data visualizations that update as Claude rewrites queries, and handoff artifacts for stakeholders who do not use the CLI. The real-time update model makes this a lightweight alternative to deploying an internal dashboard app for team-facing agent outputs.",
+          "tools": [
+            "Claude Code",
+            "Anthropic"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://venturebeat.com/data/anthropics-claude-code-artifacts-update-brings-live-shared-dashboards-and-interactive-workspaces-to-enterprises",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://claude.com/blog/artifacts-in-claude-code",
+              "name": "Anthropic Blog"
+            },
+            {
+              "url": "https://www.testingcatalog.com/anthropic-launches-live-artifacts-for-claude-code/",
+              "name": "Testing Catalog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.186 adds MCP server auth CLI commands and bash auto-response mode",
+          "description": "Released June 22 at 20:37 UTC, v2.1.186 introduces `claude mcp login <name>` and `claude mcp logout <name>` commands for authenticating MCP servers without opening the interactive menu, enabling non-interactive CI flows for MCP-gated tools. Bash commands prefixed with `!` now automatically trigger Claude responses by default, configurable via `respondToBashCommands: false`. Background subagents no longer silently auto-deny permission prompts but surface them in the main session instead.",
+          "action": "Use the new MCP auth commands to script authenticated MCP server setup in CI pipelines. Review `respondToBashCommands` if you use `!` commands in automated contexts where the auto-response would be unexpected. The subagent permission surfacing change means unattended agents will pause for human review rather than proceeding with deny, which reduces silent failures but requires operator attention.",
+          "tools": [
+            "Claude Code",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.142.0 stable ships token budgets for agent threads and multi-agent delegation",
+          "description": "The first stable release in the 0.142.x series shipped June 22 at 22:19 UTC with configurable token budgets per agent thread, multi-agent delegation options, and an indexed web-search mode. The plugin catalog is reorganized into curated, workspace, and shared sections with a new usage limit reset flow including confirmation and retry.",
+          "action": "Evaluate token budgets for cost-capped multi-step agent runs where you need hard spending limits per task. Multi-agent delegation lets a Codex orchestrator hand sub-tasks to specialized threads, which is useful for parallel code review or split-path testing workflows.",
+          "tools": [
+            "Codex CLI",
+            "OpenAI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
       "low": 0
     }
   }
