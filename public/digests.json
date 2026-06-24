@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-24",
     "2026-06-23",
     "2026-06-22",
     "2026-06-21",
@@ -9985,6 +9986,102 @@
       "critical": 1,
       "watch": 3,
       "low": 0
+    },
+    "2026-06-24": {
+      "dateKey": "2026-06-24",
+      "date": "June 24, 2026",
+      "summary": "OpenAI launches GPT-5.5-Cyber and Patch the Planet to fix open-source vulnerabilities at scale; Gemini image preview models shut down tomorrow June 25.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "OpenAI launches GPT-5.5-Cyber and Patch the Planet to secure open-source at scale",
+          "description": "OpenAI expanded its Daybreak cybersecurity program with the full release of GPT-5.5-Cyber (85.6% on CyberGym, highest single-model score) and Patch the Planet, a new initiative with Trail of Bits, HackerOne, and Calif to fund expert security researchers working directly with open-source maintainers. Initial participating projects include cURL, Python, Go, aiohttp, Sigstore, and pyca/cryptography across more than 30 projects. A five-day initial sprint surfaced hundreds of issues, merged dozens of patches, and produced reusable fuzzing tooling that projects keep permanently.",
+          "action": "If your stack depends on any of the 30-plus enrolled open-source projects, monitor their changelogs for AI-assisted security patches landing over the coming weeks. GPT-5.5-Cyber is available via Codex Security for organizations in the Trusted Access for Cyber program.",
+          "tools": [
+            "OpenAI",
+            "Codex Security",
+            "Daybreak"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/patch-the-planet/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://thehackernews.com/2026/06/openai-expands-daybreak-with-gpt-55.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://siliconangle.com/2026/06/22/openai-expands-daybreak-patch-planet-full-gpt-5-5-cyber-release/",
+              "name": "SiliconANGLE"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Gemini image preview models shut down tomorrow June 25 as GA replacements go live",
+          "description": "Google shuts down gemini-3.1-flash-image-preview and gemini-3-pro-image-preview from the Gemini API at midnight June 25. GA replacements gemini-3.1-flash-image and gemini-3-pro-image (Nano Banana 2 and Nano Banana Pro) are already available. Any application still calling the preview model strings will begin returning errors after tonight.",
+          "action": "Update all API calls from gemini-3.1-flash-image-preview to gemini-3.1-flash-image and from gemini-3-pro-image-preview to gemini-3-pro-image before June 25. Test GA behavior before cutoff as pricing and rate limits may differ from preview.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "name": "Gemini API Changelog"
+            },
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-image-preview",
+              "name": "Google AI for Developers"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.187 adds sandbox credential blocking and org-level model restrictions",
+          "description": "Claude Code 2.1.187 ships a new sandbox.credentials setting that blocks sandboxed commands from reading credential files and secret environment variables, reducing the blast radius of compromised tool calls in multi-agent deployments. A new org-configured model restriction enforces permitted model limits on the model picker, --model, /model, and ANTHROPIC_MODEL flags. Remote MCP tool calls that stall no longer hang for five minutes but now abort with an error, configurable via CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT.",
+          "action": "Set sandbox.credentials in project settings to harden shared or multi-tenant Claude Code deployments. Enterprise admins can centrally block specific models from org-wide Claude Code sessions via org policy.",
+          "tools": [
+            "Claude Code",
+            "Anthropic"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
+              "name": "GitHub Releases"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.64 stable ships inline image rendering and expanded worktree support",
+          "description": "GitHub Copilot CLI v1.0.64 is the first stable release in the 1.0.64 series following four pre-release builds on June 22-23. Key additions include inline image rendering directly in the CLI, expanded worktree functionality for parallel branch workflows, websocket response support for custom OpenAI API-compatible providers, and improved session resumption stability.",
+          "action": "Update via your package manager. If you use custom OpenAI-compatible endpoints with Copilot CLI, the new websocket response support may reduce latency on streaming responses.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "GitHub"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.64",
+              "name": "GitHub Releases"
+            }
+          ]
+        }
+      ]
     }
   }
 }
