@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-25",
     "2026-06-24",
     "2026-06-23",
     "2026-06-22",
@@ -10082,6 +10083,188 @@
           ]
         }
       ]
+    },
+    "2026-06-25": {
+      "dateKey": "2026-06-25",
+      "date": "June 25, 2026",
+      "summary": "Anthropic launches Claude Tag as a persistent AI teammate inside Slack while OpenAI expands ChatGPT Enterprise write access to the same platform; Gemini image preview APIs retire today and GPT-4.5 exits ChatGPT in 48 hours.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Anthropic ships Claude Tag as persistent AI teammate inside Slack with ambient mode and shared enterprise identity",
+          "description": "Claude Tag replaces the existing Claude for Slack app and lets Enterprise and Team customers add a shared Claude identity to channels where it learns the organization, breaks delegated tasks into stages, and delivers results asynchronously. An ambient mode proactively resurfaces stalled threads and pushes context updates without being explicitly summoned. Administrators control per-team tool access, spending limits, and channel scope; separate Claude identities keep engineering and sales contexts isolated by design.",
+          "action": "Evaluate Claude Tag for teams that coordinate in Slack. Administrators on Team or Enterprise plans can opt in and migrate from the old Claude Slack app within a 30-day window with launch credits available.",
+          "tools": [
+            "Claude",
+            "Slack",
+            "Claude Enterprise",
+            "Claude Team"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/news/introducing-claude-tag",
+              "name": "Anthropic"
+            },
+            {
+              "url": "https://techcrunch.com/2026/06/23/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://venturebeat.com/technology/anthropic-launches-claude-tag-replacing-its-slack-app-with-a-persistent-ai-teammate-that-learns-monitors-and-works-autonomously",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://fortune.com/2026/06/23/anthropic-claude-tag-virtual-employee-tool-slack/",
+              "name": "Fortune"
+            },
+            {
+              "url": "https://siliconangle.com/2026/06/23/anthropic-debuts-claude-tag-capable-ai-teammate-lives-within-slack/",
+              "name": "SiliconANGLE"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Gemini image preview models retire today as GA versions with video-to-image generation go live",
+          "description": "gemini-3.1-flash-image-preview and gemini-3-pro-image-preview are shut down effective June 25. The GA replacements are gemini-3.1-flash-image and gemini-3-pro-image. The flash image GA model adds a new capability: passing a video file as multimodal context to generate thumbnails, cinematic posters, or summary infographics.",
+          "action": "Update API calls referencing the preview model IDs by dropping the '-preview' suffix. Calls to the old strings return errors from today. The video-to-image capability on gemini-3.1-flash-image is available immediately.",
+          "tools": [
+            "Gemini API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "name": "Gemini API Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "GPT-4.5 exits ChatGPT in 48 hours on June 27, API access unaffected",
+          "description": "OpenAI retires GPT-4.5 from ChatGPT on June 27 following a 30-day sunset period, completing the removal of the GPT-4 generation from the ChatGPT interface. The retirement applies to ChatGPT paid plans only; the model remains accessible via API key with no announced API deprecation date. OpenAI o3 follows in a separate sunset on August 26.",
+          "action": "Switch any ChatGPT workflows that rely on model picker selection of GPT-4.5 to GPT-5.5 or GPT-5.4 before June 27. API usage requires no action.",
+          "tools": [
+            "ChatGPT",
+            "OpenAI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.ghacks.net/2026/06/03/openai-upgrades-gpt-5-5-instant-and-confirms-retirement-of-o3-and-gpt-4-5-models/",
+              "name": "gHacks"
+            },
+            {
+              "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-upgrades-gpt-55-as-it-plans-to-retire-legacy-chatgpt-models/",
+              "name": "Bleeping Computer"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "ChatGPT Enterprise gains Slack write actions with channel, reminder, file, and profile operations",
+          "description": "A June 22 connector update gives ChatGPT Enterprise and Edu workspaces the ability to take write actions inside Slack: joining channels, creating reminders, uploading files, and updating user profiles. Write actions are disabled by default and require administrator activation, giving IT teams control before automation runs. The update positions OpenAI's Slack integration one day before Anthropic launched Claude Tag with broader ambient mode and persistent memory capabilities.",
+          "action": "Enterprise and Edu administrators can enable Slack write actions under Workspace Settings. Compare write-action scope and memory capabilities against Claude Tag before committing platform-wide.",
+          "tools": [
+            "ChatGPT",
+            "Slack",
+            "OpenAI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.techtimes.com/articles/318982/20260624/chatgpt-enterprise-gains-slack-write-access-ai-agent-can-now-join-channels-upload-files.htm",
+              "name": "TechTimes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.191 adds session rewind from before clear and cuts streaming CPU by 37 percent",
+          "description": "/rewind now lets users resume a conversation from the exact state before /clear was called, recovering context that would otherwise be lost permanently. Text update coalescing at 100ms intervals cuts CPU usage during streaming responses by approximately 37 percent. MCP server connections gain automatic retry logic for transient network errors, reducing spurious disconnection failures in multi-server setups.",
+          "action": "Update Claude Code. Teams running multiple MCP servers see fewer disconnects without configuration changes; /rewind is valuable in long sessions where accidental /clear has cost context.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI 1.0.65 ships persistent working directory and skill management subcommand",
+          "description": "v1.0.65 (June 24 stable, first release after v1.0.64 covered June 24) adds /cd with state persistence so the working directory carries forward across subsequent shell operations without re-navigation. A new /skill subcommand manages installed skills directly inside the CLI. Canvas resume reliability is fixed and CI status is now visible inline.",
+          "action": "Update to v1.0.65. The /cd persistence benefits workflows using sequential shell operations in different directories; /skill simplifies managing Claude Code skills from within a Copilot session.",
+          "tools": [
+            "GitHub Copilot CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 6,
+      "relevant": 6,
+      "critical": 1,
+      "watch": 5,
+      "low": 0
     }
   }
 }

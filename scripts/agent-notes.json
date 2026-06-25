@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T09:00+06:00",
+  "lastUpdated": "2026-06-25T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1084,6 +1084,23 @@
     "2026-06-24: NOTE for June 25 digest: gemini-3.1-flash-image-preview and gemini-3-pro-image-preview shut down June 25. Reframe as completed event. GPT-4.5 retires from ChatGPT June 27 - begin countdown June 25.",
     "2026-06-24: NOTE for June 30 digest: Claude Mythos Preview retires June 30 (covered June 22 WATCH 7). Veo 3.0 shutdown June 30 (covered June 20 WATCH 6). OpenAI fine-tuning API wind-down first milestone July 2.",
     "2026-06-24: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-24: lastUpdated timestamp updated to 2026-06-24T09:00+06:00."
+    "2026-06-24: lastUpdated timestamp updated to 2026-06-24T09:00+06:00.",
+    "2026-06-25: 6 items (1 CRITICAL, 5 WATCH, 0 LOW). Anthropic Claude Tag on Slack with ambient mode and shared enterprise identity (CRITICAL 9, June 23, Fortune/TechCrunch/VentureBeat/Bloomberg/SiliconANGLE). Gemini image preview models retired today completed event (WATCH 7, gemini-3.1-flash-image-preview and gemini-3-pro-image-preview). GPT-4.5 ChatGPT retirement June 27 countdown (WATCH 7). ChatGPT Enterprise Slack write actions (WATCH 6, June 22 launch, June 24 TechTimes coverage). Claude Code 2.1.191 with /rewind and CPU -37% (WATCH 6, June 24). GitHub Copilot CLI 1.0.65 with /cd persistence and /skill subcommand (WATCH 6, June 24).",
+    "2026-06-25: Claude Tag (June 23) was NOT in any prior digest. Fortune, TechCrunch, VentureBeat, Bloomberg, SiliconANGLE all dated June 23. anthropic.com/news/introducing-claude-tag confirmed as primary source. Features: ambient mode, persistent memory, shared enterprise identity across channels, per-team tool access controls and spending limits, 30-day migration window from old Claude Slack app with launch credits.",
+    "2026-06-25: ChatGPT Enterprise Slack write actions (June 22) included at 3 days old per Claude for Word precedent. TechTimes coverage June 24 is within 48h window. ChatGPT Slack write actions are disabled by default and require admin activation. Different capability model from Claude Tag (which has ambient mode and memory).",
+    "2026-06-25: Gemini image preview models shutdown is the completed event version of the June 24 WATCH 7 day-before countdown. GA replacements confirmed: gemini-3.1-flash-image and gemini-3-pro-image. New video-to-image capability on flash-image GA model.",
+    "2026-06-25: platform.claude.com/docs/en/release-notes/overview still shows June 15 (Sonnet 4/Opus 4 retirement) as latest API entry. No new Anthropic API platform entries since June 15.",
+    "2026-06-25: github.com/anthropics/claude-code/releases fetchable. v2.1.191 (June 24 21:58 UTC = June 25 03:58 Almaty) is substantive with /rewind, CPU -37%, MCP retry logic. v2.1.190 (June 24 15:53 UTC) is bug fixes only, skipped per minor bugfix precedent.",
+    "2026-06-25: github.com/github/copilot-cli/releases fetchable. v1.0.65 (June 24 stable) is first stable after v1.0.64 (June 23, covered June 24 digest). v1.0.64-x pre-releases skipped per established pre-release exclusion precedent.",
+    "2026-06-25: github.com/n8n-io/n8n/releases: n8n@2.27.4 (June 24) is stable but bug-fix only (Python package imports, Google Ads v20->v21). n8n@2.28.0 and 2.28.1 (June 23-24) are pre-releases. All skipped per established minor bugfix and pre-release precedent.",
+    "2026-06-25: github.com/openai/codex/releases: 0.143.x all pre-release alphas (0.143.0-alpha.15 latest, June 24). Skipped per established precedent. 0.142.0 stable was covered in June 23 digest.",
+    "2026-06-25: GPT-5.6 prediction market odds collapsed from ~83% to ~18% for June 22-28 window as of June 24. Most likely delayed to July 2026. Gemini 3.5 Pro also reportedly delayed to July per Business Insider scoop (date unconfirmed). Neither included as speculation without confirmed announcement dates within window.",
+    "2026-06-25: Grok 5 still not released. Prediction market at 33% for June 30. Grok V9-Medium training complete but no public launch confirmed. Skip.",
+    "2026-06-25: Fable 5/Mythos 5 still suspended. Kalshi gives 57% odds of restoration before July 1. Per June 19 rule: do not re-include unless models return.",
+    "2026-06-25: No new Zapier, Make.com, or Airtable product updates found for June 23-25.",
+    "2026-06-25: No detached HEAD issue this session. Repo on main branch and up to date with origin/main.",
+    "2026-06-25: NOTE for June 30 digest: Claude Mythos Preview retires June 30 (covered June 22 WATCH 7). Veo 3.0 shutdown June 30 (covered June 20 WATCH 6). OpenAI fine-tuning API wind-down first milestone July 2. Claude Opus 4.1 API retirement August 5.",
+    "2026-06-25: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-25: lastUpdated timestamp updated to 2026-06-25T09:00+06:00."
   ]
 }
