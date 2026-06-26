@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-26",
     "2026-06-25",
     "2026-06-24",
     "2026-06-23",
@@ -10265,6 +10266,102 @@
       "critical": 1,
       "watch": 5,
       "low": 0
+    },
+    "2026-06-26": {
+      "dateKey": "2026-06-26",
+      "date": "June 26, 2026",
+      "summary": "Claude Code gains auto-mode shell classifier controls and bash path autocomplete while OpenAI unveils its first custom inference chip with Broadcom and ships a new zsh shell integration for Codex CLI.",
+      "items": [
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.193 adds auto-mode shell classifier bash path autocomplete and MCP auth reconnect",
+          "description": "A new autoMode.classifyAllShell setting routes all Bash and PowerShell commands through the auto-mode classifier, normalizing approval behavior across command types. Auto-mode denial reasons now surface in transcripts and the denial toast, giving audit logs a clear record of blocked operations. Live file path autocomplete activates in bash mode via the ! shortcut, an MCP startup notice flags servers requiring authentication before session start, and headersHelper MCP auth reconnects automatically on 401 or 403 errors.",
+          "action": "Update Claude Code to 2.1.193. Enable autoMode.classifyAllShell in CLAUDE.md if you need consistent approval behavior across mixed shell environments; the MCP 401/403 auto-reconnect removes manual intervention in multi-server workflows.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "OpenAI unveils Jalapeño custom ASIC with Broadcom targeting gigawatt scale inference by end of 2026",
+          "description": "OpenAI's first proprietary inference chip, co-designed with Broadcom over nine months, reached tape-out and is running engineering samples at production frequency. The architecture targets LLM inference kernels, memory movement, and high-bandwidth networking, with substantially better performance per watt than current alternatives. OpenAI used its own models to accelerate the chip design process; production deployment is targeted at gigawatt-scale data centers by end of 2026, with capacity expanding in subsequent years.",
+          "action": "Track the Jalapeño rollout as a signal for lower OpenAI API costs and higher throughput ceilings from 2027 onward. No immediate workflow changes required.",
+          "tools": [
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://techcrunch.com/2026/06/24/openai-reveals-its-first-custom-ai-chip-designed-to-slash-inference-costs/",
+              "name": "TechCrunch"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Codex CLI 0.142.2 defaults MCP tools to search mode and ships first zsh shell integration",
+          "description": "Version 0.142.2 (June 25) sets MCP tools to default to tool search when supported, streamlining initial workflow for multi-server setups; macOS auth now honors the system proxy and plugin catalogs return curated featured rankings. Separately, codex-zsh v0.1.0 (June 25) is the first release of the Codex zsh shell integration, enabling inline AI assistance directly from the zsh prompt without switching windows.",
+          "action": "Update Codex CLI to 0.142.2 and install codex-zsh if you run zsh and want inline Codex queries at the shell prompt.",
+          "tools": [
+            "OpenAI Codex CLI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/openai/codex/releases",
+              "name": "GitHub Releases"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 3,
+      "relevant": 3,
+      "critical": 0,
+      "watch": 3,
+      "low": 0
     }
-  }
+  },
+  "items": [],
+  "totalScanned": 0,
+  "relevant": 0,
+  "critical": 0,
+  "watch": 0,
+  "low": 0,
+  "dateKey": "2026-06-26",
+  "date": "June 26, 2026"
 }
