@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T09:00+06:00",
+  "lastUpdated": "2026-06-27T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1113,6 +1113,23 @@
     "2026-06-26: NOTE for June 27 digest: GPT-4.5 retires from ChatGPT today June 27 - cover as completed event.",
     "2026-06-26: NOTE for June 30 digest: Claude Mythos Preview retires June 30 (covered June 22 WATCH 7). Veo 3.0 shutdown June 30 (covered June 20 WATCH 6). OpenAI fine-tuning API wind-down first milestone July 2.",
     "2026-06-26: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-26: lastUpdated timestamp updated to 2026-06-26T09:00+06:00."
+    "2026-06-26: lastUpdated timestamp updated to 2026-06-26T09:00+06:00.",
+    "2026-06-27: 8 items (2 CRITICAL, 6 WATCH, 0 LOW). GPT-5.6 Sol/Terra/Luna government-gated launch (CRITICAL 9, June 26), Gemini 3.5 Flash native computer use preview (CRITICAL 8, June 24), Anthropic API rate limits raised tiers to Start/Build/Scale (WATCH 7, June 26), Claude Opus 4.7 fast mode deprecated July 24 removal (WATCH 7, June 25), MAI-Code-1-Flash expanded to Copilot Business/Enterprise (WATCH 7, June 26), Codex Remote GA for all ChatGPT users (WATCH 7, June 26), Gemini preview image model IDs shut down (WATCH 6, June 25), Claude Code 2.1.195 hook matcher fix (WATCH 6, June 26).",
+    "2026-06-27: GPT-5.6 Sol/Terra/Luna is the biggest story. First frontier model launch under a US government-managed partner access list (~20 approved companies). OpenAI says restrictions should not be the norm. GA expected in coming weeks. Sol beats Mythos on TerminalBench.",
+    "2026-06-27: Gemini 3.5 Flash computer use (June 24) included under CRITICAL 72h exception. Western June 24 date maps to June 25 Almaty (UTC+6) so may actually be within the standard 48h window. Not in any prior digest.",
+    "2026-06-27: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. June 26 entry (rate limits) and June 25 entry (Opus 4.7 fast mode deprecation) both confirmed from primary source.",
+    "2026-06-27: github.com/anthropics/claude-code/releases fetchable. v2.1.195 (June 26 21:29 UTC) is the substantive release with hook matcher exact-match fix. v2.1.193 was covered in June 26 digest, skip.",
+    "2026-06-27: github.com/n8n-io/n8n/releases shows n8n@2.28.2 pre-release (June 25) and n8n@2.27.4 stable (June 24) with Google Ads API v20-to-v21 upgrade and Python package import improvements. Both skipped: pre-release and minor bugfix per established precedent.",
+    "2026-06-27: github.com/openai/codex/releases shows only 0.142.3 maintenance patch (June 26) and 0.143.0-alpha pre-releases. 0.142.3 has no user-facing changes. 0.142.2 and zsh plugin already covered in June 26 digest. All skipped.",
+    "2026-06-27: github.com/github/copilot-cli/releases shows 1.0.66-0 and 1.0.66-1 (June 26) but both carry the -0/-1 pre-release suffix. Skipped per established pre-release exclusion precedent.",
+    "2026-06-27: MAI-Code-1-Flash for Copilot Business/Enterprise (June 26 GitHub Changelog) confirmed via WebSearch. github.blog/changelog URL returned 403 via WebFetch but URL confirmed via search result listing.",
+    "2026-06-27: Claude Tag on Slack (June 23, beta for Enterprise/Team with Opus 4.8) is 96 hours old = outside the 72h CRITICAL exception window. Skipped.",
+    "2026-06-27: New York AI legislation session wrap (kids chatbot safety, FAIR News Act, training data transparency) - awaiting Governor Hochul signature by Dec 31. Regulatory/pending-signature news with no immediate API impact. Skipped.",
+    "2026-06-27: White House AI EO signed June 2, 2026. Stale by 25 days. Skipped.",
+    "2026-06-27: Kimi K2.7 Code (June 12), GLM-6 (June frontier wave), DeepSeek V4.1 (targeted mid-June, unconfirmed launch) all stale or unconfirmed. Skipped.",
+    "2026-06-27: Claude Foundation Models for Apple iOS 27/macOS 27 (since June 9) is stale by 18 days. Skipped.",
+    "2026-06-27: Gemini image models (Nano Banana 2 GA May 28) - GA itself is stale. June 25 preview shutdown is the in-window actionable event. Included as WATCH 6.",
+    "2026-06-27: No new Zapier or Make.com product updates found for June 25-27.",
+    "2026-06-27: Detached HEAD check - verified git state at session start."
   ]
 }

@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-27",
     "2026-06-26",
     "2026-06-25",
     "2026-06-24",
@@ -10353,6 +10354,189 @@
       "relevant": 3,
       "critical": 0,
       "watch": 3,
+      "low": 0
+    },
+    "2026-06-27": {
+      "dateKey": "2026-06-27",
+      "date": "June 27, 2026",
+      "summary": "OpenAI launches GPT-5.6 Sol, Terra, and Luna under US government-approved access in the first frontier model release subject to a government-managed partner list, while Gemini 3.5 Flash gains native computer use and Anthropic raises API rate limits across all tiers.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "OpenAI launches GPT-5.6 Sol, Terra, and Luna under government-approved access only",
+          "description": "OpenAI unveiled a three-tier model family on June 26: Sol ($5/$30 per 1M tokens) for complex coding and security research, Terra ($2.50/$15) for high-volume business tasks at half the cost of GPT-5.5, and Luna ($1/$6) for fast everyday work. Access is restricted to roughly 20 companies whose participation was individually approved by the US government, the first time a frontier model has launched under a government-managed access list. OpenAI says restrictions are not meant to be the norm and plans general availability in the coming weeks.",
+          "action": "Monitor for general availability announcement. Evaluate Sol as a potential replacement for Mythos in dual-provider security and reasoning workflows when GA lands.",
+          "tools": [
+            "OpenAI API",
+            "Codex"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://venturebeat.com/technology/openai-unveils-gpt-5-6-sol-terra-and-luna-models-but-only-accessible-to-limited-preview-partners-for-now-per-us-gov",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/",
+              "name": "TechCrunch"
+            }
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Gemini 3.5 Flash gains native computer use without a separate model",
+          "description": "Google added computer use as a built-in tool inside Gemini 3.5 Flash on June 24, making it the first production Flash-tier model to see a screen and operate a browser, desktop, or mobile device natively. Previously computer use required routing to a dedicated standalone model; it now pairs alongside Google Search grounding and Maps within a single Gemini 3.5 Flash request. The capability is available as a public preview on the gemini-3.5-flash model ID.",
+          "action": "Test agentic browser automation workflows against Gemini 3.5 Flash. This removes the need to chain a separate computer-use model into agent pipelines.",
+          "tools": [
+            "Gemini API",
+            "Gemini Enterprise Agent Platform"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/",
+              "name": "Google Blog"
+            },
+            {
+              "url": "https://9to5google.com/2026/06/24/gemini-chrome-select-screen/",
+              "name": "9to5Google"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Anthropic raises API rate limits and consolidates usage tiers to three",
+          "description": "Anthropic raised rate limits across the Claude API on June 26, with Claude Sonnet and Haiku limits now matching Claude Opus at every tier. Usage tiers are consolidated into three: Start, Build, and Scale. Most organizations automatically move to a higher tier and no organization receives lower limits than before. No action is required and current limits are visible in the Claude Console.",
+          "action": "Check your current tier in the Claude Console. If your pipeline was rate-limited on Sonnet or Haiku, test whether the new limits resolve the constraint without a tier upgrade.",
+          "tools": [
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic API Release Notes"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Claude Opus 4.7 fast mode deprecated with July 24 removal date",
+          "description": "Anthropic deprecated fast mode for Claude Opus 4.7 on June 25, with API removal on July 24, 2026. After removal, requests to claude-opus-4-7 with speed set to fast will return an error. The replacement is fast mode on Claude Opus 4.8, which is already available.",
+          "action": "Audit any integration setting fast mode on claude-opus-4-7 and migrate to claude-opus-4-8 before July 24 to avoid broken calls.",
+          "tools": [
+            "Claude API",
+            "Claude Opus 4.7",
+            "Claude Opus 4.8"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic API Release Notes"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "MAI-Code-1-Flash reaches GitHub Copilot Business and Enterprise",
+          "description": "Microsoft's 5B parameter agentic coding model MAI-Code-1-Flash is now available for GitHub Copilot Business and Enterprise plans as of June 26, completing its rollout from individual accounts through team accounts. The model delivers a 16-point SWE-Bench Pro lead over Claude Haiku 4.5 and uses up to 60% fewer tokens. Admins must enable the MAI-Code-1-Flash policy in Copilot organization settings before users can access it and it bills at provider list pricing under usage-based billing.",
+          "action": "Enable MAI-Code-1-Flash in your GitHub Copilot Business or Enterprise settings. Evaluate it as the default fast-coding model for high-volume agentic coding tasks.",
+          "tools": [
+            "GitHub Copilot",
+            "MAI-Code-1-Flash"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/",
+              "name": "GitHub Changelog"
+            },
+            {
+              "url": "https://microsoft.ai/news/introducingmai-code-1-flash/",
+              "name": "Microsoft AI"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "OpenAI Codex Remote reaches general availability for all ChatGPT users",
+          "description": "OpenAI made Codex Remote generally available on June 26, allowing any ChatGPT user to start or continue Codex work from the ChatGPT iOS or Android app connected to their Mac or Windows host. The connection uses authenticated one-to-one QR pairing between the mobile device and host. A new DigitalOcean plugin lets Codex provision a Droplet and connect it as a remote cloud workspace.",
+          "action": "Update the ChatGPT mobile app and Codex App to the latest versions. If using remote connections inactive before June 8, re-pair devices since older connections require a new QR pairing.",
+          "tools": [
+            "Codex",
+            "ChatGPT"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://openai.com/index/work-with-codex-from-anywhere/",
+              "name": "OpenAI"
+            },
+            {
+              "url": "https://www.techradar.com/pro/a-new-rhythm-for-collaboration-is-emerging-openai-adds-remote-access-to-bring-codex-to-chatgpt-for-iphone-ipad-and-android",
+              "name": "TechRadar"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Gemini preview image model IDs shut down as GA versions have been active since May",
+          "description": "The gemini-3.1-flash-image-preview and gemini-3-pro-image-preview model IDs were shut down on June 25. GA replacements gemini-3.1-flash-image and gemini-3-pro-image have been active since May 28 and add video-to-image generation support on the Flash variant. Any pipeline still referencing preview model IDs will now receive API errors.",
+          "action": "Search your codebase for gemini-3.1-flash-image-preview and gemini-3-pro-image-preview and replace with their GA equivalents immediately.",
+          "tools": [
+            "Gemini API",
+            "Gemini Enterprise Agent Platform"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/changelog",
+              "name": "Gemini API Changelog"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.195 fixes hook matchers for hyphenated MCP server names",
+          "description": "Claude Code v2.1.195, released June 26, fixes a bug where hook matchers on hyphenated identifiers such as code-reviewer or mcp__brave-search were substring-matching rather than exact-matching, causing unintended hook triggers. The release also adds CLAUDE_CODE_DISABLE_MOUSE_CLICKS to disable click and hover events in fullscreen TUI while preserving scroll, and improves voice dictation for Japanese, Chinese, and Thai.",
+          "action": "Update Claude Code and verify that hook trigger rules for MCP servers or agents with hyphenated names behave correctly after the exact-match fix.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub anthropics/claude-code"
+            }
+          ]
+        }
+      ],
+      "totalScanned": 8,
+      "relevant": 8,
+      "critical": 2,
+      "watch": 6,
       "low": 0
     }
   },
