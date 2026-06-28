@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-28",
     "2026-06-27",
     "2026-06-26",
     "2026-06-25",
@@ -10538,14 +10539,127 @@
       "critical": 2,
       "watch": 6,
       "low": 0
+    },
+    "2026-06-28": {
+      "dateKey": "2026-06-28",
+      "date": "June 28, 2026",
+      "summary": "Anthropic formally accused Alibaba of running 28.8 million fraudulent API extractions in the largest known model distillation campaign against a commercial AI provider, while Google opens supervised fine-tuning for Gemini 3.5 Flash in Preview and Claude Mythos Preview and Veo 3.0 both retire June 30.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Regulation",
+          "headline": "Anthropic accuses Alibaba of 28.8 million API interactions in largest known distillation campaign",
+          "description": "Anthropic sent a letter to the US Senate Banking Committee on June 10 accusing Alibaba-linked operators of systematically querying Claude through approximately 25,000 fraudulent accounts to extract model capabilities for training a competing model. The campaign ran from April 22 to June 5, generating 28.8 million interactions, roughly 1.7 times the scale of a comparable DeepSeek operation in February 2026. Anthropic is now lobbying for US export controls on AI model API access and mandatory screening of high-volume usage patterns.",
+          "action": "Expect tighter API account verification and high-volume usage screening as Anthropic responds to distillation threats at scale. Review your own API usage patterns to ensure compliance ahead of likely terms of service tightening across the industry.",
+          "tools": [
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.breitbart.com/tech/2026/06/26/anthropic-accuses-chinas-alibaba-of-trying-to-steal-its-ai-tech-with-distillation-attack/",
+              "name": "Breitbart Tech"
+            },
+            {
+              "url": "https://www.business-standard.com/technology/tech-news/anthropic-alibaba-dispute-puts-ai-distillation-under-spotlight-what-is-it-126062600540_1.html",
+              "name": "Business Standard"
+            },
+            {
+              "url": "https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html",
+              "name": "CNBC"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Google opens supervised fine-tuning for Gemini 3.5 Flash and 3.1 Flash Lite in Preview",
+          "description": "Supervised fine-tuning is now available in Preview for gemini-3.5-flash and gemini-3.1-flash-lite on the Gemini Enterprise Agent Platform. Tuning jobs are restricted to us-central1 and europe-west4 regions, with serving via the us and eu multi-region endpoints. Provisioned throughput for fine-tuned model inference is available alongside the preview.",
+          "action": "Builders who need task-specific behavior from Gemini models can now fine-tune gemini-3.5-flash and gemini-3.1-flash-lite via the Enterprise Agent Platform. This is Preview status; test in non-production workflows before committing production pipelines.",
+          "tools": [
+            "Gemini API",
+            "Gemini Enterprise Agent Platform"
+          ],
+          "confidence": "medium",
+          "sources": [
+            {
+              "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/tuning/supervised-tuning/use",
+              "name": "Google Cloud Docs"
+            },
+            {
+              "url": "https://releasebot.io/updates/google/gemini-enterprise-agent-platform",
+              "name": "Releasebot"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Claude Mythos Preview retires June 30 with no successor available",
+          "description": "Anthropic will retire the Claude Mythos Preview model on June 30, 2026, with no replacement currently accessible. The intended successor claude-mythos-5 is tied to the Fable 5 model family, which has been suspended since June 12 with no reactivation date given. Any API call routing to the Mythos Preview model ID will fail after retirement.",
+          "action": "Audit integrations and workflows calling Claude Mythos Preview model aliases and migrate to claude-opus-4-8 or another available production model before June 30. Monitor Anthropic announcements for Fable 5 and Mythos 5 reactivation.",
+          "tools": [
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "name": "Anthropic Model Deprecations"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Veo 3.0 API model IDs retire June 30 on the Gemini API",
+          "description": "Google will retire veo-3.0-generate-001 and veo-3.0-fast-generate-001 on June 30, 2026. The recommended migration path is veo-3.1-generate-preview, which offers improved generation quality, or any generally available Veo 3.1 model. Calls to the deprecated model IDs will return errors after the retirement date.",
+          "action": "Search your codebase and pipeline configurations for veo-3.0-generate-001 and veo-3.0-fast-generate-001 and replace with veo-3.1-generate-preview or a GA equivalent before June 30.",
+          "tools": [
+            "Gemini API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "name": "Gemini API Deprecations"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
+      "low": 0
     }
-  },
-  "items": [],
-  "totalScanned": 0,
-  "relevant": 0,
-  "critical": 0,
-  "watch": 0,
-  "low": 0,
-  "dateKey": "2026-06-26",
-  "date": "June 26, 2026"
+  }
 }

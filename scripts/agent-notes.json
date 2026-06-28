@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-27T09:00+06:00",
+  "lastUpdated": "2026-06-28T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -8,8 +8,9 @@
     "zapier_updates": "https://community.zapier.com/product-updates returned 403 on 2026-04-03. Use WebSearch as fallback.",
     "anthropic_news": "https://www.anthropic.com/news returned 403 on 2026-04-03. Use WebSearch as fallback.",
     "anthropic_deprecations": "https://platform.claude.com/docs/en/about-claude/model-deprecations works via WebFetch. Good source for deadline tracking.",
-    "releasebot": "https://releasebot.io/updates/* returned 403 on 2026-04-03. Previously worked, now blocked.",
-    "llm_stats": "https://llm-stats.com/* returned 403 on 2026-04-03."
+    "releasebot": "https://releasebot.io/* returns 403 via WebFetch as of 2026-06-28.",
+    "llm_stats": "https://llm-stats.com/* returned 403 on 2026-04-03.",
+    "gemini_cloud_docs": "https://docs.cloud.google.com/* returns 403 via WebFetch as of 2026-06-28. Use WebSearch for Google Cloud release notes."
   },
   "searchTips": [
     "Generic AI news searches return too many aggregator results. Use specific product names.",
@@ -1130,6 +1131,21 @@
     "2026-06-27: Claude Foundation Models for Apple iOS 27/macOS 27 (since June 9) is stale by 18 days. Skipped.",
     "2026-06-27: Gemini image models (Nano Banana 2 GA May 28) - GA itself is stale. June 25 preview shutdown is the in-window actionable event. Included as WATCH 6.",
     "2026-06-27: No new Zapier or Make.com product updates found for June 25-27.",
-    "2026-06-27: Detached HEAD check - verified git state at session start."
+    "2026-06-27: Detached HEAD check - verified git state at session start.",
+    "2026-06-28: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). Anthropic-Alibaba 28.8M API distillation campaign (CRITICAL 8, Breitbart/Business Standard June 26, CNBC June 24). Gemini supervised fine-tuning for gemini-3.5-flash and gemini-3.1-flash-lite Preview (WATCH 7, late June Google announcement). Claude Mythos Preview T-2 retirement warning June 30 (WATCH 7). Veo 3.0 T-2 retirement warning June 30 (WATCH 6).",
+    "2026-06-28: Anthropic-Alibaba distillation: included on June 28 because Breitbart (June 26) and Business Standard (June 26) coverage brought it within 48h window. CNBC June 24 was original Tier 1 source. Story: Alibaba-linked operators ran 28.8M fraudulent API exchanges via ~25,000 accounts, April 22 to June 5. Anthropic lobbying for US export controls on AI model API access and mandatory high-volume usage screening.",
+    "2026-06-28: Gemini supervised fine-tuning: docs.cloud.google.com and releasebot.io both returned 403. Date confirmed as late June 2026 via WebSearch only. Preview for gemini-3.5-flash and gemini-3.1-flash-lite. Restricted to us-central1 and europe-west4 for tuning; us and eu multi-region for serving. Provisioned throughput available for fine-tuned inference.",
+    "2026-06-28: Claude Mythos Preview retirement June 30: T-2 day warning. Last covered June 22 as WATCH 7. Replacement claude-mythos-5 still unavailable (Fable 5 family suspended since June 12, 16+ days).",
+    "2026-06-28: Veo 3.0 retirement June 30: veo-3.0-generate-001 and veo-3.0-fast-generate-001. Migrate to veo-3.1-generate-preview. Last covered June 20 as WATCH 6.",
+    "2026-06-28: No new Claude Code release since v2.1.195 (June 26, covered June 27). No new Codex CLI stable (0.142.3 maintenance only, no user-facing changes). No new Copilot CLI stable (v1.0.66-0 and v1.0.66-1 are pre-releases with -0/-1 suffix). No new n8n stable (2.28.x pre-releases; 2.27.4 June 24 bugfix not covered per minor bugfix precedent).",
+    "2026-06-28: Fable 5/Mythos 5 still suspended (Day 16+). Per June 19 rule: do NOT re-include unless models actually return.",
+    "2026-06-28: GPT-5.6 broader rollout: OpenAI stated expansion to more companies week of June 29 in June 26 announcement. Not re-included per June 27 CRITICAL 9 duplication rule. Monitor for actual GA announcement.",
+    "2026-06-28: Grok 5 still not released. Polymarket probability estimated ~33% by June 30. Skip until confirmed.",
+    "2026-06-28: No new Zapier, Make.com, or Airtable updates found for June 26-28.",
+    "2026-06-28: Detached HEAD at session start (recurring issue). Fix pattern: git fetch origin main && git checkout main && git merge FETCH_HEAD.",
+    "2026-06-28: NOTE for June 29 digest: Claude Mythos Preview retires tomorrow June 30 - cover as day-before reminder. Veo 3.0 retires tomorrow June 30 - cover as day-before reminder. GPT-5.6 broader access expansion week of June 29 - monitor for GA announcement.",
+    "2026-06-28: NOTE for July 2 digest: OpenAI fine-tuning API wind-down first milestone July 2. Cover countdown around July 1-2.",
+    "2026-06-28: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-28: lastUpdated timestamp updated to 2026-06-28T09:00+06:00."
   ]
 }
