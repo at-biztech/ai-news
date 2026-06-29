@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-29",
     "2026-06-28",
     "2026-06-27",
     "2026-06-26",
@@ -10637,6 +10638,123 @@
           "headline": "Veo 3.0 API model IDs retire June 30 on the Gemini API",
           "description": "Google will retire veo-3.0-generate-001 and veo-3.0-fast-generate-001 on June 30, 2026. The recommended migration path is veo-3.1-generate-preview, which offers improved generation quality, or any generally available Veo 3.1 model. Calls to the deprecated model IDs will return errors after the retirement date.",
           "action": "Search your codebase and pipeline configurations for veo-3.0-generate-001 and veo-3.0-fast-generate-001 and replace with veo-3.1-generate-preview or a GA equivalent before June 30.",
+          "tools": [
+            "Gemini API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "name": "Gemini API Deprecations"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
+      "low": 0
+    },
+    "2026-06-29": {
+      "dateKey": "2026-06-29",
+      "date": "June 29, 2026",
+      "summary": "Google's Gemini 2.5 Pro Deep Think reaches API access with top reasoning benchmarks at $1.25 per million tokens, Commerce Department grants Mythos 5 access to roughly 100 Annex A organizations, and Claude Mythos Preview retires tomorrow.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Google's Gemini 2.5 Pro Deep Think posts 89.8 percent MMLU-Pro at $1.25 per million tokens with 2M context",
+          "description": "Google launched Gemini 2.5 Pro Deep Think on June 22 targeting reasoning-heavy agentic workflows. It scores 89.8% on MMLU-Pro and 82.4% on GPQA Diamond, ahead of Fable 5 at 79.1% and GPT-5.5 at 76.3%. Pricing starts at $1.25 per million input tokens, roughly a quarter of GPT-5.5, with a 2 million token context window. API access is live for trusted testers on Vertex AI with general developer access described as arriving soon.",
+          "action": "Benchmark Gemini 2.5 Pro Deep Think against your current reasoning model on representative tasks before general API release. The cost differential versus GPT-5.5 and Opus-tier models is significant enough to evaluate for long-context and multi-step workflows now so pipelines are ready to switch when access opens.",
+          "tools": [
+            "Gemini API",
+            "Vertex AI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blog.google/products/gemini/gemini-2-5-deep-think/",
+              "name": "Google Blog"
+            },
+            {
+              "url": "https://deepmind.google/models/gemini/pro/",
+              "name": "Google DeepMind"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Regulation",
+          "headline": "Commerce letter restores Mythos 5 access for roughly 100 Annex A organizations effective June 27",
+          "description": "Commerce Secretary Howard Lutnick signed a letter dated June 26 granting a targeted carve-out reinstating Anthropic's Mythos 5 to approximately 100 vetted US entities under Annex A, with access effective June 27. Covered organizations include critical infrastructure operators, Anthropic US entities and their foreign-national staff, government civilian agencies, and national labs. Fable 5 remains fully suspended for all other users and all June 12 conditions stay in force.",
+          "action": "Verify with Anthropic whether your organization is on the Annex A list. If confirmed, Mythos 5 API calls are now permitted under the carve-out. Organizations not on Annex A remain blocked from the entire Fable 5 model family.",
+          "tools": [
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.techtimes.com/articles/319213/20260628/",
+              "name": "TechTimes"
+            },
+            {
+              "url": "https://www.anthropic.com/news/fable-mythos-access",
+              "name": "Anthropic"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Claude Mythos Preview retires tomorrow and Mythos 5 remains inaccessible for non-Annex A builders",
+          "description": "Anthropic retires the Claude Mythos Preview model on June 30. The intended successor claude-mythos-5 is now available only to the roughly 100 organizations on the Commerce Department Annex A list; all other API consumers have no path to the Mythos 5 capability tier. Builders currently routing to Mythos Preview must migrate to another available model before tomorrow to avoid failed API calls.",
+          "action": "Confirm today that no production integrations call Claude Mythos Preview model IDs. If your organization is not on the Annex A list, migrate to claude-opus-4-8 or claude-sonnet-4-6 and monitor Anthropic communications for any broader Mythos 5 or Fable 5 reactivation.",
+          "tools": [
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+              "name": "Anthropic Model Deprecations"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "Veo 3.0 API model IDs retire tomorrow on the Gemini API",
+          "description": "Google retires veo-3.0-generate-001 and veo-3.0-fast-generate-001 on June 30. After that date, calls to these model IDs will return errors. The recommended migration target is veo-3.1-generate-preview or any generally available Veo 3.1 model.",
+          "action": "Search codebases, pipeline configurations, and Make.com or n8n modules for references to veo-3.0-generate-001 or veo-3.0-fast-generate-001 and update to the 3.1 model ID before end of day today.",
           "tools": [
             "Gemini API"
           ],

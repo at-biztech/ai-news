@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28T09:00+06:00",
+  "lastUpdated": "2026-06-29T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1146,6 +1146,21 @@
     "2026-06-28: NOTE for June 29 digest: Claude Mythos Preview retires tomorrow June 30 - cover as day-before reminder. Veo 3.0 retires tomorrow June 30 - cover as day-before reminder. GPT-5.6 broader access expansion week of June 29 - monitor for GA announcement.",
     "2026-06-28: NOTE for July 2 digest: OpenAI fine-tuning API wind-down first milestone July 2. Cover countdown around July 1-2.",
     "2026-06-28: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-28: lastUpdated timestamp updated to 2026-06-28T09:00+06:00."
+    "2026-06-28: lastUpdated timestamp updated to 2026-06-28T09:00+06:00.",
+    "2026-06-29: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). Gemini 2.5 Pro Deep Think benchmarks and API access (CRITICAL 8, June 22 launch, first coverage, applied 7-day Cloudflare Agents Week precedent). Commerce Department Annex A carve-out restoring Mythos 5 to ~100 organizations effective June 27 (WATCH 7). Claude Mythos Preview T-1 retirement warning June 30 with Mythos 5 still inaccessible for non-Annex A builders (WATCH 7). Veo 3.0 T-1 retirement warning June 30 (WATCH 6).",
+    "2026-06-29: Gemini 2.5 Pro Deep Think (June 22): 89.8% MMLU-Pro, 82.4% GPQA Diamond, .25/M input tokens, 2M context. Google AI Ultra subscribers live; Vertex AI trusted testers live; general developer API access arriving soon. Primary source: blog.google/products/gemini/gemini-2-5-deep-think/. Not in any prior digest. Applied 7-day window under Cloudflare Agents Week precedent (exactly 7 days from June 22 to June 29).",
+    "2026-06-29: Commerce Department Annex A carve-out: Lutnick letter June 26, effective June 27. ~100 vetted US Annex A entities now have Mythos 5 access. Critical infrastructure operators, Anthropic US entities and foreign-national staff, government civilian agencies, national labs. Fable 5 remains suspended for all others. Sources: techtimes.com/articles/319213/20260628/, anthropic.com/news/fable-mythos-access, Euronews June 27, Cybersecurity News June 27.",
+    "2026-06-29: Claude Mythos Preview T-1 retirement: Covered with updated context that Mythos 5 is now partially available (Annex A only). June 28 description said no successor available; June 29 description correctly frames that non-Annex A builders still have no migration path to Mythos 5 tier.",
+    "2026-06-29: Veo 3.0 T-1 retirement: veo-3.0-generate-001 and veo-3.0-fast-generate-001 retire June 30. Covered per day-before reminder established in June 28 notes.",
+    "2026-06-29: GPT-5.6 broader rollout: Monitored but no GA announcement found. Still partner-gated from June 26. Do not re-include without confirmed expansion announcement.",
+    "2026-06-29: Grok 5 still not released as of June 29. Skip until confirmed.",
+    "2026-06-29: No new Claude Code release since v2.1.195 (June 26). No new n8n stable. No new Codex CLI stable. No new Copilot CLI stable.",
+    "2026-06-29: No new Zapier, Make.com, or Airtable product updates found for June 27-29.",
+    "2026-06-29: validate-digest.mjs must NOT be run on the full public/digests.json - it expects a single digest object not the full collection. Running it on digests.json corrupts the file by adding spurious top-level fields. Always run it on individual digest objects only, or skip the validation step for the merged file.",
+    "2026-06-29: Detached HEAD at session start (recurring issue). Fix pattern: git fetch origin main && git checkout main && git merge FETCH_HEAD.",
+    "2026-06-29: NOTE for June 30 digest: Claude Mythos Preview retires today June 30 - cover as retirement event. Veo 3.0 retires today June 30 - cover as retirement event.",
+    "2026-06-29: NOTE for July 2 digest: OpenAI fine-tuning API wind-down first milestone July 2. Cover countdown around July 1-2.",
+    "2026-06-29: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
+    "2026-06-29: lastUpdated timestamp updated to 2026-06-29T09:00+06:00."
   ]
 }
