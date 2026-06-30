@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-29T09:00+06:00",
+  "lastUpdated": "2026-06-30T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1103,10 +1103,10 @@
     "2026-06-25: NOTE for June 30 digest: Claude Mythos Preview retires June 30 (covered June 22 WATCH 7). Veo 3.0 shutdown June 30 (covered June 20 WATCH 6). OpenAI fine-tuning API wind-down first milestone July 2. Claude Opus 4.1 API retirement August 5.",
     "2026-06-25: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
     "2026-06-25: lastUpdated timestamp updated to 2026-06-25T09:00+06:00.",
-    "2026-06-26: 3 items (0 CRITICAL, 3 WATCH, 0 LOW). Claude Code 2.1.193 with autoMode.classifyAllShell, bash path autocomplete, denial reason surfacing, MCP headersHelper 401/403 reconnect (WATCH 7, June 25 21:45 UTC = June 26 03:45 Almaty). OpenAI Jalapeño custom ASIC with Broadcom, first custom inference chip, tape-out achieved, gigawatt-scale deployment by end 2026 (WATCH 7, June 24, not in any prior digest). Codex CLI 0.142.2 MCP tool-search default + codex-zsh v0.1.0 first zsh shell integration (WATCH 6, June 25, 0.142.0 stable was covered June 23).",
+    "2026-06-26: 3 items (0 CRITICAL, 3 WATCH, 0 LOW). Claude Code 2.1.193 with autoMode.classifyAllShell, bash path autocomplete, denial reason surfacing, MCP headersHelper 401/403 reconnect (WATCH 7, June 25 21:45 UTC = June 26 03:45 Almaty). OpenAI Jalape\u00f1o custom ASIC with Broadcom, first custom inference chip, tape-out achieved, gigawatt-scale deployment by end 2026 (WATCH 7, June 24, not in any prior digest). Codex CLI 0.142.2 MCP tool-search default + codex-zsh v0.1.0 first zsh shell integration (WATCH 6, June 25, 0.142.0 stable was covered June 23).",
     "2026-06-26: Quiet day. No CRITICAL items. GPT-4.5 ChatGPT retirement June 27 already covered June 25 digest. No new Anthropic API platform release notes (still shows June 15). No new n8n stable (2.28.x pre-release, 2.27.4 bugfix covered June 25). GitHub Copilot CLI 1.0.65 already covered June 25. GitHub Copilot CLI v1.0.66-x pre-releases skipped per established pre-release exclusion precedent.",
     "2026-06-26: GPT-5.6 prediction market at ~18% for June window - still delayed. Gemini 3.5 Pro still not GA (delayed to July per Business Insider). Grok 5 still not released. Fable 5/Mythos 5 still suspended - per June 19 rule: do not re-include unless models return.",
-    "2026-06-26: OpenAI Jalapeño: announced June 24 (TechCrunch, Fortune June 25, VentureBeat, CNBC). Primary source: openai.com/index/openai-broadcom-jalapeno-inference-chip/. Included under 72h CRITICAL window even though not CRITICAL-scored, as infra item not in any prior digest and within 72h from Almaty date.",
+    "2026-06-26: OpenAI Jalape\u00f1o: announced June 24 (TechCrunch, Fortune June 25, VentureBeat, CNBC). Primary source: openai.com/index/openai-broadcom-jalapeno-inference-chip/. Included under 72h CRITICAL window even though not CRITICAL-scored, as infra item not in any prior digest and within 72h from Almaty date.",
     "2026-06-26: platform.claude.com/docs/en/release-notes/overview still shows June 15 (Sonnet 4/Opus 4 retirement) as latest entry. No new Anthropic API platform entries since June 15.",
     "2026-06-26: github.com/anthropics/claude-code/releases fetchable. v2.1.193 (June 25 21:45 UTC) is within window. v2.1.192 (June 25 15:53 UTC) skipped - minor bugfix only. v2.1.191 (June 24, covered June 25 digest).",
     "2026-06-26: github.com/openai/codex/releases: v0.142.1 (June 25 00:36 UTC) and v0.142.2 (June 25 07:32 UTC) are stable. codex-zsh v0.1.0 (June 25 21:02 UTC) is first stable release. All within window, not in prior digests.",
@@ -1161,6 +1161,19 @@
     "2026-06-29: NOTE for June 30 digest: Claude Mythos Preview retires today June 30 - cover as retirement event. Veo 3.0 retires today June 30 - cover as retirement event.",
     "2026-06-29: NOTE for July 2 digest: OpenAI fine-tuning API wind-down first milestone July 2. Cover countdown around July 1-2.",
     "2026-06-29: NOTE for August 3 digest: Claude Opus 4.1 (claude-opus-4-1-20250805) retires August 5. Cover countdown around August 3.",
-    "2026-06-29: lastUpdated timestamp updated to 2026-06-29T09:00+06:00."
+    "2026-06-29: lastUpdated timestamp updated to 2026-06-29T09:00+06:00.",
+    "2026-06-30: 5 items (1 CRITICAL, 4 WATCH, 0 LOW). Claude in Microsoft Foundry GA with Opus 4.8 and Haiku 4.5 on Azure (CRITICAL 8), Claude Opus 4.6 fast mode silently removed with no error (WATCH 7), Claude Code v2.1.196 with org default model controls and MCP security fix (WATCH 7), Gemini 3.5 Pro delay confirmed to July 2026 (WATCH 6), Veo 3.0 endpoints shutdown effective today (WATCH 6).",
+    "2026-06-30: Claude in Microsoft Foundry GA confirmed via Seeking Alpha (June 29, 4:59 PM ET) and Azure Blog. claude.com/blog/claude-in-microsoft-foundry and anthropic.com/news/claude-in-microsoft-foundry both return 403 via WebFetch but Seeking Alpha and Azure Blog confirm GA date and model list (Opus 4.8, Haiku 4.5 in Messages API).",
+    "2026-06-30: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. June 29 entry (Opus 4.6 fast mode removed) and June 26 entry (rate limits raised) confirmed from primary source.",
+    "2026-06-30: Claude rate limit consolidation (June 26) into Start/Build/Scale tiers is outside the 48-hour window (4 days old). Skipped. Confirm rate limits page is primary source for this kind of change.",
+    "2026-06-30: Claude Opus 4.7 fast mode deprecated June 25 (removal July 24) is outside 72h exception window. Skipped. Will be a valid include if not covered before July 24.",
+    "2026-06-30: GPT-5.6 Sol/Terra/Luna announced June 26 or June 28 (conflicting sources; MarkTechPost URL shows 2026/06/26). Outside 48h window and possibly 72h. Skipped. Will be major include when broad API access opens in July.",
+    "2026-06-30: Gemini 3.5 Pro delay confirmed by multiple sources as of June 27-29. Cryptobriefing.com returns 403; blog.getbind.co returns 403; Analytics Insight accessible. Reports cite Google Enterprise preview still ongoing and July GA now target. Four researcher departures (including Gemini co-lead Noam Shazeer) add credibility to sources reporting the delay.",
+    "2026-06-30: Veo 3.0 shutdown (veo-3.0-generate-001 and veo-3.0-fast-generate-001) effective today. Included as active shutdown following precedent of covering retirement days (like Haiku 3 on April 20). Yesterday's digest covered as retires tomorrow.",
+    "2026-06-30: n8n releases June 29: 2.27.5 (startup bugfix), 1.123.62 (security updates for hono/vue-i18n/linkify-it deps), 2.28.3 pre-release (same startup fix). All minor maintenance. Skipped per minor bugfix precedent.",
+    "2026-06-30: Microsoft Claude Code license deadline (June 30) - the June 30 enforcement date is today but original announcement was June 1 (29 days old). No new article from today reporting on the enforcement. Skipped as announcement too old and no new source for today.",
+    "2026-06-30: No new Zapier, Make.com, or Airtable product updates found for June 29-30.",
+    "2026-06-30: Detached HEAD state issue: need to check at session start and resolve if needed (recurring across sessions).",
+    "2026-06-30: lastUpdated timestamp updated to 2026-06-30T09:00+06:00."
   ]
 }

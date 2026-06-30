@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-06-30",
     "2026-06-29",
     "2026-06-28",
     "2026-06-27",
@@ -10778,6 +10779,165 @@
       "critical": 1,
       "watch": 3,
       "low": 0
+    },
+    "2026-06-30": {
+      "dateKey": "2026-06-30",
+      "date": "June 30, 2026",
+      "summary": "Claude reaches general availability on Azure through Microsoft Foundry with Opus 4.8 and Haiku 4.5, Anthropic silently removes Opus 4.6 fast mode with no error returned, and Gemini 3.5 Pro slips past its June IO-stage commitment to July.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "Claude Opus 4.8 and Haiku 4.5 reach general availability on Azure through Microsoft Foundry",
+          "description": "Anthropic's two current production models are now GA-hosted in Microsoft Azure infrastructure via Microsoft Foundry, eliminating the need to call the Anthropic API directly for teams with Azure-native compliance requirements. Builders choose between two hosting modes: hosted on Azure for teams that must keep inference within their Azure environment with Azure identity, billing, governance, and an optional US data residency zone, or hosted on Anthropic for full API feature access. Messages API support covers coding, agentic workflows, and complex reasoning workloads.",
+          "action": "Teams deploying Claude in Azure-regulated environments including financial services, healthcare, and government should evaluate migrating from direct Anthropic API to Foundry-hosted endpoints to consolidate billing and meet data residency requirements.",
+          "clientPitch": "",
+          "useCase": "",
+          "tools": [
+            "Claude API",
+            "Azure",
+            "Microsoft Foundry"
+          ],
+          "timeline": "GA as of June 29, 2026",
+          "confidence": "confirmed",
+          "sourceTier": 1,
+          "sourceUrl": "https://claude.com/blog/claude-in-microsoft-foundry",
+          "sourceName": "Anthropic Blog",
+          "sources": [
+            {
+              "url": "https://claude.com/blog/claude-in-microsoft-foundry",
+              "name": "Anthropic Blog"
+            },
+            {
+              "url": "https://azure.microsoft.com/en-us/blog/claude-in-microsoft-foundry-is-now-generally-available/",
+              "name": "Microsoft Azure Blog"
+            },
+            {
+              "url": "https://seekingalpha.com/news/4608259-anthropic-says-claude-now-generally-available-in-microsoft-foundry",
+              "name": "Seeking Alpha"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Anthropic removes Opus 4.6 fast mode with silent speed downgrade instead of error",
+          "description": "As of June 29, any request to claude-opus-4-6 with the speed: fast parameter now silently falls back to standard speed at standard pricing with no error returned; the response usage.speed field reports the actual speed used. This means production integrations relying on fast mode are now running slower than expected with no alert in logs or API responses. The migration path is claude-opus-4-8, which supports fast mode at higher speeds and lower cost than the deprecated Opus 4.7 fast tier.",
+          "action": "Audit any integration calling claude-opus-4-6 with speed: fast and migrate to claude-opus-4-8 to restore performance; set up monitoring on usage.speed to catch any remaining silent downgrades.",
+          "clientPitch": "",
+          "useCase": "",
+          "tools": [
+            "Claude API"
+          ],
+          "timeline": "Effective June 29, 2026",
+          "confidence": "confirmed",
+          "sourceTier": 1,
+          "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+          "sourceName": "Anthropic API Release Notes",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic API Release Notes"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code v2.1.196 adds org default model controls and closes untrusted MCP server gap",
+          "description": "The release ships admin controls to set default models per organization or role from the Claude Console, displayed as Org default or Role default in the /model picker — a structural primitive teams need to standardize model selection across users without per-user configuration. The /code-review workflow now consumes 25% fewer tokens and terminal rendering during streaming drops approximately 37% per frame. A security fix stops claude mcp list and get from spawning MCP servers defined in untrusted repository .mcp.json files, which previously ran silently on workspace checkout.",
+          "action": "Admins should set org default models via the Claude Console now rather than relying on per-user defaults; teams whose repos are accessible to untrusted contributors should update to v2.1.196 immediately for the MCP server isolation fix.",
+          "clientPitch": "",
+          "useCase": "",
+          "tools": [
+            "Claude Code"
+          ],
+          "timeline": "Released June 29, 2026 at 23:27 UTC",
+          "confidence": "confirmed",
+          "sourceTier": 1,
+          "sourceUrl": "https://github.com/anthropics/claude-code/releases",
+          "sourceName": "Claude Code GitHub Releases",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "Claude Code GitHub Releases"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Google confirms Gemini 3.5 Pro slips past its June IO-stage commitment to July 2026",
+          "description": "Gemini 3.5 Pro, positioned with a 2-million-token context window, Deep Think reasoning mode, and multimodal capability across text, image, audio, and video, missed Sundar Pichai's Google IO public commitment of a June general availability date and is now tracking a July 2026 GA. Google cited quality refinements in coding, token efficiency, and long-task performance following limited Vertex AI enterprise preview. Four senior Google AI researchers have left for OpenAI and Anthropic in the weeks surrounding the miss, adding internal context to the delay.",
+          "action": "Remove Gemini 3.5 Pro from any June delivery dependency; treat the July 2026 target as guidance not a commitment and design pipelines to treat GA as a bonus event rather than a hard dependency.",
+          "clientPitch": "",
+          "useCase": "",
+          "tools": [
+            "Gemini API",
+            "Vertex AI"
+          ],
+          "timeline": "Now targeting July 2026; was committed for June at Google IO May 19",
+          "confidence": "reported",
+          "sourceTier": 2,
+          "sourceUrl": "https://cryptobriefing.com/google-delays-gemini-35-pro-launch-to-july-2026/",
+          "sourceName": "CryptoBriefing",
+          "sources": [
+            {
+              "url": "https://cryptobriefing.com/google-delays-gemini-35-pro-launch-to-july-2026/",
+              "name": "CryptoBriefing"
+            },
+            {
+              "url": "https://blog.getbind.co/gemini-3-5-pro-slips-to-july-and-four-senior-google-researchers-just-left-for-anthropic/",
+              "name": "Bind AI Blog"
+            },
+            {
+              "url": "https://www.analyticsinsight.net/news/is-google-delaying-gemini-35-pro-launch-to-july-for-further-testing",
+              "name": "Analytics Insight"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Veo 3.0 video generation endpoints are now offline on the Gemini API",
+          "description": "Google's Gemini API has shut down veo-3.0-generate-001 and veo-3.0-fast-generate-001 as of June 30 on the previously announced schedule. Any integration still calling these model IDs will now receive errors. The available replacements are veo-3.1-generate-preview and veo-3.1-fast-generate-preview, with veo-3.1-lite-generate-preview as the most cost-efficient option for high-volume or rapid-iteration workloads.",
+          "action": "Update all video generation pipeline model IDs to veo-3.1 variants immediately; any production integration still on veo-3.0 IDs is now broken and will return errors on every call.",
+          "clientPitch": "",
+          "useCase": "",
+          "tools": [
+            "Gemini API"
+          ],
+          "timeline": "Shutdown effective June 30, 2026",
+          "confidence": "confirmed",
+          "sourceTier": 1,
+          "sourceUrl": "https://ai.google.dev/gemini-api/docs/deprecations",
+          "sourceName": "Gemini API Deprecations",
+          "sources": [
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/deprecations",
+              "name": "Gemini API Deprecations"
+            }
+          ]
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 5,
+      "critical": 1,
+      "watch": 4,
+      "low": 0
     }
-  }
+  },
+  "items": [],
+  "totalScanned": 0,
+  "relevant": 0,
+  "critical": 0,
+  "watch": 0,
+  "low": 0,
+  "dateKey": "2026-06-30",
+  "date": "June 30, 2026"
 }
