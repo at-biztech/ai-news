@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-07-01",
     "2026-06-30",
     "2026-06-29",
     "2026-06-28",
@@ -10930,14 +10931,77 @@
       "critical": 1,
       "watch": 4,
       "low": 0
+    },
+    "2026-07-01": {
+      "dateKey": "2026-07-01",
+      "date": "July 1, 2026",
+      "summary": "Anthropic launches Claude Sonnet 5 with three breaking API changes and a new 30-percent-heavier tokenizer, while Claude Managed Agents gains per-session configuration overrides and full webhook lifecycle coverage.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Claude Sonnet 5 ships with 1M context and three breaking API changes",
+          "description": "Anthropic launched claude-sonnet-5 on June 30 at introductory pricing of $2/$10 per million tokens through August 31 (standard $3/$15 after). Three changes break existing integrations: adaptive thinking is on by default and cannot be disabled; manual extended thinking (thinking.type enabled) returns a 400 error; and non-default sampling parameters (temperature, top_p, top_k) return a 400 error. A new tokenizer produces approximately 30 percent more tokens for the same text, raising effective cost even at the lower per-token rate. Sonnet 5 is now the default on Free and Pro plans and in Claude Code v2.1.197.",
+          "action": "Audit every API call that sets temperature, top_p, or top_k and remove them before switching to claude-sonnet-5. Recount token budgets using the token counting API with model: claude-sonnet-5. Replace manual extended thinking with adaptive thinking. Pinned model configs in Claude Code need updating.",
+          "tools": [
+            "Claude API",
+            "Claude Code",
+            "Claude Managed Agents"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Release Notes"
+            },
+            {
+              "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/",
+              "name": "TechCrunch"
+            },
+            {
+              "url": "https://www.anthropic.com/news/claude-sonnet-5",
+              "name": "Anthropic"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Managed Agents adds per-session config overrides and webhook lifecycle events",
+          "description": "Five capabilities shipped on June 30: per-session configuration overrides let you swap the model, system prompt, tools, MCP servers, or skills for one session without changing the agent definition; webhooks now cover agent version publish, deployment pause, and scheduled run failure; event deltas stream agent message text as it generates before the complete event arrives; backward pagination lets callers move through session lists in either direction; and vault injection_location controls whether environment variable credentials are injected into request headers, the request body, or both.",
+          "action": "Use per-session overrides to A/B test models or inject customer-specific system prompts without duplicating agent definitions. Wire up deployment run webhooks to replace polling loops for scheduled agents.",
+          "tools": [
+            "Claude Managed Agents",
+            "Claude API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Release Notes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 2,
+      "relevant": 2,
+      "critical": 1,
+      "watch": 1,
+      "low": 0
     }
-  },
-  "items": [],
-  "totalScanned": 0,
-  "relevant": 0,
-  "critical": 0,
-  "watch": 0,
-  "low": 0,
-  "dateKey": "2026-06-30",
-  "date": "June 30, 2026"
+  }
 }

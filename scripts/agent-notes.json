@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-30T09:00+06:00",
+  "lastUpdated": "2026-07-01T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1174,6 +1174,20 @@
     "2026-06-30: Microsoft Claude Code license deadline (June 30) - the June 30 enforcement date is today but original announcement was June 1 (29 days old). No new article from today reporting on the enforcement. Skipped as announcement too old and no new source for today.",
     "2026-06-30: No new Zapier, Make.com, or Airtable product updates found for June 29-30.",
     "2026-06-30: Detached HEAD state issue: need to check at session start and resolve if needed (recurring across sessions).",
-    "2026-06-30: lastUpdated timestamp updated to 2026-06-30T09:00+06:00."
+    "2026-06-30: lastUpdated timestamp updated to 2026-06-30T09:00+06:00.",
+    "2026-07-01: 2 items (1 CRITICAL, 1 WATCH, 0 LOW). Claude Sonnet 5 launch with three breaking API changes (CRITICAL 9, June 30, platform.claude.com/Anthropic.com/TechCrunch confirmed), Claude Managed Agents five-feature update with per-session config overrides (WATCH 7, June 30, platform.claude.com confirmed).",
+    "2026-07-01: Claude Sonnet 5 (claude-sonnet-5) is the most important item. Breaking: (1) adaptive thinking on by default, (2) manual extended thinking returns 400, (3) non-default temperature/top_p/top_k returns 400. New tokenizer adds ~30% tokens for same text. Intro pricing $2/$10 through Aug 31, then $3/$15. Default model in Free/Pro and Claude Code v2.1.197 (June 30, 17:56 UTC).",
+    "2026-07-01: Claude Code v2.1.197 (June 30, 17:56 UTC) makes Sonnet 5 the default model and requires update. Merged into the Claude Sonnet 5 CRITICAL item rather than as a separate Claude Code item.",
+    "2026-07-01: Claude Managed Agents June 30 update: per-session config overrides (most useful), webhooks for agent/deployment/run lifecycle, event deltas for streaming, backward pagination, vault injection_location. All confirmed from primary source (platform.claude.com release notes).",
+    "2026-07-01: platform.claude.com/docs/en/release-notes/overview is still fetchable and was the authoritative primary source again. Most recent entry is June 30 (Sonnet 5 + Managed Agents). The June 30 digest ran before these were published (Sonnet 5 published 17:56 UTC = 23:56 Almaty, after the June 30 routine).",
+    "2026-07-01: GPT-5.6 Sol/Terra/Luna (June 26) still outside 48h window. June 29 agent-note says 'Will be major include when broad API access opens in July.' Track this for the next digest after GA opens.",
+    "2026-07-01: Claude Opus 4.7 fast mode removal is July 24. Not covered in any digest yet (announcement June 25 was outside window on June 30). Needs to be covered before July 24. Earliest valid include is July 22 (48h countdown) or as CRITICAL item any time once a recent article specifically covers it.",
+    "2026-07-01: DeepSeek deepseek-chat and deepseek-reasoner aliases retire July 24 at 15:59 UTC. Originally announced April 24 at V4 launch. Not in any digest. Cover before July 24. Earliest valid as a countdown item: July 22.",
+    "2026-07-01: OpenAI fine-tuning API Phase 2 (July 2 cutoff for 60-day-inactive orgs) announced May 8. Not in any digest. June 29 agent-note flags this for July 1-2. No June 29-July 1 source confirmed for the July 2 milestone specifically. Skipped today. Check again tomorrow - the July 2 date itself is the news hook.",
+    "2026-07-01: Gemini 3.5 Pro targeting July GA (confirmed from multiple June 29 sources). Watch for launch announcement. When it ships, will be CRITICAL for builders.",
+    "2026-07-01: Claude Fable 5 remains offline due to US export control directive (June 12). Status as of July 1: offline for general users, no confirmed restoration timeline. Not in any recent digest explicitly. If restoration announced, include immediately.",
+    "2026-07-01: n8n had no new stable feature releases in June 29-July 1 window. 2.29.0 is pre-release. Security fix 1.123.62 (June 29) for hono/vue-i18n/linkify-it was skipped per minor dependency maintenance precedent.",
+    "2026-07-01: No detached HEAD issue this session. Started on main branch, up to date.",
+    "2026-07-01: lastUpdated timestamp updated to 2026-07-01T09:00+06:00."
   ]
 }
