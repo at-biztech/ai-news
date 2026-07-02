@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-07-02",
     "2026-07-01",
     "2026-06-30",
     "2026-06-29",
@@ -5408,7 +5409,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -10305,9 +10306,9 @@
           "score": 7,
           "tag": "WATCH",
           "category": "Infrastructure",
-          "headline": "OpenAI unveils Jalapeño custom ASIC with Broadcom targeting gigawatt scale inference by end of 2026",
+          "headline": "OpenAI unveils Jalape\u00f1o custom ASIC with Broadcom targeting gigawatt scale inference by end of 2026",
           "description": "OpenAI's first proprietary inference chip, co-designed with Broadcom over nine months, reached tape-out and is running engineering samples at production frequency. The architecture targets LLM inference kernels, memory movement, and high-bandwidth networking, with substantially better performance per watt than current alternatives. OpenAI used its own models to accelerate the chip design process; production deployment is targeted at gigawatt-scale data centers by end of 2026, with capacity expanding in subsequent years.",
-          "action": "Track the Jalapeño rollout as a signal for lower OpenAI API costs and higher throughput ceilings from 2027 onward. No immediate workflow changes required.",
+          "action": "Track the Jalape\u00f1o rollout as a signal for lower OpenAI API costs and higher throughput ceilings from 2027 onward. No immediate workflow changes required.",
           "tools": [
             "OpenAI API"
           ],
@@ -10849,7 +10850,7 @@
           "tag": "WATCH",
           "category": "Tools",
           "headline": "Claude Code v2.1.196 adds org default model controls and closes untrusted MCP server gap",
-          "description": "The release ships admin controls to set default models per organization or role from the Claude Console, displayed as Org default or Role default in the /model picker — a structural primitive teams need to standardize model selection across users without per-user configuration. The /code-review workflow now consumes 25% fewer tokens and terminal rendering during streaming drops approximately 37% per frame. A security fix stops claude mcp list and get from spawning MCP servers defined in untrusted repository .mcp.json files, which previously ran silently on workspace checkout.",
+          "description": "The release ships admin controls to set default models per organization or role from the Claude Console, displayed as Org default or Role default in the /model picker \u2014 a structural primitive teams need to standardize model selection across users without per-user configuration. The /code-review workflow now consumes 25% fewer tokens and terminal rendering during streaming drops approximately 37% per frame. A security fix stops claude mcp list and get from spawning MCP servers defined in untrusted repository .mcp.json files, which previously ran silently on workspace checkout.",
           "action": "Admins should set org default models via the Claude Console now rather than relying on per-user defaults; teams whose repos are accessible to untrusted contributors should update to v2.1.196 immediately for the MCP server isolation fix.",
           "clientPitch": "",
           "useCase": "",
@@ -11001,6 +11002,181 @@
       "relevant": 2,
       "critical": 1,
       "watch": 1,
+      "low": 0
+    },
+    "2026-07-02": {
+      "dateKey": "2026-07-02",
+      "date": "July 2, 2026",
+      "summary": "Anthropic restores Fable 5 and Mythos 5 after a 19-day US export control ban and removes steganographic proxy-tracking code from Claude Code discovered by a developer the previous day.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Models",
+          "headline": "Anthropic restores Fable 5 and Mythos 5 after US lifts 19-day export control ban",
+          "description": "The US Department of Commerce lifted export controls on Claude Fable 5 and Mythos 5 on June 30, ending a 19-day suspension triggered by Amazon researchers disclosing a jailbreak that bypassed Fable 5 cybersecurity safeguards. Anthropic redeployed both models July 1 with a new classifier blocking the jailbreak in over 99 percent of cases, at the cost of more false positives on routine coding tasks. Pro, Max, and Team subscribers get Fable 5 included for up to half their weekly usage limits through July 7, after which it shifts to usage credits.",
+          "action": "Update any workflows that fell back to Opus 4.8 during the suspension. If you route Claude through a corporate gateway, test the new classifier against your coding use cases to surface false-positive patterns before relying on Fable 5 in production.",
+          "tools": [
+            "Claude Fable 5",
+            "Claude Mythos 5",
+            "Claude Platform",
+            "Claude Code",
+            "Claude Cowork"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/news/redeploying-fable-5-mythos-5",
+              "name": "Anthropic"
+            },
+            {
+              "url": "https://thehackernews.com/2026/07/anthropic-restores-claude-fable-5-after.html",
+              "name": "The Hacker News"
+            },
+            {
+              "url": "https://venturebeat.com/technology/anthropic-is-bringing-back-claude-fable-5-globally-after-us-lifts-export-control-order-where-can-enterprises-access-it",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://platform.claude.com/docs/en/release-notes/overview",
+              "name": "Anthropic Platform Release Notes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Anthropic removes Claude Code steganographic proxy markers after developer reverse-engineers three-month covert fingerprinting",
+          "description": "A developer reverse-engineered the Claude Code binary on June 30 and found it had been embedding invisible Unicode markers in system prompts for at least three months to identify requests routed through Chinese-linked API proxies and AI lab infrastructure. The apostrophe in the date string alternated among four visually identical Unicode variants to encode a three-bit fingerprint indicating whether the proxy hostname matched a domain list, an AI-lab keyword list, or both; the date separator also switched from dash to slash when the system timezone was Asia/Shanghai or Asia/Urumqi. Anyone using a custom ANTHROPIC_BASE_URL, corporate API gateway, or internal proxy was affected. Anthropic confirmed the feature was a March anti-distillation experiment and shipped the fix in v2.1.197 on July 1 with no changelog entry.",
+          "action": "Update Claude Code to v2.1.197 or later if you use a custom ANTHROPIC_BASE_URL or route through a gateway. Verify your upstream request logging to confirm markers are absent. Anyone building infrastructure on top of Claude Code should audit their logging pipelines for Unicode anomalies in system prompts.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.theregister.com/ai-and-ml/2026/07/01/anthropic-is-removing-its-covert-code-for-catching-chinese-competitors/5265366",
+              "name": "The Register"
+            },
+            {
+              "url": "https://news.ycombinator.com/item?id=48734373",
+              "name": "Hacker News"
+            },
+            {
+              "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+              "name": "thereallo.dev (original discovery)"
+            },
+            {
+              "url": "https://byteiota.com/claude-code-is-marking-requests-what-anthropic-hid/",
+              "name": "byteiota"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code v2.1.198 makes Chrome extension generally available and adds background agent push automation",
+          "description": "Claude Code v2.1.198, released July 1, promotes Claude in Chrome from beta to general availability for all paid subscribers. Background agents now automatically commit, push, and open a draft pull request when finishing code work instead of stopping to ask for input. A new Notification hook exposes agent_needs_input and agent_completed events so external systems can react to agent state without polling.",
+          "action": "Install the Claude Chrome extension on any paid plan and enable it in Claude Code. Update to v2.1.198 to get the auto-PR behavior. Wire the Notification hook into your task queue or alerting system to handle background agents in automation pipelines.",
+          "tools": [
+            "Claude Code",
+            "Claude in Chrome"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases (Claude Code)"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Google releases Nano Banana 2 Lite image API and Gemini Omni Flash video preview",
+          "description": "Google released two generative media models via the Gemini API on July 1. Nano Banana 2 Lite (gemini-3.1-flash-lite-image) returns a 1K-resolution image in about four seconds at $0.034 per image, generally available. Gemini Omni Flash (gemini-omni-flash-preview) converts images to video at $0.10 per second of output, available as a public preview. Both are accessible through Google AI Studio and the Gemini Enterprise Agent Platform.",
+          "action": "Evaluate Nano Banana 2 Lite as the cheapest and fastest option for image generation steps in Gemini-based workflows. Gemini Omni Flash enables image-to-video pipelines via API for the first time at a known per-second cost; start prototyping if video generation is on your roadmap.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio",
+            "Gemini Enterprise Agent Platform"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/",
+              "name": "Google Blog"
+            },
+            {
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-lite-and-gemini-omni-flash-available/",
+              "name": "Google Cloud Blog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "OpenAI fine-tuning cutoff for inactive organizations takes effect today",
+          "description": "July 2 is the second milestone in OpenAI's wind-down of the self-serve fine-tuning API: organizations that have not created a fine-tuning job in 60 or more days lose the ability to start new training runs. Inference on existing fine-tuned models continues until the underlying base model is deprecated. Full end of fine-tuning for all remaining organizations follows on January 6, 2027. OpenAI recommends replacing fine-tuning with prompt caching combined with GPT-5.4 Mini or GPT-4.1 Nano.",
+          "action": "Verify whether your organization is still within the active-use threshold. If you have fine-tuned models in production, begin evaluating prompt caching plus GPT-5.4 Mini as a migration path before the January 6, 2027 full cutoff. Document which fine-tuned model versions you depend on and when their base models are scheduled for deprecation.",
+          "tools": [
+            "OpenAI API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://developers.openai.com/api/docs/deprecations",
+              "name": "OpenAI Deprecations"
+            },
+            {
+              "url": "https://community.openai.com/t/openai-is-winding-down-the-fine-tuning-api-and-platform-discussion-thread/1380522",
+              "name": "OpenAI Developer Community"
+            },
+            {
+              "url": "https://tessl.io/blog/openai-shutting-fine-tuning-signals-for-enterprise-ai/",
+              "name": "tessl.io"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 5,
+      "relevant": 5,
+      "critical": 2,
+      "watch": 3,
       "low": 0
     }
   }

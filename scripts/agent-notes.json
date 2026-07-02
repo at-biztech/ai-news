@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T09:00+06:00",
+  "lastUpdated": "2026-07-02T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1188,6 +1188,19 @@
     "2026-07-01: Claude Fable 5 remains offline due to US export control directive (June 12). Status as of July 1: offline for general users, no confirmed restoration timeline. Not in any recent digest explicitly. If restoration announced, include immediately.",
     "2026-07-01: n8n had no new stable feature releases in June 29-July 1 window. 2.29.0 is pre-release. Security fix 1.123.62 (June 29) for hono/vue-i18n/linkify-it was skipped per minor dependency maintenance precedent.",
     "2026-07-01: No detached HEAD issue this session. Started on main branch, up to date.",
-    "2026-07-01: lastUpdated timestamp updated to 2026-07-01T09:00+06:00."
+    "2026-07-01: lastUpdated timestamp updated to 2026-07-01T09:00+06:00.",
+    "2026-07-02: 5 items (2 CRITICAL, 3 WATCH, 0 LOW). Fable 5 and Mythos 5 restored after 19-day US government export control ban (CRITICAL 9, July 1, Anthropic/THN/VentureBeat confirmed via primary source platform.claude.com). Claude Code steganographic proxy fingerprinting removed (CRITICAL 8, July 1, The Register/Hacker News/thereallo.dev). Claude Code v2.1.198 Claude in Chrome GA and background agent auto-PR (WATCH 7, July 1, GitHub releases). Google Nano Banana 2 Lite image API and Gemini Omni Flash video preview (WATCH 7, July 1, Google Blog/Cloud Blog). OpenAI fine-tuning inactive organization cutoff takes effect today (WATCH 7, July 2, OpenAI Deprecations).",
+    "2026-07-02: Fable 5 and Mythos 5 restoration is a landmark regulatory event. US government successfully suspended a frontier model for 19 days over a disclosed jailbreak. The model returned with a new classifier at the cost of more false positives. Industry precedent: frontier models are now subject to export-control suspension. Builders need to design AI ecosystems with model-availability fallbacks.",
+    "2026-07-02: Claude Code steganographic fingerprinting is the biggest trust story of the week. Anthropic silently embedded invisible Unicode markers in system prompts for 3+ months to detect Chinese-linked proxies. Affects anyone using custom ANTHROPIC_BASE_URL or corporate gateways. Fixed in v2.1.197 (June 30/July 1) with no changelog entry. Original discovery by a developer reverse-engineering the Claude Code binary. Hacker News discussion item 48734373.",
+    "2026-07-02: GPT-5.6 Sol/Terra/Luna announced June 26 (outside 48-hour window). Not included. GA expected mid-July per Axios. Will likely be CRITICAL for the July 10-17 run.",
+    "2026-07-02: OpenAI fine-tuning wind-down was announced May 7. The July 2 inactive-organization milestone was never covered in any prior digest. Included today as the action is builder-critical (calls to create new fine-tuning jobs now fail for inactive orgs).",
+    "2026-07-02: n8n@2.28.4 (July 1, latest stable) had AI Agent Node chat memory fixes and Python task runner config. Skipped per established minor bugfix precedent. n8n@2.29.x are pre-releases.",
+    "2026-07-02: OpenAI Codex CLI 0.142.5 (July 1, stable) only fixed WebSocket request payloads leaking into trace logs. Minor security fix. Skipped as too minor for builders.",
+    "2026-07-02: platform.claude.com/docs/en/release-notes/overview still fetchable via WebFetch. Only July 1 entry: Fable 5 and Mythos 5 restored. June 30 entries covered in July 1 digest.",
+    "2026-07-02: github.com/anthropics/claude-code/releases still fetchable. v2.1.198 (July 1, 20:45 UTC) is the latest release as of this run.",
+    "2026-07-02: github.com/openai/codex/releases still fetchable. v0.142.5 (July 1) is the latest stable. v0.143.0-alpha.32 is pre-release, skipped per established precedent.",
+    "2026-07-02: No new Zapier or Make.com product updates found for July 1-2.",
+    "2026-07-02: MCP 2026-07-28 spec release candidate (announced May 21) is a future event not within the 48-hour window. Will be significant when the final spec ships July 28.",
+    "2026-07-02: No detached HEAD issue this session. Branch check and merge with origin/main ran cleanly."
   ]
 }
