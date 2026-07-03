@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-02T09:00+06:00",
+  "lastUpdated": "2026-07-03T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1201,6 +1201,17 @@
     "2026-07-02: github.com/openai/codex/releases still fetchable. v0.142.5 (July 1) is the latest stable. v0.143.0-alpha.32 is pre-release, skipped per established precedent.",
     "2026-07-02: No new Zapier or Make.com product updates found for July 1-2.",
     "2026-07-02: MCP 2026-07-28 spec release candidate (announced May 21) is a future event not within the 48-hour window. Will be significant when the final spec ships July 28.",
-    "2026-07-02: No detached HEAD issue this session. Branch check and merge with origin/main ran cleanly."
+    "2026-07-02: No detached HEAD issue this session. Branch check and merge with origin/main ran cleanly.",
+    "2026-07-03: 8 items (3 CRITICAL, 5 WATCH, 0 LOW). LongCat 2.0 by Meituan open-sourced (CRITICAL 9, June 30 release, VentureBeat July 1). Cursor DuneSlide CVE-2026-50548/50549 public disclosure (CRITICAL 8, July 1, Cato Networks + THN). GitHub Copilot browser tools GA in VS Code (CRITICAL 8, July 1, GitHub Changelog). GitHub Copilot Vision GA (WATCH 7, July 1). OpenAI government 5% equity stake proposal (WATCH 7, July 2, Bloomberg). Kimi K2.7 Code in GitHub Copilot (WATCH 6, July 1). Claude Code 2.1.199 (WATCH 6, July 2). Copilot CLI/SDK per-session AI credit limits (WATCH 6, July 1).",
+    "2026-07-03: LongCat 2.0 (1.6T MoE, MIT, 59.5% SWE-Bench Pro) was trained and served entirely on Chinese domestic ASICs. VentureBeat article appeared July 1 (within 48h of July 3 Almaty). This is the first frontier-scale model with no Nvidia GPU. The 'Owl Alpha' reveal is significant: the stealth model was leading OpenRouter for 2 months under an anonymous name. Strongly builder-relevant.",
+    "2026-07-03: Cursor DuneSlide is already patched in Cursor 3.0 (April 2, 2026). Public disclosure July 1. Scored CRITICAL 8 as zero-click prompt injection to RCE in a tool used by 500+ Fortune companies warrants immediate awareness even when patched. Action framing: verify version and audit headless CI usage.",
+    "2026-07-03: GitHub Copilot shipped 4 significant changelog entries on July 1: Vision GA, browser tools GA in VS Code, Kimi K2.7 Code generally available, and per-session AI credit limits. These are all separate items from the GitHub Changelog. The browser tools GA scored CRITICAL 8 because agents driving real browsers in VS Code is a new agentic class of capability for Copilot.",
+    "2026-07-03: OpenAI government 5% equity proposal (Bloomberg July 2) included as WATCH 7 under Regulation category. Not a funding round per se - it's a governance/equity structure proposal that could directly affect export control policy and compliance requirements. The rules exclude 'funding rounds, layoffs, VC stats' but this is a regulatory governance story.",
+    "2026-07-03: Claude Opus 4.7 fast mode removal (July 24, announced June 25) was NOT included. The 48h window rule prohibits including a June 25 announcement for a July 3 digest at WATCH score. Will need to include as an imminent deadline reminder in the July 21-23 window.",
+    "2026-07-03: n8n@2.28.5 (July 2) was bug fixes only. Skipped per minor bugfix precedent.",
+    "2026-07-03: OpenAI Codex CLI rust-v0.142.5 (July 1) prevented WebSocket payloads from being logged. Minor security hygiene fix, not worth a dedicated item.",
+    "2026-07-03: MiniMax M3 (released June 1-12) confirmed too stale for inclusion. Way outside the 48h window.",
+    "2026-07-03: No new Zapier or Make.com product updates found for July 2-3.",
+    "2026-07-03: No detached HEAD issue this session. Repository was on main branch at start."
   ]
 }

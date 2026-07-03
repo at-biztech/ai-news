@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-07-03",
     "2026-07-02",
     "2026-07-01",
     "2026-06-30",
@@ -11177,6 +11178,227 @@
       "relevant": 5,
       "critical": 2,
       "watch": 3,
+      "low": 0
+    },
+    "2026-07-03": {
+      "dateKey": "2026-07-03",
+      "date": "July 3, 2026",
+      "summary": "Meituan released LongCat 2.0, the 1.6T MIT-licensed coding model that had been leading OpenRouter under the stealth name 'Owl Alpha' for two months, trained entirely on Chinese chips; GitHub made browser-driving agents and image attachment generally available across all Copilot plans on the same day.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "OpenSource",
+          "headline": "Meituan releases LongCat 2.0, a 1.6T MIT open-source coding model trained on Chinese chips that topped OpenRouter for two months as the stealth model Owl Alpha",
+          "description": "Meituan open-sourced LongCat 2.0 on June 30, revealing it as the model behind 'Owl Alpha,' the anonymous top-ranked agent on OpenRouter since May 2026. The 1.6-trillion-parameter Mixture-of-Experts model achieves 59.5 percent on SWE-Bench Pro, outperforming GPT-5.5 and Claude Sonnet 5, with a 1M-token context window and MIT license. It is the first frontier-scale model trained and served end-to-end on Chinese domestic ASICs with no Nvidia GPU involvement.",
+          "action": "Weights are available on Hugging Face at meituan-longcat/LongCat-2.0. Benchmark against Claude Sonnet 5 for agentic coding pipelines where MIT licensing enables cost-free local or self-hosted deployment.",
+          "tools": [
+            "LongCat 2.0",
+            "OpenRouter",
+            "Hugging Face"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips",
+              "name": "VentureBeat"
+            },
+            {
+              "url": "https://winbuzzer.com/2026/06/30/meituan-opens-longcat-20-coding-model-with-1m-context-xcxwbn/",
+              "name": "Winbuzzer"
+            },
+            {
+              "url": "https://huggingface.co/meituan-longcat/LongCat-2.0",
+              "name": "Hugging Face"
+            }
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Cato AI Labs discloses DuneSlide, two CVSS 9.8 zero-click prompt injection flaws in Cursor IDE that escape the sandbox and execute code",
+          "description": "CVE-2026-50548 and CVE-2026-50549 allow a malicious prompt in a Cursor agent session to escape the IDE sandbox and write to arbitrary paths or run arbitrary commands on the host machine with no user click required. Both are patched in Cursor 3.0, released April 2, 2026. Cato AI Labs coordinated disclosure with the Cursor team from February; the public advisory and CVE assignments dropped July 1 after The Hacker News and multiple security outlets covered the findings.",
+          "action": "Verify all team Cursor installations are on version 3.0 or later. Audit CI pipelines that run Cursor in headless or automated mode against untrusted repositories, as those are the highest-risk surfaces for automated prompt injection.",
+          "tools": [
+            "Cursor IDE"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://www.catonetworks.com/blog/duneslide-two-critical-rce-vulnerabilities/",
+              "name": "Cato Networks"
+            },
+            {
+              "url": "https://thehackernews.com/2026/07/critical-cursor-flaws-could-let-prompt.html",
+              "name": "The Hacker News"
+            }
+          ]
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "GitHub Copilot browser tools reach general availability in VS Code, giving agents live page navigation, click and type control, and screenshot capture",
+          "description": "Copilot agents in VS Code can now open URLs, click, type, hover, handle dialogs, capture console errors, and take screenshots in a real Chromium browser, directly from the editor. The feature ships on by default for all Copilot subscribers across Free, Pro, Pro+, Business, and Enterprise plans with no admin action required. Browser access to user-opened tabs requires an explicit Share with Agent grant and can be revoked at any time.",
+          "action": "Wire browser tools into Copilot agent sessions for end-to-end test automation, live web scraping within coding context, and screenshot-driven debugging loops that previously required manual steps outside the editor.",
+          "tools": [
+            "GitHub Copilot",
+            "VS Code",
+            "Chromium"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/",
+              "name": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot Vision reaches general availability, enabling image and PDF attachment in chat for all subscribers with no admin action required",
+          "description": "Copilot Vision, which lets developers attach images and PDFs to chat prompts so Copilot can reason about visual content alongside code, is now on by default for all plans. Enterprise plans retain attachments for approximately 24 hours. The GA removes the prior preview restriction that limited image input to select plans and regions.",
+          "action": "Attach screenshots, wireframes, error-state captures, or architecture diagrams directly to Copilot chat for context-rich debugging and feature planning without switching to a separate visual AI tool.",
+          "tools": [
+            "GitHub Copilot"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available/",
+              "name": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Regulation",
+          "headline": "OpenAI proposes giving the US government a 5 percent equity stake in leading AI developers as part of a structured governance arrangement",
+          "description": "Bloomberg reported July 2 that OpenAI executives proposed the US government receive a 5 percent stake in each of the major US AI developers, potentially including Anthropic, Google, and Meta, as part of a broader governance deal. The proposal would formalize government visibility into leading AI labs and could affect export control policy, government procurement terms, and international market access. No other party has confirmed agreement.",
+          "action": "Monitor for formal announcements. If the arrangement proceeds it could affect export rules on models like Fable 5 and Mythos 5 that have already been subject to temporary controls, and create new compliance requirements for government-facing AI deployments.",
+          "tools": [],
+          "confidence": "reported",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://www.bloomberg.com/news/articles/2026-07-02/openai-proposes-giving-the-us-government-a-5-stake-ft-says",
+              "name": "Bloomberg"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Models",
+          "headline": "Kimi K2.7 Code becomes the first open-weight model in the GitHub Copilot model picker, rolling out to Pro, Pro+, and Max plans on Azure infrastructure",
+          "description": "Moonshot AI's Kimi K2.7 Code, hosted by GitHub on Microsoft Azure, is now selectable in VS Code, JetBrains, Xcode, Eclipse, and Copilot CLI model pickers. It is off by default for Business and Enterprise plans pending administrator policy enablement. GitHub positions it as a lower-cost option with performance comparable to frontier models for everyday coding tasks.",
+          "action": "Test Kimi K2.7 as a lower-cost model for routine code generation tasks in Copilot-powered pipelines. Enterprise admins must explicitly enable the Kimi K2.7 Code policy in Copilot settings before team members can select it.",
+          "tools": [
+            "GitHub Copilot",
+            "Kimi K2.7 Code",
+            "VS Code"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-01-kimi-k2-7-is-now-available-in-github-copilot/",
+              "name": "GitHub Changelog"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Claude Code 2.1.199 adds stacked slash-skill invocations up to five deep and fixes streaming response loss on mid-stream API failures",
+          "description": "Release 2.1.199 (July 2) allows stacking up to five slash-skill calls in a single invocation so compound chains like /skill-a /skill-b do XYZ load all leading skills before executing. The release also fixes streaming responses that were previously discarded when an API error occurred mid-stream, which is significant for pipelines that collect and process Claude Code output programmatically. Background agent daemons on Linux and macOS receive additional stability fixes.",
+          "action": "Update Claude Code to 2.1.199. Test stacked skill invocations for any workflow that chains multiple skills. The streaming fix improves reliability for any pipeline reading Claude Code output over a stream.",
+          "tools": [
+            "Claude Code"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases",
+              "name": "GitHub Releases"
+            }
+          ]
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI and SDK add per-session AI credit limits to cap agent spending in automated and CI workflows",
+          "description": "Copilot CLI and the Copilot SDK now support a session credit limit parameter that hard-caps the total AI credits an agent can spend in a single session, preventing runaway token consumption in automated pipelines. The feature is designed for CI/CD integrations and long-running agents where uncapped model calls represent a cost risk. Limits are configured per-session, not per-plan.",
+          "action": "Set conservative credit limits on any Copilot SDK or CLI agent running in CI pipelines or automated tests. Start with a ceiling that covers normal session usage and alert on limit hits before raising caps.",
+          "tools": [
+            "GitHub Copilot CLI",
+            "Copilot SDK"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-01-set-ai-credit-session-limits-in-copilot-cli-and-sdk/",
+              "name": "GitHub Changelog"
+            }
+          ]
+        }
+      ],
+      "totalScanned": 8,
+      "relevant": 8,
+      "critical": 3,
+      "watch": 5,
       "low": 0
     }
   }
