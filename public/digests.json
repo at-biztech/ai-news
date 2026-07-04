@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-07-04",
     "2026-07-03",
     "2026-07-02",
     "2026-07-01",
@@ -5410,7 +5411,7 @@
           "tag": "CRITICAL",
           "category": "Infrastructure",
           "headline": "DALL-E 2 and DALL-E 3 shut down tomorrow with migration that requires code changes beyond a model swap",
-          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback \u2014 calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
+          "description": "OpenAI shuts down dall-e-2 and dall-e-3 from the API on May 12 with no auto-upgrade fallback — calls will return errors immediately. Migration to gpt-image-1 or gpt-image-1.5 is not a drop-in rename: builders must remove the response_format, style, and quality request parameters, and switch response parsing from URL fetching to b64_json decoding. Any integration that forwards these parameters unchanged will break on the first call after midnight.",
           "action": "Audit all /v1/images/generations calls before May 12. Update model string, strip deprecated params, and rewrite response handling to decode b64_json. Test on a staging API key before cutover.",
           "tools": [
             "OpenAI API",
@@ -10307,9 +10308,9 @@
           "score": 7,
           "tag": "WATCH",
           "category": "Infrastructure",
-          "headline": "OpenAI unveils Jalape\u00f1o custom ASIC with Broadcom targeting gigawatt scale inference by end of 2026",
+          "headline": "OpenAI unveils Jalapeño custom ASIC with Broadcom targeting gigawatt scale inference by end of 2026",
           "description": "OpenAI's first proprietary inference chip, co-designed with Broadcom over nine months, reached tape-out and is running engineering samples at production frequency. The architecture targets LLM inference kernels, memory movement, and high-bandwidth networking, with substantially better performance per watt than current alternatives. OpenAI used its own models to accelerate the chip design process; production deployment is targeted at gigawatt-scale data centers by end of 2026, with capacity expanding in subsequent years.",
-          "action": "Track the Jalape\u00f1o rollout as a signal for lower OpenAI API costs and higher throughput ceilings from 2027 onward. No immediate workflow changes required.",
+          "action": "Track the Jalapeño rollout as a signal for lower OpenAI API costs and higher throughput ceilings from 2027 onward. No immediate workflow changes required.",
           "tools": [
             "OpenAI API"
           ],
@@ -10851,7 +10852,7 @@
           "tag": "WATCH",
           "category": "Tools",
           "headline": "Claude Code v2.1.196 adds org default model controls and closes untrusted MCP server gap",
-          "description": "The release ships admin controls to set default models per organization or role from the Claude Console, displayed as Org default or Role default in the /model picker \u2014 a structural primitive teams need to standardize model selection across users without per-user configuration. The /code-review workflow now consumes 25% fewer tokens and terminal rendering during streaming drops approximately 37% per frame. A security fix stops claude mcp list and get from spawning MCP servers defined in untrusted repository .mcp.json files, which previously ran silently on workspace checkout.",
+          "description": "The release ships admin controls to set default models per organization or role from the Claude Console, displayed as Org default or Role default in the /model picker — a structural primitive teams need to standardize model selection across users without per-user configuration. The /code-review workflow now consumes 25% fewer tokens and terminal rendering during streaming drops approximately 37% per frame. A security fix stops claude mcp list and get from spawning MCP servers defined in untrusted repository .mcp.json files, which previously ran silently on workspace checkout.",
           "action": "Admins should set org default models via the Claude Console now rather than relying on per-user defaults; teams whose repos are accessible to untrusted contributors should update to v2.1.196 immediately for the MCP server isolation fix.",
           "clientPitch": "",
           "useCase": "",
@@ -11400,6 +11401,71 @@
       "critical": 3,
       "watch": 5,
       "low": 0
+    },
+    "2026-07-04": {
+      "dateKey": "2026-07-04",
+      "date": "July 4, 2026",
+      "summary": "Anthropic released the Claude Apps Gateway, a self-hosted enterprise control plane for Claude Code with corporate SSO, RBAC, and per-user spend caps on Amazon Bedrock and Google Cloud, while Claude Code v2.1.200 set the default permission mode to Manual and removed AskUserQuestion auto-continue.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "ClaudeEnterprise",
+          "headline": "Anthropic ships self-hosted Claude Code gateway with corporate SSO, RBAC, and daily spend caps on Amazon Bedrock and Google Cloud",
+          "description": "The Claude Apps Gateway is a stateless container deployed on Cloud Run or Bedrock infrastructure that intercepts Claude Code traffic and enforces organisation-wide policy before routing requests to the cloud backend. It authenticates developers through any OIDC provider (Google Workspace, Entra ID, Okta) and exchanges IdP tokens for short-lived session JWTs, eliminating per-developer API keys or service-account credentials on laptops. Per-user, per-group, and per-org daily, weekly, or monthly token spend caps are metered against a Cloud SQL ledger; cap breaches return HTTP 429, and all telemetry carries verified identity over OTLP for integration with Cloud Monitoring, Grafana, or Datadog.",
+          "action": "Deploy from the open-source container image and configure gateway.yaml with your OIDC issuer, allowed email domains, upstream providers (Claude API, Bedrock, or Vertex), and spend limits. Model lists and tool permissions update fleet-wide within one hour of a gateway.yaml change, making this the correct place to centralise all Claude Code governance for enterprise teams.",
+          "tools": [
+            "Claude Code",
+            "Amazon Bedrock",
+            "Google Cloud",
+            "Cloud Run",
+            "OIDC"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://claude.com/blog/introducing-the-claude-apps-gateway",
+              "name": "Anthropic Blog"
+            },
+            {
+              "url": "https://cloud.google.com/blog/topics/developers-practitioners/announcing-claude-apps-gateway-for-google-cloud",
+              "name": "Google Cloud Blog"
+            }
+          ]
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "ClaudeCode",
+          "headline": "Claude Code v2.1.200 sets permission mode to Manual by default and removes AskUserQuestion auto-continue across CLI, VS Code, and JetBrains",
+          "description": "Anthropic changed Claude Code's default permission mode from \"default\" to \"Manual\" across all surfaces, requiring explicit approval for every potentially destructive operation rather than relying on the previous permissive baseline. AskUserQuestion dialogs no longer auto-continue on idle timeout unless opted in via /config, removing a behavior that allowed unattended agents to proceed without oversight. Background agent stability also improved with fixes for daemon handover after stale lock files, mid-turn crash on sleep/wake, rate-limit-induced subagent failures returning empty results, and older binary builds taking over the daemon after reinstall.",
+          "action": "Audit CI and automated pipeline configurations that relied on the previous default permission mode; set --permission-mode explicitly or use /config to opt into idle-timeout auto-continue if your workflow requires it. Update background agent builds immediately for the daemon stability fixes, particularly in environments where agents run overnight or across sleep cycles.",
+          "tools": [
+            "Claude Code",
+            "VS Code",
+            "JetBrains"
+          ],
+          "confidence": "confirmed",
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": "",
+          "sources": [
+            {
+              "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.200",
+              "name": "GitHub Release"
+            }
+          ]
+        }
+      ]
     }
   }
 }
