@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-07-05",
     "2026-07-04",
     "2026-07-03",
     "2026-07-02",
@@ -11466,6 +11467,140 @@
           ]
         }
       ]
+    },
+    "2026-07-05": {
+      "dateKey": "2026-07-05",
+      "date": "July 5, 2026",
+      "summary": "Anthropic ships a programmatic Analytics API and model entitlements for Claude Enterprise; DeepSeek retires legacy model aliases on July 24 with 19 days to migrate; GitHub removes the PAT requirement for Copilot CLI in GitHub Actions.",
+      "items": [
+        {
+          "score": 9,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "Anthropic ships Analytics API and model entitlements for Claude Enterprise",
+          "description": "Anthropic launched three admin controls for Claude Enterprise on July 2: a programmatic Analytics API returning per-user cost and usage data filterable by date, team, product, and model across every Claude surface; model-level entitlements letting admins set a default model per group and restrict which models users can access via existing SCIM groups; and spend-threshold alerts notifying admins at 75 percent and 90 percent of an org limit with user-facing notifications at 75 percent and 95 percent. The release followed documented enterprise billing crises where unmonitored agentic workloads exhausted full-year AI budgets in as few as four months.",
+          "action": "Enable the Analytics API to attribute costs across chat, Claude Code, Cowork, and Office agents. Set model defaults to prevent Claude Code from defaulting to Opus on every session. Configure spend alerts before your next agentic project scales up.",
+          "tools": [
+            "Claude Enterprise",
+            "Claude API",
+            "Admin API"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend",
+              "name": "Anthropic Blog"
+            },
+            {
+              "url": "https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm",
+              "name": "TechTimes"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "DeepSeek retires deepseek-chat and deepseek-reasoner aliases on July 24",
+          "description": "DeepSeek will shut down the deepseek-chat and deepseek-reasoner API aliases at 15:59 UTC on July 24, 2026, returning errors for any call using those model strings. Both aliases currently route to deepseek-v4-flash; the migration is a one-line model parameter change. The key gotcha: deepseek-reasoner maps to V4 Flash not V4 Pro, so reasoning-heavy workloads that need equivalent capability must explicitly switch to deepseek-v4-pro as a separate step.",
+          "action": "Audit all integrations, n8n workflows, and API calls using deepseek-chat or deepseek-reasoner. Replace with deepseek-v4-flash for general use or deepseek-v4-pro for heavy reasoning. Cache hit pricing drops V4 Pro input cost by 98 percent for repeated prefixes. 19 days remain.",
+          "tools": [
+            "DeepSeek API",
+            "n8n",
+            "OpenRouter"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://www.developersdigest.tech/blog/deepseek-chat-to-v4-migration-guide",
+              "name": "Developers Digest"
+            },
+            {
+              "url": "https://wavespeed.ai/blog/posts/blog-deepseek-v4-model-name-migration/",
+              "name": "WaveSpeed Blog"
+            },
+            {
+              "url": "https://deepseekv4pro.com/news/deepseek-claude-code-may20-model-alias-deprecation",
+              "name": "DeepSeek V4 Hub"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Tools",
+          "headline": "GitHub Copilot CLI in Actions no longer requires a personal access token",
+          "description": "GitHub published a changelog on July 2 allowing Copilot CLI to authenticate in GitHub Actions using the built-in GITHUB_TOKEN, replacing the previous requirement for a long-lived personal access token stored as a repository secret. Workflows add copilot-requests: write to their permission block and authentication is handled automatically; AI credits consumed by the CLI in org-owned repositories bill directly to the organization. The update eliminates the security risk of managing rotating PATs across large CI fleets.",
+          "action": "Update Copilot CLI Actions workflows to use GITHUB_TOKEN instead of stored PAT secrets. Enable the Allow use of Copilot CLI billed to the organization policy in your org settings before deploying.",
+          "tools": [
+            "GitHub Copilot",
+            "GitHub Actions"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions/",
+              "name": "GitHub Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Copilot CLI adds MCP server inspector and session auto-approval mode",
+          "description": "GitHub Copilot CLI v1.0.69-1, released July 4, ships a /mcp list command for viewing all attached MCP servers and their active tool manifests from inside a session, an auto-approval mode that lets trusted tool-call patterns proceed without a confirmation prompt, and a stayInAutopilot setting that locks the session in agent mode rather than falling back to manual after each operation. The release also fixes macOS clipboard handling and WSL path resolution for Windows users.",
+          "action": "Run /mcp list after connecting MCP servers to verify tool manifests before enabling auto-approval. Review approved tool patterns carefully as auto-approval bypasses the per-call confirmation gate.",
+          "tools": [
+            "GitHub Copilot",
+            "MCP"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.com/github/copilot-cli/releases/tag/v1.0.69-1",
+              "name": "GitHub Release"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 3,
+      "watch": 1,
+      "low": 0
     }
-  }
+  },
+  "items": [],
+  "totalScanned": 0,
+  "relevant": 0,
+  "critical": 0,
+  "watch": 0,
+  "low": 0,
+  "dateKey": "2026-07-05",
+  "date": "July 5, 2026"
 }
