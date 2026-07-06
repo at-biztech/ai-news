@@ -1,5 +1,6 @@
 {
   "dates": [
+    "2026-07-06",
     "2026-07-05",
     "2026-07-04",
     "2026-07-03",
@@ -11592,6 +11593,131 @@
       "relevant": 4,
       "critical": 3,
       "watch": 1,
+      "low": 0
+    },
+    "2026-07-06": {
+      "dateKey": "2026-07-06",
+      "date": "July 6, 2026",
+      "summary": "GitHub sets July 30 retirement for its Models inference API with brownouts starting July 16, while Google opens Gemini Managed Agents in public preview to all API developers and GitHub Enterprise gains per-session agent audit streaming.",
+      "items": [
+        {
+          "score": 8,
+          "tag": "CRITICAL",
+          "category": "Infrastructure",
+          "headline": "GitHub Models fully retires July 30 with brownouts July 16 and 23",
+          "description": "GitHub Models—playground, model catalog, inference API, and bring-your-own-key endpoints—shuts down permanently on July 30, 2026, closed to new customers since June 16. Two scheduled brownouts on July 16 and July 23 serve as operational drills before the full blackout. Any workflow calling github.com/github-models inference endpoints, the playground, or BYOK must migrate to a direct provider API before the first brownout in 10 days.",
+          "action": "Audit all code calling GitHub Models inference endpoints. Migrate to OpenAI, Azure OpenAI, Anthropic, or another direct API. Set July 16 as your internal migration deadline to validate migrated paths before the first brownout.",
+          "tools": [
+            "GitHub Models",
+            "GitHub Copilot Enterprise",
+            "OpenAI API",
+            "Azure OpenAI"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/",
+              "name": "GitHub Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 7,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "Gemini API opens Managed Agents public preview with one-call isolated Linux sandbox",
+          "description": "Google launched Managed Agents in the Gemini API in public preview on July 1, giving any developer a single POST to the Interactions API that spins up a Gemini 3.5 Flash agent in an isolated Google-hosted Linux sandbox with code execution, web search, and URL fetch built in. The general-purpose Antigravity agent is available immediately in Google AI Studio and the API, positioned directly against Anthropic Claude Managed Agents and OpenAI Agents SDK sandbox. No self-managed infrastructure is required to run stateful multi-step Gemini agent workflows.",
+          "action": "Test the Interactions API in Google AI Studio to benchmark Gemini Managed Agents against Claude Managed Agents for latency, tooling, and cost. The isolated sandbox removes the need to provision your own execution environment for agentic Gemini workflows.",
+          "tools": [
+            "Gemini API",
+            "Google AI Studio",
+            "Gemini Enterprise Agent Platform"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/managed-agents-gemini-api/",
+              "name": "Google Blog"
+            },
+            {
+              "url": "https://ai.google.dev/gemini-api/docs/custom-agents",
+              "name": "Gemini API Docs"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Tools",
+          "headline": "GitHub Copilot Enterprise gains streaming audit logs for all agent session activity",
+          "description": "GitHub Enterprise Cloud launched Copilot agent session streaming in public preview on July 2, letting enterprises stream every agent prompt, response, and tool call from GitHub.com, Copilot CLI, VS Code, Visual Studio, JetBrains, and Eclipse to an event collector, SIEM, or Microsoft Purview. The feature toggles on under AI Controls and complements the existing usage metrics API. It addresses the compliance gap for organizations that need prompt-level audit trails for AI governance and security incident investigation.",
+          "action": "Enable Copilot Usage Records Streaming in enterprise AI Controls if you need auditable logs of agent activity for regulatory compliance or internal chargeback. Connect to an existing SIEM or Microsoft Purview to start capturing session data immediately.",
+          "tools": [
+            "GitHub Copilot Enterprise",
+            "Microsoft Purview",
+            "GitHub AI Controls"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview/",
+              "name": "GitHub Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        },
+        {
+          "score": 6,
+          "tag": "WATCH",
+          "category": "Infrastructure",
+          "headline": "GitHub Copilot cost centers can now cap each department share of included AI credits",
+          "description": "GitHub Enterprise Cloud cost centers gained AI credit pool caps on July 2, preventing any single department from drawing the organization shared monthly included credits beyond its own seat allocation. The control is separate from cost center budgets that govern metered usage after included credits are exhausted, and is available today through the REST API with UI management coming soon. Per-user AI credit budgets within cost centers also went live on June 30 via API.",
+          "action": "Use the REST API to assign AI credit pool caps to each cost center before high-consumption teams—especially those running agentic workflows—exhaust shared included credits. UI management is not yet available so REST is the only configuration path.",
+          "tools": [
+            "GitHub Copilot Business",
+            "GitHub Copilot Enterprise",
+            "GitHub Enterprise Cloud"
+          ],
+          "confidence": "confirmed",
+          "sources": [
+            {
+              "url": "https://github.blog/changelog/2026-07-02-cost-centers-now-support-included-usage-caps/",
+              "name": "GitHub Changelog"
+            },
+            {
+              "url": "https://github.blog/changelog/2026-06-30-per-user-ai-credit-budgets-available-for-cost-centers/",
+              "name": "GitHub Changelog"
+            }
+          ],
+          "clientPitch": "",
+          "useCase": "",
+          "timeline": "",
+          "sourceTier": 0,
+          "sourceUrl": "",
+          "sourceName": ""
+        }
+      ],
+      "totalScanned": 4,
+      "relevant": 4,
+      "critical": 1,
+      "watch": 3,
       "low": 0
     }
   },

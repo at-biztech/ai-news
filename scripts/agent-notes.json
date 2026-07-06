@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-05T09:00+06:00",
+  "lastUpdated": "2026-07-06T09:00+06:00",
   "sourceNotes": {
     "openai_changelog": "https://developers.openai.com/changelog/ returned 403 on 2026-04-03. Blocked by Cloudflare or bot protection. Use WebSearch as fallback.",
     "anthropic_releases": "https://platform.claude.com/docs/en/release-notes/overview is fetchable via WebFetch as of 2026-04-09. Best primary source for Anthropic API changes.",
@@ -1234,6 +1234,14 @@
     "2026-07-05: n8n 2.28.6 (July 3) was bug fixes only. 2.29.x still pre-release. Nothing worth including.",
     "2026-07-05: California/Newsom/Anthropic deal (June 29) is 6 days old, well outside 48h/72h window. Not covered.",
     "2026-07-05: UPCOMING DEADLINES - Claude Opus 4.7 fast mode removal July 24 (cover countdown ~July 22); DeepSeek aliases July 24 (COVERED TODAY); MCP spec final July 28 (cover when spec ships); Claude Opus 4.1 retires August 5 (countdown ~August 3). GPT-5.6 broad access expected mid-to-late July.",
-    "2026-07-05: No detached HEAD issue this session. Repository was on main branch at start."
+    "2026-07-05: No detached HEAD issue this session. Repository was on main branch at start.",
+    "2026-07-06: 4 items (1 CRITICAL, 3 WATCH, 0 LOW). GitHub Models full retirement July 30 with brownouts July 16 and 23 (CRITICAL 8, announced July 1 but missed in July 1-5 digests). Gemini API Managed Agents public preview with isolated Linux sandbox (WATCH 7, Google Blog July 1, also missed in prior digests). GitHub Copilot enterprise agent session streaming public preview (WATCH 6, July 2). GitHub cost center AI credit pools via REST API (WATCH 6, July 2).",
+    "2026-07-06: July 5-6 was a quiet news period. No new Claude Code releases since v2.1.201 (July 3, covered July 4 digest). No new n8n releases. No new Copilot CLI releases since v1.0.69-1 (July 4, covered July 5 digest). Digest filled with July 1-2 items that were skipped in prior runs due to higher-priority news (Fable 5 restoration, LongCat 2.0, Cursor CVEs, Claude Apps Gateway).",
+    "2026-07-06: GitHub Models retirement (July 1 announcement) was not in any July 1-5 digest despite being highly actionable. Applied Axios precedent (5 days late, CRITICAL, not in any prior digest). Deadline urgency (10 days to first brownout) justified inclusion.",
+    "2026-07-06: Gemini Managed Agents (July 1 blog) similarly skipped in July 1-2 digests. Applied Axios precedent. Google now has direct competitor to Claude Managed Agents and OpenAI Agents SDK sandbox.",
+    "2026-07-06: Claude Science workbench (June 30) was 6 days old and could not be included under any exception. Not in any prior digest but too old. Should have been covered July 1.",
+    "2026-07-06: Detached HEAD recurred at session start. Fixed with git fetch origin main && git checkout main && git merge FETCH_HEAD pattern. Root cause persists: sessions still start in detached HEAD state.",
+    "2026-07-06: github.blog/changelog 403 via WebFetch. GitHub changelog entries confirmed via WebSearch with direct URL matching. This is a reliable pattern for finding GitHub changelog items.",
+    "2026-07-06: ai.google.dev/gemini-api/docs/changelog still returns 403 via WebFetch. WebSearch remains the fallback for Gemini API changelog."
   ]
 }
